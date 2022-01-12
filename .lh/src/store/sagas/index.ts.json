@@ -1,0 +1,90 @@
+{
+    "sourceFile": "src/store/sagas/index.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1641819811999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641833424537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,13 @@\n import { takeLatest, all, takeEvery } from 'redux-saga/effects';\n \n import { Types as SearchTypes } from '../actions/searchMovie';\n-import { getPopularMovies, getMovieList, getGenres } from './searchMovie';\n+import {\n+    getPopularMovies,\n+    getMovieList,\n+    getGenres,\n+    getGames,\n+} from './searchMovie';\n \n export default function* rootSaga(): any {\n     return yield all([\n         takeEvery(SearchTypes.SEARCH_MOVIE_LIST_REQUEST, getMovieList),\n@@ -10,6 +15,7 @@\n             SearchTypes.SEARCH_POPULAR_MOVIE_LIST_REQUEST,\n             getPopularMovies,\n         ),\n         takeLatest(SearchTypes.SEARCH_GENRE_REQUEST, getGenres),\n+        takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, getGames),\n     ]);\n }\n"
+                },
+                {
+                    "date": 1641864430874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,21 +1,8 @@\n import { takeLatest, all, takeEvery } from 'redux-saga/effects';\n \n import { Types as SearchTypes } from '../actions/searchMovie';\n-import {\n-    getPopularMovies,\n-    getMovieList,\n-    getGenres,\n-    getGames,\n-} from './searchMovie';\n+import { getGames } from './searchMovie';\n \n export default function* rootSaga(): any {\n-    return yield all([\n-        takeEvery(SearchTypes.SEARCH_MOVIE_LIST_REQUEST, getMovieList),\n-        takeLatest(\n-            SearchTypes.SEARCH_POPULAR_MOVIE_LIST_REQUEST,\n-            getPopularMovies,\n-        ),\n-        takeLatest(SearchTypes.SEARCH_GENRE_REQUEST, getGenres),\n-        takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, getGames),\n-    ]);\n+    return yield all([takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, getGames)]);\n }\n"
+                },
+                {
+                    "date": 1641864871507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { takeLatest, all, takeEvery } from 'redux-saga/effects';\n \n-import { Types as SearchTypes } from '../actions/searchMovie';\n-import { getGames } from './searchMovie';\n+import { Types as SearchTypes } from '../actions/searchGames';\n+import { getGames } from './searchGames';\n \n export default function* rootSaga(): any {\n     return yield all([takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, getGames)]);\n }\n"
+                },
+                {
+                    "date": 1641918776243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,11 @@\n import { takeLatest, all, takeEvery } from 'redux-saga/effects';\n \n import { Types as SearchTypes } from '../actions/searchGames';\n-import { getGames } from './searchGames';\n+import { filterGames, getGames } from './searchGames';\n \n export default function* rootSaga(): any {\n-    return yield all([takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, getGames)]);\n+    return yield all([\n+        takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, getGames)\n+        takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, filterGames)\n+    ]);\n }\n"
+                },
+                {
+                    "date": 1641918794797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,8 @@\n import { filterGames, getGames } from './searchGames';\n \n export default function* rootSaga(): any {\n     return yield all([\n-        takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, getGames)\n-        takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, filterGames)\n+        takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, getGames),\n+        takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, filterGames),\n     ]);\n }\n"
+                },
+                {
+                    "date": 1641919437855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,7 @@\n \n export default function* rootSaga(): any {\n     return yield all([\n         takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, getGames),\n-        takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, filterGames),\n+        takeLatest(SearchTypes.FILTER_GAMES_REQUEST, filterGames),\n     ]);\n }\n"
+                },
+                {
+                    "date": 1641959393583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,12 @@\n import { takeLatest, all, takeEvery } from 'redux-saga/effects';\n \n import { Types as SearchTypes } from '../actions/searchGames';\n-import { filterGames, getGames } from './searchGames';\n+import { filterGames, getGames, getEspecificGame } from './searchGames';\n \n export default function* rootSaga(): any {\n     return yield all([\n         takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, getGames),\n         takeLatest(SearchTypes.FILTER_GAMES_REQUEST, filterGames),\n+        takeLatest(SearchTypes.GET_ESPECIFIC_GAME_REQUEST, getEspecificGame),\n     ]);\n }\n"
+                },
+                {
+                    "date": 1641962071014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n export default function* rootSaga(): any {\n     return yield all([\n         takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, getGames),\n         takeLatest(SearchTypes.FILTER_GAMES_REQUEST, filterGames),\n-        takeLatest(SearchTypes.GET_ESPECIFIC_GAME_REQUEST, getEspecificGame),\n+        // takeLatest(SearchTypes.GET_ESPECIFIC_GAME_REQUEST, getEspecificGame),\n     ]);\n }\n"
+                },
+                {
+                    "date": 1641962096670,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n export default function* rootSaga(): any {\n     return yield all([\n         takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, getGames),\n         takeLatest(SearchTypes.FILTER_GAMES_REQUEST, filterGames),\n-        // takeLatest(SearchTypes.GET_ESPECIFIC_GAME_REQUEST, getEspecificGame),\n+        takeLatest(SearchTypes.GET_ESPECIFIC_GAME_REQUEST, getEspecificGame),\n     ]);\n }\n"
+                },
+                {
+                    "date": 1641962290645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n export default function* rootSaga(): any {\n     return yield all([\n         takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, getGames),\n         takeLatest(SearchTypes.FILTER_GAMES_REQUEST, filterGames),\n-        takeLatest(SearchTypes.GET_ESPECIFIC_GAME_REQUEST, getEspecificGame),\n+        takeEvery(SearchTypes.GET_ESPECIFIC_GAME_REQUEST, getEspecificGame),\n     ]);\n }\n"
+                },
+                {
+                    "date": 1641962308007,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n export default function* rootSaga(): any {\n     return yield all([\n         takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, getGames),\n         takeLatest(SearchTypes.FILTER_GAMES_REQUEST, filterGames),\n-        takeEvery(SearchTypes.GET_ESPECIFIC_GAME_REQUEST, getEspecificGame),\n+        takeLatest(SearchTypes.GET_ESPECIFIC_GAME_REQUEST, getEspecificGame),\n     ]);\n }\n"
+                },
+                {
+                    "date": 1641962437938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n import { takeLatest, all, takeEvery } from 'redux-saga/effects';\n \n import { Types as SearchTypes } from '../actions/searchGames';\n-import { filterGames, getGames, getEspecificGame } from './searchGames';\n+import { filterGames, getGames, getEspecificGameee } from './searchGames';\n \n export default function* rootSaga(): any {\n     return yield all([\n         takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, getGames),\n         takeLatest(SearchTypes.FILTER_GAMES_REQUEST, filterGames),\n-        takeLatest(SearchTypes.GET_ESPECIFIC_GAME_REQUEST, getEspecificGame),\n+        takeLatest(SearchTypes.GET_ESPECIFIC_GAME_REQUEST, getEspecificGameee),\n     ]);\n }\n"
+                },
+                {
+                    "date": 1641962517603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n import { takeLatest, all, takeEvery } from 'redux-saga/effects';\n \n import { Types as SearchTypes } from '../actions/searchGames';\n-import { filterGames, getGames, getEspecificGameee } from './searchGames';\n+import { filterGames, getGames, getEspecificGame } from './searchGames';\n \n export default function* rootSaga(): any {\n     return yield all([\n         takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, getGames),\n         takeLatest(SearchTypes.FILTER_GAMES_REQUEST, filterGames),\n-        takeLatest(SearchTypes.GET_ESPECIFIC_GAME_REQUEST, getEspecificGameee),\n+        takeLatest(SearchTypes.GET_ESPECIFIC_GAME_REQUEST, getEspecificGame),\n     ]);\n }\n"
+                },
+                {
+                    "date": 1641989914546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n export default function* rootSaga(): any {\n     return yield all([\n         takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, getGames),\n         takeLatest(SearchTypes.FILTER_GAMES_REQUEST, filterGames),\n-        takeLatest(SearchTypes.GET_ESPECIFIC_GAME_REQUEST, getEspecificGame),\n+        takeEvery(SearchTypes.GET_ESPECIFIC_GAME_REQUEST, getEspecificGame),\n     ]);\n }\n"
+                },
+                {
+                    "date": 1641989945251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n export default function* rootSaga(): any {\n     return yield all([\n         takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, getGames),\n         takeLatest(SearchTypes.FILTER_GAMES_REQUEST, filterGames),\n-        takeEvery(SearchTypes.GET_ESPECIFIC_GAME_REQUEST, getEspecificGame),\n+        takeLatest(SearchTypes.GET_ESPECIFIC_GAME_REQUEST, getEspecificGame),\n     ]);\n }\n"
+                },
+                {
+                    "date": 1641990170985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n export default function* rootSaga(): any {\n     return yield all([\n         takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, getGames),\n         takeLatest(SearchTypes.FILTER_GAMES_REQUEST, filterGames),\n-        takeLatest(SearchTypes.GET_ESPECIFIC_GAME_REQUEST, getEspecificGame),\n+        takeLatest(SearchTypes.GET_ESPECIFIC_GAME_REQUEST, console.log('aqui')),\n     ]);\n }\n"
+                },
+                {
+                    "date": 1641990180618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n export default function* rootSaga(): any {\n     return yield all([\n         takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, getGames),\n         takeLatest(SearchTypes.FILTER_GAMES_REQUEST, filterGames),\n-        takeLatest(SearchTypes.GET_ESPECIFIC_GAME_REQUEST, console.log('aqui')),\n+        takeLatest(SearchTypes.GET_ESPECIFIC_GAME_REQUEST, getEspecificGame),\n     ]);\n }\n"
+                },
+                {
+                    "date": 1641990285054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,8 @@\n \n export default function* rootSaga(): any {\n     return yield all([\n         takeLatest(SearchTypes.SEARCH_GAMES_REQUEST, getGames),\n-        takeLatest(SearchTypes.FILTER_GAMES_REQUEST, filterGames),\n+        takeEvery(SearchTypes.FILTER_GAMES_REQUEST, filterGames),\n         takeLatest(SearchTypes.GET_ESPECIFIC_GAME_REQUEST, getEspecificGame),\n     ]);\n }\n"
+                }
+            ],
+            "date": 1641819811999,
+            "name": "Commit-0",
+            "content": "import { takeLatest, all, takeEvery } from 'redux-saga/effects';\n\nimport { Types as SearchTypes } from '../actions/searchMovie';\nimport { getPopularMovies, getMovieList, getGenres } from './searchMovie';\n\nexport default function* rootSaga(): any {\n    return yield all([\n        takeEvery(SearchTypes.SEARCH_MOVIE_LIST_REQUEST, getMovieList),\n        takeLatest(\n            SearchTypes.SEARCH_POPULAR_MOVIE_LIST_REQUEST,\n            getPopularMovies,\n        ),\n        takeLatest(SearchTypes.SEARCH_GENRE_REQUEST, getGenres),\n    ]);\n}\n"
+        }
+    ]
+}

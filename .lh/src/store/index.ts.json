@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/store/index.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1641820817042,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641822559822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { compose, createStore, applyMiddleware, Store } from 'redux';\n import createSagaMiddleware from 'redux-saga';\n \n import reducers from './reducers';\n-import { SEARCH_STATE, CAROUSEL_STATE } from './reducers/types';\n+import { SEARCH_STATE } from './reducers/types';\n import sagas from './sagas';\n \n export interface ApplicationState {\n     searchMovie: SEARCH_STATE;\n"
+                },
+                {
+                    "date": 1641864790210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,9 @@\n import { SEARCH_STATE } from './reducers/types';\n import sagas from './sagas';\n \n export interface ApplicationState {\n-    searchMovie: SEARCH_STATE;\n-    carousel: CAROUSEL_STATE;\n+    searchGames: SEARCH_STATE;\n }\n \n const sagaMiddleware = createSagaMiddleware();\n const middlewares = [sagaMiddleware];\n"
+                }
+            ],
+            "date": 1641820817042,
+            "name": "Commit-0",
+            "content": "import { compose, createStore, applyMiddleware, Store } from 'redux';\nimport createSagaMiddleware from 'redux-saga';\n\nimport reducers from './reducers';\nimport { SEARCH_STATE, CAROUSEL_STATE } from './reducers/types';\nimport sagas from './sagas';\n\nexport interface ApplicationState {\n    searchMovie: SEARCH_STATE;\n    carousel: CAROUSEL_STATE;\n}\n\nconst sagaMiddleware = createSagaMiddleware();\nconst middlewares = [sagaMiddleware];\n\nconst composeEnhancers =\n    (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;\n\nconst store: Store<ApplicationState> = createStore(\n    reducers,\n    composeEnhancers(applyMiddleware(...middlewares)),\n);\n\nsagaMiddleware.run(sagas);\n\nexport default store;\n"
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+{
+    "sourceFile": "src/components/filter/searchbar/style.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 15,
+            "patches": [
+                {
+                    "date": 1641565032733,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641565071633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import styled from 'styled-components';\n \n export const Search = styled.input`\n-    width: 50px;\n     width: 250px;\n+    height: 250px;\n `;\n"
+                },
+                {
+                    "date": 1641565079242,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import styled from 'styled-components';\n \n export const Search = styled.input`\n     width: 250px;\n-    height: 250px;\n+    height: 50px;\n `;\n"
+                },
+                {
+                    "date": 1641565102851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import styled from 'styled-components';\n \n export const Search = styled.input`\n     width: 250px;\n-    height: 50px;\n+    height: 30px;\n `;\n"
+                },
+                {
+                    "date": 1641565191020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,6 @@\n \n export const Search = styled.input`\n     width: 250px;\n     height: 30px;\n+    background-color: #635e5e;\n `;\n"
+                },
+                {
+                    "date": 1641565507277,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,36 @@\n import styled from 'styled-components';\n \n-export const Search = styled.input`\n+export const SearchContainer = styled.div`\n     width: 250px;\n     height: 30px;\n-    background-color: #635e5e;\n+    display: flex;\n+    align-items: center;\n+\n+    input {\n+        width: 70%;\n+        transition: width 0.4s ease-in-out;\n+        height: 20px;\n+        border: none;\n+        border-bottom: 2px solid #282828;\n+        padding: 5px 5px 5px 10px;\n+        background: none;\n+        color: #fff;\n+        &:focus {\n+            width: 100%;\n+            outline: none;\n+            box-shadow: none;\n+        }\n+        &::placeholder {\n+            color: #282828;\n+            font-family: 'Roboto', sans-serif;\n+        }\n+    }\n+    i {\n+        position: relative;\n+\n+        left: -25px;\n+        top: 1px;\n+        color: #282828;\n+        width: 0;\n+    }\n `;\n"
+                },
+                {
+                    "date": 1641565766633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,8 @@\n             outline: none;\n             box-shadow: none;\n         }\n         &::placeholder {\n-            color: #282828;\n             font-family: 'Roboto', sans-serif;\n         }\n     }\n     i {\n"
+                },
+                {
+                    "date": 1641565788928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n         border: none;\n         border-bottom: 2px solid #282828;\n         padding: 5px 5px 5px 10px;\n         background: none;\n-        color: #fff;\n+        color: #000;\n         &:focus {\n             width: 100%;\n             outline: none;\n             box-shadow: none;\n@@ -25,9 +25,8 @@\n         }\n     }\n     i {\n         position: relative;\n-\n         left: -25px;\n         top: 1px;\n         color: #282828;\n         width: 0;\n"
+                },
+                {
+                    "date": 1641566866999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n import styled from 'styled-components';\n \n export const SearchContainer = styled.div`\n-    width: 250px;\n     height: 30px;\n     display: flex;\n     align-items: center;\n \n"
+                },
+                {
+                    "date": 1641566942673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,21 +5,16 @@\n     display: flex;\n     align-items: center;\n \n     input {\n-        width: 70%;\n-        transition: width 0.4s ease-in-out;\n+        width: 100%;\n         height: 20px;\n         border: none;\n         border-bottom: 2px solid #282828;\n         padding: 5px 5px 5px 10px;\n         background: none;\n         color: #000;\n-        &:focus {\n-            width: 100%;\n-            outline: none;\n-            box-shadow: none;\n-        }\n+\n         &::placeholder {\n             font-family: 'Roboto', sans-serif;\n         }\n     }\n"
+                },
+                {
+                    "date": 1641566957517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,15 +6,20 @@\n     align-items: center;\n \n     input {\n         width: 100%;\n+        transition: width 0.4s ease-in-out;\n         height: 20px;\n         border: none;\n         border-bottom: 2px solid #282828;\n         padding: 5px 5px 5px 10px;\n         background: none;\n         color: #000;\n \n+        &:focus {\n+            outline: none;\n+            box-shadow: none;\n+        }\n         &::placeholder {\n             font-family: 'Roboto', sans-serif;\n         }\n     }\n"
+                },
+                {
+                    "date": 1641567612535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import styled from 'styled-components';\n \n export const SearchContainer = styled.div`\n     height: 30px;\n+    width: 270px;\n     display: flex;\n     align-items: center;\n \n     input {\n"
+                },
+                {
+                    "date": 1641567730254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,8 @@\n     align-items: center;\n \n     input {\n         width: 100%;\n-        transition: width 0.4s ease-in-out;\n         height: 20px;\n         border: none;\n         border-bottom: 2px solid #282828;\n         padding: 5px 5px 5px 10px;\n"
+                },
+                {
+                    "date": 1641567737278,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     input {\n         width: 100%;\n         height: 20px;\n         border: none;\n-        border-bottom: 2px solid #282828;\n+        border: 2px solid #282828;\n         padding: 5px 5px 5px 10px;\n         background: none;\n         color: #000;\n \n"
+                },
+                {
+                    "date": 1641567746762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     align-items: center;\n \n     input {\n         width: 100%;\n-        height: 20px;\n+        height: 30px;\n         border: none;\n         border: 2px solid #282828;\n         padding: 5px 5px 5px 10px;\n         background: none;\n"
+                },
+                {
+                    "date": 1641567763565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     input {\n         width: 100%;\n         height: 30px;\n         border: none;\n-        border: 2px solid #282828;\n+        border-bottom: 2px solid #282828;\n         padding: 5px 5px 5px 10px;\n         background: none;\n         color: #000;\n \n"
+                }
+            ],
+            "date": 1641565032733,
+            "name": "Commit-0",
+            "content": "import styled from 'styled-components';\n\nexport const Search = styled.input`\n    width: 50px;\n    width: 250px;\n`;\n"
+        }
+    ]
+}

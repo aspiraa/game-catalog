@@ -1,0 +1,86 @@
+{
+    "sourceFile": "src/components/mainContent/filter/style.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 17,
+            "patches": [
+                {
+                    "date": 1641571250884,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641571291082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,8 @@\n \n export const FilterContainer = styled.div`\n     display: flex;\n     column-gap: 30px;\n-    margin-top: 85px;\n `;\n \n export const CheckBoxContainer = styled.div`\n     height: 700px;\n"
+                },
+                {
+                    "date": 1641571606367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \n export const FilterContainer = styled.div`\n     display: flex;\n     column-gap: 30px;\n+    grid-column: span 2;\n `;\n \n export const CheckBoxContainer = styled.div`\n     height: 700px;\n"
+                },
+                {
+                    "date": 1641868935421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,5 +9,6 @@\n export const CheckBoxContainer = styled.div`\n     height: 700px;\n     width: 270px;\n     background-color: #282828;\n+    padding: 75px 0 0 10px;\n `;\n"
+                },
+                {
+                    "date": 1641868951614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,6 @@\n     height: 700px;\n     width: 270px;\n     background-color: #282828;\n     padding: 75px 0 0 10px;\n+    color: white;\n `;\n"
+                },
+                {
+                    "date": 1641914635583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,5 +11,9 @@\n     width: 270px;\n     background-color: #282828;\n     padding: 75px 0 0 10px;\n     color: white;\n+\n+    h3 {\n+        margin: 20px 0;\n+    }\n `;\n"
+                },
+                {
+                    "date": 1641923646189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     grid-column: span 2;\n `;\n \n export const CheckBoxContainer = styled.div`\n-    height: 700px;\n+    height: 69vh;\n     width: 270px;\n     background-color: #282828;\n     padding: 75px 0 0 10px;\n     color: white;\n"
+                },
+                {
+                    "date": 1641923873504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     grid-column: span 2;\n `;\n \n export const CheckBoxContainer = styled.div`\n-    height: 69vh;\n+    height: 68.5vh;\n     width: 270px;\n     background-color: #282828;\n     padding: 75px 0 0 10px;\n     color: white;\n"
+                },
+                {
+                    "date": 1641924282931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,10 @@\n     width: 270px;\n     background-color: #282828;\n     padding: 75px 0 0 10px;\n     color: white;\n+    flex-direction: column;\n+    flex-wrap: wrap;\n \n     h3 {\n         margin: 20px 0;\n     }\n"
+                },
+                {
+                    "date": 1641924764684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,8 @@\n     width: 270px;\n     background-color: #282828;\n     padding: 75px 0 0 10px;\n     color: white;\n-    flex-direction: column;\n-    flex-wrap: wrap;\n \n     h3 {\n         margin: 20px 0;\n     }\n"
+                },
+                {
+                    "date": 1642004465758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n export const CheckBoxContainer = styled.div`\n     height: 68.5vh;\n     width: 270px;\n     background-color: #282828;\n-    padding: 75px 0 0 10px;\n+    padding: 50px 0 0 10px;\n     color: white;\n \n     h3 {\n         margin: 20px 0;\n"
+                },
+                {
+                    "date": 1642009492395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,5 +15,9 @@\n \n     h3 {\n         margin: 20px 0;\n     }\n+\n+    @media (min-width: 0px) and (max-width: 800px) {\n+        position: absolute;\n+    }\n `;\n"
+                },
+                {
+                    "date": 1642009594392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,6 +18,8 @@\n     }\n \n     @media (min-width: 0px) and (max-width: 800px) {\n         position: absolute;\n+        height: 100%;\n+        width: 92%;\n     }\n `;\n"
+                },
+                {
+                    "date": 1642009895281,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,12 @@\n export const FilterContainer = styled.div`\n     display: flex;\n     column-gap: 30px;\n     grid-column: span 2;\n+\n+    @media (min-width: 0px) and (max-width: 800px) {\n+        flex-wrap: wrap;\n+    }\n `;\n \n export const CheckBoxContainer = styled.div`\n     height: 68.5vh;\n"
+                },
+                {
+                    "date": 1642009903966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n     grid-column: span 2;\n \n     @media (min-width: 0px) and (max-width: 800px) {\n         flex-wrap: wrap;\n+        gap: 10px;\n     }\n `;\n \n export const CheckBoxContainer = styled.div`\n"
+                },
+                {
+                    "date": 1642009911504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n \n     @media (min-width: 0px) and (max-width: 800px) {\n         flex-wrap: wrap;\n         gap: 10px;\n+        margin-bottom: 10px;\n     }\n `;\n \n export const CheckBoxContainer = styled.div`\n"
+                },
+                {
+                    "date": 1642009948999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,8 @@\n \n     @media (min-width: 0px) and (max-width: 800px) {\n         flex-wrap: wrap;\n         gap: 10px;\n-        margin-bottom: 10px;\n     }\n `;\n \n export const CheckBoxContainer = styled.div`\n"
+                },
+                {
+                    "date": 1642010128202,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,6 +25,7 @@\n     @media (min-width: 0px) and (max-width: 800px) {\n         position: absolute;\n         height: 100%;\n         width: 92%;\n+        padding-top: 70px;\n     }\n `;\n"
+                }
+            ],
+            "date": 1641571250884,
+            "name": "Commit-0",
+            "content": "import styled from 'styled-components';\n\nexport const FilterContainer = styled.div`\n    display: flex;\n    column-gap: 30px;\n    margin-top: 85px;\n`;\n\nexport const CheckBoxContainer = styled.div`\n    height: 700px;\n    width: 270px;\n    background-color: #282828;\n`;\n"
+        }
+    ]
+}

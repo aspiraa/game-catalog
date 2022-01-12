@@ -1,0 +1,374 @@
+{
+    "sourceFile": "src/components/mainContent/filter/checkBox/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 89,
+            "patches": [
+                {
+                    "date": 1641869026296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641869128132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,12 @@\n import React from 'react';\n+\n+const CheckBox = () => {\n+    return (\n+        <label htmlFor=\"teste\">\n+            <input type=\"checkbox\" id=\"teste\" />\n+            Surname\n+        </label>\n+    );\n+};\n+\n+export default CheckBox;\n"
+                },
+                {
+                    "date": 1641869245853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,11 @@\n import React from 'react';\n \n-const CheckBox = () => {\n+interface IProps = {\n+    inputName: string;\n+}\n+\n+const CheckBox = ( {inputName}: IProps) => {\n     return (\n         <label htmlFor=\"teste\">\n             <input type=\"checkbox\" id=\"teste\" />\n             Surname\n"
+                },
+                {
+                    "date": 1641869257138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n import React from 'react';\n \n-interface IProps = {\n+interface IProps {\n     inputName: string;\n }\n \n-const CheckBox = ( {inputName}: IProps) => {\n+const CheckBox = ({ inputName }: IProps) => {\n     return (\n         <label htmlFor=\"teste\">\n             <input type=\"checkbox\" id=\"teste\" />\n             Surname\n"
+                },
+                {
+                    "date": 1641869273576,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n }\n \n const CheckBox = ({ inputName }: IProps) => {\n     return (\n-        <label htmlFor=\"teste\">\n-            <input type=\"checkbox\" id=\"teste\" />\n+        <label htmlFor={inputName}>\n+            <input type=\"checkbox\" id={inputName} />\n             Surname\n         </label>\n     );\n };\n"
+                },
+                {
+                    "date": 1641869295229,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n const CheckBox = ({ inputName }: IProps) => {\n     return (\n         <label htmlFor={inputName}>\n             <input type=\"checkbox\" id={inputName} />\n-            Surname\n+            {inputName}\n         </label>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641869509472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,15 @@\n import React from 'react';\n+import { CustomInput } from './styles';\n \n interface IProps {\n     inputName: string;\n }\n \n const CheckBox = ({ inputName }: IProps) => {\n     return (\n         <label htmlFor={inputName}>\n-            <input type=\"checkbox\" id={inputName} />\n+            <CustomInput type=\"checkbox\" id={inputName} />\n             {inputName}\n         </label>\n     );\n };\n"
+                },
+                {
+                    "date": 1641869723031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,17 @@\n import React from 'react';\n-import { CustomInput } from './styles';\n+import { CustomInput, CustomLabel } from './styles';\n \n interface IProps {\n     inputName: string;\n }\n \n const CheckBox = ({ inputName }: IProps) => {\n     return (\n-        <label htmlFor={inputName}>\n+        <CustomLabel htmlFor={inputName}>\n             <CustomInput type=\"checkbox\" id={inputName} />\n             {inputName}\n-        </label>\n+        </CustomLabel>\n     );\n };\n \n export default CheckBox;\n"
+                },
+                {
+                    "date": 1641870336142,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,15 @@\n \n const CheckBox = ({ inputName }: IProps) => {\n     return (\n         <CustomLabel htmlFor={inputName}>\n-            <CustomInput type=\"checkbox\" id={inputName} />\n+            <CustomInput\n+                type=\"checkbox\"\n+                id={inputName}\n+                onChange={() => {\n+                    console.log('mudou');\n+                }}\n+            />\n             {inputName}\n         </CustomLabel>\n     );\n };\n"
+                },
+                {
+                    "date": 1641870453178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n             <CustomInput\n                 type=\"checkbox\"\n                 id={inputName}\n                 onChange={() => {\n-                    console.log('mudou');\n+                    console.log(inputName);\n                 }}\n             />\n             {inputName}\n         </CustomLabel>\n"
+                },
+                {
+                    "date": 1641871016411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,12 @@\n import { CustomInput, CustomLabel } from './styles';\n \n interface IProps {\n     inputName: string;\n+    filterType: string;\n }\n \n-const CheckBox = ({ inputName }: IProps) => {\n+const CheckBox = ({ inputName, filterType }: IProps) => {\n     return (\n         <CustomLabel htmlFor={inputName}>\n             <CustomInput\n                 type=\"checkbox\"\n"
+                },
+                {
+                    "date": 1641871156467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,16 +5,20 @@\n     inputName: string;\n     filterType: string;\n }\n \n+const gamesFilter = ({ inputName, filterType }: IProps) => {\n+    return console.log(inputName, filterType);\n+};\n+\n const CheckBox = ({ inputName, filterType }: IProps) => {\n     return (\n         <CustomLabel htmlFor={inputName}>\n             <CustomInput\n                 type=\"checkbox\"\n                 id={inputName}\n                 onChange={() => {\n-                    console.log(inputName);\n+                    gamesFilter(inputName, filterType);\n                 }}\n             />\n             {inputName}\n         </CustomLabel>\n"
+                },
+                {
+                    "date": 1641871192268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n             <CustomInput\n                 type=\"checkbox\"\n                 id={inputName}\n                 onChange={() => {\n-                    gamesFilter(inputName, filterType);\n+                    gamesFilter({ inputName, filterType });\n                 }}\n             />\n             {inputName}\n         </CustomLabel>\n"
+                },
+                {
+                    "date": 1641871824470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,23 +2,23 @@\n import { CustomInput, CustomLabel } from './styles';\n \n interface IProps {\n     inputName: string;\n-    filterType: string;\n+    paramType: string;\n }\n \n-const gamesFilter = ({ inputName, filterType }: IProps) => {\n-    return console.log(inputName, filterType);\n+const gamesFilter = ({ inputName, paramType }: IProps) => {\n+    return console.log(inputName, paramType);\n };\n \n-const CheckBox = ({ inputName, filterType }: IProps) => {\n+const CheckBox = ({ inputName, paramType }: IProps) => {\n     return (\n         <CustomLabel htmlFor={inputName}>\n             <CustomInput\n                 type=\"checkbox\"\n                 id={inputName}\n                 onChange={() => {\n-                    gamesFilter({ inputName, filterType });\n+                    gamesFilter({ inputName, paramType });\n                 }}\n             />\n             {inputName}\n         </CustomLabel>\n"
+                },
+                {
+                    "date": 1641872223817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,10 @@\n     paramType: string;\n }\n \n const gamesFilter = ({ inputName, paramType }: IProps) => {\n+    const checkbox = document.getElementById(inputName).checked;\n+\n     return console.log(inputName, paramType);\n };\n \n const CheckBox = ({ inputName, paramType }: IProps) => {\n"
+                },
+                {
+                    "date": 1641872900259,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     paramType: string;\n }\n \n const gamesFilter = ({ inputName, paramType }: IProps) => {\n-    const checkbox = document.getElementById(inputName).checked;\n+    const checkbox = document.getElementById(inputName)?.checked;\n \n     return console.log(inputName, paramType);\n };\n \n"
+                },
+                {
+                    "date": 1641872954606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     paramType: string;\n }\n \n const gamesFilter = ({ inputName, paramType }: IProps) => {\n-    const checkbox = document.getElementById(inputName)?.checked;\n+    const checkbox = document.getElementById(inputName);\n \n     return console.log(inputName, paramType);\n };\n \n@@ -18,9 +18,11 @@\n             <CustomInput\n                 type=\"checkbox\"\n                 id={inputName}\n                 onChange={() => {\n-                    gamesFilter({ inputName, paramType });\n+                    if (this.checked) {\n+                        gamesFilter({ inputName, paramType });\n+                    }\n                 }}\n             />\n             {inputName}\n         </CustomLabel>\n"
+                },
+                {
+                    "date": 1641873243916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n const gamesFilter = ({ inputName, paramType }: IProps) => {\n     const checkbox = document.getElementById(inputName);\n \n-    return console.log(inputName, paramType);\n+    if (checkbox?.ariaChecked) return console.log(inputName, paramType);\n };\n \n const CheckBox = ({ inputName, paramType }: IProps) => {\n     return (\n@@ -18,8 +18,9 @@\n             <CustomInput\n                 type=\"checkbox\"\n                 id={inputName}\n                 onChange={() => {\n+                    // eslint-disable-next-line react/no-this-in-sfc\n                     if (this.checked) {\n                         gamesFilter({ inputName, paramType });\n                     }\n                 }}\n"
+                },
+                {
+                    "date": 1641873250101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,11 +19,10 @@\n                 type=\"checkbox\"\n                 id={inputName}\n                 onChange={() => {\n                     // eslint-disable-next-line react/no-this-in-sfc\n-                    if (this.checked) {\n-                        gamesFilter({ inputName, paramType });\n-                    }\n+\n+                    gamesFilter({ inputName, paramType });\n                 }}\n             />\n             {inputName}\n         </CustomLabel>\n"
+                },
+                {
+                    "date": 1641873292700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,13 @@\n \n const gamesFilter = ({ inputName, paramType }: IProps) => {\n     const checkbox = document.getElementById(inputName);\n \n-    if (checkbox?.ariaChecked) return console.log(inputName, paramType);\n+    if (checkbox?.ariaChecked) {\n+        console.log('check');\n+    } else console.log('noteCheck');\n+\n+    // return console.log(inputName, paramType);\n };\n \n const CheckBox = ({ inputName, paramType }: IProps) => {\n     return (\n@@ -18,10 +22,8 @@\n             <CustomInput\n                 type=\"checkbox\"\n                 id={inputName}\n                 onChange={() => {\n-                    // eslint-disable-next-line react/no-this-in-sfc\n-\n                     gamesFilter({ inputName, paramType });\n                 }}\n             />\n             {inputName}\n"
+                },
+                {
+                    "date": 1641873335504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,10 @@\n \n const gamesFilter = ({ inputName, paramType }: IProps) => {\n     const checkbox = document.getElementById(inputName);\n \n-    if (checkbox?.ariaChecked) {\n-        console.log('check');\n+    if (checkbox) {\n+        console.log(checkbox);\n     } else console.log('noteCheck');\n \n     // return console.log(inputName, paramType);\n };\n"
+                },
+                {
+                    "date": 1641873470306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     paramType: string;\n }\n \n const gamesFilter = ({ inputName, paramType }: IProps) => {\n-    const checkbox = document.getElementById(inputName);\n+    const checkbox = document.querySelectorAll('#filterInput');\n \n     if (checkbox) {\n         console.log(checkbox);\n     } else console.log('noteCheck');\n"
+                },
+                {
+                    "date": 1641873509583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     return (\n         <CustomLabel htmlFor={inputName}>\n             <CustomInput\n                 type=\"checkbox\"\n-                id={inputName}\n+                id={`${inputName} filterInput`}\n                 onChange={() => {\n                     gamesFilter({ inputName, paramType });\n                 }}\n             />\n"
+                },
+                {
+                    "date": 1641873586537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     return (\n         <CustomLabel htmlFor={inputName}>\n             <CustomInput\n                 type=\"checkbox\"\n-                id={`${inputName} filterInput`}\n+                id={inputName}\n                 onChange={() => {\n                     gamesFilter({ inputName, paramType });\n                 }}\n             />\n"
+                },
+                {
+                    "date": 1641873641440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     return (\n         <CustomLabel htmlFor={inputName}>\n             <CustomInput\n                 type=\"checkbox\"\n-                id={inputName}\n+                id={`${inputName} filterInput`}\n                 onChange={() => {\n                     gamesFilter({ inputName, paramType });\n                 }}\n             />\n"
+                },
+                {
+                    "date": 1641873704138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     paramType: string;\n }\n \n const gamesFilter = ({ inputName, paramType }: IProps) => {\n-    const checkbox = document.querySelectorAll('#filterInput');\n+    const checkbox = document.querySelectorAll(`#${inputName}`);\n \n     if (checkbox) {\n         console.log(checkbox);\n     } else console.log('noteCheck');\n"
+                },
+                {
+                    "date": 1641873718398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     paramType: string;\n }\n \n const gamesFilter = ({ inputName, paramType }: IProps) => {\n-    const checkbox = document.querySelectorAll(`#${inputName}`);\n+    const checkbox = document.querySelectorAll('#filterInput');\n \n     if (checkbox) {\n         console.log(checkbox);\n     } else console.log('noteCheck');\n"
+                },
+                {
+                    "date": 1641873730276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     paramType: string;\n }\n \n const gamesFilter = ({ inputName, paramType }: IProps) => {\n-    const checkbox = document.querySelectorAll('#filterInput');\n+    const checkbox = document.getElementById('filterInput');\n \n     if (checkbox) {\n         console.log(checkbox);\n     } else console.log('noteCheck');\n"
+                },
+                {
+                    "date": 1641902083615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n }\n \n const gamesFilter = ({ inputName, paramType }: IProps) => {\n     const checkbox = document.getElementById('filterInput');\n-\n+    console.log(checkbox);\n     if (checkbox) {\n         console.log(checkbox);\n     } else console.log('noteCheck');\n \n"
+                },
+                {
+                    "date": 1641902263007,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     return (\n         <CustomLabel htmlFor={inputName}>\n             <CustomInput\n                 type=\"checkbox\"\n-                id={`${inputName} filterInput`}\n+                id={inputName}\n                 onChange={() => {\n                     gamesFilter({ inputName, paramType });\n                 }}\n             />\n"
+                },
+                {
+                    "date": 1641902315830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n         <CustomLabel htmlFor={inputName}>\n             <CustomInput\n                 type=\"checkbox\"\n                 id={inputName}\n+                className=\"filterInput\"\n                 onChange={() => {\n                     gamesFilter({ inputName, paramType });\n                 }}\n             />\n"
+                },
+                {
+                    "date": 1641902324774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     paramType: string;\n }\n \n const gamesFilter = ({ inputName, paramType }: IProps) => {\n-    const checkbox = document.getElementById('filterInput');\n+    const checkbox = document.getElementsByClassName('filterInput');\n     console.log(checkbox);\n     if (checkbox) {\n         console.log(checkbox);\n     } else console.log('noteCheck');\n"
+                },
+                {
+                    "date": 1641902347094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     paramType: string;\n }\n \n const gamesFilter = ({ inputName, paramType }: IProps) => {\n-    const checkbox = document.getElementsByClassName('filterInput');\n+    const checkbox = document.querySelectorAll('.filterInput');\n     console.log(checkbox);\n     if (checkbox) {\n         console.log(checkbox);\n     } else console.log('noteCheck');\n"
+                },
+                {
+                    "date": 1641902359016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,8 @@\n }\n \n const gamesFilter = ({ inputName, paramType }: IProps) => {\n     const checkbox = document.querySelectorAll('.filterInput');\n-    console.log(checkbox);\n     if (checkbox) {\n         console.log(checkbox);\n     } else console.log('noteCheck');\n \n"
+                },
+                {
+                    "date": 1641902416937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,11 @@\n const gamesFilter = ({ inputName, paramType }: IProps) => {\n     const checkbox = document.querySelectorAll('.filterInput');\n     if (checkbox) {\n         console.log(checkbox);\n+        checkbox.forEach((elemente) => {\n+            console.log(elemente.id);\n+        });\n     } else console.log('noteCheck');\n \n     // return console.log(inputName, paramType);\n };\n"
+                },
+                {
+                    "date": 1641902588971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     const checkbox = document.querySelectorAll('.filterInput');\n     if (checkbox) {\n         console.log(checkbox);\n         checkbox.forEach((elemente) => {\n-            console.log(elemente.id);\n+            console.log(elemente.ariaChecked);\n         });\n     } else console.log('noteCheck');\n \n     // return console.log(inputName, paramType);\n"
+                },
+                {
+                    "date": 1641902606975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     const checkbox = document.querySelectorAll('.filterInput');\n     if (checkbox) {\n         console.log(checkbox);\n         checkbox.forEach((elemente) => {\n-            console.log(elemente.ariaChecked);\n+            console.log(elemente.checked);\n         });\n     } else console.log('noteCheck');\n \n     // return console.log(inputName, paramType);\n"
+                },
+                {
+                    "date": 1641902635206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,10 @@\n const gamesFilter = ({ inputName, paramType }: IProps) => {\n     const checkbox = document.querySelectorAll('.filterInput');\n     if (checkbox) {\n         console.log(checkbox);\n-        checkbox.forEach((elemente) => {\n-            console.log(elemente.checked);\n+        checkbox.forEach((element) => {\n+            console.log(element.checked);\n         });\n     } else console.log('noteCheck');\n \n     // return console.log(inputName, paramType);\n"
+                },
+                {
+                    "date": 1641902762856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,17 @@\n     inputName: string;\n     paramType: string;\n }\n \n+let element: HTMLInputElement;\n+// ... You still need to do all the null checks as necessary\n+// The below check may be irrelevant depending upon what you are actually doing.\n+// But i am just adding here to show that you need to refer to the property \"type\" and\n+// not \"InputType\"\n+if (element.type.toLowerCase() == 'checkbox') {\n+    element.checked = true;\n+}\n+\n const gamesFilter = ({ inputName, paramType }: IProps) => {\n     const checkbox = document.querySelectorAll('.filterInput');\n     if (checkbox) {\n         console.log(checkbox);\n"
+                },
+                {
+                    "date": 1641902863589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,17 +5,8 @@\n     inputName: string;\n     paramType: string;\n }\n \n-let element: HTMLInputElement;\n-// ... You still need to do all the null checks as necessary\n-// The below check may be irrelevant depending upon what you are actually doing.\n-// But i am just adding here to show that you need to refer to the property \"type\" and\n-// not \"InputType\"\n-if (element.type.toLowerCase() == 'checkbox') {\n-    element.checked = true;\n-}\n-\n const gamesFilter = ({ inputName, paramType }: IProps) => {\n     const checkbox = document.querySelectorAll('.filterInput');\n     if (checkbox) {\n         console.log(checkbox);\n@@ -27,8 +18,17 @@\n     // return console.log(inputName, paramType);\n };\n \n const CheckBox = ({ inputName, paramType }: IProps) => {\n+    const elementt: HTMLInputElement;\n+    // ... You still need to do all the null checks as necessary\n+    // The below check may be irrelevant depending upon what you are actually doing.\n+    // But i am just adding here to show that you need to refer to the property \"type\" and\n+    // not \"InputType\"\n+    if (elementt.type.toLowerCase() === 'checkbox') {\n+        elementt.checked = true;\n+    }\n+\n     return (\n         <CustomLabel htmlFor={inputName}>\n             <CustomInput\n                 type=\"checkbox\"\n"
+                },
+                {
+                    "date": 1641902906134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,17 +18,8 @@\n     // return console.log(inputName, paramType);\n };\n \n const CheckBox = ({ inputName, paramType }: IProps) => {\n-    const elementt: HTMLInputElement;\n-    // ... You still need to do all the null checks as necessary\n-    // The below check may be irrelevant depending upon what you are actually doing.\n-    // But i am just adding here to show that you need to refer to the property \"type\" and\n-    // not \"InputType\"\n-    if (elementt.type.toLowerCase() === 'checkbox') {\n-        elementt.checked = true;\n-    }\n-\n     return (\n         <CustomLabel htmlFor={inputName}>\n             <CustomInput\n                 type=\"checkbox\"\n"
+                },
+                {
+                    "date": 1641902989011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     const checkbox = document.querySelectorAll('.filterInput');\n     if (checkbox) {\n         console.log(checkbox);\n         checkbox.forEach((element) => {\n-            console.log(element.checked);\n+            console.log(element);\n         });\n     } else console.log('noteCheck');\n \n     // return console.log(inputName, paramType);\n"
+                },
+                {
+                    "date": 1641903111110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     const checkbox = document.querySelectorAll('.filterInput');\n     if (checkbox) {\n         console.log(checkbox);\n         checkbox.forEach((element) => {\n-            console.log(element);\n+            console.log(element.attributes);\n         });\n     } else console.log('noteCheck');\n \n     // return console.log(inputName, paramType);\n"
+                },
+                {
+                    "date": 1641903271129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,13 +6,15 @@\n     paramType: string;\n }\n \n const gamesFilter = ({ inputName, paramType }: IProps) => {\n-    const checkbox = document.querySelectorAll('.filterInput');\n+    const checkbox = document.querySelectorAll(\n+        '.filterInput',\n+    ) as HTMLTextAreaElement;\n     if (checkbox) {\n         console.log(checkbox);\n         checkbox.forEach((element) => {\n-            console.log(element.attributes);\n+            console.log(element.target.value);\n         });\n     } else console.log('noteCheck');\n \n     // return console.log(inputName, paramType);\n"
+                },
+                {
+                    "date": 1641903344971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,14 +6,12 @@\n     paramType: string;\n }\n \n const gamesFilter = ({ inputName, paramType }: IProps) => {\n-    const checkbox = document.querySelectorAll(\n-        '.filterInput',\n-    ) as HTMLTextAreaElement;\n+    const checkbox = document.querySelectorAll('.filterInput');\n     if (checkbox) {\n         console.log(checkbox);\n-        checkbox.forEach((element) => {\n+        checkbox.forEach((element <HTMLTextAreaElement>) => {\n             console.log(element.target.value);\n         });\n     } else console.log('noteCheck');\n \n"
+                },
+                {
+                    "date": 1641903478223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,15 @@\n     paramType: string;\n }\n \n const gamesFilter = ({ inputName, paramType }: IProps) => {\n-    const checkbox = document.querySelectorAll('.filterInput');\n+    const checkbox = document.querySelectorAll('.filterInput') as unknown;\n+    const checkbox = document.querySelectorAll(\n+        '.filterInput',\n+    ) as HTMLInputElement;\n     if (checkbox) {\n         console.log(checkbox);\n-        checkbox.forEach((element <HTMLTextAreaElement>) => {\n+        checkbox.forEach((element) => {\n             console.log(element.target.value);\n         });\n     } else console.log('noteCheck');\n \n"
+                },
+                {
+                    "date": 1641903534058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,15 +7,13 @@\n }\n \n const gamesFilter = ({ inputName, paramType }: IProps) => {\n     const checkbox = document.querySelectorAll('.filterInput') as unknown;\n-    const checkbox = document.querySelectorAll(\n-        '.filterInput',\n-    ) as HTMLInputElement;\n+\n     if (checkbox) {\n         console.log(checkbox);\n-        checkbox.forEach((element) => {\n-            console.log(element.target.value);\n+        checkbox.forEach((element: HTMLInputElement) => {\n+            console.log(element.checked);\n         });\n     } else console.log('noteCheck');\n \n     // return console.log(inputName, paramType);\n"
+                },
+                {
+                    "date": 1641903726990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     paramType: string;\n }\n \n const gamesFilter = ({ inputName, paramType }: IProps) => {\n-    const checkbox = document.querySelectorAll('.filterInput') as unknown;\n+    const checkbox = document.querySelectorAll('.filterInput') as any;\n \n     if (checkbox) {\n         console.log(checkbox);\n         checkbox.forEach((element: HTMLInputElement) => {\n"
+                },
+                {
+                    "date": 1641903793214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,14 +8,12 @@\n \n const gamesFilter = ({ inputName, paramType }: IProps) => {\n     const checkbox = document.querySelectorAll('.filterInput') as any;\n \n-    if (checkbox) {\n-        console.log(checkbox);\n-        checkbox.forEach((element: HTMLInputElement) => {\n-            console.log(element.checked);\n-        });\n-    } else console.log('noteCheck');\n+    console.log(checkbox);\n+    checkbox.forEach((element: HTMLInputElement) => {\n+        console.log(element.checked);\n+    });\n \n     // return console.log(inputName, paramType);\n };\n \n"
+                },
+                {
+                    "date": 1641904103606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,11 +8,12 @@\n \n const gamesFilter = ({ inputName, paramType }: IProps) => {\n     const checkbox = document.querySelectorAll('.filterInput') as any;\n \n-    console.log(checkbox);\n-    checkbox.forEach((element: HTMLInputElement) => {\n-        console.log(element.checked);\n+    checkbox.forEach((item: HTMLInputElement) => {\n+        if (item.checked) {\n+            console.log(item);\n+        }\n     });\n \n     // return console.log(inputName, paramType);\n };\n"
+                },
+                {
+                    "date": 1641904116336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     inputName: string;\n     paramType: string;\n }\n \n-const gamesFilter = ({ inputName, paramType }: IProps) => {\n+const gamesFilter = () => {\n     const checkbox = document.querySelectorAll('.filterInput') as any;\n \n     checkbox.forEach((item: HTMLInputElement) => {\n         if (item.checked) {\n@@ -25,9 +25,9 @@\n                 type=\"checkbox\"\n                 id={inputName}\n                 className=\"filterInput\"\n                 onChange={() => {\n-                    gamesFilter({ inputName, paramType });\n+                    gamesFilter();\n                 }}\n             />\n             {inputName}\n         </CustomLabel>\n"
+                },
+                {
+                    "date": 1641904247086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n         <CustomLabel htmlFor={inputName}>\n             <CustomInput\n                 type=\"checkbox\"\n                 id={inputName}\n+                paramType={paramType}\n                 className=\"filterInput\"\n                 onChange={() => {\n                     gamesFilter();\n                 }}\n"
+                },
+                {
+                    "date": 1641904254607,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,8 @@\n         <CustomLabel htmlFor={inputName}>\n             <CustomInput\n                 type=\"checkbox\"\n                 id={inputName}\n-                paramType={paramType}\n                 className=\"filterInput\"\n                 onChange={() => {\n                     gamesFilter();\n                 }}\n"
+                },
+                {
+                    "date": 1641904548816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     const checkbox = document.querySelectorAll('.filterInput') as any;\n \n     checkbox.forEach((item: HTMLInputElement) => {\n         if (item.checked) {\n-            console.log(item);\n+            console.log(item.id);\n         }\n     });\n \n     // return console.log(inputName, paramType);\n"
+                },
+                {
+                    "date": 1641904917582,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,14 @@\n-import React from 'react';\n+import React, { useState } from 'react';\n import { CustomInput, CustomLabel } from './styles';\n \n interface IProps {\n     inputName: string;\n     paramType: string;\n }\n \n+const [filter, setFilter] = useState<IProps[]>();\n+\n const gamesFilter = () => {\n     const checkbox = document.querySelectorAll('.filterInput') as any;\n \n     checkbox.forEach((item: HTMLInputElement) => {\n"
+                },
+                {
+                    "date": 1641904940105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,23 +5,23 @@\n     inputName: string;\n     paramType: string;\n }\n \n-const [filter, setFilter] = useState<IProps[]>();\n+const CheckBox = ({ inputName, paramType }: IProps) => {\n+    const [filter, setFilter] = useState<IProps[]>();\n \n-const gamesFilter = () => {\n-    const checkbox = document.querySelectorAll('.filterInput') as any;\n+    const gamesFilter = () => {\n+        const checkbox = document.querySelectorAll('.filterInput') as any;\n \n-    checkbox.forEach((item: HTMLInputElement) => {\n-        if (item.checked) {\n-            console.log(item.id);\n-        }\n-    });\n+        checkbox.forEach((item: HTMLInputElement) => {\n+            if (item.checked) {\n+                console.log(item.id);\n+            }\n+        });\n \n-    // return console.log(inputName, paramType);\n-};\n+        // return console.log(inputName, paramType);\n+    };\n \n-const CheckBox = ({ inputName, paramType }: IProps) => {\n     return (\n         <CustomLabel htmlFor={inputName}>\n             <CustomInput\n                 type=\"checkbox\"\n"
+                },
+                {
+                    "date": 1641905419189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,16 @@\n import React, { useState } from 'react';\n import { CustomInput, CustomLabel } from './styles';\n \n-interface IProps {\n+interface Filter {\n     inputName: string;\n     paramType: string;\n }\n \n-const CheckBox = ({ inputName, paramType }: IProps) => {\n-    const [filter, setFilter] = useState<IProps[]>();\n+const CheckBox = ({ inputName, paramType }: Filter) => {\n+    const [filter, setFilter] = useState<Filter[]>(\n+        inputName: \"valor\";\n+    );\n \n     const gamesFilter = () => {\n         const checkbox = document.querySelectorAll('.filterInput') as any;\n \n"
+                },
+                {
+                    "date": 1641905454888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,10 @@\n }\n \n const CheckBox = ({ inputName, paramType }: Filter) => {\n     const [filter, setFilter] = useState<Filter[]>(\n-        inputName: \"valor\";\n+        inputName: \"valor\",\n+        paramType: 'valorr'\n     );\n \n     const gamesFilter = () => {\n         const checkbox = document.querySelectorAll('.filterInput') as any;\n"
+                },
+                {
+                    "date": 1641905467657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,12 @@\n     paramType: string;\n }\n \n const CheckBox = ({ inputName, paramType }: Filter) => {\n-    const [filter, setFilter] = useState<Filter[]>(\n-        inputName: \"valor\",\n-        paramType: 'valorr'\n-    );\n+    const [filter, setFilter] = useState<Filter[]>({\n+        inputName: 'valor',\n+        paramType: 'valorr',\n+    });\n \n     const gamesFilter = () => {\n         const checkbox = document.querySelectorAll('.filterInput') as any;\n \n"
+                },
+                {
+                    "date": 1641905496164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,14 @@\n     paramType: string;\n }\n \n const CheckBox = ({ inputName, paramType }: Filter) => {\n-    const [filter, setFilter] = useState<Filter[]>({\n-        inputName: 'valor',\n-        paramType: 'valorr',\n-    });\n+    const [filter, setFilter] = useState<Filter[]>([\n+        {\n+            inputName: 'valor',\n+            paramType: 'valorr',\n+        },\n+    ]);\n \n     const gamesFilter = () => {\n         const checkbox = document.querySelectorAll('.filterInput') as any;\n \n"
+                },
+                {
+                    "date": 1641905689319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,12 +15,14 @@\n     ]);\n \n     const gamesFilter = () => {\n         const checkbox = document.querySelectorAll('.filterInput') as any;\n+        const filtered = [];\n \n         checkbox.forEach((item: HTMLInputElement) => {\n             if (item.checked) {\n                 console.log(item.id);\n+                filtered.push(item.id, 'valor');\n             }\n         });\n \n         // return console.log(inputName, paramType);\n"
+                },
+                {
+                    "date": 1641905707746,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,10 @@\n                 filtered.push(item.id, 'valor');\n             }\n         });\n \n+        console.log(filtered);\n+\n         // return console.log(inputName, paramType);\n     };\n \n     return (\n"
+                },
+                {
+                    "date": 1641905760132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     ]);\n \n     const gamesFilter = () => {\n         const checkbox = document.querySelectorAll('.filterInput') as any;\n-        const filtered = [];\n+        const filtered: string[] = [];\n \n         checkbox.forEach((item: HTMLInputElement) => {\n             if (item.checked) {\n                 console.log(item.id);\n"
+                },
+                {
+                    "date": 1641905848743,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,17 +15,18 @@\n     ]);\n \n     const gamesFilter = () => {\n         const checkbox = document.querySelectorAll('.filterInput') as any;\n-        const filtered: string[] = [];\n+        const filtered =\n+            Array <\n+            Filter >\n+            checkbox.forEach((item: HTMLInputElement) => {\n+                if (item.checked) {\n+                    console.log(item.id);\n+                    filtered.push(item.id, 'valor');\n+                }\n+            });\n \n-        checkbox.forEach((item: HTMLInputElement) => {\n-            if (item.checked) {\n-                console.log(item.id);\n-                filtered.push(item.id, 'valor');\n-            }\n-        });\n-\n         console.log(filtered);\n \n         // return console.log(inputName, paramType);\n     };\n"
+                },
+                {
+                    "date": 1641905977501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,18 +15,17 @@\n     ]);\n \n     const gamesFilter = () => {\n         const checkbox = document.querySelectorAll('.filterInput') as any;\n-        const filtered =\n-            Array <\n-            Filter >\n-            checkbox.forEach((item: HTMLInputElement) => {\n-                if (item.checked) {\n-                    console.log(item.id);\n-                    filtered.push(item.id, 'valor');\n-                }\n-            });\n+        const filtered: Filter[] = [];\n \n+        checkbox.forEach((item: HTMLInputElement) => {\n+            if (item.checked) {\n+                console.log(item.id);\n+                filtered.push({inputName: item.id , paramType: 'valor');\n+            }\n+        });\n+\n         console.log(filtered);\n \n         // return console.log(inputName, paramType);\n     };\n"
+                },
+                {
+                    "date": 1641905995694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \n         checkbox.forEach((item: HTMLInputElement) => {\n             if (item.checked) {\n                 console.log(item.id);\n-                filtered.push({inputName: item.id , paramType: 'valor');\n+                filtered.push({ inputName: item.id, paramType: 'valor' });\n             }\n         });\n \n         console.log(filtered);\n"
+                },
+                {
+                    "date": 1641906907658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import React, { useState } from 'react';\n+import React, { useRef, useState } from 'react';\n import { CustomInput, CustomLabel } from './styles';\n \n interface Filter {\n     inputName: string;\n@@ -13,8 +13,14 @@\n             paramType: 'valorr',\n         },\n     ]);\n \n+    const inputEl = useRef(null);\n+    const onButtonClick = () => {\n+        // `current` aponta para o evento de `focus` gerado pelo campo de texto\n+        inputEl.current.focus();\n+    };\n+\n     const gamesFilter = () => {\n         const checkbox = document.querySelectorAll('.filterInput') as any;\n         const filtered: Filter[] = [];\n \n@@ -37,11 +43,17 @@\n                 id={inputName}\n                 className=\"filterInput\"\n                 onChange={() => {\n                     gamesFilter();\n+                    inputEl?.current?.focus();\n                 }}\n             />\n             {inputName}\n+\n+            <input ref={inputEl} type=\"text\" />\n+            <button onClick={onButtonClick} type=\"checkbox\">\n+                Focus no input\n+            </button>\n         </CustomLabel>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641906919669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n             />\n             {inputName}\n \n             <input ref={inputEl} type=\"text\" />\n-            <button onClick={onButtonClick} type=\"checkbox\">\n+            <button onClick={onButtonClick} type=\"button\">\n                 Focus no input\n             </button>\n         </CustomLabel>\n     );\n"
+                },
+                {
+                    "date": 1641907196742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,13 +13,9 @@\n             paramType: 'valorr',\n         },\n     ]);\n \n-    const inputEl = useRef(null);\n-    const onButtonClick = () => {\n-        // `current` aponta para o evento de `focus` gerado pelo campo de texto\n-        inputEl.current.focus();\n-    };\n+    const inputEl = useRef();\n \n     const gamesFilter = () => {\n         const checkbox = document.querySelectorAll('.filterInput') as any;\n         const filtered: Filter[] = [];\n"
+                },
+                {
+                    "date": 1641907206603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,17 +39,11 @@\n                 id={inputName}\n                 className=\"filterInput\"\n                 onChange={() => {\n                     gamesFilter();\n-                    inputEl?.current?.focus();\n                 }}\n             />\n             {inputName}\n-\n-            <input ref={inputEl} type=\"text\" />\n-            <button onClick={onButtonClick} type=\"button\">\n-                Focus no input\n-            </button>\n         </CustomLabel>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641907309958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,12 @@\n     ]);\n \n     const inputEl = useRef();\n \n+    const focus = () => {\n+        console.log(inputEl.current);\n+    };\n+\n     const gamesFilter = () => {\n         const checkbox = document.querySelectorAll('.filterInput') as any;\n         const filtered: Filter[] = [];\n \n@@ -36,8 +40,9 @@\n         <CustomLabel htmlFor={inputName}>\n             <CustomInput\n                 type=\"checkbox\"\n                 id={inputName}\n+                ref={inputName}\n                 className=\"filterInput\"\n                 onChange={() => {\n                     gamesFilter();\n                 }}\n"
+                },
+                {
+                    "date": 1641907369783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,15 +37,16 @@\n     };\n \n     return (\n         <CustomLabel htmlFor={inputName}>\n-            <CustomInput\n+            <input\n                 type=\"checkbox\"\n                 id={inputName}\n                 ref={inputName}\n                 className=\"filterInput\"\n                 onChange={() => {\n                     gamesFilter();\n+                    focus();\n                 }}\n             />\n             {inputName}\n         </CustomLabel>\n"
+                },
+                {
+                    "date": 1641907454518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,14 +13,8 @@\n             paramType: 'valorr',\n         },\n     ]);\n \n-    const inputEl = useRef();\n-\n-    const focus = () => {\n-        console.log(inputEl.current);\n-    };\n-\n     const gamesFilter = () => {\n         const checkbox = document.querySelectorAll('.filterInput') as any;\n         const filtered: Filter[] = [];\n \n@@ -40,13 +34,11 @@\n         <CustomLabel htmlFor={inputName}>\n             <input\n                 type=\"checkbox\"\n                 id={inputName}\n-                ref={inputName}\n                 className=\"filterInput\"\n                 onChange={() => {\n                     gamesFilter();\n-                    focus();\n                 }}\n             />\n             {inputName}\n         </CustomLabel>\n"
+                },
+                {
+                    "date": 1641907461665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n     };\n \n     return (\n         <CustomLabel htmlFor={inputName}>\n-            <input\n+            <CustomInput\n                 type=\"checkbox\"\n                 id={inputName}\n                 className=\"filterInput\"\n                 onChange={() => {\n"
+                },
+                {
+                    "date": 1641907720972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import React, { useRef, useState } from 'react';\n+import React, { useState } from 'react';\n import { CustomInput, CustomLabel } from './styles';\n \n interface Filter {\n     inputName: string;\n"
+                },
+                {
+                    "date": 1641908208117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,9 @@\n             paramType: 'valorr',\n         },\n     ]);\n \n-    const gamesFilter = () => {\n-        const checkbox = document.querySelectorAll('.filterInput') as any;\n+    const gamesFilter = (e: React.ChangeEvent<HTMLInputElement>) => {\n         const filtered: Filter[] = [];\n \n         checkbox.forEach((item: HTMLInputElement) => {\n             if (item.checked) {\n@@ -35,10 +34,10 @@\n             <CustomInput\n                 type=\"checkbox\"\n                 id={inputName}\n                 className=\"filterInput\"\n-                onChange={() => {\n-                    gamesFilter();\n+                onChange={(e) => {\n+                    gamesFilter(e);\n                 }}\n             />\n             {inputName}\n         </CustomLabel>\n"
+                },
+                {
+                    "date": 1641908346630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,16 +16,19 @@\n \n     const gamesFilter = (e: React.ChangeEvent<HTMLInputElement>) => {\n         const filtered: Filter[] = [];\n \n-        checkbox.forEach((item: HTMLInputElement) => {\n-            if (item.checked) {\n-                console.log(item.id);\n-                filtered.push({ inputName: item.id, paramType: 'valor' });\n-            }\n-        });\n+        // checkbox.forEach((item: HTMLInputElement) => {\n+        //     if (item.checked) {\n+        //         console.log(item.id);\n+        //         filtered.push({ inputName: item.id, paramType: 'valor' });\n+        //     }\n+        // });\n \n-        console.log(filtered);\n+        const obj = {\n+            inputName: e.target.id,\n+            paramType: e.target.value,\n+        };\n \n         // return console.log(inputName, paramType);\n     };\n \n"
+                },
+                {
+                    "date": 1641908469717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,13 @@\n import React, { useState } from 'react';\n import { CustomInput, CustomLabel } from './styles';\n \n-interface Filter {\n+export interface Filter {\n     inputName: string;\n     paramType: string;\n }\n \n const CheckBox = ({ inputName, paramType }: Filter) => {\n-    const [filter, setFilter] = useState<Filter[]>([\n-        {\n-            inputName: 'valor',\n-            paramType: 'valorr',\n-        },\n-    ]);\n-\n     const gamesFilter = (e: React.ChangeEvent<HTMLInputElement>) => {\n         const filtered: Filter[] = [];\n \n         // checkbox.forEach((item: HTMLInputElement) => {\n"
+                },
+                {
+                    "date": 1641908535386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,31 +1,13 @@\n-import React, { useState } from 'react';\n+import React from 'react';\n import { CustomInput, CustomLabel } from './styles';\n \n export interface Filter {\n     inputName: string;\n     paramType: string;\n }\n \n const CheckBox = ({ inputName, paramType }: Filter) => {\n-    const gamesFilter = (e: React.ChangeEvent<HTMLInputElement>) => {\n-        const filtered: Filter[] = [];\n-\n-        // checkbox.forEach((item: HTMLInputElement) => {\n-        //     if (item.checked) {\n-        //         console.log(item.id);\n-        //         filtered.push({ inputName: item.id, paramType: 'valor' });\n-        //     }\n-        // });\n-\n-        const obj = {\n-            inputName: e.target.id,\n-            paramType: e.target.value,\n-        };\n-\n-        // return console.log(inputName, paramType);\n-    };\n-\n     return (\n         <CustomLabel htmlFor={inputName}>\n             <CustomInput\n                 type=\"checkbox\"\n"
+                },
+                {
+                    "date": 1641908770865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,9 @@\n import React from 'react';\n import { CustomInput, CustomLabel } from './styles';\n \n export interface Filter {\n-    inputName: string;\n-    paramType: string;\n+    onchange: () => void;\n }\n \n const CheckBox = ({ inputName, paramType }: Filter) => {\n     return (\n@@ -12,10 +11,10 @@\n             <CustomInput\n                 type=\"checkbox\"\n                 id={inputName}\n                 className=\"filterInput\"\n-                onChange={(e) => {\n-                    gamesFilter(e);\n+                onChange={() => {\n+                    gamesFilter;\n                 }}\n             />\n             {inputName}\n         </CustomLabel>\n"
+                },
+                {
+                    "date": 1641908851953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,19 +4,12 @@\n export interface Filter {\n     onchange: () => void;\n }\n \n-const CheckBox = ({ inputName, paramType }: Filter) => {\n+const CheckBox = ({ onchange }: Filter) => {\n     return (\n-        <CustomLabel htmlFor={inputName}>\n-            <CustomInput\n-                type=\"checkbox\"\n-                id={inputName}\n-                className=\"filterInput\"\n-                onChange={() => {\n-                    gamesFilter;\n-                }}\n-            />\n+        <CustomLabel>\n+            <CustomInput onChange={} />\n             {inputName}\n         </CustomLabel>\n     );\n };\n"
+                },
+                {
+                    "date": 1641908925337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,14 +2,19 @@\n import { CustomInput, CustomLabel } from './styles';\n \n export interface Filter {\n     onchange: () => void;\n+    inputName: string;\n }\n \n-const CheckBox = ({ onchange }: Filter) => {\n+const CheckBox = ({ onchange, inputName }: Filter) => {\n     return (\n         <CustomLabel>\n-            <CustomInput onChange={} />\n+            <CustomInput\n+                type=\"checkbox\"\n+                className=\"filterInput\"\n+                onChange={onchange}\n+            />\n             {inputName}\n         </CustomLabel>\n     );\n };\n"
+                },
+                {
+                    "date": 1641909036273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n \n export interface Filter {\n     onchange: () => void;\n     inputName: string;\n+    paramType?: string;\n }\n \n const CheckBox = ({ onchange, inputName }: Filter) => {\n     return (\n"
+                },
+                {
+                    "date": 1641909086510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\n import { CustomInput, CustomLabel } from './styles';\n \n export interface Filter {\n-    onchange: () => void;\n+    onchange?: () => void;\n     inputName: string;\n     paramType?: string;\n }\n \n"
+                },
+                {
+                    "date": 1641909152168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,17 @@\n import React from 'react';\n import { CustomInput, CustomLabel } from './styles';\n \n export interface Filter {\n-    onchange?: () => void;\n     inputName: string;\n     paramType?: string;\n }\n \n-const CheckBox = ({ onchange, inputName }: Filter) => {\n+export interface IProps{\n+    onchange?: () => void;\n+}\n+\n+const CheckBox = ({inputName }: Filter {onchange}: IProps) => {\n     return (\n         <CustomLabel>\n             <CustomInput\n                 type=\"checkbox\"\n"
+                },
+                {
+                    "date": 1641909245711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,13 +5,13 @@\n     inputName: string;\n     paramType?: string;\n }\n \n-export interface IProps{\n-    onchange?: () => void;\n+export interface IProps {\n+    onchange: () => void;\n }\n \n-const CheckBox = ({inputName }: Filter {onchange}: IProps) => {\n+const CheckBox = ({ inputName }: Filter, { onchange }: IProps) => {\n     return (\n         <CustomLabel>\n             <CustomInput\n                 type=\"checkbox\"\n"
+                },
+                {
+                    "date": 1641909338006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,13 @@\n import React from 'react';\n import { CustomInput, CustomLabel } from './styles';\n \n-export interface Filter {\n-    inputName: string;\n-    paramType?: string;\n-}\n-\n export interface IProps {\n     onchange: () => void;\n+    inputName: string;\n }\n \n-const CheckBox = ({ inputName }: Filter, { onchange }: IProps) => {\n+const CheckBox = ({ onchange, inputName }: IProps) => {\n     return (\n         <CustomLabel>\n             <CustomInput\n                 type=\"checkbox\"\n"
+                },
+                {
+                    "date": 1641912865308,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\n import { CustomInput, CustomLabel } from './styles';\n \n export interface IProps {\n-    onchange: () => void;\n+    onchange: () => HTMLInputElement | void;\n     inputName: string;\n }\n \n const CheckBox = ({ onchange, inputName }: IProps) => {\n"
+                },
+                {
+                    "date": 1641912894369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\n import { CustomInput, CustomLabel } from './styles';\n \n export interface IProps {\n-    onchange: () => HTMLInputElement | void;\n+    onchange: () => void;\n     inputName: string;\n }\n \n const CheckBox = ({ onchange, inputName }: IProps) => {\n"
+                },
+                {
+                    "date": 1641913257852,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\n import { CustomInput, CustomLabel } from './styles';\n \n export interface IProps {\n-    onchange: () => void;\n+    onchange: (e: React.ChangeEvent<HTMLInputElement>) => void;\n     inputName: string;\n }\n \n const CheckBox = ({ onchange, inputName }: IProps) => {\n"
+                }
+            ],
+            "date": 1641869026296,
+            "name": "Commit-0",
+            "content": "import React from 'react';\n"
+        }
+    ]
+}

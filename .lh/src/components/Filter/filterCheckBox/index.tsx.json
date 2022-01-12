@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/components/filter/filterCheckBox/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1641564424487,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641564680298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,7 @@\n import React from 'react';\n+\n+const FilterCheckBox = () => {\n+    return <h2>filter check box</h2>;\n+};\n+\n+export default FilterCheckBox;\n"
+                },
+                {
+                    "date": 1641566005518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,12 @@\n import React from 'react';\n+import { CheckBoxContainer } from './style';\n \n const FilterCheckBox = () => {\n-    return <h2>filter check box</h2>;\n+    return (\n+        <CheckBoxContainer>\n+            <span>Filtrar Resultados</span>\n+        </CheckBoxContainer>\n+    );\n };\n \n export default FilterCheckBox;\n"
+                },
+                {
+                    "date": 1641566346951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { CheckBoxContainer } from './style';\n \n const FilterCheckBox = () => {\n     return (\n-        <CheckBoxContainer>\n+        <CheckBoxContainer type=\"button\">\n             <span>Filtrar Resultados</span>\n         </CheckBoxContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641566373010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n import React from 'react';\n-import { CheckBoxContainer } from './style';\n+import { CheckBoxButton } from './style';\n \n const FilterCheckBox = () => {\n     return (\n-        <CheckBoxContainer type=\"button\">\n+        <CheckBoxButton type=\"button\">\n             <span>Filtrar Resultados</span>\n-        </CheckBoxContainer>\n+        </CheckBoxButton>\n     );\n };\n \n export default FilterCheckBox;\n"
+                },
+                {
+                    "date": 1641566402707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,12 @@\n import React from 'react';\n+import { BsSearch } from 'react-icons/bs';\n import { CheckBoxButton } from './style';\n \n const FilterCheckBox = () => {\n     return (\n         <CheckBoxButton type=\"button\">\n+            <i />\n             <span>Filtrar Resultados</span>\n         </CheckBoxButton>\n     );\n };\n"
+                },
+                {
+                    "date": 1641566477604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,14 @@\n import React from 'react';\n-import { BsSearch } from 'react-icons/bs';\n+import { BiSortUp } from 'react-icons/bi';\n import { CheckBoxButton } from './style';\n \n const FilterCheckBox = () => {\n     return (\n         <CheckBoxButton type=\"button\">\n-            <i />\n+            <i>\n+                <BiSortUp />\n+            </i>\n             <span>Filtrar Resultados</span>\n         </CheckBoxButton>\n     );\n };\n"
+                },
+                {
+                    "date": 1641566494632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const FilterCheckBox = () => {\n     return (\n         <CheckBoxButton type=\"button\">\n             <i>\n-                <BiSortUp />\n+                <BiSortUp height=\"30px\" />\n             </i>\n             <span>Filtrar Resultados</span>\n         </CheckBoxButton>\n     );\n"
+                },
+                {
+                    "date": 1641566504106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const FilterCheckBox = () => {\n     return (\n         <CheckBoxButton type=\"button\">\n             <i>\n-                <BiSortUp height=\"30px\" />\n+                <BiSortUp size=\"30px\" />\n             </i>\n             <span>Filtrar Resultados</span>\n         </CheckBoxButton>\n     );\n"
+                },
+                {
+                    "date": 1641566547750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const FilterCheckBox = () => {\n     return (\n         <CheckBoxButton type=\"button\">\n             <i>\n-                <BiSortUp size=\"30px\" />\n+                <BiSortUp size=\"25px\" />\n             </i>\n             <span>Filtrar Resultados</span>\n         </CheckBoxButton>\n     );\n"
+                }
+            ],
+            "date": 1641564424487,
+            "name": "Commit-0",
+            "content": "import React from 'react';\n"
+        }
+    ]
+}

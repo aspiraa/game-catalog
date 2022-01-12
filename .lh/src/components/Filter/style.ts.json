@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/components/filter/style.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1641566747093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641567629484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,6 @@\n \n export const FilterContainer = styled.div`\n     display: flex;\n     column-gap: 30px;\n+    margin-top: 60px;\n `;\n"
+                },
+                {
+                    "date": 1641567645108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,6 @@\n \n export const FilterContainer = styled.div`\n     display: flex;\n     column-gap: 30px;\n-    margin-top: 60px;\n+    margin-top: 85px;\n `;\n"
+                },
+                {
+                    "date": 1641570660464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,4 +4,10 @@\n     display: flex;\n     column-gap: 30px;\n     margin-top: 85px;\n `;\n+\n+export const CheckBoxContainer = styled.div`\n+    height: 700px;\n+    width: 270px;\n+    background-color: #282828;\n+`;\n"
+                }
+            ],
+            "date": 1641566747093,
+            "name": "Commit-0",
+            "content": "import styled from 'styled-components';\n\nexport const FilterContainer = styled.div`\n    display: flex;\n    column-gap: 30px;\n`;\n"
+        }
+    ]
+}

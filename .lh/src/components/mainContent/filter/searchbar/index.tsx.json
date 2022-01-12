@@ -1,0 +1,114 @@
+{
+    "sourceFile": "src/components/mainContent/filter/searchbar/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 24,
+            "patches": [
+                {
+                    "date": 1641575536180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641575574638,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { BsSearch } from 'react-icons/bs';\n \n import { SearchContainer } from './style';\n \n-const SearchBar = (positionCss: CSSProperties) => {\n+const SearchBar = (positionCss: any) => {\n     return (\n         <SearchContainer style={positionCss}>\n             <input\n                 type=\"text\"\n"
+                },
+                {
+                    "date": 1641575718515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,13 @@\n import { BsSearch } from 'react-icons/bs';\n \n import { SearchContainer } from './style';\n \n-const SearchBar = (positionCss: any) => {\n+interface IProps {\n+    cssPosition: string;\n+}\n+\n+const SearchBar = ({ cssPosition }: IProps) => {\n     return (\n         <SearchContainer style={positionCss}>\n             <input\n                 type=\"text\"\n"
+                },
+                {
+                    "date": 1641575732644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,14 +3,14 @@\n \n import { SearchContainer } from './style';\n \n interface IProps {\n-    cssPosition: string;\n+    cssPosition: CSSProperties;\n }\n \n const SearchBar = ({ cssPosition }: IProps) => {\n     return (\n-        <SearchContainer style={positionCss}>\n+        <SearchContainer style={cssPosition}>\n             <input\n                 type=\"text\"\n                 id=\"searchInput\"\n                 autoComplete=\"off\"\n"
+                },
+                {
+                    "date": 1641575919245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,14 +3,16 @@\n \n import { SearchContainer } from './style';\n \n interface IProps {\n-    cssPosition: CSSProperties;\n+    cssStyle: {\n+        position: string;\n+    };\n }\n \n-const SearchBar = ({ cssPosition }: IProps) => {\n+const SearchBar = ({ cssStyle }: IProps) => {\n     return (\n-        <SearchContainer style={cssPosition}>\n+        <SearchContainer style={cssStyle}>\n             <input\n                 type=\"text\"\n                 id=\"searchInput\"\n                 autoComplete=\"off\"\n"
+                },
+                {
+                    "date": 1641576048162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,17 +2,11 @@\n import { BsSearch } from 'react-icons/bs';\n \n import { SearchContainer } from './style';\n \n-interface IProps {\n-    cssStyle: {\n-        position: string;\n-    };\n-}\n-\n-const SearchBar = ({ cssStyle }: IProps) => {\n+const SearchBar = () => {\n     return (\n-        <SearchContainer style={cssStyle}>\n+        <SearchContainer id=\"search-container\">\n             <input\n                 type=\"text\"\n                 id=\"searchInput\"\n                 autoComplete=\"off\"\n"
+                },
+                {
+                    "date": 1641576131182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n-import React, { CSSProperties } from 'react';\n+import React from 'react';\n import { BsSearch } from 'react-icons/bs';\n \n import { SearchContainer } from './style';\n \n const SearchBar = () => {\n     return (\n-        <SearchContainer id=\"search-container\">\n+        <SearchContainer id=\"search-bar\">\n             <input\n                 type=\"text\"\n                 id=\"searchInput\"\n                 autoComplete=\"off\"\n"
+                },
+                {
+                    "date": 1642010822665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,36 @@\n import React from 'react';\n import { BsSearch } from 'react-icons/bs';\n+import { GameListType } from '../../../../store/reducers/types';\n \n import { SearchContainer } from './style';\n \n-const SearchBar = () => {\n+interface IProps {\n+    gameList: GameListType[];\n+}\n+\n+const SearchBar = ({ gameList }: IProps) => {\n+    const nameFilter = (e: string) => {\n+        const filtered = gameList.filter((p) =>\n+            p.title.startsWith(e.toLowerCase()),\n+        );\n+\n+        setPokemonsFiltered(filtered);\n+        if (filtered.length !== 0) {\n+            calculateTotalPage(filtered);\n+        } else {\n+            setTotalPage(0);\n+        }\n+    };\n+\n     return (\n         <SearchContainer id=\"search-bar\">\n             <input\n                 type=\"text\"\n                 id=\"searchInput\"\n                 autoComplete=\"off\"\n                 placeholder=\"Game Name\"\n+                onChange={(e) => nameFilter(e.target.value)}\n             />\n             <i>\n                 <BsSearch />\n             </i>\n"
+                },
+                {
+                    "date": 1642011556716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,22 +5,18 @@\n import { SearchContainer } from './style';\n \n interface IProps {\n     gameList: GameListType[];\n+    setFilter: (value: React.SetStateAction<GameListType[]>) => void;\n }\n \n-const SearchBar = ({ gameList }: IProps) => {\n+const SearchBar = ({ gameList, setFilter }: IProps) => {\n     const nameFilter = (e: string) => {\n         const filtered = gameList.filter((p) =>\n             p.title.startsWith(e.toLowerCase()),\n         );\n \n-        setPokemonsFiltered(filtered);\n-        if (filtered.length !== 0) {\n-            calculateTotalPage(filtered);\n-        } else {\n-            setTotalPage(0);\n-        }\n+        setFilter(filtered);\n     };\n \n     return (\n         <SearchContainer id=\"search-bar\">\n"
+                },
+                {
+                    "date": 1642011669617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n             p.title.startsWith(e.toLowerCase()),\n         );\n \n         setFilter(filtered);\n+        console.log(filtered);\n     };\n \n     return (\n         <SearchContainer id=\"search-bar\">\n"
+                },
+                {
+                    "date": 1642011692520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,10 @@\n             p.title.startsWith(e.toLowerCase()),\n         );\n \n         setFilter(filtered);\n-        console.log(filtered);\n     };\n+    console.log(filtered);\n \n     return (\n         <SearchContainer id=\"search-bar\">\n             <input\n"
+                },
+                {
+                    "date": 1642011702260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,8 @@\n         );\n \n         setFilter(filtered);\n     };\n-    console.log(filtered);\n \n     return (\n         <SearchContainer id=\"search-bar\">\n             <input\n"
+                },
+                {
+                    "date": 1642011838753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n         const filtered = gameList.filter((p) =>\n             p.title.startsWith(e.toLowerCase()),\n         );\n \n-        setFilter(filtered);\n+        return filtered;\n     };\n \n     return (\n         <SearchContainer id=\"search-bar\">\n@@ -24,9 +24,9 @@\n                 type=\"text\"\n                 id=\"searchInput\"\n                 autoComplete=\"off\"\n                 placeholder=\"Game Name\"\n-                onChange={(e) => nameFilter(e.target.value)}\n+                onChange={(e) => setFilter(nameFilter(e.target.value))}\n             />\n             <i>\n                 <BsSearch />\n             </i>\n"
+                },
+                {
+                    "date": 1642011994833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,11 +11,12 @@\n \n const SearchBar = ({ gameList, setFilter }: IProps) => {\n     const nameFilter = (e: string) => {\n         const filtered = gameList.filter((p) =>\n-            p.title.startsWith(e.toLowerCase()),\n+        p.title.startsWith(e.toLowerCase()),\n         );\n \n+        console.log(gameList)/\n         return filtered;\n     };\n \n     return (\n"
+                },
+                {
+                    "date": 1642012043485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,12 +11,12 @@\n \n const SearchBar = ({ gameList, setFilter }: IProps) => {\n     const nameFilter = (e: string) => {\n         const filtered = gameList.filter((p) =>\n-        p.title.startsWith(e.toLowerCase()),\n+            p.title.startsWith(e.toLowerCase()),\n         );\n \n-        console.log(gameList)/\n+        console.log(filtered);\n         return filtered;\n     };\n \n     return (\n"
+                },
+                {
+                    "date": 1642012091298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n const SearchBar = ({ gameList, setFilter }: IProps) => {\n     const nameFilter = (e: string) => {\n         const filtered = gameList.filter((p) =>\n-            p.title.startsWith(e.toLowerCase()),\n+            p.title.toLowerCase.startsWith(e.toLowerCase()),\n         );\n \n         console.log(filtered);\n         return filtered;\n"
+                },
+                {
+                    "date": 1642012124604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,10 +10,11 @@\n }\n \n const SearchBar = ({ gameList, setFilter }: IProps) => {\n     const nameFilter = (e: string) => {\n-        const filtered = gameList.filter((p) =>\n-            p.title.toLowerCase.startsWith(e.toLowerCase()),\n+        const filtered = gameList.filter(\n+            (p) => p.title.startsWith(e.toLowerCase()),\n+            console.log(p.title),\n         );\n \n         console.log(filtered);\n         return filtered;\n"
+                },
+                {
+                    "date": 1642012135489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,11 +10,10 @@\n }\n \n const SearchBar = ({ gameList, setFilter }: IProps) => {\n     const nameFilter = (e: string) => {\n-        const filtered = gameList.filter(\n-            (p) => p.title.startsWith(e.toLowerCase()),\n-            console.log(p.title),\n+        const filtered = gameList.filter((p) =>\n+            p.title.startsWith(e.toLowerCase()),\n         );\n \n         console.log(filtered);\n         return filtered;\n"
+                },
+                {
+                    "date": 1642012197946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,10 +10,10 @@\n }\n \n const SearchBar = ({ gameList, setFilter }: IProps) => {\n     const nameFilter = (e: string) => {\n-        const filtered = gameList.filter((p) =>\n-            p.title.startsWith(e.toLowerCase()),\n+        const filtered = gameList.filter((item) =>\n+            item.title.includes(e.toLowerCase()),\n         );\n \n         console.log(filtered);\n         return filtered;\n"
+                },
+                {
+                    "date": 1642012266872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n const SearchBar = ({ gameList, setFilter }: IProps) => {\n     const nameFilter = (e: string) => {\n         const filtered = gameList.filter((item) =>\n-            item.title.includes(e.toLowerCase()),\n+            item.title.toLowerCase().includes(e.toLowerCase()),\n         );\n \n         console.log(filtered);\n         return filtered;\n"
+                },
+                {
+                    "date": 1642012289672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,12 +11,11 @@\n \n const SearchBar = ({ gameList, setFilter }: IProps) => {\n     const nameFilter = (e: string) => {\n         const filtered = gameList.filter((item) =>\n-            item.title.toLowerCase().includes(e.toLowerCase()),\n+            item.title.toLowerCase().startsWith(e.toLowerCase()),\n         );\n \n-        console.log(filtered);\n         return filtered;\n     };\n \n     return (\n"
+                },
+                {
+                    "date": 1642014675795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import React from 'react';\n+import React, { useEffect } from 'react';\n import { BsSearch } from 'react-icons/bs';\n import { GameListType } from '../../../../store/reducers/types';\n \n import { SearchContainer } from './style';\n"
+                },
+                {
+                    "date": 1642015086475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import React, { useEffect } from 'react';\n+import React from 'react';\n import { BsSearch } from 'react-icons/bs';\n import { GameListType } from '../../../../store/reducers/types';\n \n import { SearchContainer } from './style';\n"
+                },
+                {
+                    "date": 1642015116630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,11 +10,13 @@\n }\n \n const SearchBar = ({ gameList, setFilter }: IProps) => {\n     const nameFilter = (e: string) => {\n-        const filtered = gameList.filter((item) =>\n-            item.title.toLowerCase().startsWith(e.toLowerCase()),\n-        );\n+        if (e.length > 0) {\n+            const filtered = gameList.filter((item) =>\n+                item.title.toLowerCase().startsWith(e.toLowerCase()),\n+            );\n+        }\n \n         return filtered;\n     };\n \n"
+                },
+                {
+                    "date": 1642015213875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,11 @@\n         if (e.length > 0) {\n             const filtered = gameList.filter((item) =>\n                 item.title.toLowerCase().startsWith(e.toLowerCase()),\n             );\n+            return filtered;\n         }\n-\n-        return filtered;\n+        return gameList;\n     };\n \n     return (\n         <SearchContainer id=\"search-bar\">\n"
+                }
+            ],
+            "date": 1641575536180,
+            "name": "Commit-0",
+            "content": "import React, { CSSProperties } from 'react';\nimport { BsSearch } from 'react-icons/bs';\n\nimport { SearchContainer } from './style';\n\nconst SearchBar = (positionCss: CSSProperties) => {\n    return (\n        <SearchContainer style={positionCss}>\n            <input\n                type=\"text\"\n                id=\"searchInput\"\n                autoComplete=\"off\"\n                placeholder=\"Game Name\"\n            />\n            <i>\n                <BsSearch />\n            </i>\n        </SearchContainer>\n    );\n};\n\nexport default SearchBar;\n"
+        }
+    ]
+}

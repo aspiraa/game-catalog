@@ -1,0 +1,302 @@
+{
+    "sourceFile": "src/store/services/index.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 71,
+            "patches": [
+                {
+                    "date": 1641822496836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641830455691,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,17 @@\n import { MovieListType } from '../reducers/types';\n \n const api_key = 'c124f3ace236457605a147acd9f834f6';\n export const services = {\n+\n+    getGames: async() =>{\n+        try{\n+            const resp = await axios.get(\n+                'https://www.mmobomb.com/api1/games'\n+            )\n+        }\n+    }\n+\n     getImage: async (movieName: string): Promise<string | unknown> => {\n         const params = {\n             api_key,\n             region: 'pt-BR',\n"
+                },
+                {
+                    "date": 1641830520156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,16 +3,17 @@\n import { MovieListType } from '../reducers/types';\n \n const api_key = 'c124f3ace236457605a147acd9f834f6';\n export const services = {\n+    getGames: async () => {\n+        try {\n+            const resp = await axios.get('https://www.mmobomb.com/api1/games');\n \n-    getGames: async() =>{\n-        try{\n-            const resp = await axios.get(\n-                'https://www.mmobomb.com/api1/games'\n-            )\n+            return resp;\n+        } catch (err) {\n+            return console.error(err);\n         }\n-    }\n+    },\n \n     getImage: async (movieName: string): Promise<string | unknown> => {\n         const params = {\n             api_key,\n"
+                },
+                {
+                    "date": 1641835650634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,15 @@\n /* eslint-disable camelcase */\n import axios from 'axios';\n import { MovieListType } from '../reducers/types';\n \n-const api_key = 'c124f3ace236457605a147acd9f834f6';\n+const api_key = '60b99f967cmsh9c2e261209c9ab4p138f4fjsn18d12b4c6aa6';\n export const services = {\n     getGames: async () => {\n         try {\n-            const resp = await axios.get('https://www.mmobomb.com/api1/games');\n+            const resp = await axios.get('mmo-games.p.rapidapi.com', {\n+                api_key,\n+            });\n \n             return resp;\n         } catch (err) {\n             return console.error(err);\n"
+                },
+                {
+                    "date": 1641835685067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,15 @@\n \n const api_key = '60b99f967cmsh9c2e261209c9ab4p138f4fjsn18d12b4c6aa6';\n export const services = {\n     getGames: async () => {\n+        const params = {\n+            api_key,\n+        };\n+\n         try {\n             const resp = await axios.get('mmo-games.p.rapidapi.com', {\n-                api_key,\n+                params,\n             });\n \n             return resp;\n         } catch (err) {\n"
+                },
+                {
+                    "date": 1641835748378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,14 @@\n             api_key,\n         };\n \n         try {\n-            const resp = await axios.get('mmo-games.p.rapidapi.com', {\n-                params,\n-            });\n+            const resp = await axios.get(\n+                'https://mmo-games.p.rapidapi.com/latestnews',\n+                {\n+                    params,\n+                },\n+            );\n \n             return resp;\n         } catch (err) {\n             return console.error(err);\n"
+                },
+                {
+                    "date": 1641835802722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n         };\n \n         try {\n             const resp = await axios.get(\n-                'https://mmo-games.p.rapidapi.com/latestnews',\n+                'https://mmo-games.p.rapidapi.com/games',\n                 {\n                     params,\n                 },\n             );\n"
+                },
+                {
+                    "date": 1641836166494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,12 +2,14 @@\n import axios from 'axios';\n import { MovieListType } from '../reducers/types';\n \n const api_key = '60b99f967cmsh9c2e261209c9ab4p138f4fjsn18d12b4c6aa6';\n+\n export const services = {\n     getGames: async () => {\n         const params = {\n-            api_key,\n+            'x-rapidapi-key':\n+                '60b99f967cmsh9c2e261209c9ab4p138f4fjsn18d12b4c6aa6',\n         };\n \n         try {\n             const resp = await axios.get(\n"
+                },
+                {
+                    "date": 1641836182708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,9 @@\n \n export const services = {\n     getGames: async () => {\n         const params = {\n-            'x-rapidapi-key':\n-                '60b99f967cmsh9c2e261209c9ab4p138f4fjsn18d12b4c6aa6',\n+            'x-rapidapi-key': api_key,\n         };\n \n         try {\n             const resp = await axios.get(\n"
+                },
+                {
+                    "date": 1641836237229,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n \n export const services = {\n     getGames: async () => {\n         const params = {\n+            'x-rapidapi-host': 'mmo-games.p.rapidapi.com',\n             'x-rapidapi-key': api_key,\n         };\n \n         try {\n"
+                },
+                {
+                    "date": 1641836361989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,13 @@\n             'x-rapidapi-host': 'mmo-games.p.rapidapi.com',\n             'x-rapidapi-key': api_key,\n         };\n \n+        const headers: {\n+            'x-rapidapi-host': 'mmo-games.p.rapidapi.com';\n+            'x-rapidapi-key': '60b99f967cmsh9c2e261209c9ab4p138f4fjsn18d12b4c6aa6';\n+        };\n+\n         try {\n             const resp = await axios.get(\n                 'https://mmo-games.p.rapidapi.com/games',\n                 {\n"
+                },
+                {
+                    "date": 1641836437460,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n         try {\n             const resp = await axios.get(\n                 'https://mmo-games.p.rapidapi.com/games',\n                 {\n+                    headers,\n                     params,\n                 },\n             );\n \n"
+                },
+                {
+                    "date": 1641836481146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,20 +3,19 @@\n import { MovieListType } from '../reducers/types';\n \n const api_key = '60b99f967cmsh9c2e261209c9ab4p138f4fjsn18d12b4c6aa6';\n \n+const headers = {\n+    'x-rapidapi-host': 'mmo-games.p.rapidapi.com',\n+    'x-rapidapi-key': '60b99f967cmsh9c2e261209c9ab4p138f4fjsn18d12b4c6aa6',\n+};\n export const services = {\n     getGames: async () => {\n         const params = {\n             'x-rapidapi-host': 'mmo-games.p.rapidapi.com',\n             'x-rapidapi-key': api_key,\n         };\n \n-        const headers: {\n-            'x-rapidapi-host': 'mmo-games.p.rapidapi.com';\n-            'x-rapidapi-key': '60b99f967cmsh9c2e261209c9ab4p138f4fjsn18d12b4c6aa6';\n-        };\n-\n         try {\n             const resp = await axios.get(\n                 'https://mmo-games.p.rapidapi.com/games',\n                 {\n"
+                },
+                {
+                    "date": 1641836511170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,19 +9,13 @@\n     'x-rapidapi-key': '60b99f967cmsh9c2e261209c9ab4p138f4fjsn18d12b4c6aa6',\n };\n export const services = {\n     getGames: async () => {\n-        const params = {\n-            'x-rapidapi-host': 'mmo-games.p.rapidapi.com',\n-            'x-rapidapi-key': api_key,\n-        };\n-\n         try {\n             const resp = await axios.get(\n                 'https://mmo-games.p.rapidapi.com/games',\n                 {\n                     headers,\n-                    params,\n                 },\n             );\n \n             return resp;\n"
+                },
+                {
+                    "date": 1641864571628,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,16 @@\n /* eslint-disable camelcase */\n import axios from 'axios';\n-import { MovieListType } from '../reducers/types';\n+import { GameListType, MovieListType } from '../reducers/types';\n \n const api_key = '60b99f967cmsh9c2e261209c9ab4p138f4fjsn18d12b4c6aa6';\n \n const headers = {\n     'x-rapidapi-host': 'mmo-games.p.rapidapi.com',\n     'x-rapidapi-key': '60b99f967cmsh9c2e261209c9ab4p138f4fjsn18d12b4c6aa6',\n };\n export const services = {\n-    getGames: async () => {\n+    getGames: async (): Promise<GameListType[] | unknown => {\n         try {\n             const resp = await axios.get(\n                 'https://mmo-games.p.rapidapi.com/games',\n                 {\n"
+                },
+                {
+                    "date": 1641864607688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     'x-rapidapi-host': 'mmo-games.p.rapidapi.com',\n     'x-rapidapi-key': '60b99f967cmsh9c2e261209c9ab4p138f4fjsn18d12b4c6aa6',\n };\n export const services = {\n-    getGames: async (): Promise<GameListType[] | unknown => {\n+    getGames: async () => {\n         try {\n             const resp = await axios.get(\n                 'https://mmo-games.p.rapidapi.com/games',\n                 {\n"
+                },
+                {
+                    "date": 1641864632198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,79 +22,5 @@\n         } catch (err) {\n             return console.error(err);\n         }\n     },\n-\n-    getImage: async (movieName: string): Promise<string | unknown> => {\n-        const params = {\n-            api_key,\n-            region: 'pt-BR',\n-            language: 'pt-BR',\n-            query: movieName,\n-            page: 1,\n-            include_adult: false,\n-        };\n-        try {\n-            const resp = await axios.get(\n-                'https://api.themoviedb.org/3/search/movie',\n-                { params },\n-            );\n-            return resp.data.results[0];\n-        } catch (err) {\n-            return err;\n-        }\n-    },\n-    getPopularMovies: async (): Promise<Array<MovieListType> | unknown> => {\n-        const params = {\n-            api_key,\n-            language: 'pt-BR',\n-            page: 1,\n-            include_adult: false,\n-        };\n-        try {\n-            const resp = await axios.get(\n-                'https://api.themoviedb.org/3/movie/popular',\n-                { params },\n-            );\n-            return resp.data.results;\n-        } catch (err) {\n-            return err;\n-        }\n-    },\n-\n-    getGenres: async () => {\n-        const params = {\n-            api_key,\n-            language: 'pt-BR',\n-        };\n-        try {\n-            const resp = await axios.get(\n-                'https://api.themoviedb.org/3/genre/movie/list',\n-                { params },\n-            );\n-            return resp.data.genres;\n-        } catch (err) {\n-            return err;\n-        }\n-    },\n-\n-    getMoviesByGenre: async (\n-        genrer: string,\n-    ): Promise<Array<MovieListType> | unknown> => {\n-        const params = {\n-            api_key,\n-            language: 'pt-BR',\n-            page: 1,\n-            include_adult: false,\n-            with_genres: genrer,\n-        };\n-        try {\n-            const resp = await axios.get(\n-                'https://api.themoviedb.org/3/discover/movie',\n-                { params },\n-            );\n-            return resp.data.results;\n-        } catch (err) {\n-            return err;\n-        }\n-    },\n };\n"
+                },
+                {
+                    "date": 1641864651363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,7 @@\n /* eslint-disable camelcase */\n import axios from 'axios';\n-import { GameListType, MovieListType } from '../reducers/types';\n \n-const api_key = '60b99f967cmsh9c2e261209c9ab4p138f4fjsn18d12b4c6aa6';\n-\n const headers = {\n     'x-rapidapi-host': 'mmo-games.p.rapidapi.com',\n     'x-rapidapi-key': '60b99f967cmsh9c2e261209c9ab4p138f4fjsn18d12b4c6aa6',\n };\n"
+                },
+                {
+                    "date": 1641915406430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,5 +19,25 @@\n         } catch (err) {\n             return console.error(err);\n         }\n     },\n+\n+    filterGames: async (genreName: string, genreType: string) => {\n+        const params = {\n+            genreName,\n+            genreType,\n+        };\n+        try {\n+            const resp = await axios.get(\n+                'https://mmo-games.p.rapidapi.com/games?',\n+                {\n+                    params,\n+                    headers,\n+                },\n+            );\n+\n+            return resp;\n+        } catch (err) {\n+            return console.error(err);\n+        }\n+    },\n };\n"
+                },
+                {
+                    "date": 1641915749529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,11 +21,14 @@\n         }\n     },\n \n     filterGames: async (genreName: string, genreType: string) => {\n-        const params = {\n-            genreName,\n-            genreType,\n+        const params = new URLSearchParams();\n+        params.append('foo', 5);\n+        params.append('foo', 2);\n+        params.append('foo', 11);\n+        const request = {\n+            params,\n         };\n         try {\n             const resp = await axios.get(\n                 'https://mmo-games.p.rapidapi.com/games?',\n"
+                },
+                {
+                    "date": 1641916288988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n /* eslint-disable camelcase */\n import axios from 'axios';\n+import { platform } from 'os';\n+import Filter from '../../components/mainContent/filter';\n \n const headers = {\n     'x-rapidapi-host': 'mmo-games.p.rapidapi.com',\n     'x-rapidapi-key': '60b99f967cmsh9c2e261209c9ab4p138f4fjsn18d12b4c6aa6',\n@@ -20,16 +22,22 @@\n             return console.error(err);\n         }\n     },\n \n-    filterGames: async (genreName: string, genreType: string) => {\n+    filterGames: async (array: Filter[]) => {\n         const params = new URLSearchParams();\n-        params.append('foo', 5);\n-        params.append('foo', 2);\n-        params.append('foo', 11);\n-        const request = {\n-            params,\n-        };\n+        params.append('foo', '5');\n+        params.append('foo', '2');\n+        params.append('foo', '11');\n+\n+        array.forEach((item) => {\n+            if (item.paramType === 'platform') {\n+                params.append('platform', item.inputName);\n+            } else {\n+                params.append('category', item.inputName);\n+            }\n+        });\n+\n         try {\n             const resp = await axios.get(\n                 'https://mmo-games.p.rapidapi.com/games?',\n                 {\n"
+                },
+                {
+                    "date": 1641916394231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,11 +24,8 @@\n     },\n \n     filterGames: async (array: Filter[]) => {\n         const params = new URLSearchParams();\n-        params.append('foo', '5');\n-        params.append('foo', '2');\n-        params.append('foo', '11');\n \n         array.forEach((item) => {\n             if (item.paramType === 'platform') {\n                 params.append('platform', item.inputName);\n"
+                },
+                {
+                    "date": 1641918590761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,12 +22,12 @@\n             return console.error(err);\n         }\n     },\n \n-    filterGames: async (array: Filter[]) => {\n+    filterGames: async (array: any) => {\n         const params = new URLSearchParams();\n \n-        array.forEach((item) => {\n+        array.forEach((item: any) => {\n             if (item.paramType === 'platform') {\n                 params.append('platform', item.inputName);\n             } else {\n                 params.append('category', item.inputName);\n"
+                },
+                {
+                    "date": 1641919495948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n             return console.error(err);\n         }\n     },\n \n-    filterGames: async (array: any) => {\n+    filterGames: async (array: Array<any>) => {\n         const params = new URLSearchParams();\n \n         array.forEach((item: any) => {\n             if (item.paramType === 'platform') {\n"
+                },
+                {
+                    "date": 1641919525525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n     },\n \n     filterGames: async (array: Array<any>) => {\n         const params = new URLSearchParams();\n-\n+        console.log(array);\n         array.forEach((item: any) => {\n             if (item.paramType === 'platform') {\n                 params.append('platform', item.inputName);\n             } else {\n"
+                },
+                {
+                    "date": 1641919785493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,15 +25,17 @@\n \n     filterGames: async (array: Array<any>) => {\n         const params = new URLSearchParams();\n         console.log(array);\n-        array.forEach((item: any) => {\n-            if (item.paramType === 'platform') {\n-                params.append('platform', item.inputName);\n-            } else {\n-                params.append('category', item.inputName);\n-            }\n-        });\n+        if (array.length > 1) {\n+            array.forEach((item: any) => {\n+                if (item.paramType === 'platform') {\n+                    params.append('platform', item.inputName);\n+                } else {\n+                    params.append('category', item.inputName);\n+                }\n+            });\n+        }\n \n         try {\n             const resp = await axios.get(\n                 'https://mmo-games.p.rapidapi.com/games?',\n"
+                },
+                {
+                    "date": 1641919944399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n                     params,\n                     headers,\n                 },\n             );\n-\n+            console.log(resp);\n             return resp;\n         } catch (err) {\n             return console.error(err);\n         }\n"
+                },
+                {
+                    "date": 1641919984984,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n                     params,\n                     headers,\n                 },\n             );\n-            console.log(resp);\n+            console.log(params);\n             return resp;\n         } catch (err) {\n             return console.error(err);\n         }\n"
+                },
+                {
+                    "date": 1641920595575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,9 @@\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n                 } else {\n                     params.append('category', item.inputName);\n+                    console.log(item.inputName);\n                 }\n             });\n         }\n \n"
+                },
+                {
+                    "date": 1641920627691,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n     },\n \n     filterGames: async (array: Array<any>) => {\n         const params = new URLSearchParams();\n-        console.log(array);\n+        console.log(array.length);\n         if (array.length > 1) {\n             array.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n"
+                },
+                {
+                    "date": 1641920645474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n     },\n \n     filterGames: async (array: Array<any>) => {\n         const params = new URLSearchParams();\n-        console.log(array.length);\n+        console.log(array);\n         if (array.length > 1) {\n             array.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n"
+                },
+                {
+                    "date": 1641920657803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n     },\n \n     filterGames: async (array: Array<any>) => {\n         const params = new URLSearchParams();\n-        console.log(array);\n+        console.log(array.array);\n         if (array.length > 1) {\n             array.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n"
+                },
+                {
+                    "date": 1641920769375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,6 @@\n /* eslint-disable camelcase */\n import axios from 'axios';\n-import { platform } from 'os';\n-import Filter from '../../components/mainContent/filter';\n \n const headers = {\n     'x-rapidapi-host': 'mmo-games.p.rapidapi.com',\n     'x-rapidapi-key': '60b99f967cmsh9c2e261209c9ab4p138f4fjsn18d12b4c6aa6',\n@@ -22,11 +20,11 @@\n             return console.error(err);\n         }\n     },\n \n-    filterGames: async (array: Array<any>) => {\n+    filterGames: async (array: IFilter[]) => {\n         const params = new URLSearchParams();\n-        console.log(array.array);\n+        console.log(array);\n         if (array.length > 1) {\n             array.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n"
+                },
+                {
+                    "date": 1641920785183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n /* eslint-disable camelcase */\n import axios from 'axios';\n+import { IFilter } from '../../components/mainContent/filter';\n \n const headers = {\n     'x-rapidapi-host': 'mmo-games.p.rapidapi.com',\n     'x-rapidapi-key': '60b99f967cmsh9c2e261209c9ab4p138f4fjsn18d12b4c6aa6',\n"
+                },
+                {
+                    "date": 1641920858784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     },\n \n     filterGames: async (array: IFilter[]) => {\n         const params = new URLSearchParams();\n-        console.log(array);\n+        console.log(...array);\n         if (array.length > 1) {\n             array.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n"
+                },
+                {
+                    "date": 1641920896353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     },\n \n     filterGames: async (array: IFilter[]) => {\n         const params = new URLSearchParams();\n-        console.log(...array);\n+        console.log(array.length);\n         if (array.length > 1) {\n             array.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n"
+                },
+                {
+                    "date": 1641920933929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     },\n \n     filterGames: async (array: IFilter[]) => {\n         const params = new URLSearchParams();\n-        console.log(array.length);\n+        console.log(array);\n         if (array.length > 1) {\n             array.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n"
+                },
+                {
+                    "date": 1641920951586,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     },\n \n     filterGames: async (array: IFilter[]) => {\n         const params = new URLSearchParams();\n-        console.log(array);\n+        console.log(typeof array);\n         if (array.length > 1) {\n             array.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n"
+                },
+                {
+                    "date": 1641920972206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     },\n \n     filterGames: async (array: IFilter[]) => {\n         const params = new URLSearchParams();\n-        console.log(typeof array);\n+        console.log(array);\n         if (array.length > 1) {\n             array.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n"
+                },
+                {
+                    "date": 1641921000906,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,13 +21,13 @@\n             return console.error(err);\n         }\n     },\n \n-    filterGames: async (array: IFilter[]) => {\n+    filterGames: async (lista: IFilter[]) => {\n         const params = new URLSearchParams();\n-        console.log(array);\n-        if (array.length > 1) {\n-            array.forEach((item: any) => {\n+        console.log(lista);\n+        if (lista.length > 1) {\n+            lista.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n                 } else {\n                     params.append('category', item.inputName);\n"
+                },
+                {
+                    "date": 1641921057829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     },\n \n     filterGames: async (lista: IFilter[]) => {\n         const params = new URLSearchParams();\n-        console.log(lista);\n+        console.log(lista.values);\n         if (lista.length > 1) {\n             lista.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n"
+                },
+                {
+                    "date": 1641921076113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     },\n \n     filterGames: async (lista: IFilter[]) => {\n         const params = new URLSearchParams();\n-        console.log(lista.values);\n+        console.log(lista.toString);\n         if (lista.length > 1) {\n             lista.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n"
+                },
+                {
+                    "date": 1641921088697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     },\n \n     filterGames: async (lista: IFilter[]) => {\n         const params = new URLSearchParams();\n-        console.log(lista.toString);\n+        console.log(lista);\n         if (lista.length > 1) {\n             lista.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n"
+                },
+                {
+                    "date": 1641921174634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     },\n \n     filterGames: async (lista: IFilter[]) => {\n         const params = new URLSearchParams();\n-        console.log(lista);\n+        console.log(lista.entries());\n         if (lista.length > 1) {\n             lista.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n"
+                },
+                {
+                    "date": 1641921186642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     },\n \n     filterGames: async (lista: IFilter[]) => {\n         const params = new URLSearchParams();\n-        console.log(lista.entries());\n+        console.log(lista);\n         if (lista.length > 1) {\n             lista.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n"
+                },
+                {
+                    "date": 1641921318668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,16 +23,15 @@\n     },\n \n     filterGames: async (lista: IFilter[]) => {\n         const params = new URLSearchParams();\n-        console.log(lista);\n+\n         if (lista.length > 1) {\n             lista.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n                 } else {\n                     params.append('category', item.inputName);\n-                    console.log(item.inputName);\n                 }\n             });\n         }\n \n"
+                },
+                {
+                    "date": 1641921414858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,18 +33,18 @@\n                     params.append('category', item.inputName);\n                 }\n             });\n         }\n-\n+        console.log(params);\n         try {\n             const resp = await axios.get(\n                 'https://mmo-games.p.rapidapi.com/games?',\n                 {\n                     params,\n                     headers,\n                 },\n             );\n-            console.log(params);\n+\n             return resp;\n         } catch (err) {\n             return console.error(err);\n         }\n"
+                },
+                {
+                    "date": 1641921466155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n \n     filterGames: async (lista: IFilter[]) => {\n         const params = new URLSearchParams();\n \n-        if (lista.length > 1) {\n+        if (lista.length > 0) {\n             lista.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n                 } else {\n"
+                },
+                {
+                    "date": 1641921714726,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n                     params.append('category', item.inputName);\n                 }\n             });\n         }\n-        console.log(params);\n+\n         try {\n             const resp = await axios.get(\n                 'https://mmo-games.p.rapidapi.com/games?',\n                 {\n"
+                },
+                {
+                    "date": 1641925030438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n         }\n \n         try {\n             const resp = await axios.get(\n-                'https://mmo-games.p.rapidapi.com/games?',\n+                'https://mmo-games.p.rapidapi.com/filter?',\n                 {\n                     params,\n                     headers,\n                 },\n"
+                },
+                {
+                    "date": 1641925039609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n             lista.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n                 } else {\n-                    params.append('category', item.inputName);\n+                    params.append('tag', item.inputName);\n                 }\n             });\n         }\n \n"
+                },
+                {
+                    "date": 1641927956927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n             lista.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n                 } else {\n-                    params.append('tag', item.inputName);\n+                    params.append('category', item.inputName);\n                 }\n             });\n         }\n \n"
+                },
+                {
+                    "date": 1641927964562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n             lista.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n                 } else {\n-                    params.append('category', item.inputName);\n+                    params.append('tag', item.inputName);\n                 }\n             });\n         }\n \n"
+                },
+                {
+                    "date": 1641950605260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,15 +23,17 @@\n     },\n \n     filterGames: async (lista: IFilter[]) => {\n         const params = new URLSearchParams();\n+        const genres = '';\n \n         if (lista.length > 0) {\n             lista.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n                 } else {\n                     params.append('tag', item.inputName);\n+                    genres.concat(`${item.inputName}`);\n                 }\n             });\n         }\n \n"
+                },
+                {
+                    "date": 1641950615840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,10 @@\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n                 } else {\n                     params.append('tag', item.inputName);\n-                    genres.concat(`${item.inputName}`);\n+                    genres.concat(`.${item.inputName}`);\n+                    console.log(genres);\n                 }\n             });\n         }\n \n"
+                },
+                {
+                    "date": 1641950773249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n                 } else {\n                     params.append('tag', item.inputName);\n-                    genres.concat(`.${item.inputName}`);\n+                    genres = `${genres}.${item.inputName}`;\n                     console.log(genres);\n                 }\n             });\n         }\n"
+                },
+                {
+                    "date": 1641950781624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     },\n \n     filterGames: async (lista: IFilter[]) => {\n         const params = new URLSearchParams();\n-        const genres = '';\n+        let genres = '';\n \n         if (lista.length > 0) {\n             lista.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n"
+                },
+                {
+                    "date": 1641950861362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n             lista.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n                 } else {\n-                    params.append('tag', item.inputName);\n+                    params.append('tag', genres);\n                     genres = `${genres}.${item.inputName}`;\n                     console.log(genres);\n                 }\n             });\n"
+                },
+                {
+                    "date": 1641951007621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n                 } else {\n                     params.append('tag', genres);\n-                    genres = `${genres}.${item.inputName}`;\n+                    genres = `${genres}.${item.inputName}`.substring(1);\n                     console.log(genres);\n                 }\n             });\n         }\n"
+                },
+                {
+                    "date": 1641951090049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,10 +30,10 @@\n             lista.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n                 } else {\n+                    genres = `${genres}.${item.inputName}`.substring(1);\n                     params.append('tag', genres);\n-                    genres = `${genres}.${item.inputName}`.substring(1);\n                     console.log(genres);\n                 }\n             });\n         }\n"
+                },
+                {
+                    "date": 1641951187139,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,13 +30,14 @@\n             lista.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n                 } else {\n-                    genres = `${genres}.${item.inputName}`.substring(1);\n+                    genres = `${genres}.${item.inputName}`;\n                     params.append('tag', genres);\n                     console.log(genres);\n                 }\n             });\n+            genres.substring(1);\n         }\n \n         try {\n             const resp = await axios.get(\n"
+                },
+                {
+                    "date": 1641951246365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,11 +32,11 @@\n                     params.append('platform', item.inputName);\n                 } else {\n                     genres = `${genres}.${item.inputName}`;\n                     params.append('tag', genres);\n-                    console.log(genres);\n                 }\n             });\n+            console.log(genres);\n             genres.substring(1);\n         }\n \n         try {\n"
+                },
+                {
+                    "date": 1641951273920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,13 +31,13 @@\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n                 } else {\n                     genres = `${genres}.${item.inputName}`;\n-                    params.append('tag', genres);\n                 }\n             });\n+            genres.substring(1);\n+            params.append('tag', genres);\n             console.log(genres);\n-            genres.substring(1);\n         }\n \n         try {\n             const resp = await axios.get(\n"
+                },
+                {
+                    "date": 1641951379584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,10 +33,10 @@\n                 } else {\n                     genres = `${genres}.${item.inputName}`;\n                 }\n             });\n-            genres.substring(1);\n-            params.append('tag', genres);\n+\n+            params.append('tag', genres.substring(1));\n             console.log(genres);\n         }\n \n         try {\n"
+                },
+                {
+                    "date": 1641952809084,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,26 +23,22 @@\n     },\n \n     filterGames: async (lista: IFilter[]) => {\n         const params = new URLSearchParams();\n-        let genres = '';\n \n         if (lista.length > 0) {\n             lista.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n                 } else {\n-                    genres = `${genres}.${item.inputName}`;\n+                    params.append('tag', item.inputName);\n                 }\n             });\n-\n-            params.append('tag', genres.substring(1));\n-            console.log(genres);\n         }\n \n         try {\n             const resp = await axios.get(\n-                'https://mmo-games.p.rapidapi.com/filter?',\n+                'https://mmo-games.p.rapidapi.com/games',\n                 {\n                     params,\n                     headers,\n                 },\n"
+                },
+                {
+                    "date": 1641952853389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n             lista.forEach((item: any) => {\n                 if (item.paramType === 'platform') {\n                     params.append('platform', item.inputName);\n                 } else {\n-                    params.append('tag', item.inputName);\n+                    params.append('category', item.inputName);\n                 }\n             });\n         }\n \n"
+                },
+                {
+                    "date": 1641959257441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,5 +48,24 @@\n         } catch (err) {\n             return console.error(err);\n         }\n     },\n+\n+    getEspecificGame: async (genre: string) => {\n+        const params = {\n+            id: genre,\n+        };\n+        try {\n+            const resp = await axios.get(\n+                'https://mmo-games.p.rapidapi.com/games',\n+                {\n+                    params,\n+                    headers,\n+                },\n+            );\n+\n+            return resp;\n+        } catch (err) {\n+            return console.error(err);\n+        }\n+    },\n };\n"
+                },
+                {
+                    "date": 1641988168405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,22 +50,23 @@\n         }\n     },\n \n     getEspecificGame: async (genre: string) => {\n-        const params = {\n-            id: genre,\n-        };\n-        try {\n-            const resp = await axios.get(\n-                'https://mmo-games.p.rapidapi.com/games',\n-                {\n-                    params,\n-                    headers,\n-                },\n-            );\n+        console.log(genre);\n+        // const params = {\n+        //     id: genre,\n+        // };\n+        // try {\n+        //     const resp = await axios.get(\n+        //         'https://mmo-games.p.rapidapi.com/games',\n+        //         {\n+        //             params,\n+        //             headers,\n+        //         },\n+        //     );\n \n-            return resp;\n-        } catch (err) {\n-            return console.error(err);\n-        }\n+        //     return resp;\n+        // } catch (err) {\n+        //     return console.error(err);\n+        // }\n     },\n };\n"
+                },
+                {
+                    "date": 1641988359921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,23 +50,22 @@\n         }\n     },\n \n     getEspecificGame: async (genre: string) => {\n-        console.log(genre);\n-        // const params = {\n-        //     id: genre,\n-        // };\n-        // try {\n-        //     const resp = await axios.get(\n-        //         'https://mmo-games.p.rapidapi.com/games',\n-        //         {\n-        //             params,\n-        //             headers,\n-        //         },\n-        //     );\n+        const params = {\n+            id: genre,\n+        };\n+        try {\n+            const resp = await axios.get(\n+                'https://mmo-games.p.rapidapi.com/games',\n+                {\n+                    params,\n+                    headers,\n+                },\n+            );\n \n-        //     return resp;\n-        // } catch (err) {\n-        //     return console.error(err);\n-        // }\n+            return resp;\n+        } catch (err) {\n+            return console.error(err);\n+        }\n     },\n };\n"
+                },
+                {
+                    "date": 1641988446818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n             id: genre,\n         };\n         try {\n             const resp = await axios.get(\n-                'https://mmo-games.p.rapidapi.com/games',\n+                'https://mmo-games.p.rapidapi.com/game',\n                 {\n                     params,\n                     headers,\n                 },\n"
+                },
+                {
+                    "date": 1641989716696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,8 +50,9 @@\n         }\n     },\n \n     getEspecificGame: async (genre: string) => {\n+        console.log('oiii');\n         const params = {\n             id: genre,\n         };\n         try {\n"
+                },
+                {
+                    "date": 1641989737020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,8 @@\n         }\n     },\n \n     getEspecificGame: async (genre: string) => {\n-        console.log('oiii');\n         const params = {\n             id: genre,\n         };\n         try {\n"
+                }
+            ],
+            "date": 1641822496836,
+            "name": "Commit-0",
+            "content": "/* eslint-disable camelcase */\nimport axios from 'axios';\nimport { MovieListType } from '../reducers/types';\n\nconst api_key = 'c124f3ace236457605a147acd9f834f6';\nexport const services = {\n    getImage: async (movieName: string): Promise<string | unknown> => {\n        const params = {\n            api_key,\n            region: 'pt-BR',\n            language: 'pt-BR',\n            query: movieName,\n            page: 1,\n            include_adult: false,\n        };\n        try {\n            const resp = await axios.get(\n                'https://api.themoviedb.org/3/search/movie',\n                { params },\n            );\n            return resp.data.results[0];\n        } catch (err) {\n            return err;\n        }\n    },\n    getPopularMovies: async (): Promise<Array<MovieListType> | unknown> => {\n        const params = {\n            api_key,\n            language: 'pt-BR',\n            page: 1,\n            include_adult: false,\n        };\n        try {\n            const resp = await axios.get(\n                'https://api.themoviedb.org/3/movie/popular',\n                { params },\n            );\n            return resp.data.results;\n        } catch (err) {\n            return err;\n        }\n    },\n\n    getGenres: async () => {\n        const params = {\n            api_key,\n            language: 'pt-BR',\n        };\n        try {\n            const resp = await axios.get(\n                'https://api.themoviedb.org/3/genre/movie/list',\n                { params },\n            );\n            return resp.data.genres;\n        } catch (err) {\n            return err;\n        }\n    },\n\n    getMoviesByGenre: async (\n        genrer: string,\n    ): Promise<Array<MovieListType> | unknown> => {\n        const params = {\n            api_key,\n            language: 'pt-BR',\n            page: 1,\n            include_adult: false,\n            with_genres: genrer,\n        };\n        try {\n            const resp = await axios.get(\n                'https://api.themoviedb.org/3/discover/movie',\n                { params },\n            );\n            return resp.data.results;\n        } catch (err) {\n            return err;\n        }\n    },\n};\n"
+        }
+    ]
+}

@@ -1,0 +1,130 @@
+{
+    "sourceFile": "src/store/sagas/searchGames.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 28,
+            "patches": [
+                {
+                    "date": 1641864819223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641915217045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,4 +12,16 @@\n     } catch (err) {\n         yield put(SearchActions.searchGamesFailed());\n     }\n }\n+\n+export function* filterGames(): any {\n+    try {\n+        const gameList = yield call(services.getGames);\n+\n+        yield put(SearchActions.searchGamesSuccess(gameList.data));\n+\n+        return;\n+    } catch (err) {\n+        yield put(SearchActions.searchGamesFailed());\n+    }\n+}\n"
+                },
+                {
+                    "date": 1641916577311,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import { call, put } from 'redux-saga/effects';\n import { services } from '../services';\n import { Creators as SearchActions } from '../actions/searchGames';\n+import { GenreFilter } from '../reducers/types';\n \n export function* getGames(): any {\n     try {\n         const gameList = yield call(services.getGames);\n@@ -13,11 +14,11 @@\n         yield put(SearchActions.searchGamesFailed());\n     }\n }\n \n-export function* filterGames(): any {\n+export function* filterGames(array: GenreFilter[]): any {\n     try {\n-        const gameList = yield call(services.getGames);\n+        const gameList = yield call(services.filterGames(array));\n \n         yield put(SearchActions.searchGamesSuccess(gameList.data));\n \n         return;\n"
+                },
+                {
+                    "date": 1641917976414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n import { call, put } from 'redux-saga/effects';\n import { services } from '../services';\n import { Creators as SearchActions } from '../actions/searchGames';\n-import { GenreFilter } from '../reducers/types';\n \n export function* getGames(): any {\n     try {\n         const gameList = yield call(services.getGames);\n@@ -14,11 +13,11 @@\n         yield put(SearchActions.searchGamesFailed());\n     }\n }\n \n-export function* filterGames(array: GenreFilter[]): any {\n+export function* filterGames(action: any): any {\n     try {\n-        const gameList = yield call(services.filterGames(array));\n+        const gameList = yield call(services.filterGames, action);\n \n         yield put(SearchActions.searchGamesSuccess(gameList.data));\n \n         return;\n"
+                },
+                {
+                    "date": 1641918729734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n export function* filterGames(action: any): any {\n     try {\n         const gameList = yield call(services.filterGames, action);\n \n+        console.log(gameList);\n         yield put(SearchActions.searchGamesSuccess(gameList.data));\n \n         return;\n     } catch (err) {\n"
+                },
+                {
+                    "date": 1641919102697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     try {\n         const gameList = yield call(services.filterGames, action);\n \n         console.log(gameList);\n-        yield put(SearchActions.searchGamesSuccess(gameList.data));\n+        yield put(SearchActions.filterGamesSucces(gameList.data));\n \n         return;\n     } catch (err) {\n         yield put(SearchActions.searchGamesFailed());\n"
+                },
+                {
+                    "date": 1641919120038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,7 +22,8 @@\n         yield put(SearchActions.filterGamesSucces(gameList.data));\n \n         return;\n     } catch (err) {\n+        console.log(erro);\n         yield put(SearchActions.searchGamesFailed());\n     }\n }\n"
+                },
+                {
+                    "date": 1641919281868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,15 +15,19 @@\n }\n \n export function* filterGames(action: any): any {\n     try {\n+        if (!action) {\n+            const gameList = yield call(services.getGames);\n+            yield put(SearchActions.filterGamesSucces(gameList.data));\n+        }\n         const gameList = yield call(services.filterGames, action);\n \n         console.log(gameList);\n         yield put(SearchActions.filterGamesSucces(gameList.data));\n \n         return;\n     } catch (err) {\n-        console.log(erro);\n+        console.log(err);\n         yield put(SearchActions.searchGamesFailed());\n     }\n }\n"
+                },
+                {
+                    "date": 1641919838929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,12 +15,8 @@\n }\n \n export function* filterGames(action: any): any {\n     try {\n-        if (!action) {\n-            const gameList = yield call(services.getGames);\n-            yield put(SearchActions.filterGamesSucces(gameList.data));\n-        }\n         const gameList = yield call(services.filterGames, action);\n \n         console.log(gameList);\n         yield put(SearchActions.filterGamesSucces(gameList.data));\n"
+                },
+                {
+                    "date": 1641919906221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,8 @@\n export function* filterGames(action: any): any {\n     try {\n         const gameList = yield call(services.filterGames, action);\n \n-        console.log(gameList);\n         yield put(SearchActions.filterGamesSucces(gameList.data));\n \n         return;\n     } catch (err) {\n"
+                },
+                {
+                    "date": 1641921231376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n }\n \n export function* filterGames(action: any): any {\n     try {\n-        const gameList = yield call(services.filterGames, action);\n+        const gameList = yield call(services.filterGames, action.array);\n \n         yield put(SearchActions.filterGamesSucces(gameList.data));\n \n         return;\n"
+                },
+                {
+                    "date": 1641959347424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,4 +25,17 @@\n         console.log(err);\n         yield put(SearchActions.searchGamesFailed());\n     }\n }\n+\n+export function* getEspecificGame(action: any): any {\n+    try {\n+        const game = yield call(services.getEspecificGame, action.genre);\n+\n+        yield put(SearchActions.getEspecificGameSuccess(game.data));\n+\n+        return;\n+    } catch (err) {\n+        console.log(err);\n+        yield put(SearchActions.searchGamesFailed());\n+    }\n+}\n"
+                },
+                {
+                    "date": 1641962107677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,15 +27,17 @@\n     }\n }\n \n export function* getEspecificGame(action: any): any {\n-    try {\n-        const game = yield call(services.getEspecificGame, action.genre);\n+    console.log('aquii');\n \n-        yield put(SearchActions.getEspecificGameSuccess(game.data));\n+    // try {\n+    //     const game = yield call(services.getEspecificGame, action.genre);\n \n-        return;\n-    } catch (err) {\n-        console.log(err);\n-        yield put(SearchActions.searchGamesFailed());\n-    }\n+    //     yield put(SearchActions.getEspecificGameSuccess(game.data));\n+\n+    //     return;\n+    // } catch (err) {\n+    //     console.log(err);\n+    //     yield put(SearchActions.searchGamesFailed());\n+    // }\n }\n"
+                },
+                {
+                    "date": 1641962125621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,17 +27,16 @@\n     }\n }\n \n export function* getEspecificGame(action: any): any {\n-    console.log('aquii');\n+    try {\n+        const game = yield call(services.getEspecificGame, action.genre);\n+        console.log('aquiii');\n \n-    // try {\n-    //     const game = yield call(services.getEspecificGame, action.genre);\n+        yield put(SearchActions.getEspecificGameSuccess(game.data));\n \n-    //     yield put(SearchActions.getEspecificGameSuccess(game.data));\n-\n-    //     return;\n-    // } catch (err) {\n-    //     console.log(err);\n-    //     yield put(SearchActions.searchGamesFailed());\n-    // }\n+        return;\n+    } catch (err) {\n+        console.log(err);\n+        yield put(SearchActions.searchGamesFailed());\n+    }\n }\n"
+                },
+                {
+                    "date": 1641962207751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,8 @@\n \n export function* getEspecificGame(action: any): any {\n     try {\n         const game = yield call(services.getEspecificGame, action.genre);\n-        console.log('aquiii');\n \n         yield put(SearchActions.getEspecificGameSuccess(game.data));\n \n         return;\n"
+                },
+                {
+                    "date": 1641962247036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,10 +31,8 @@\n     try {\n         const game = yield call(services.getEspecificGame, action.genre);\n \n         yield put(SearchActions.getEspecificGameSuccess(game.data));\n-\n-        return;\n     } catch (err) {\n         console.log(err);\n         yield put(SearchActions.searchGamesFailed());\n     }\n"
+                },
+                {
+                    "date": 1641962278553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,10 @@\n     try {\n         const game = yield call(services.getEspecificGame, action.genre);\n \n         yield put(SearchActions.getEspecificGameSuccess(game.data));\n+\n+        return;\n     } catch (err) {\n         console.log(err);\n         yield put(SearchActions.searchGamesFailed());\n     }\n"
+                },
+                {
+                    "date": 1641962436647,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n         yield put(SearchActions.searchGamesFailed());\n     }\n }\n \n-export function* getEspecificGame(action: any): any {\n+export function* getEspecificGameee(action: any): any {\n     try {\n         const game = yield call(services.getEspecificGame, action.genre);\n \n         yield put(SearchActions.getEspecificGameSuccess(game.data));\n"
+                },
+                {
+                    "date": 1641962512425,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n         yield put(SearchActions.searchGamesFailed());\n     }\n }\n \n-export function* getEspecificGameee(action: any): any {\n+export function* getEspecificGame(action: any): any {\n     try {\n         const game = yield call(services.getEspecificGame, action.genre);\n \n         yield put(SearchActions.getEspecificGameSuccess(game.data));\n"
+                },
+                {
+                    "date": 1641988296937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n export function* getEspecificGame(action: any): any {\n     try {\n         const game = yield call(services.getEspecificGame, action.genre);\n \n-        yield put(SearchActions.getEspecificGameSuccess(game.data));\n+        // yield put(SearchActions.getEspecificGameSuccess(game.data));\n \n         return;\n     } catch (err) {\n         console.log(err);\n"
+                },
+                {
+                    "date": 1641988306147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,9 @@\n     try {\n         const game = yield call(services.getEspecificGame, action.genre);\n \n         // yield put(SearchActions.getEspecificGameSuccess(game.data));\n+        console.log(game);\n \n         return;\n     } catch (err) {\n         console.log(err);\n"
+                },
+                {
+                    "date": 1641988486772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,10 +30,9 @@\n export function* getEspecificGame(action: any): any {\n     try {\n         const game = yield call(services.getEspecificGame, action.genre);\n \n-        // yield put(SearchActions.getEspecificGameSuccess(game.data));\n-        console.log(game);\n+        yield put(SearchActions.getEspecificGameSuccess(game.data));\n \n         return;\n     } catch (err) {\n         console.log(err);\n"
+                },
+                {
+                    "date": 1641988587213,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n \n export function* getEspecificGame(action: any): any {\n     try {\n         const game = yield call(services.getEspecificGame, action.genre);\n-\n+        console.log(game);\n         yield put(SearchActions.getEspecificGameSuccess(game.data));\n \n         return;\n     } catch (err) {\n"
+                },
+                {
+                    "date": 1641989751993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n \n export function* getEspecificGame(action: any): any {\n     try {\n         const game = yield call(services.getEspecificGame, action.genre);\n-        console.log(game);\n+        console.log('oiii');\n         yield put(SearchActions.getEspecificGameSuccess(game.data));\n \n         return;\n     } catch (err) {\n"
+                },
+                {
+                    "date": 1641989789881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n \n export function* getEspecificGame(action: any): any {\n     try {\n         const game = yield call(services.getEspecificGame, action.genre);\n-        console.log('oiii');\n+\n         yield put(SearchActions.getEspecificGameSuccess(game.data));\n \n         return;\n     } catch (err) {\n"
+                },
+                {
+                    "date": 1641990086301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,9 @@\n }\n \n export function* getEspecificGame(action: any): any {\n     try {\n+        console.log(action.genre);\n         const game = yield call(services.getEspecificGame, action.genre);\n \n         yield put(SearchActions.getEspecificGameSuccess(game.data));\n \n"
+                },
+                {
+                    "date": 1641990127403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,8 @@\n }\n \n export function* getEspecificGame(action: any): any {\n     try {\n-        console.log(action.genre);\n         const game = yield call(services.getEspecificGame, action.genre);\n \n         yield put(SearchActions.getEspecificGameSuccess(game.data));\n \n"
+                },
+                {
+                    "date": 1641990140245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,9 @@\n     }\n }\n \n export function* getEspecificGame(action: any): any {\n+    console.log(action.genre);\n     try {\n         const game = yield call(services.getEspecificGame, action.genre);\n \n         yield put(SearchActions.getEspecificGameSuccess(game.data));\n"
+                },
+                {
+                    "date": 1641990153451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,8 @@\n     }\n }\n \n export function* getEspecificGame(action: any): any {\n-    console.log(action.genre);\n     try {\n         const game = yield call(services.getEspecificGame, action.genre);\n \n         yield put(SearchActions.getEspecificGameSuccess(game.data));\n"
+                }
+            ],
+            "date": 1641864819223,
+            "name": "Commit-0",
+            "content": "import { call, put } from 'redux-saga/effects';\nimport { services } from '../services';\nimport { Creators as SearchActions } from '../actions/searchGames';\n\nexport function* getGames(): any {\n    try {\n        const gameList = yield call(services.getGames);\n\n        yield put(SearchActions.searchGamesSuccess(gameList.data));\n\n        return;\n    } catch (err) {\n        yield put(SearchActions.searchGamesFailed());\n    }\n}\n"
+        }
+    ]
+}

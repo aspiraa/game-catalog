@@ -1,0 +1,78 @@
+{
+    "sourceFile": "src/App.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 15,
+            "patches": [
+                {
+                    "date": 1641558283204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641558323056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react';\n import GlobalStyle from './styles/global';\n \n-const App = function () {\n+const App: React.FC = () => {\n     <>\n         return <h1>hello world</h1>;\n         <GlobalStyle />\n     </>;\n"
+                },
+                {
+                    "date": 1641558333633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import GlobalStyle from './styles/global';\n \n const App: React.FC = () => {\n     <>\n-        return <h1>hello world</h1>;\n+        <h1>hello world</h1>;\n         <GlobalStyle />\n     </>;\n };\n \n"
+                },
+                {
+                    "date": 1641558356609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n import React from 'react';\n import GlobalStyle from './styles/global';\n \n-const App: React.FC = () => {\n+const App: React.FC = () => (\n     <>\n         <h1>hello world</h1>;\n         <GlobalStyle />\n     </>;\n-};\n+);\n \n export default App;\n"
+                },
+                {
+                    "date": 1641558503805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,12 @@\n import React from 'react';\n import GlobalStyle from './styles/global';\n \n-const App: React.FC = () => (\n-    <>\n-        <h1>hello world</h1>;\n-        <GlobalStyle />\n-    </>;\n-);\n-\n+const App: React.FC = function () {\n+    return (\n+        <>\n+            <h1>Hello world</h1>\n+            <GlobalStyle />\n+        </>\n+    );\n+};\n export default App;\n"
+                },
+                {
+                    "date": 1641562426041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,13 @@\n import React from 'react';\n import GlobalStyle from './styles/global';\n \n+import Carousel from './components/Carousel';\n+\n const App: React.FC = function () {\n     return (\n         <>\n-            <h1>Hello world</h1>\n+            <Carousel />\n             <GlobalStyle />\n         </>\n     );\n };\n"
+                },
+                {
+                    "date": 1641562449366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import GlobalStyle from './styles/global';\n \n import Carousel from './components/Carousel';\n \n-const App: React.FC = function () {\n+const App: React.FC = () => {\n     return (\n         <>\n             <Carousel />\n             <GlobalStyle />\n"
+                },
+                {
+                    "date": 1641563244800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n import React from 'react';\n-import GlobalStyle from './styles/global';\n+import GlobalStyle, { GlobalContainer } from './styles/global';\n \n import Carousel from './components/Carousel';\n \n const App: React.FC = () => {\n     return (\n-        <>\n+        <GlobalContainer>\n             <Carousel />\n             <GlobalStyle />\n-        </>\n+        </GlobalContainer>\n     );\n };\n export default App;\n"
+                },
+                {
+                    "date": 1641564300376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react';\n import GlobalStyle, { GlobalContainer } from './styles/global';\n \n-import Carousel from './components/Carousel';\n+import Carousel from './components/carousel';\n \n const App: React.FC = () => {\n     return (\n         <GlobalContainer>\n"
+                },
+                {
+                    "date": 1641564714472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,15 @@\n import React from 'react';\n import GlobalStyle, { GlobalContainer } from './styles/global';\n \n import Carousel from './components/carousel';\n+import Filter from './components/filter';\n \n const App: React.FC = () => {\n     return (\n         <GlobalContainer>\n             <Carousel />\n+            <Filter />\n             <GlobalStyle />\n         </GlobalContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641568515974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,14 +2,16 @@\n import GlobalStyle, { GlobalContainer } from './styles/global';\n \n import Carousel from './components/carousel';\n import Filter from './components/filter';\n+import MainContent from './components/mainContent';\n \n const App: React.FC = () => {\n     return (\n         <GlobalContainer>\n             <Carousel />\n             <Filter />\n+            <MainContent />\n             <GlobalStyle />\n         </GlobalContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641571045618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,8 @@\n const App: React.FC = () => {\n     return (\n         <GlobalContainer>\n             <Carousel />\n-            <Filter />\n             <MainContent />\n             <GlobalStyle />\n         </GlobalContainer>\n     );\n"
+                },
+                {
+                    "date": 1641571265950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n import React from 'react';\n import GlobalStyle, { GlobalContainer } from './styles/global';\n \n import Carousel from './components/carousel';\n-import Filter from './components/filter';\n import MainContent from './components/mainContent';\n \n const App: React.FC = () => {\n     return (\n"
+                },
+                {
+                    "date": 1641833321162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,20 @@\n import React from 'react';\n+import { Provider } from 'react-redux';\n import GlobalStyle, { GlobalContainer } from './styles/global';\n+import store from './store';\n \n import Carousel from './components/carousel';\n import MainContent from './components/mainContent';\n \n const App: React.FC = () => {\n     return (\n-        <GlobalContainer>\n-            <Carousel />\n-            <MainContent />\n-            <GlobalStyle />\n-        </GlobalContainer>\n+        <Provider store={store}>\n+            <GlobalContainer>\n+                <Carousel />\n+                <MainContent />\n+                <GlobalStyle />\n+            </GlobalContainer>\n+        </Provider>\n     );\n };\n export default App;\n"
+                },
+                {
+                    "date": 1641996177945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,16 +2,14 @@\n import { Provider } from 'react-redux';\n import GlobalStyle, { GlobalContainer } from './styles/global';\n import store from './store';\n \n-import Carousel from './components/carousel';\n import MainContent from './components/mainContent';\n \n const App: React.FC = () => {\n     return (\n         <Provider store={store}>\n             <GlobalContainer>\n-                <Carousel />\n                 <MainContent />\n                 <GlobalStyle />\n             </GlobalContainer>\n         </Provider>\n"
+                },
+                {
+                    "date": 1641996254403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,15 @@\n import GlobalStyle, { GlobalContainer } from './styles/global';\n import store from './store';\n \n import MainContent from './components/mainContent';\n+import Carousel from './components/carousel';\n \n const App: React.FC = () => {\n     return (\n         <Provider store={store}>\n             <GlobalContainer>\n+                <Carousel />\n                 <MainContent />\n                 <GlobalStyle />\n             </GlobalContainer>\n         </Provider>\n"
+                }
+            ],
+            "date": 1641558283204,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport GlobalStyle from './styles/global';\n\nconst App = function () {\n    <>\n        return <h1>hello world</h1>;\n        <GlobalStyle />\n    </>;\n};\n\nexport default App;\n"
+        }
+    ]
+}

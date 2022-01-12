@@ -1,0 +1,682 @@
+{
+    "sourceFile": "src/components/mainContent/filter/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 166,
+            "patches": [
+                {
+                    "date": 1641571342952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641571914442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <FilterCheckBox />\n-            {/* <CheckBoxContainer /> */}\n+            <CheckBoxContainer />\n         </FilterContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641571933934,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,11 +5,11 @@\n \n const Filter = () => {\n     return (\n         <FilterContainer>\n+            <CheckBoxContainer />\n             <SearchBar />\n             <FilterCheckBox />\n-            <CheckBoxContainer />\n         </FilterContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641572616976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n \n const Filter = () => {\n     return (\n         <FilterContainer>\n-            <CheckBoxContainer />\n             <SearchBar />\n+            <CheckBoxContainer id=\"check-box-container\" />\n             <FilterCheckBox />\n         </FilterContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641572847354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,16 @@\n-import React from 'react';\n+import React, { useState } from 'react';\n import FilterCheckBox from './filterCheckBox';\n import SearchBar from './searchbar';\n import { CheckBoxContainer, FilterContainer } from './style';\n \n const Filter = () => {\n+    const [visible, setVisible] = useState(true);\n+\n+    const showCheckContainer = () => {\n+        document.querySelector('#check-box-container')?.style.display = 'none';\n+    };\n+\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer id=\"check-box-container\" />\n"
+                },
+                {
+                    "date": 1641572907847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,16 +5,16 @@\n \n const Filter = () => {\n     const [visible, setVisible] = useState(true);\n \n-    const showCheckContainer = () => {\n-        document.querySelector('#check-box-container')?.style.display = 'none';\n-    };\n+    // const showCheckContainer = () => {\n+    //     document.querySelector('#check-box-container')?.style.display = 'none';\n+    // };\n \n     return (\n         <FilterContainer>\n             <SearchBar />\n-            <CheckBoxContainer id=\"check-box-container\" />\n+            <CheckBoxContainer style=\"display = ${ visible}\" />\n             <FilterCheckBox />\n         </FilterContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641573015843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+\n import React, { useState } from 'react';\n import FilterCheckBox from './filterCheckBox';\n import SearchBar from './searchbar';\n import { CheckBoxContainer, FilterContainer } from './style';\n@@ -9,12 +10,16 @@\n     // const showCheckContainer = () => {\n     //     document.querySelector('#check-box-container')?.style.display = 'none';\n     // };\n \n+    const style = {\n+        display: \"none\";\n+    }\n+\n     return (\n         <FilterContainer>\n             <SearchBar />\n-            <CheckBoxContainer style=\"display = ${ visible}\" />\n+            <CheckBoxContainer style={style}/>\n             <FilterCheckBox />\n         </FilterContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641573021214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,4 @@\n-\n import React, { useState } from 'react';\n import FilterCheckBox from './filterCheckBox';\n import SearchBar from './searchbar';\n import { CheckBoxContainer, FilterContainer } from './style';\n@@ -11,15 +10,15 @@\n     //     document.querySelector('#check-box-container')?.style.display = 'none';\n     // };\n \n     const style = {\n-        display: \"none\";\n-    }\n+        display: 'none',\n+    };\n \n     return (\n         <FilterContainer>\n             <SearchBar />\n-            <CheckBoxContainer style={style}/>\n+            <CheckBoxContainer style={style} />\n             <FilterCheckBox />\n         </FilterContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641573031688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     //     document.querySelector('#check-box-container')?.style.display = 'none';\n     // };\n \n     const style = {\n-        display: 'none',\n+        display: 'block',\n     };\n \n     return (\n         <FilterContainer>\n"
+                },
+                {
+                    "date": 1641573036987,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     //     document.querySelector('#check-box-container')?.style.display = 'none';\n     // };\n \n     const style = {\n-        display: 'block',\n+        display: 'none',\n     };\n \n     return (\n         <FilterContainer>\n"
+                },
+                {
+                    "date": 1641575301225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,11 +5,11 @@\n \n const Filter = () => {\n     const [visible, setVisible] = useState(true);\n \n-    // const showCheckContainer = () => {\n-    //     document.querySelector('#check-box-container')?.style.display = 'none';\n-    // };\n+    const showCheckContainer = () => {\n+        const button = document.querySelector('#check-box-button');\n+    };\n \n     const style = {\n         display: 'none',\n     };\n"
+                },
+                {
+                    "date": 1641575374436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     };\n \n     return (\n         <FilterContainer>\n-            <SearchBar />\n+            <SearchBar position=\"block\" />\n             <CheckBoxContainer style={style} />\n             <FilterCheckBox />\n         </FilterContainer>\n     );\n"
+                },
+                {
+                    "date": 1641575577182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     };\n \n     return (\n         <FilterContainer>\n-            <SearchBar position=\"block\" />\n+            <SearchBar positionCss={style} />\n             <CheckBoxContainer style={style} />\n             <FilterCheckBox />\n         </FilterContainer>\n     );\n"
+                },
+                {
+                    "date": 1641575603066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     };\n \n     return (\n         <FilterContainer>\n-            <SearchBar positionCss={style} />\n+            <SearchBar positionCss=\"position: block;\" />\n             <CheckBoxContainer style={style} />\n             <FilterCheckBox />\n         </FilterContainer>\n     );\n"
+                },
+                {
+                    "date": 1641575637649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     };\n \n     return (\n         <FilterContainer>\n-            <SearchBar positionCss=\"position: block;\" />\n+            <SearchBar />\n             <CheckBoxContainer style={style} />\n             <FilterCheckBox />\n         </FilterContainer>\n     );\n"
+                },
+                {
+                    "date": 1641575761578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     };\n \n     return (\n         <FilterContainer>\n-            <SearchBar />\n+            <SearchBar cssPosition={\"display: 'none';\"} />\n             <CheckBoxContainer style={style} />\n             <FilterCheckBox />\n         </FilterContainer>\n     );\n"
+                },
+                {
+                    "date": 1641576161257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,11 +13,16 @@\n     const style = {\n         display: 'none',\n     };\n \n+    const serchBar = document.getElementById('search-bar');\n+\n+    if (searchBar) {\n+    }\n+\n     return (\n         <FilterContainer>\n-            <SearchBar cssPosition={\"display: 'none';\"} />\n+            <SearchBar />\n             <CheckBoxContainer style={style} />\n             <FilterCheckBox />\n         </FilterContainer>\n     );\n"
+                },
+                {
+                    "date": 1641576211910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,11 +13,12 @@\n     const style = {\n         display: 'none',\n     };\n \n-    const serchBar = document.getElementById('search-bar');\n+    const searchBar = document.getElementById('search-bar');\n \n     if (searchBar) {\n+        searchBar.style.position = 'block';\n     }\n \n     return (\n         <FilterContainer>\n"
+                },
+                {
+                    "date": 1641576238725,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,12 +5,8 @@\n \n const Filter = () => {\n     const [visible, setVisible] = useState(true);\n \n-    const showCheckContainer = () => {\n-        const button = document.querySelector('#check-box-button');\n-    };\n-\n     const style = {\n         display: 'none',\n     };\n \n"
+                },
+                {
+                    "date": 1641576245349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,10 @@\n     if (searchBar) {\n         searchBar.style.position = 'block';\n     }\n \n+    console.log('ta aqui');\n+\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style} />\n"
+                },
+                {
+                    "date": 1641576256172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,12 +13,11 @@\n     const searchBar = document.getElementById('search-bar');\n \n     if (searchBar) {\n         searchBar.style.position = 'block';\n+        console.log('ta aqui');\n     }\n \n-    console.log('ta aqui');\n-\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style} />\n"
+                },
+                {
+                    "date": 1641576270002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     };\n \n     const searchBar = document.getElementById('search-bar');\n \n-    if (searchBar) {\n+    if (searchBar != null) {\n         searchBar.style.position = 'block';\n         console.log('ta aqui');\n     }\n \n"
+                },
+                {
+                    "date": 1641576316868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,10 @@\n     const searchBar = document.getElementById('search-bar');\n \n     if (searchBar != null) {\n         searchBar.style.position = 'block';\n-        console.log('ta aqui');\n     }\n+    console.log(searchBar);\n \n     return (\n         <FilterContainer>\n             <SearchBar />\n"
+                },
+                {
+                    "date": 1641576357818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \n     const searchBar = document.getElementById('search-bar');\n \n     if (searchBar != null) {\n-        searchBar.style.position = 'block';\n+        searchBar.style.position = 'inherit';\n     }\n     console.log(searchBar);\n \n     return (\n"
+                },
+                {
+                    "date": 1641576450489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \n     const searchBar = document.getElementById('search-bar');\n \n     if (searchBar != null) {\n-        searchBar.style.position = 'inherit';\n+        searchBar.style.position = 'none';\n     }\n     console.log(searchBar);\n \n     return (\n"
+                },
+                {
+                    "date": 1641576610397,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \n     const searchBar = document.getElementById('search-bar');\n \n     if (searchBar != null) {\n-        searchBar.style.position = 'none';\n+        searchBar.style.display = 'none';\n     }\n     console.log(searchBar);\n \n     return (\n"
+                },
+                {
+                    "date": 1641576622369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \n     const searchBar = document.getElementById('search-bar');\n \n     if (searchBar != null) {\n-        searchBar.style.display = 'none';\n+        searchBar.style.position = 'relative';\n     }\n     console.log(searchBar);\n \n     return (\n"
+                },
+                {
+                    "date": 1641576644067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \n     const searchBar = document.getElementById('search-bar');\n \n     if (searchBar != null) {\n-        searchBar.style.position = 'relative';\n+        searchBar.style.display = 'relative';\n     }\n     console.log(searchBar);\n \n     return (\n"
+                },
+                {
+                    "date": 1641576720442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,18 +11,18 @@\n     };\n \n     const searchBar = document.getElementById('search-bar');\n \n-    if (searchBar != null) {\n+    if (searchBar != null && visible === false) {\n         searchBar.style.display = 'relative';\n     }\n-    console.log(searchBar);\n \n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style} />\n             <FilterCheckBox />\n+            <button onClick={set}> teste </button>\n         </FilterContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641576726209,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style} />\n             <FilterCheckBox />\n-            <button onClick={set}> teste </button>\n+            <button> teste </button>\n         </FilterContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641576735407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style} />\n             <FilterCheckBox />\n-            <button> teste </button>\n+            <button type=\"button\"> teste </button>\n         </FilterContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641576777560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,17 @@\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style} />\n             <FilterCheckBox />\n-            <button type=\"button\"> teste </button>\n+            <button\n+                type=\"button\"\n+                onClick={() => {\n+                    setVisible(false);\n+                }}\n+            >\n+                {' '}\n+                teste{' '}\n+            </button>\n         </FilterContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641576782845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,9 @@\n                 onClick={() => {\n                     setVisible(false);\n                 }}\n             >\n-                {' '}\n-                teste{' '}\n+                teste\n             </button>\n         </FilterContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641576795509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \n     const searchBar = document.getElementById('search-bar');\n \n     if (searchBar != null && visible === false) {\n-        searchBar.style.display = 'relative';\n+        searchBar.style.display = 'none';\n     }\n \n     return (\n         <FilterContainer>\n"
+                },
+                {
+                    "date": 1641576821795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,9 @@\n             <button\n                 type=\"button\"\n                 onClick={() => {\n                     setVisible(false);\n+                    console.log('apertou');\n                 }}\n             >\n                 teste\n             </button>\n"
+                },
+                {
+                    "date": 1641577001835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,15 @@\n+import { stringify } from 'querystring';\n import React, { useState } from 'react';\n import FilterCheckBox from './filterCheckBox';\n import SearchBar from './searchbar';\n import { CheckBoxContainer, FilterContainer } from './style';\n \n const Filter = () => {\n     const [visible, setVisible] = useState(true);\n+    const [style, setStyle] = useState({\n+        display: stringify,\n+    });\n \n     const style = {\n         display: 'none',\n     };\n"
+                },
+                {
+                    "date": 1641577007199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,4 @@\n-import { stringify } from 'querystring';\n import React, { useState } from 'react';\n import FilterCheckBox from './filterCheckBox';\n import SearchBar from './searchbar';\n import { CheckBoxContainer, FilterContainer } from './style';\n"
+                },
+                {
+                    "date": 1641577021815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,15 +5,11 @@\n \n const Filter = () => {\n     const [visible, setVisible] = useState(true);\n     const [style, setStyle] = useState({\n-        display: stringify,\n+        display: String,\n     });\n \n-    const style = {\n-        display: 'none',\n-    };\n-\n     const searchBar = document.getElementById('search-bar');\n \n     if (searchBar != null && visible === false) {\n         searchBar.style.display = 'none';\n"
+                },
+                {
+                    "date": 1641577042043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \n const Filter = () => {\n     const [visible, setVisible] = useState(true);\n     const [style, setStyle] = useState({\n-        display: String,\n+        display: 'none',\n     });\n \n     const searchBar = document.getElementById('search-bar');\n \n"
+                },
+                {
+                    "date": 1641577064503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n     const searchBar = document.getElementById('search-bar');\n \n     if (searchBar != null && visible === false) {\n         searchBar.style.display = 'none';\n+        setStyle({ display = 'block' });\n     }\n \n     return (\n         <FilterContainer>\n"
+                },
+                {
+                    "date": 1641577073325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     const searchBar = document.getElementById('search-bar');\n \n     if (searchBar != null && visible === false) {\n         searchBar.style.display = 'none';\n-        setStyle({ display = 'block' });\n+        setStyle({ display: 'block' });\n     }\n \n     return (\n         <FilterContainer>\n"
+                },
+                {
+                    "date": 1641577131899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import React, { useState } from 'react';\n+import React, { useEffect, useState } from 'react';\n import FilterCheckBox from './filterCheckBox';\n import SearchBar from './searchbar';\n import { CheckBoxContainer, FilterContainer } from './style';\n \n@@ -9,14 +9,16 @@\n         display: 'none',\n     });\n \n     const searchBar = document.getElementById('search-bar');\n-\n+useEffect({\n     if (searchBar != null && visible === false) {\n         searchBar.style.display = 'none';\n         setStyle({ display: 'block' });\n     }\n \n+}[])\n+\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style} />\n"
+                },
+                {
+                    "date": 1641577162256,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n         display: 'none',\n     });\n \n     const searchBar = document.getElementById('search-bar');\n-useEffect({\n+useEffect(() => {\n     if (searchBar != null && visible === false) {\n         searchBar.style.display = 'none';\n         setStyle({ display: 'block' });\n     }\n"
+                },
+                {
+                    "date": 1641577175071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,16 +9,15 @@\n         display: 'none',\n     });\n \n     const searchBar = document.getElementById('search-bar');\n-useEffect(() => {\n-    if (searchBar != null && visible === false) {\n-        searchBar.style.display = 'none';\n-        setStyle({ display: 'block' });\n-    }\n+    useEffect(() => {\n+        if (searchBar != null && visible === false) {\n+            searchBar.style.display = 'none';\n+            setStyle({ display: 'block' });\n+        }\n+    }, [visible]);\n \n-}[])\n-\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style} />\n"
+                },
+                {
+                    "date": 1641577226740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n             <FilterCheckBox />\n             <button\n                 type=\"button\"\n                 onClick={() => {\n-                    setVisible(false);\n+                    setVisible(!visible);\n                     console.log('apertou');\n                 }}\n             >\n                 teste\n"
+                },
+                {
+                    "date": 1641577268672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,12 @@\n         if (searchBar != null && visible === false) {\n             searchBar.style.display = 'none';\n             setStyle({ display: 'block' });\n         }\n+        if (searchBar != null && visible === true) {\n+            searchBar.style.display = 'block';\n+            setStyle({ display: 'none' });\n+        }\n     }, [visible]);\n \n     return (\n         <FilterContainer>\n"
+                },
+                {
+                    "date": 1641577284896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n             searchBar.style.display = 'none';\n             setStyle({ display: 'block' });\n         }\n         if (searchBar != null && visible === true) {\n-            searchBar.style.display = 'block';\n+            searchBar.style.display = 'flex';\n             setStyle({ display: 'none' });\n         }\n     }, [visible]);\n \n"
+                },
+                {
+                    "date": 1641577361321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,13 +11,11 @@\n \n     const searchBar = document.getElementById('search-bar');\n     useEffect(() => {\n         if (searchBar != null && visible === false) {\n-            searchBar.style.display = 'none';\n             setStyle({ display: 'block' });\n         }\n         if (searchBar != null && visible === true) {\n-            searchBar.style.display = 'flex';\n             setStyle({ display: 'none' });\n         }\n     }, [visible]);\n \n"
+                },
+                {
+                    "date": 1641577483008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,11 +11,13 @@\n \n     const searchBar = document.getElementById('search-bar');\n     useEffect(() => {\n         if (searchBar != null && visible === false) {\n+            searchBar.style.position = 'inherit';\n             setStyle({ display: 'block' });\n         }\n         if (searchBar != null && visible === true) {\n+            searchBar.style.position = 'absolute';\n             setStyle({ display: 'none' });\n         }\n     }, [visible]);\n \n"
+                },
+                {
+                    "date": 1641577501549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,13 +11,13 @@\n \n     const searchBar = document.getElementById('search-bar');\n     useEffect(() => {\n         if (searchBar != null && visible === false) {\n-            searchBar.style.position = 'inherit';\n+            searchBar.style.position = 'absolute';\n             setStyle({ display: 'block' });\n         }\n         if (searchBar != null && visible === true) {\n-            searchBar.style.position = 'absolute';\n+            searchBar.style.position = 'inherit';\n             setStyle({ display: 'none' });\n         }\n     }, [visible]);\n \n"
+                },
+                {
+                    "date": 1641577532378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n             setStyle({ display: 'block' });\n         }\n         if (searchBar != null && visible === true) {\n             searchBar.style.position = 'inherit';\n+            searchBar.style.color = 'white';\n             setStyle({ display: 'none' });\n         }\n     }, [visible]);\n \n"
+                },
+                {
+                    "date": 1641577559726,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,13 +12,13 @@\n     const searchBar = document.getElementById('search-bar');\n     useEffect(() => {\n         if (searchBar != null && visible === false) {\n             searchBar.style.position = 'absolute';\n+            searchBar.style.color = 'white';\n             setStyle({ display: 'block' });\n         }\n         if (searchBar != null && visible === true) {\n             searchBar.style.position = 'inherit';\n-            searchBar.style.color = 'white';\n             setStyle({ display: 'none' });\n         }\n     }, [visible]);\n \n"
+                },
+                {
+                    "date": 1641577677738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,13 +12,14 @@\n     const searchBar = document.getElementById('search-bar');\n     useEffect(() => {\n         if (searchBar != null && visible === false) {\n             searchBar.style.position = 'absolute';\n-            searchBar.style.color = 'white';\n+            searchBar.style.color = '#FFF';\n             setStyle({ display: 'block' });\n         }\n         if (searchBar != null && visible === true) {\n             searchBar.style.position = 'inherit';\n+            searchBar.style.color = '#000';\n             setStyle({ display: 'none' });\n         }\n     }, [visible]);\n \n"
+                },
+                {
+                    "date": 1641577838512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,14 +10,14 @@\n     });\n \n     const searchBar = document.getElementById('search-bar');\n     useEffect(() => {\n-        if (searchBar != null && visible === false) {\n+        if (searchBar != null && visible === true) {\n             searchBar.style.position = 'absolute';\n             searchBar.style.color = '#FFF';\n             setStyle({ display: 'block' });\n         }\n-        if (searchBar != null && visible === true) {\n+        if (searchBar != null && visible === false) {\n             searchBar.style.position = 'inherit';\n             searchBar.style.color = '#000';\n             setStyle({ display: 'none' });\n         }\n"
+                },
+                {
+                    "date": 1641577891194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,12 +9,14 @@\n         display: 'none',\n     });\n \n     const searchBar = document.getElementById('search-bar');\n+    const gameContainer = document.getElementById('game-container');\n     useEffect(() => {\n         if (searchBar != null && visible === true) {\n             searchBar.style.position = 'absolute';\n             searchBar.style.color = '#FFF';\n+            gameContainer?.style.gridColumn = '2/-1';\n             setStyle({ display: 'block' });\n         }\n         if (searchBar != null && visible === false) {\n             searchBar.style.position = 'inherit';\n"
+                },
+                {
+                    "date": 1641577931450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,17 +11,18 @@\n \n     const searchBar = document.getElementById('search-bar');\n     const gameContainer = document.getElementById('game-container');\n     useEffect(() => {\n-        if (searchBar != null && visible === true) {\n+        if (searchBar && gameContainer != null && visible === true) {\n             searchBar.style.position = 'absolute';\n             searchBar.style.color = '#FFF';\n-            gameContainer?.style.gridColumn = '2/-1';\n+            gameContainer.style.gridColumn = '2/-1';\n             setStyle({ display: 'block' });\n         }\n-        if (searchBar != null && visible === false) {\n+        if (searchBar && gameContainer != null && visible === false) {\n             searchBar.style.position = 'inherit';\n             searchBar.style.color = '#000';\n+            gameContainer.style.gridColumn = '1/-1';\n             setStyle({ display: 'none' });\n         }\n     }, [visible]);\n \n"
+                },
+                {
+                    "date": 1641578054839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React, { useEffect, useState } from 'react';\n-import FilterCheckBox from './filterCheckBox';\n+import FilterCheckBoxButton from './filterCheckBoxButton';\n import SearchBar from './searchbar';\n import { CheckBoxContainer, FilterContainer } from './style';\n \n const Filter = () => {\n@@ -10,8 +10,9 @@\n     });\n \n     const searchBar = document.getElementById('search-bar');\n     const gameContainer = document.getElementById('game-container');\n+\n     useEffect(() => {\n         if (searchBar && gameContainer != null && visible === true) {\n             searchBar.style.position = 'absolute';\n             searchBar.style.color = '#FFF';\n@@ -29,18 +30,14 @@\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style} />\n-            <FilterCheckBox />\n-            <button\n-                type=\"button\"\n+            <FilterCheckBoxButton\n                 onClick={() => {\n                     setVisible(!visible);\n                     console.log('apertou');\n                 }}\n-            >\n-                teste\n-            </button>\n+            />\n         </FilterContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641578068811,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,8 @@\n             <CheckBoxContainer style={style} />\n             <FilterCheckBoxButton\n                 onClick={() => {\n                     setVisible(!visible);\n-                    console.log('apertou');\n                 }}\n             />\n         </FilterContainer>\n     );\n"
+                },
+                {
+                    "date": 1641578731500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,13 +30,19 @@\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style} />\n-            <FilterCheckBoxButton\n+            <FilterCheckBoxButton />\n+\n+            <button\n+                type=\"button\"\n                 onClick={() => {\n                     setVisible(!visible);\n+                    console.log('apertou');\n                 }}\n-            />\n+            >\n+                teste\n+            </button>\n         </FilterContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641612661740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,12 @@\n \n     const searchBar = document.getElementById('search-bar');\n     const gameContainer = document.getElementById('game-container');\n \n+    const testeFunc = () => {\n+        console.log('aeee');\n+    };\n+\n     useEffect(() => {\n         if (searchBar && gameContainer != null && visible === true) {\n             searchBar.style.position = 'absolute';\n             searchBar.style.color = '#FFF';\n@@ -30,9 +34,9 @@\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style} />\n-            <FilterCheckBoxButton />\n+            <FilterCheckBoxButton visible={testeFunc()} />\n \n             <button\n                 type=\"button\"\n                 onClick={() => {\n"
+                },
+                {
+                    "date": 1641612897803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style} />\n-            <FilterCheckBoxButton visible={testeFunc()} />\n+            <FilterCheckBoxButton visible={() => testeFunc()} />\n \n             <button\n                 type=\"button\"\n                 onClick={() => {\n"
+                },
+                {
+                    "date": 1641612952282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style} />\n-            <FilterCheckBoxButton visible={() => testeFunc()} />\n+            <FilterCheckBoxButton visibly={(visible) => testeFunc()} />\n \n             <button\n                 type=\"button\"\n                 onClick={() => {\n"
+                },
+                {
+                    "date": 1641612995236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style} />\n-            <FilterCheckBoxButton visibly={(visible) => testeFunc()} />\n+            <FilterCheckBoxButton visibly={(visible) => setVisible()} />\n \n             <button\n                 type=\"button\"\n                 onClick={() => {\n"
+                },
+                {
+                    "date": 1641613080838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style} />\n-            <FilterCheckBoxButton visibly={(visible) => setVisible()} />\n+            <FilterCheckBoxButton visibly={(bolean) => setVisible(visible)} />\n \n             <button\n                 type=\"button\"\n                 onClick={() => {\n"
+                },
+                {
+                    "date": 1641613701015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,11 @@\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style} />\n-            <FilterCheckBoxButton visibly={(bolean) => setVisible(visible)} />\n+            <FilterCheckBoxButton\n+                visibly={(value: boolean) => setVisible(value)}\n+            />\n \n             <button\n                 type=\"button\"\n                 onClick={() => {\n"
+                },
+                {
+                    "date": 1641613811330,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style} />\n             <FilterCheckBoxButton\n-                visibly={(value: boolean) => setVisible(value)}\n+                visibly={(value: boolean) => setVisible(!value)}\n             />\n \n             <button\n                 type=\"button\"\n"
+                },
+                {
+                    "date": 1641613859521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,11 +34,9 @@\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style} />\n-            <FilterCheckBoxButton\n-                visibly={(value: boolean) => setVisible(!value)}\n-            />\n+            <FilterCheckBoxButton visibly={() => setVisible(!visible)} />\n \n             <button\n                 type=\"button\"\n                 onClick={() => {\n"
+                },
+                {
+                    "date": 1641613934055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style} />\n-            <FilterCheckBoxButton visibly={() => setVisible(!visible)} />\n+            <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n \n             <button\n                 type=\"button\"\n                 onClick={() => {\n"
+                },
+                {
+                    "date": 1641613958753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,18 +35,8 @@\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style} />\n             <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n-\n-            <button\n-                type=\"button\"\n-                onClick={() => {\n-                    setVisible(!visible);\n-                    console.log('apertou');\n-                }}\n-            >\n-                teste\n-            </button>\n         </FilterContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641614330135,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,12 +11,8 @@\n \n     const searchBar = document.getElementById('search-bar');\n     const gameContainer = document.getElementById('game-container');\n \n-    const testeFunc = () => {\n-        console.log('aeee');\n-    };\n-\n     useEffect(() => {\n         if (searchBar && gameContainer != null && visible === true) {\n             searchBar.style.position = 'absolute';\n             searchBar.style.color = '#FFF';\n"
+                },
+                {
+                    "date": 1641818189196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,10 @@\n \n     const searchBar = document.getElementById('search-bar');\n     const gameContainer = document.getElementById('game-container');\n \n+    // mostra e organiza os items em tela a depender se o filtro esta exibido ou não\n+\n     useEffect(() => {\n         if (searchBar && gameContainer != null && visible === true) {\n             searchBar.style.position = 'absolute';\n             searchBar.style.color = '#FFF';\n"
+                },
+                {
+                    "date": 1641862810231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n         display: 'none',\n     });\n \n     const searchBar = document.getElementById('search-bar');\n+\n     const gameContainer = document.getElementById('game-container');\n \n     // mostra e organiza os items em tela a depender se o filtro esta exibido ou não\n \n"
+                },
+                {
+                    "date": 1641868481787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,8 @@\n         display: 'none',\n     });\n \n     const searchBar = document.getElementById('search-bar');\n-\n     const gameContainer = document.getElementById('game-container');\n \n     // mostra e organiza os items em tela a depender se o filtro esta exibido ou não\n \n@@ -32,9 +31,15 @@\n \n     return (\n         <FilterContainer>\n             <SearchBar />\n-            <CheckBoxContainer style={style} />\n+            <CheckBoxContainer style={style}>\n+            <div>\n+  <input type=\"checkbox\" id=\"scales\" name=\"scales\"\n+         checked>\n+  <label for=\"scales\">Scales</label>\n+</div>\n+            </CheckBoxContainer>\n             <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n         </FilterContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641868492951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n   <input type=\"checkbox\" id=\"scales\" name=\"scales\"\n          checked>\n   <label for=\"scales\">Scales</label>\n </div>\n-            </CheckBoxContainer>\n+            <CheckBoxContainer/>\n             <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n         </FilterContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641868522621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n   <input type=\"checkbox\" id=\"scales\" name=\"scales\"\n          checked>\n   <label for=\"scales\">Scales</label>\n </div>\n-            <CheckBoxContainer/>\n+            </CheckBoxContainer>\n             <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n         </FilterContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641868548337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,13 +32,12 @@\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style}>\n-            <div>\n-  <input type=\"checkbox\" id=\"scales\" name=\"scales\"\n-         checked>\n-  <label for=\"scales\">Scales</label>\n-</div>\n+                <div>\n+                    <input type=\"checkbox\" id=\"scales\" name=\"scales\" checked />\n+                    <label htmlFor=\"scales\">Scales</label>\n+                </div>\n             </CheckBoxContainer>\n             <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n         </FilterContainer>\n     );\n"
+                },
+                {
+                    "date": 1641868707186,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,12 +32,12 @@\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style}>\n-                <div>\n-                    <input type=\"checkbox\" id=\"scales\" name=\"scales\" checked />\n-                    <label htmlFor=\"scales\">Scales</label>\n-                </div>\n+\n+  <input type=\"text\" />\n+  Surname\n+</label>\n             </CheckBoxContainer>\n             <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n         </FilterContainer>\n     );\n"
+                },
+                {
+                    "date": 1641868727037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,12 +32,12 @@\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style}>\n-\n-  <input type=\"text\" />\n-  Surname\n-</label>\n+                <label>\n+                    <input type=\"text\" />\n+                    Surname\n+                </label>\n             </CheckBoxContainer>\n             <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n         </FilterContainer>\n     );\n"
+                },
+                {
+                    "date": 1641868745416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,10 +32,10 @@\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style}>\n-                <label>\n-                    <input type=\"text\" />\n+                <label htmlFor=\"teste\">\n+                    <input type=\"text\" id=\"teste\" />\n                     Surname\n                 </label>\n             </CheckBoxContainer>\n             <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n"
+                },
+                {
+                    "date": 1641868791119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style}>\n                 <label htmlFor=\"teste\">\n-                    <input type=\"text\" id=\"teste\" />\n+                    <input type=\"checkbox\" id=\"teste\" />\n                     Surname\n                 </label>\n             </CheckBoxContainer>\n             <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n"
+                },
+                {
+                    "date": 1641869138385,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import React, { useEffect, useState } from 'react';\n+import CheckBox from './checkBox';\n import FilterCheckBoxButton from './filterCheckBoxButton';\n import SearchBar from './searchbar';\n import { CheckBoxContainer, FilterContainer } from './style';\n \n@@ -32,12 +33,9 @@\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style}>\n-                <label htmlFor=\"teste\">\n-                    <input type=\"checkbox\" id=\"teste\" />\n-                    Surname\n-                </label>\n+                <CheckBox />\n             </CheckBoxContainer>\n             <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n         </FilterContainer>\n     );\n"
+                },
+                {
+                    "date": 1641869148064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,8 +34,10 @@\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style}>\n                 <CheckBox />\n+                <CheckBox />\n+                <CheckBox />\n             </CheckBoxContainer>\n             <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n         </FilterContainer>\n     );\n"
+                },
+                {
+                    "date": 1641869158006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,10 +34,8 @@\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style}>\n                 <CheckBox />\n-                <CheckBox />\n-                <CheckBox />\n             </CheckBoxContainer>\n             <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n         </FilterContainer>\n     );\n"
+                },
+                {
+                    "date": 1641869194517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,8 +33,9 @@\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style}>\n+                <h3>Sorted by Platform:</h3>\n                 <CheckBox />\n             </CheckBoxContainer>\n             <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n         </FilterContainer>\n"
+                },
+                {
+                    "date": 1641869286862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style}>\n                 <h3>Sorted by Platform:</h3>\n-                <CheckBox />\n+                <CheckBox inputName=\"teste\" />\n             </CheckBoxContainer>\n             <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n         </FilterContainer>\n     );\n"
+                },
+                {
+                    "date": 1641869751083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,9 @@\n             <SearchBar />\n             <CheckBoxContainer style={style}>\n                 <h3>Sorted by Platform:</h3>\n                 <CheckBox inputName=\"teste\" />\n+                <CheckBox inputName=\"teste\" />\n             </CheckBoxContainer>\n             <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n         </FilterContainer>\n     );\n"
+                },
+                {
+                    "date": 1641869899209,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,10 @@\n             setStyle({ display: 'none' });\n         }\n     }, [visible]);\n \n+    const platforms = ['PC', 'BROWSER'];\n+\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style}>\n"
+                },
+                {
+                    "date": 1641870107971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,17 +29,18 @@\n             setStyle({ display: 'none' });\n         }\n     }, [visible]);\n \n-    const platforms = ['PC', 'BROWSER'];\n+    const platform = ['pc', 'browser'];\n \n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style}>\n                 <h3>Sorted by Platform:</h3>\n-                <CheckBox inputName=\"teste\" />\n-                <CheckBox inputName=\"teste\" />\n+                {platform.map((element) => {\n+                    <CheckBox inputName={element} />;\n+                })}\n             </CheckBoxContainer>\n             <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n         </FilterContainer>\n     );\n"
+                },
+                {
+                    "date": 1641870118120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n             <SearchBar />\n             <CheckBoxContainer style={style}>\n                 <h3>Sorted by Platform:</h3>\n                 {platform.map((element) => {\n-                    <CheckBox inputName={element} />;\n+                    return <CheckBox inputName={element} />;\n                 })}\n             </CheckBoxContainer>\n             <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n         </FilterContainer>\n"
+                },
+                {
+                    "date": 1641870129303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n             setStyle({ display: 'none' });\n         }\n     }, [visible]);\n \n-    const platform = ['pc', 'browser'];\n+    const platform = ['pc', 'browser', 'outra'];\n \n     return (\n         <FilterContainer>\n             <SearchBar />\n"
+                },
+                {
+                    "date": 1641870136121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n             setStyle({ display: 'none' });\n         }\n     }, [visible]);\n \n-    const platform = ['pc', 'browser', 'outra'];\n+    const platform = ['pc', 'browser'];\n \n     return (\n         <FilterContainer>\n             <SearchBar />\n"
+                },
+                {
+                    "date": 1641870271021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,10 @@\n             setStyle({ display: 'none' });\n         }\n     }, [visible]);\n \n+    // array com os generos disponiveis no filtro\n+\n     const platform = ['pc', 'browser'];\n \n     return (\n         <FilterContainer>\n"
+                },
+                {
+                    "date": 1641870386093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n             <SearchBar />\n             <CheckBoxContainer style={style}>\n                 <h3>Sorted by Platform:</h3>\n                 {platform.map((element) => {\n-                    return <CheckBox inputName={element} />;\n+                    return <CheckBox inputName={element} key={element} />;\n                 })}\n             </CheckBoxContainer>\n             <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n         </FilterContainer>\n"
+                },
+                {
+                    "date": 1641871043780,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,15 @@\n             <SearchBar />\n             <CheckBoxContainer style={style}>\n                 <h3>Sorted by Platform:</h3>\n                 {platform.map((element) => {\n-                    return <CheckBox inputName={element} key={element} />;\n+                    return (\n+                        <CheckBox\n+                            inputName={element}\n+                            filterType=\"platform\"\n+                            key={element}\n+                        />\n+                    );\n                 })}\n             </CheckBoxContainer>\n             <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n         </FilterContainer>\n"
+                },
+                {
+                    "date": 1641871830560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n                 {platform.map((element) => {\n                     return (\n                         <CheckBox\n                             inputName={element}\n-                            filterType=\"platform\"\n+                            paramType=\"platform\"\n                             key={element}\n                         />\n                     );\n                 })}\n"
+                },
+                {
+                    "date": 1641873600239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,8 +41,9 @@\n                 <h3>Sorted by Platform:</h3>\n                 {platform.map((element) => {\n                     return (\n                         <CheckBox\n+                            id=\"filterInput\"\n                             inputName={element}\n                             paramType=\"platform\"\n                             key={element}\n                         />\n"
+                },
+                {
+                    "date": 1641873613525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,8 @@\n                 <h3>Sorted by Platform:</h3>\n                 {platform.map((element) => {\n                     return (\n                         <CheckBox\n-                            id=\"filterInput\"\n                             inputName={element}\n                             paramType=\"platform\"\n                             key={element}\n                         />\n"
+                },
+                {
+                    "date": 1641908489145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React, { useEffect, useState } from 'react';\n-import CheckBox from './checkBox';\n+import CheckBox, { Filter } from './checkBox';\n import FilterCheckBoxButton from './filterCheckBoxButton';\n import SearchBar from './searchbar';\n import { CheckBoxContainer, FilterContainer } from './style';\n \n@@ -9,8 +9,15 @@\n     const [style, setStyle] = useState({\n         display: 'none',\n     });\n \n+    const [filter, setFilter] = useState<Filter[]>([\n+        {\n+            inputName: 'valor',\n+            paramType: 'valorr',\n+        },\n+    ]);\n+\n     const searchBar = document.getElementById('search-bar');\n     const gameContainer = document.getElementById('game-container');\n \n     // mostra e organiza os items em tela a depender se o filtro esta exibido ou não\n"
+                },
+                {
+                    "date": 1641908586511,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,26 @@\n     // array com os generos disponiveis no filtro\n \n     const platform = ['pc', 'browser'];\n \n+    const gamesFilter = (inputName, ParamType) => {\n+        const filtered: Filter[] = [];\n+\n+        // checkbox.forEach((item: HTMLInputElement) => {\n+        //     if (item.checked) {\n+        //         console.log(item.id);\n+        //         filtered.push({ inputName: item.id, paramType: 'valor' });\n+        //     }\n+        // });\n+\n+        const obj = {\n+            inputName: e.target.id,\n+            paramType: e.target.value,\n+        };\n+\n+        // return console.log(inputName, paramType);\n+    };\n+\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style}>\n"
+                },
+                {
+                    "date": 1641908601009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n     // array com os generos disponiveis no filtro\n \n     const platform = ['pc', 'browser'];\n \n-    const gamesFilter = (inputName, ParamType) => {\n+    const gamesFilter = ({ inputName, ParamType }: Filter) => {\n         const filtered: Filter[] = [];\n \n         // checkbox.forEach((item: HTMLInputElement) => {\n         //     if (item.checked) {\n"
+                },
+                {
+                    "date": 1641908961207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n     // array com os generos disponiveis no filtro\n \n     const platform = ['pc', 'browser'];\n \n-    const gamesFilter = ({ inputName, ParamType }: Filter) => {\n+    const gamesFilter = ({ inputName, paramType }: Filter) => {\n         const filtered: Filter[] = [];\n \n         // checkbox.forEach((item: HTMLInputElement) => {\n         //     if (item.checked) {\n@@ -67,9 +67,11 @@\n                 {platform.map((element) => {\n                     return (\n                         <CheckBox\n                             inputName={element}\n-                            paramType=\"platform\"\n+                            onchange={() => {\n+                                gameFilter();\n+                            }}\n                             key={element}\n                         />\n                     );\n                 })}\n"
+                },
+                {
+                    "date": 1641909057069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,12 @@\n                     return (\n                         <CheckBox\n                             inputName={element}\n                             onchange={() => {\n-                                gameFilter();\n+                                gamesFilter({\n+                                    inputName: element,\n+                                    paramType: 'platform',\n+                                });\n                             }}\n                             key={element}\n                         />\n                     );\n"
+                },
+                {
+                    "date": 1641909224182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React, { useEffect, useState } from 'react';\n-import CheckBox, { Filter } from './checkBox';\n+import CheckBox, { Filter, IProps } from './checkBox';\n import FilterCheckBoxButton from './filterCheckBoxButton';\n import SearchBar from './searchbar';\n import { CheckBoxContainer, FilterContainer } from './style';\n \n"
+                },
+                {
+                    "date": 1641909317937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,15 @@\n import React, { useEffect, useState } from 'react';\n-import CheckBox, { Filter, IProps } from './checkBox';\n+import CheckBox from './checkBox';\n import FilterCheckBoxButton from './filterCheckBoxButton';\n import SearchBar from './searchbar';\n import { CheckBoxContainer, FilterContainer } from './style';\n \n+interface Filter {\n+    inputName: string;\n+    paramType?: string;\n+}\n+\n const Filter = () => {\n     const [visible, setVisible] = useState(true);\n     const [style, setStyle] = useState({\n         display: 'none',\n"
+                },
+                {
+                    "date": 1641909358450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,10 +56,10 @@\n         //     }\n         // });\n \n         const obj = {\n-            inputName: e.target.id,\n-            paramType: e.target.value,\n+            inputName,\n+            paramType,\n         };\n \n         // return console.log(inputName, paramType);\n     };\n"
+                },
+                {
+                    "date": 1641909557345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n \n     const platform = ['pc', 'browser'];\n \n     const gamesFilter = ({ inputName, paramType }: Filter) => {\n-        const filtered: Filter[] = [];\n+        // const filtered: Filter[] = [];\n \n         // checkbox.forEach((item: HTMLInputElement) => {\n         //     if (item.checked) {\n         //         console.log(item.id);\n@@ -72,12 +72,15 @@\n                 {platform.map((element) => {\n                     return (\n                         <CheckBox\n                             inputName={element}\n-                            onchange={() => {\n+                            onchange={(\n+                                e: React.ChangeEvent<HTMLInputElement>,\n+                            ) => {\n                                 gamesFilter({\n                                     inputName: element,\n                                     paramType: 'platform',\n+                                    checked: e.target.checked,\n                                 });\n                             }}\n                             key={element}\n                         />\n"
+                },
+                {
+                    "date": 1641909577189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,22 +6,23 @@\n \n interface Filter {\n     inputName: string;\n     paramType?: string;\n+    checked: boolean;\n }\n \n const Filter = () => {\n     const [visible, setVisible] = useState(true);\n     const [style, setStyle] = useState({\n         display: 'none',\n     });\n \n-    const [filter, setFilter] = useState<Filter[]>([\n-        {\n-            inputName: 'valor',\n-            paramType: 'valorr',\n-        },\n-    ]);\n+    // const [filter, setFilter] = useState<Filter[]>([\n+    //     {\n+    //         inputName: 'valor',\n+    //         paramType: 'valorr',\n+    //     },\n+    // ]);\n \n     const searchBar = document.getElementById('search-bar');\n     const gameContainer = document.getElementById('game-container');\n \n"
+                },
+                {
+                    "date": 1641913263378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                             inputName={element}\n                             onchange={(\n                                 e: React.ChangeEvent<HTMLInputElement>,\n                             ) => {\n-                                gamesFilter({\n+                                return gamesFilter({\n                                     inputName: element,\n                                     paramType: 'platform',\n                                     checked: e.target.checked,\n                                 });\n"
+                },
+                {
+                    "date": 1641913276620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,8 +61,9 @@\n             inputName,\n             paramType,\n         };\n \n+        console.log(obj);\n         // return console.log(inputName, paramType);\n     };\n \n     return (\n"
+                },
+                {
+                    "date": 1641913297427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n     // array com os generos disponiveis no filtro\n \n     const platform = ['pc', 'browser'];\n \n-    const gamesFilter = ({ inputName, paramType }: Filter) => {\n+    const gamesFilter = ({ inputName, paramType, checked }: Filter) => {\n         // const filtered: Filter[] = [];\n \n         // checkbox.forEach((item: HTMLInputElement) => {\n         //     if (item.checked) {\n@@ -59,8 +59,9 @@\n \n         const obj = {\n             inputName,\n             paramType,\n+            checked,\n         };\n \n         console.log(obj);\n         // return console.log(inputName, paramType);\n"
+                },
+                {
+                    "date": 1641913366214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,14 +15,9 @@\n     const [style, setStyle] = useState({\n         display: 'none',\n     });\n \n-    // const [filter, setFilter] = useState<Filter[]>([\n-    //     {\n-    //         inputName: 'valor',\n-    //         paramType: 'valorr',\n-    //     },\n-    // ]);\n+    const [filter, setFilter] = useState<Filter[]>([]);\n \n     const searchBar = document.getElementById('search-bar');\n     const gameContainer = document.getElementById('game-container');\n \n@@ -47,10 +42,8 @@\n \n     const platform = ['pc', 'browser'];\n \n     const gamesFilter = ({ inputName, paramType, checked }: Filter) => {\n-        // const filtered: Filter[] = [];\n-\n         // checkbox.forEach((item: HTMLInputElement) => {\n         //     if (item.checked) {\n         //         console.log(item.id);\n         //         filtered.push({ inputName: item.id, paramType: 'valor' });\n"
+                },
+                {
+                    "date": 1641913385705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,8 +56,9 @@\n             checked,\n         };\n \n         console.log(obj);\n+        setFilter(...filter, obj);\n         // return console.log(inputName, paramType);\n     };\n \n     return (\n"
+                },
+                {
+                    "date": 1641913577309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,10 +55,11 @@\n             paramType,\n             checked,\n         };\n \n-        console.log(obj);\n-        setFilter(...filter, obj);\n+        if (filter.filter(obj)) {\n+        }\n+\n         // return console.log(inputName, paramType);\n     };\n \n     return (\n"
+                },
+                {
+                    "date": 1641913635819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n             paramType,\n             checked,\n         };\n \n-        if (filter.filter(obj)) {\n+        if (filter.find(obj)) {\n         }\n \n         // return console.log(inputName, paramType);\n     };\n"
+                },
+                {
+                    "date": 1641913651146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import { CheckBoxContainer, FilterContainer } from './style';\n \n interface Filter {\n     inputName: string;\n-    paramType?: string;\n+    paramType: string;\n     checked: boolean;\n }\n \n const Filter = () => {\n"
+                },
+                {
+                    "date": 1641913727225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,13 @@\n             paramType,\n             checked,\n         };\n \n-        if (filter.find(obj)) {\n+        if (\n+            filter.find((item) => {\n+                item.inputName === inputName;\n+            })\n+        ) {\n         }\n \n         // return console.log(inputName, paramType);\n     };\n"
+                },
+                {
+                    "date": 1641913745467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,12 +56,13 @@\n             checked,\n         };\n \n         if (\n-            filter.find((item) => {\n+            filter.find((item) =>\n                 item.inputName === inputName;\n-            })\n+            )\n         ) {\n+\n         }\n \n         // return console.log(inputName, paramType);\n     };\n"
+                },
+                {
+                    "date": 1641913758835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,14 +55,9 @@\n             paramType,\n             checked,\n         };\n \n-        if (\n-            filter.find((item) =>\n-                item.inputName === inputName;\n-            )\n-        ) {\n-\n+        if (filter.find((item) => item.inputName === inputName)) {\n         }\n \n         // return console.log(inputName, paramType);\n     };\n"
+                },
+                {
+                    "date": 1641913952468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,8 +56,11 @@\n             checked,\n         };\n \n         if (filter.find((item) => item.inputName === inputName)) {\n+            if (!obj.checked) {\n+                setFilter(filter.filter((item) => item !== inputName));\n+            }\n         }\n \n         // return console.log(inputName, paramType);\n     };\n"
+                },
+                {
+                    "date": 1641913958711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,11 @@\n         };\n \n         if (filter.find((item) => item.inputName === inputName)) {\n             if (!obj.checked) {\n-                setFilter(filter.filter((item) => item !== inputName));\n+                setFilter(\n+                    filter.filter((item) => item.inputName !== inputName),\n+                );\n             }\n         }\n \n         // return console.log(inputName, paramType);\n"
+                },
+                {
+                    "date": 1641914015217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,8 +61,10 @@\n                 setFilter(\n                     filter.filter((item) => item.inputName !== inputName),\n                 );\n             }\n+        } else if (obj.checked) {\n+            setFilter(filter.push(obj));\n         }\n \n         // return console.log(inputName, paramType);\n     };\n"
+                },
+                {
+                    "date": 1641914037999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n                     filter.filter((item) => item.inputName !== inputName),\n                 );\n             }\n         } else if (obj.checked) {\n-            setFilter(filter.push(obj));\n+            setFilter(filter.concat(obj));\n         }\n \n         // return console.log(inputName, paramType);\n     };\n"
+                },
+                {
+                    "date": 1641914047150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,9 @@\n         } else if (obj.checked) {\n             setFilter(filter.concat(obj));\n         }\n \n-        // return console.log(inputName, paramType);\n+        console.log(filter);\n     };\n \n     return (\n         <FilterContainer>\n"
+                },
+                {
+                    "date": 1641914076944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,12 +64,11 @@\n             }\n         } else if (obj.checked) {\n             setFilter(filter.concat(obj));\n         }\n-\n-        console.log(filter);\n     };\n \n+    console.log(filter);\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style}>\n"
+                },
+                {
+                    "date": 1641914110670,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,15 +42,8 @@\n \n     const platform = ['pc', 'browser'];\n \n     const gamesFilter = ({ inputName, paramType, checked }: Filter) => {\n-        // checkbox.forEach((item: HTMLInputElement) => {\n-        //     if (item.checked) {\n-        //         console.log(item.id);\n-        //         filtered.push({ inputName: item.id, paramType: 'valor' });\n-        //     }\n-        // });\n-\n         const obj = {\n             inputName,\n             paramType,\n             checked,\n"
+                },
+                {
+                    "date": 1641914136479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,8 +41,10 @@\n     // array com os generos disponiveis no filtro\n \n     const platform = ['pc', 'browser'];\n \n+    // Adiciona ou remove itens do filtro\n+\n     const gamesFilter = ({ inputName, paramType, checked }: Filter) => {\n         const obj = {\n             inputName,\n             paramType,\n"
+                },
+                {
+                    "date": 1641914263104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,8 @@\n             setFilter(filter.concat(obj));\n         }\n     };\n \n-    console.log(filter);\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style}>\n"
+                },
+                {
+                    "date": 1641914462266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,8 +41,21 @@\n     // array com os generos disponiveis no filtro\n \n     const platform = ['pc', 'browser'];\n \n+    const genre = [\n+        'MMO',\n+        'MMORPG',\n+        'shooter',\n+        'Strategy',\n+        'moba',\n+        'Battle Royale',\n+        'Card',\n+        'Racing',\n+        'Sports',\n+        'Social',\n+        'Fighting',\n+    ];\n     // Adiciona ou remove itens do filtro\n \n     const gamesFilter = ({ inputName, paramType, checked }: Filter) => {\n         const obj = {\n"
+                },
+                {
+                    "date": 1641914518795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,8 +96,27 @@\n                             key={element}\n                         />\n                     );\n                 })}\n+\n+                <h3>Filter by Genre:</h3>\n+                {genre.map((element) => {\n+                    return (\n+                        <CheckBox\n+                            inputName={element}\n+                            onchange={(\n+                                e: React.ChangeEvent<HTMLInputElement>,\n+                            ) => {\n+                                return gamesFilter({\n+                                    inputName: element,\n+                                    paramType: 'genre',\n+                                    checked: e.target.checked,\n+                                });\n+                            }}\n+                            key={element}\n+                        />\n+                    );\n+                })}\n             </CheckBoxContainer>\n             <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n         </FilterContainer>\n     );\n"
+                },
+                {
+                    "date": 1641914717784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,8 +74,10 @@\n             setFilter(filter.concat(obj));\n         }\n     };\n \n+    console.log(filter);\n+\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style}>\n"
+                },
+                {
+                    "date": 1641916379171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \n interface Filter {\n     inputName: string;\n     paramType: string;\n-    checked: boolean;\n+    checked?: boolean;\n }\n \n const Filter = () => {\n     const [visible, setVisible] = useState(true);\n"
+                },
+                {
+                    "date": 1641918144499,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n import React, { useEffect, useState } from 'react';\n+import { connect, useDispatch, useSelector } from 'react-redux';\n+import { bindActionCreators, Dispatch } from 'redux';\n import CheckBox from './checkBox';\n import FilterCheckBoxButton from './filterCheckBoxButton';\n import SearchBar from './searchbar';\n import { CheckBoxContainer, FilterContainer } from './style';\n@@ -123,5 +125,5 @@\n         </FilterContainer>\n     );\n };\n \n-export default Filter;\n+export default connect(mapStateToProps, mapDispatchToProps)(Filter);\n"
+                },
+                {
+                    "date": 1641918161483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,17 @@\n     paramType: string;\n     checked?: boolean;\n }\n \n+const mapDispatchToProps = (dispatch: Dispatch) => {\n+    return bindActionCreators(SearchAction, dispatch);\n+};\n+const mapStateToProps = (state: ApplicationState) => ({\n+    movieList: state.searchMovie.movieList,\n+    movieName: state.searchMovie.movieName,\n+    genreList: state.searchMovie.genreList,\n+});\n+\n const Filter = () => {\n     const [visible, setVisible] = useState(true);\n     const [style, setStyle] = useState({\n         display: 'none',\n"
+                },
+                {
+                    "date": 1641918188893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import React, { useEffect, useState } from 'react';\n import { connect, useDispatch, useSelector } from 'react-redux';\n import { bindActionCreators, Dispatch } from 'redux';\n+import { ApplicationState } from '../../../store';\n import CheckBox from './checkBox';\n import FilterCheckBoxButton from './filterCheckBoxButton';\n import SearchBar from './searchbar';\n import { CheckBoxContainer, FilterContainer } from './style';\n"
+                },
+                {
+                    "date": 1641918198208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n import CheckBox from './checkBox';\n import FilterCheckBoxButton from './filterCheckBoxButton';\n import SearchBar from './searchbar';\n import { CheckBoxContainer, FilterContainer } from './style';\n+import { Creators as SearchAction } from '../../store/actions/searchMovie';\n \n interface Filter {\n     inputName: string;\n     paramType: string;\n"
+                },
+                {
+                    "date": 1641918229922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,13 +16,8 @@\n \n const mapDispatchToProps = (dispatch: Dispatch) => {\n     return bindActionCreators(SearchAction, dispatch);\n };\n-const mapStateToProps = (state: ApplicationState) => ({\n-    movieList: state.searchMovie.movieList,\n-    movieName: state.searchMovie.movieName,\n-    genreList: state.searchMovie.genreList,\n-});\n \n const Filter = () => {\n     const [visible, setVisible] = useState(true);\n     const [style, setStyle] = useState({\n"
+                },
+                {
+                    "date": 1641918275716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import CheckBox from './checkBox';\n import FilterCheckBoxButton from './filterCheckBoxButton';\n import SearchBar from './searchbar';\n import { CheckBoxContainer, FilterContainer } from './style';\n-import { Creators as SearchAction } from '../../store/actions/searchMovie';\n+import { Creators as SearchAction } from '../../../store/actions/searchGames';\n \n interface Filter {\n     inputName: string;\n     paramType: string;\n"
+                },
+                {
+                    "date": 1641918283943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n import React, { useEffect, useState } from 'react';\n import { connect, useDispatch, useSelector } from 'react-redux';\n import { bindActionCreators, Dispatch } from 'redux';\n-import { ApplicationState } from '../../../store';\n import CheckBox from './checkBox';\n import FilterCheckBoxButton from './filterCheckBoxButton';\n import SearchBar from './searchbar';\n import { CheckBoxContainer, FilterContainer } from './style';\n"
+                },
+                {
+                    "date": 1641918297472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,10 @@\n     return bindActionCreators(SearchAction, dispatch);\n };\n \n const Filter = () => {\n+    const dispatch = useDispatch();\n+\n     const [visible, setVisible] = useState(true);\n     const [style, setStyle] = useState({\n         display: 'none',\n     });\n"
+                },
+                {
+                    "date": 1641918394104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n };\n \n const Filter = () => {\n     const dispatch = useDispatch();\n+    const { filterGamesRequest } = SearchAction;\n \n     const [visible, setVisible] = useState(true);\n     const [style, setStyle] = useState({\n         display: 'none',\n@@ -83,9 +84,11 @@\n             setFilter(filter.concat(obj));\n         }\n     };\n \n-    console.log(filter);\n+    useEffect(() => {\n+        dispatch();\n+    }, []);\n \n     return (\n         <FilterContainer>\n             <SearchBar />\n"
+                },
+                {
+                    "date": 1641918416414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,10 +85,10 @@\n         }\n     };\n \n     useEffect(() => {\n-        dispatch();\n-    }, []);\n+        dispatch(filterGamesRequest(filter));\n+    }, [filter]);\n \n     return (\n         <FilterContainer>\n             <SearchBar />\n"
+                },
+                {
+                    "date": 1641918441758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React, { useEffect, useState } from 'react';\n-import { connect, useDispatch, useSelector } from 'react-redux';\n+import { connect, useDispatch } from 'react-redux';\n import { bindActionCreators, Dispatch } from 'redux';\n import CheckBox from './checkBox';\n import FilterCheckBoxButton from './filterCheckBoxButton';\n import SearchBar from './searchbar';\n"
+                },
+                {
+                    "date": 1641918468783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -135,5 +135,5 @@\n         </FilterContainer>\n     );\n };\n \n-export default connect(mapStateToProps, mapDispatchToProps)(Filter);\n+export default connect(null, mapDispatchToProps)(Filter);\n"
+                },
+                {
+                    "date": 1641920751954,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n import SearchBar from './searchbar';\n import { CheckBoxContainer, FilterContainer } from './style';\n import { Creators as SearchAction } from '../../../store/actions/searchGames';\n \n-interface Filter {\n+interface IFilter {\n     inputName: string;\n     paramType: string;\n     checked?: boolean;\n }\n@@ -25,9 +25,9 @@\n     const [style, setStyle] = useState({\n         display: 'none',\n     });\n \n-    const [filter, setFilter] = useState<Filter[]>([]);\n+    const [filter, setFilter] = useState<IFilter[]>([]);\n \n     const searchBar = document.getElementById('search-bar');\n     const gameContainer = document.getElementById('game-container');\n \n@@ -66,9 +66,9 @@\n         'Fighting',\n     ];\n     // Adiciona ou remove itens do filtro\n \n-    const gamesFilter = ({ inputName, paramType, checked }: Filter) => {\n+    const gamesFilter = ({ inputName, paramType, checked }: IFilter) => {\n         const obj = {\n             inputName,\n             paramType,\n             checked,\n"
+                },
+                {
+                    "date": 1641920778297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n import SearchBar from './searchbar';\n import { CheckBoxContainer, FilterContainer } from './style';\n import { Creators as SearchAction } from '../../../store/actions/searchGames';\n \n-interface IFilter {\n+export interface IFilter {\n     inputName: string;\n     paramType: string;\n     checked?: boolean;\n }\n"
+                },
+                {
+                    "date": 1641921580690,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n         'MMORPG',\n         'shooter',\n         'Strategy',\n         'moba',\n-        'Battle Royale',\n+        'BattleRoyale',\n         'Card',\n         'Racing',\n         'Sports',\n         'Social',\n"
+                },
+                {
+                    "date": 1641921615452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n         'MMORPG',\n         'shooter',\n         'Strategy',\n         'moba',\n-        'BattleRoyale',\n+        'Battle-Royale',\n         'Card',\n         'Racing',\n         'Sports',\n         'Social',\n"
+                },
+                {
+                    "date": 1641921702801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,22 +67,22 @@\n     ];\n     // Adiciona ou remove itens do filtro\n \n     const gamesFilter = ({ inputName, paramType, checked }: IFilter) => {\n-        const obj = {\n+        const checkbox = {\n             inputName,\n             paramType,\n             checked,\n         };\n \n         if (filter.find((item) => item.inputName === inputName)) {\n-            if (!obj.checked) {\n+            if (!checkbox.checked) {\n                 setFilter(\n                     filter.filter((item) => item.inputName !== inputName),\n                 );\n             }\n-        } else if (obj.checked) {\n-            setFilter(filter.concat(obj));\n+        } else if (checkbox.checked) {\n+            setFilter(filter.concat(checkbox));\n         }\n     };\n \n     useEffect(() => {\n"
+                },
+                {
+                    "date": 1641924343016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n         if (searchBar && gameContainer != null && visible === true) {\n             searchBar.style.position = 'absolute';\n             searchBar.style.color = '#FFF';\n             gameContainer.style.gridColumn = '2/-1';\n-            setStyle({ display: 'block' });\n+            setStyle({ display: 'flex' });\n         }\n         if (searchBar && gameContainer != null && visible === false) {\n             searchBar.style.position = 'inherit';\n             searchBar.style.color = '#000';\n"
+                },
+                {
+                    "date": 1641924381446,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,41 +95,47 @@\n             <CheckBoxContainer style={style}>\n                 <h3>Sorted by Platform:</h3>\n                 {platform.map((element) => {\n                     return (\n-                        <CheckBox\n-                            inputName={element}\n-                            onchange={(\n-                                e: React.ChangeEvent<HTMLInputElement>,\n-                            ) => {\n-                                return gamesFilter({\n-                                    inputName: element,\n-                                    paramType: 'platform',\n-                                    checked: e.target.checked,\n-                                });\n-                            }}\n-                            key={element}\n-                        />\n+                        <div>\n+                            <CheckBox\n+                                inputName={element}\n+                                onchange={(\n+                                    e: React.ChangeEvent<HTMLInputElement>,\n+                                ) => {\n+                                    return gamesFilter({\n+                                        inputName: element,\n+                                        paramType: 'platform',\n+                                        checked: e.target.checked,\n+                                    });\n+                                }}\n+                                key={element}\n+                            />\n+\n+                        </div>\n                     );\n                 })}\n \n                 <h3>Filter by Genre:</h3>\n                 {genre.map((element) => {\n                     return (\n-                        <CheckBox\n-                            inputName={element}\n-                            onchange={(\n-                                e: React.ChangeEvent<HTMLInputElement>,\n-                            ) => {\n-                                return gamesFilter({\n-                                    inputName: element,\n-                                    paramType: 'genre',\n-                                    checked: e.target.checked,\n-                                });\n-                            }}\n-                            key={element}\n-                        />\n-                    );\n+                        <div>\n+                            <CheckBox\n+                                inputName={element}\n+                                onchange={(\n+                                    e: React.ChangeEvent<HTMLInputElement>,\n+                                ) => {\n+                                    return gamesFilter({\n+                                        inputName: element,\n+                                        paramType: 'genre',\n+                                        checked: e.target.checked,\n+                                    });\n+                                }}\n+                                key={element}\n+                            />\n+                        );\n+\n+                        </div>\n                 })}\n             </CheckBoxContainer>\n             <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n         </FilterContainer>\n"
+                },
+                {
+                    "date": 1641924423509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -93,11 +93,11 @@\n         <FilterContainer>\n             <SearchBar />\n             <CheckBoxContainer style={style}>\n                 <h3>Sorted by Platform:</h3>\n-                {platform.map((element) => {\n-                    return (\n-                        <div>\n+                <div>\n+                    {platform.map((element) => {\n+                        return (\n                             <CheckBox\n                                 inputName={element}\n                                 onchange={(\n                                     e: React.ChangeEvent<HTMLInputElement>,\n@@ -109,17 +109,16 @@\n                                     });\n                                 }}\n                                 key={element}\n                             />\n+                        );\n+                    })}\n+                </div>\n \n-                        </div>\n-                    );\n-                })}\n-\n                 <h3>Filter by Genre:</h3>\n-                {genre.map((element) => {\n-                    return (\n-                        <div>\n+                <div>\n+                    {genre.map((element) => {\n+                        return (\n                             <CheckBox\n                                 inputName={element}\n                                 onchange={(\n                                     e: React.ChangeEvent<HTMLInputElement>,\n@@ -132,11 +131,10 @@\n                                 }}\n                                 key={element}\n                             />\n                         );\n-\n-                        </div>\n-                })}\n+                    })}\n+                </div>\n             </CheckBoxContainer>\n             <FilterCheckBoxButton onClick={() => setVisible(!visible)} />\n         </FilterContainer>\n     );\n"
+                },
+                {
+                    "date": 1641924760928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n         if (searchBar && gameContainer != null && visible === true) {\n             searchBar.style.position = 'absolute';\n             searchBar.style.color = '#FFF';\n             gameContainer.style.gridColumn = '2/-1';\n-            setStyle({ display: 'flex' });\n+            setStyle({ display: 'block' });\n         }\n         if (searchBar && gameContainer != null && visible === false) {\n             searchBar.style.position = 'inherit';\n             searchBar.style.color = '#000';\n"
+                },
+                {
+                    "date": 1641989054760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,9 +85,9 @@\n         }\n     };\n \n     useEffect(() => {\n-        dispatch(filterGamesRequest(filter));\n+        // dispatch(filterGamesRequest(filter));\n     }, [filter]);\n \n     return (\n         <FilterContainer>\n"
+                },
+                {
+                    "date": 1641989077823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -85,9 +85,9 @@\n         }\n     };\n \n     useEffect(() => {\n-        // dispatch(filterGamesRequest(filter));\n+        dispatch(filterGamesRequest(filter));\n     }, [filter]);\n \n     return (\n         <FilterContainer>\n"
+                },
+                {
+                    "date": 1642010205316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n const Filter = () => {\n     const dispatch = useDispatch();\n     const { filterGamesRequest } = SearchAction;\n \n-    const [visible, setVisible] = useState(true);\n+    const [visible, setVisible] = useState(false);\n     const [style, setStyle] = useState({\n         display: 'none',\n     });\n \n"
+                },
+                {
+                    "date": 1642011328340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,39 +1,45 @@\n import React, { useEffect, useState } from 'react';\n-import { connect, useDispatch } from 'react-redux';\n+import { connect, useDispatch, useSelector } from 'react-redux';\n import { bindActionCreators, Dispatch } from 'redux';\n import CheckBox from './checkBox';\n import FilterCheckBoxButton from './filterCheckBoxButton';\n import SearchBar from './searchbar';\n import { CheckBoxContainer, FilterContainer } from './style';\n import { Creators as SearchAction } from '../../../store/actions/searchGames';\n+import { GameListType } from '../../../store/reducers/types';\n+import { ApplicationState } from '../../../store';\n \n export interface IFilter {\n     inputName: string;\n     paramType: string;\n     checked?: boolean;\n }\n-\n+const mapStateToProps = (state: ApplicationState) => ({\n+    gamelist: state.searchGames.gameList,\n+});\n const mapDispatchToProps = (dispatch: Dispatch) => {\n     return bindActionCreators(SearchAction, dispatch);\n };\n \n const Filter = () => {\n     const dispatch = useDispatch();\n     const { filterGamesRequest } = SearchAction;\n-\n+    const [filteredGames, setFilteredGames] = useState<GameListType[]>([]);\n     const [visible, setVisible] = useState(false);\n     const [style, setStyle] = useState({\n         display: 'none',\n     });\n \n     const [filter, setFilter] = useState<IFilter[]>([]);\n+    const gameList: GameListType[] = useSelector(\n+        (state: ApplicationState) => state.searchGames.gameList,\n+    );\n \n+    // mostra e organiza os items em tela a depender se o filtro esta exibido ou não\n     const searchBar = document.getElementById('search-bar');\n     const gameContainer = document.getElementById('game-container');\n \n-    // mostra e organiza os items em tela a depender se o filtro esta exibido ou não\n-\n     useEffect(() => {\n         if (searchBar && gameContainer != null && visible === true) {\n             searchBar.style.position = 'absolute';\n             searchBar.style.color = '#FFF';\n@@ -90,9 +96,9 @@\n     }, [filter]);\n \n     return (\n         <FilterContainer>\n-            <SearchBar />\n+            <SearchBar gameList={gameList} />\n             <CheckBoxContainer style={style}>\n                 <h3>Sorted by Platform:</h3>\n                 <div>\n                     {platform.map((element) => {\n@@ -139,5 +145,5 @@\n         </FilterContainer>\n     );\n };\n \n-export default connect(null, mapDispatchToProps)(Filter);\n+export default connect(mapStateToProps, mapDispatchToProps)(Filter);\n"
+                },
+                {
+                    "date": 1642011464772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,9 +96,9 @@\n     }, [filter]);\n \n     return (\n         <FilterContainer>\n-            <SearchBar gameList={gameList} />\n+            <SearchBar gameList={gameList} setFilter={()=>(setFilter} />\n             <CheckBoxContainer style={style}>\n                 <h3>Sorted by Platform:</h3>\n                 <div>\n                     {platform.map((element) => {\n"
+                },
+                {
+                    "date": 1642011470034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,9 +96,9 @@\n     }, [filter]);\n \n     return (\n         <FilterContainer>\n-            <SearchBar gameList={gameList} setFilter={()=>(setFilter} />\n+            <SearchBar gameList={gameList} setFilter={() => setFilter} />\n             <CheckBoxContainer style={style}>\n                 <h3>Sorted by Platform:</h3>\n                 <div>\n                     {platform.map((element) => {\n"
+                },
+                {
+                    "date": 1642011527503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,9 +96,12 @@\n     }, [filter]);\n \n     return (\n         <FilterContainer>\n-            <SearchBar gameList={gameList} setFilter={() => setFilter} />\n+            <SearchBar\n+                gameList={gameList}\n+                setFilter={() => setFilteredGames()}\n+            />\n             <CheckBoxContainer style={style}>\n                 <h3>Sorted by Platform:</h3>\n                 <div>\n                     {platform.map((element) => {\n"
+                },
+                {
+                    "date": 1642011563349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,12 +96,9 @@\n     }, [filter]);\n \n     return (\n         <FilterContainer>\n-            <SearchBar\n-                gameList={gameList}\n-                setFilter={() => setFilteredGames()}\n-            />\n+            <SearchBar gameList={gameList} setFilter={() => setFilteredGames} />\n             <CheckBoxContainer style={style}>\n                 <h3>Sorted by Platform:</h3>\n                 <div>\n                     {platform.map((element) => {\n"
+                },
+                {
+                    "date": 1642011717175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,10 @@\n     const [style, setStyle] = useState({\n         display: 'none',\n     });\n \n+    console.log(filteredGames);\n+\n     const [filter, setFilter] = useState<IFilter[]>([]);\n     const gameList: GameListType[] = useSelector(\n         (state: ApplicationState) => state.searchGames.gameList,\n     );\n"
+                },
+                {
+                    "date": 1642011755619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,11 @@\n     const [style, setStyle] = useState({\n         display: 'none',\n     });\n \n-    console.log(filteredGames);\n+    useEffect(() => {\n+        console.log(filteredGames);\n+    }, [filteredGames]);\n \n     const [filter, setFilter] = useState<IFilter[]>([]);\n     const gameList: GameListType[] = useSelector(\n         (state: ApplicationState) => state.searchGames.gameList,\n"
+                },
+                {
+                    "date": 1642011953900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,9 +100,9 @@\n     }, [filter]);\n \n     return (\n         <FilterContainer>\n-            <SearchBar gameList={gameList} setFilter={() => setFilteredGames} />\n+            <SearchBar gameList={gameList} setFilter={setFilteredGames} />\n             <CheckBoxContainer style={style}>\n                 <h3>Sorted by Platform:</h3>\n                 <div>\n                     {platform.map((element) => {\n"
+                },
+                {
+                    "date": 1642012730872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n };\n \n const Filter = () => {\n     const dispatch = useDispatch();\n-    const { filterGamesRequest } = SearchAction;\n+    const { filterGamesRequest, filteredGamesStore } = SearchAction;\n     const [filteredGames, setFilteredGames] = useState<GameListType[]>([]);\n     const [visible, setVisible] = useState(false);\n     const [style, setStyle] = useState({\n         display: 'none',\n"
+                },
+                {
+                    "date": 1642012810783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,12 +29,8 @@\n     const [style, setStyle] = useState({\n         display: 'none',\n     });\n \n-    useEffect(() => {\n-        console.log(filteredGames);\n-    }, [filteredGames]);\n-\n     const [filter, setFilter] = useState<IFilter[]>([]);\n     const gameList: GameListType[] = useSelector(\n         (state: ApplicationState) => state.searchGames.gameList,\n     );\n@@ -93,8 +89,11 @@\n         } else if (checkbox.checked) {\n             setFilter(filter.concat(checkbox));\n         }\n     };\n+    useEffect(() => {\n+        dispatch(filteredGamesStore(filteredGames));\n+    }, [filteredGames]);\n \n     useEffect(() => {\n         dispatch(filterGamesRequest(filter));\n     }, [filter]);\n"
+                },
+                {
+                    "date": 1642013788148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,9 +91,9 @@\n         }\n     };\n     useEffect(() => {\n         dispatch(filteredGamesStore(filteredGames));\n-    }, [filteredGames]);\n+    }, [filteredGames, filter]);\n \n     useEffect(() => {\n         dispatch(filterGamesRequest(filter));\n     }, [filter]);\n"
+                },
+                {
+                    "date": 1642013980474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,9 +91,9 @@\n         }\n     };\n     useEffect(() => {\n         dispatch(filteredGamesStore(filteredGames));\n-    }, [filteredGames, filter]);\n+    }, [filteredGames]);\n \n     useEffect(() => {\n         dispatch(filterGamesRequest(filter));\n     }, [filter]);\n"
+                }
+            ],
+            "date": 1641571342952,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport FilterCheckBox from './filterCheckBox';\nimport SearchBar from './searchbar';\nimport { CheckBoxContainer, FilterContainer } from './style';\n\nconst Filter = () => {\n    return (\n        <FilterContainer>\n            <SearchBar />\n            <FilterCheckBox />\n            {/* <CheckBoxContainer /> */}\n        </FilterContainer>\n    );\n};\n\nexport default Filter;\n"
+        }
+    ]
+}

@@ -1,0 +1,62 @@
+{
+    "sourceFile": ".eslintrc.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1641559767340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641560772055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,10 @@\n     \"rules\": {\n       \"prettier/prettier\": \"error\",\n       \"react-hooks/rules-of-hooks\": \"error\",\n       \"react-hooks/exhaustive-deps\": \"warn\",\n-      \"react/jsx-filename-extension\": [1, {\"extensions\":[\".tsx\"]\n+      \"react/jsx-filename-extension\": [1, {\"extensions\":[\".tsx\"],\n+      \"react/function-component-definition\":\"arrow-function\"\n    }],\n       \"import/prefer-default-export\": \"off\",\n       \"import/extensions\": [\n         \"error\",\n"
+                },
+                {
+                    "date": 1641560832422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n       \"prettier/prettier\": \"error\",\n       \"react-hooks/rules-of-hooks\": \"error\",\n       \"react-hooks/exhaustive-deps\": \"warn\",\n       \"react/jsx-filename-extension\": [1, {\"extensions\":[\".tsx\"],\n-      \"react/function-component-definition\":\"arrow-function\"\n+      \"react/function-component-definition\":\"warn\"\n    }],\n       \"import/prefer-default-export\": \"off\",\n       \"import/extensions\": [\n         \"error\",\n"
+                },
+                {
+                    "date": 1641560853444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,52 +1,51 @@\n {\n-    \"env\": {\n-        \"browser\": true,\n-        \"es2021\": true\n-    },\n-    \"extends\": [\n-        \"plugin:react/recommended\",\n-        \"airbnb\",\n-        \"plugin:@typescript-eslint/recommended\",\n-        \"plugin:prettier/recommended\"\n+  \"env\": {\n+      \"browser\": true,\n+      \"es2021\": true\n+  },\n+  \"extends\": [\n+      \"plugin:react/recommended\",\n+      \"airbnb\",\n+      \"plugin:@typescript-eslint/recommended\",\n+      \"plugin:prettier/recommended\"\n \n \n+  ],\n+  \"parser\": \"@typescript-eslint/parser\",\n+  \"parserOptions\": {\n+      \"ecmaFeatures\": {\n+          \"jsx\": true\n+      },\n+      \"ecmaVersion\": 12,\n+      \"sourceType\": \"module\"\n+  },\n+  \"plugins\": [\n+      \"react\",\n+      \"react-hooks\",\n+      \"@typescript-eslint\",\n+      \"prettier\"\n+  ],\n+  \"rules\": {\n+    \"prettier/prettier\": \"error\",\n+    \"react-hooks/rules-of-hooks\": \"error\",\n+    \"react-hooks/exhaustive-deps\": \"warn\",\n+    \"react/jsx-filename-extension\": [1, {\"extensions\":[\".tsx\"]\n+ }],\n+    \"import/prefer-default-export\": \"off\",\n+    \"import/extensions\": [\n+      \"error\",\n+      \"ignorePackages\",\n+      {\n+        \"ts\": \"never\",\n+        \"tsx\": \"never\"\n+      }\n     ],\n-    \"parser\": \"@typescript-eslint/parser\",\n-    \"parserOptions\": {\n-        \"ecmaFeatures\": {\n-            \"jsx\": true\n-        },\n-        \"ecmaVersion\": 12,\n-        \"sourceType\": \"module\"\n-    },\n-    \"plugins\": [\n-        \"react\",\n-        \"react-hooks\",\n-        \"@typescript-eslint\",\n-        \"prettier\"\n-    ],\n-    \"rules\": {\n-      \"prettier/prettier\": \"error\",\n-      \"react-hooks/rules-of-hooks\": \"error\",\n-      \"react-hooks/exhaustive-deps\": \"warn\",\n-      \"react/jsx-filename-extension\": [1, {\"extensions\":[\".tsx\"],\n-      \"react/function-component-definition\":\"warn\"\n-   }],\n-      \"import/prefer-default-export\": \"off\",\n-      \"import/extensions\": [\n-        \"error\",\n-        \"ignorePackages\",\n-        {\n-          \"ts\": \"never\",\n-          \"tsx\": \"never\"\n-        }\n-      ],\n-      \"no-use-before-define\": \"off\",\n-      \"@typescript-eslint/no-use-before-define\": [\"error\"]\n-    },\n-    \"settings\": {\n-      \"import/resolver\": {\n-        \"typescript\": {}\n-      }\n+    \"no-use-before-define\": \"off\",\n+    \"@typescript-eslint/no-use-before-define\": [\"error\"]\n+  },\n+  \"settings\": {\n+    \"import/resolver\": {\n+      \"typescript\": {}\n     }\n   }\n+}\n"
+                },
+                {
+                    "date": 1641561087921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,10 @@\n   \"rules\": {\n     \"prettier/prettier\": \"error\",\n     \"react-hooks/rules-of-hooks\": \"error\",\n     \"react-hooks/exhaustive-deps\": \"warn\",\n-    \"react/jsx-filename-extension\": [1, {\"extensions\":[\".tsx\"]\n+    \"react/jsx-filename-extension\": [1, {\"extensions\":[\".tsx\"],\n+    \"react/function-component-definition\": \"disable\"\n  }],\n     \"import/prefer-default-export\": \"off\",\n     \"import/extensions\": [\n       \"error\",\n"
+                },
+                {
+                    "date": 1641561296024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,10 +28,9 @@\n   \"rules\": {\n     \"prettier/prettier\": \"error\",\n     \"react-hooks/rules-of-hooks\": \"error\",\n     \"react-hooks/exhaustive-deps\": \"warn\",\n-    \"react/jsx-filename-extension\": [1, {\"extensions\":[\".tsx\"],\n-    \"react/function-component-definition\": \"disable\"\n+    \"react/jsx-filename-extension\": [1, {\"extensions\":[\".tsx\"]\n  }],\n     \"import/prefer-default-export\": \"off\",\n     \"import/extensions\": [\n       \"error\",\n@@ -41,9 +40,10 @@\n         \"tsx\": \"never\"\n       }\n     ],\n     \"no-use-before-define\": \"off\",\n-    \"@typescript-eslint/no-use-before-define\": [\"error\"]\n+    \"@typescript-eslint/no-use-before-define\": [\"error\"],\n+    \"react/function-component-definition\": \"disable\"\n   },\n   \"settings\": {\n     \"import/resolver\": {\n       \"typescript\": {}\n"
+                },
+                {
+                    "date": 1641561341243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n       }\n     ],\n     \"no-use-before-define\": \"off\",\n     \"@typescript-eslint/no-use-before-define\": [\"error\"],\n-    \"react/function-component-definition\": \"disable\"\n+    \"react/function-component-definition\": \"arrow-function\"\n   },\n   \"settings\": {\n     \"import/resolver\": {\n       \"typescript\": {}\n"
+                },
+                {
+                    "date": 1641561698778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n       }\n     ],\n     \"no-use-before-define\": \"off\",\n     \"@typescript-eslint/no-use-before-define\": [\"error\"],\n-    \"react/function-component-definition\": \"arrow-function\"\n+    \"react/function-component-definition\": \"disable\"\n   },\n   \"settings\": {\n     \"import/resolver\": {\n       \"typescript\": {}\n"
+                },
+                {
+                    "date": 1641561708682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n       }\n     ],\n     \"no-use-before-define\": \"off\",\n     \"@typescript-eslint/no-use-before-define\": [\"error\"],\n-    \"react/function-component-definition\": \"disable\"\n+\n   },\n   \"settings\": {\n     \"import/resolver\": {\n       \"typescript\": {}\n"
+                },
+                {
+                    "date": 1641561934219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,8 +41,9 @@\n       }\n     ],\n     \"no-use-before-define\": \"off\",\n     \"@typescript-eslint/no-use-before-define\": [\"error\"],\n+    \"react/function-component-definition\": [<enabled>,{}]\n \n   },\n   \"settings\": {\n     \"import/resolver\": {\n"
+                },
+                {
+                    "date": 1641562324301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n       }\n     ],\n     \"no-use-before-define\": \"off\",\n     \"@typescript-eslint/no-use-before-define\": [\"error\"],\n-    \"react/function-component-definition\": [<enabled>,{}]\n+    \"react/function-component-definition\": \"off\"\n \n   },\n   \"settings\": {\n     \"import/resolver\": {\n"
+                },
+                {
+                    "date": 1641820726776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,10 @@\n       }\n     ],\n     \"no-use-before-define\": \"off\",\n     \"@typescript-eslint/no-use-before-define\": [\"error\"],\n-    \"react/function-component-definition\": \"off\"\n+    \"react/function-component-definition\": \"off\",\n+    \"default-param-last\": \"off\"\n \n   },\n   \"settings\": {\n     \"import/resolver\": {\n"
+                }
+            ],
+            "date": 1641559767340,
+            "name": "Commit-0",
+            "content": "{\n    \"env\": {\n        \"browser\": true,\n        \"es2021\": true\n    },\n    \"extends\": [\n        \"plugin:react/recommended\",\n        \"airbnb\",\n        \"plugin:@typescript-eslint/recommended\",\n        \"plugin:prettier/recommended\"\n\n\n    ],\n    \"parser\": \"@typescript-eslint/parser\",\n    \"parserOptions\": {\n        \"ecmaFeatures\": {\n            \"jsx\": true\n        },\n        \"ecmaVersion\": 12,\n        \"sourceType\": \"module\"\n    },\n    \"plugins\": [\n        \"react\",\n        \"react-hooks\",\n        \"@typescript-eslint\",\n        \"prettier\"\n    ],\n    \"rules\": {\n      \"prettier/prettier\": \"error\",\n      \"react-hooks/rules-of-hooks\": \"error\",\n      \"react-hooks/exhaustive-deps\": \"warn\",\n      \"react/jsx-filename-extension\": [1, {\"extensions\":[\".tsx\"]\n   }],\n      \"import/prefer-default-export\": \"off\",\n      \"import/extensions\": [\n        \"error\",\n        \"ignorePackages\",\n        {\n          \"ts\": \"never\",\n          \"tsx\": \"never\"\n        }\n      ],\n      \"no-use-before-define\": \"off\",\n      \"@typescript-eslint/no-use-before-define\": [\"error\"]\n    },\n    \"settings\": {\n      \"import/resolver\": {\n        \"typescript\": {}\n      }\n    }\n  }\n"
+        }
+    ]
+}

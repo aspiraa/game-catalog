@@ -1,0 +1,86 @@
+{
+    "sourceFile": "src/store/reducers/searchMovie.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 17,
+            "patches": [
+                {
+                    "date": 1641819792814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641830342953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,14 +11,15 @@\n     genreList: [],\n };\n \n const searchMovie = (state = initialState, action: any): SEARCH_STATE => {\n-    if (action.type === SearchTypes.SEARCH_MOVIE_LIST_REQUEST) {\n-        return {\n-            ...state,\n-            genre: action.genre,\n-        };\n-    }\n+    if (action.type)\n+        if (action.type === SearchTypes.SEARCH_MOVIE_LIST_REQUEST) {\n+            return {\n+                ...state,\n+                genre: action.genre,\n+            };\n+        }\n \n     if (action.type === SearchTypes.SEARCH_MOVIE_LIST_SUCCESS) {\n         if (state.movieList.find((e) => e.genreNumber === action.genre)) {\n             return {\n"
+                },
+                {
+                    "date": 1641830371565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,15 +11,17 @@\n     genreList: [],\n };\n \n const searchMovie = (state = initialState, action: any): SEARCH_STATE => {\n-    if (action.type)\n-        if (action.type === SearchTypes.SEARCH_MOVIE_LIST_REQUEST) {\n-            return {\n-                ...state,\n-                genre: action.genre,\n-            };\n-        }\n+    if (action.type === SearchTypes.SEARCH_GAMES) {\n+        console.log(state);\n+    }\n+    if (action.type === SearchTypes.SEARCH_MOVIE_LIST_REQUEST) {\n+        return {\n+            ...state,\n+            genre: action.genre,\n+        };\n+    }\n \n     if (action.type === SearchTypes.SEARCH_MOVIE_LIST_SUCCESS) {\n         if (state.movieList.find((e) => e.genreNumber === action.genre)) {\n             return {\n"
+                },
+                {
+                    "date": 1641830395566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n const searchMovie = (state = initialState, action: any): SEARCH_STATE => {\n     if (action.type === SearchTypes.SEARCH_GAMES) {\n         console.log(state);\n     }\n+\n     if (action.type === SearchTypes.SEARCH_MOVIE_LIST_REQUEST) {\n         return {\n             ...state,\n             genre: action.genre,\n"
+                },
+                {
+                    "date": 1641830734118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     genreList: [],\n };\n \n const searchMovie = (state = initialState, action: any): SEARCH_STATE => {\n-    if (action.type === SearchTypes.SEARCH_GAMES) {\n+    if (action.type === SearchTypes.SEARCH_GAMES_SUCCESS) {\n         console.log(state);\n     }\n \n     if (action.type === SearchTypes.SEARCH_MOVIE_LIST_REQUEST) {\n"
+                },
+                {
+                    "date": 1641830845731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,13 @@\n     genreList: [],\n };\n \n const searchMovie = (state = initialState, action: any): SEARCH_STATE => {\n+\n+    if(action.type === SearchTypes.SEARCH_GAMES_REQUEST){\n+        ...state,\n+\n+    }\n     if (action.type === SearchTypes.SEARCH_GAMES_SUCCESS) {\n         console.log(state);\n     }\n \n"
+                },
+                {
+                    "date": 1641830889574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,11 +13,12 @@\n \n const searchMovie = (state = initialState, action: any): SEARCH_STATE => {\n \n     if(action.type === SearchTypes.SEARCH_GAMES_REQUEST){\n+        return{\n         ...state,\n-\n-    }\n+};\n+    },\n     if (action.type === SearchTypes.SEARCH_GAMES_SUCCESS) {\n         console.log(state);\n     }\n \n"
+                },
+                {
+                    "date": 1641830927410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,14 +11,14 @@\n     genreList: [],\n };\n \n const searchMovie = (state = initialState, action: any): SEARCH_STATE => {\n+    if (action.type === SearchTypes.SEARCH_GAMES_REQUEST) {\n+        return {\n+            ...state,\n+        };\n+    }\n \n-    if(action.type === SearchTypes.SEARCH_GAMES_REQUEST){\n-        return{\n-        ...state,\n-};\n-    },\n     if (action.type === SearchTypes.SEARCH_GAMES_SUCCESS) {\n         console.log(state);\n     }\n \n"
+                },
+                {
+                    "date": 1641830955516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n         };\n     }\n \n     if (action.type === SearchTypes.SEARCH_GAMES_SUCCESS) {\n+        console.log('Sucesso');\n         console.log(state);\n     }\n \n     if (action.type === SearchTypes.SEARCH_MOVIE_LIST_REQUEST) {\n"
+                },
+                {
+                    "date": 1641831207022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     }\n \n     if (action.type === SearchTypes.SEARCH_GAMES_SUCCESS) {\n         console.log('Sucesso');\n-        console.log(state);\n+        console.log(action.gameList);\n     }\n \n     if (action.type === SearchTypes.SEARCH_MOVIE_LIST_REQUEST) {\n         return {\n"
+                },
+                {
+                    "date": 1641833463247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     }\n \n     if (action.type === SearchTypes.SEARCH_GAMES_SUCCESS) {\n         console.log('Sucesso');\n-        console.log(action.gameList);\n+        console.log(action);\n     }\n \n     if (action.type === SearchTypes.SEARCH_MOVIE_LIST_REQUEST) {\n         return {\n"
+                },
+                {
+                    "date": 1641834880483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,8 @@\n     }\n \n     if (action.type === SearchTypes.SEARCH_GAMES_SUCCESS) {\n         console.log('Sucesso');\n-        console.log(action);\n     }\n \n     if (action.type === SearchTypes.SEARCH_MOVIE_LIST_REQUEST) {\n         return {\n"
+                },
+                {
+                    "date": 1641836572126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n     }\n \n     if (action.type === SearchTypes.SEARCH_GAMES_SUCCESS) {\n         console.log('Sucesso');\n+        console.log(action.gameList);\n     }\n \n     if (action.type === SearchTypes.SEARCH_MOVIE_LIST_REQUEST) {\n         return {\n"
+                },
+                {
+                    "date": 1641836642354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,14 +2,15 @@\n \n import { Types as SearchTypes } from '../actions/searchMovie';\n import { SEARCH_STATE } from './types';\n \n-const initialState: SEARCH_STATE = {\n+const initialState: SEARCH_STATE || any = {\n     movieName: 'zzz',\n     movieList: [],\n     popularMovieList: [],\n     genre: 18,\n     genreList: [],\n+    gameList: [],\n };\n \n const searchMovie = (state = initialState, action: any): SEARCH_STATE => {\n     if (action.type === SearchTypes.SEARCH_GAMES_REQUEST) {\n@@ -18,9 +19,12 @@\n         };\n     }\n \n     if (action.type === SearchTypes.SEARCH_GAMES_SUCCESS) {\n-        console.log('Sucesso');\n+        return{\n+            ...state,\n+\n+        }\n         console.log(action.gameList);\n     }\n \n     if (action.type === SearchTypes.SEARCH_MOVIE_LIST_REQUEST) {\n"
+                },
+                {
+                    "date": 1641836650939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n import { Types as SearchTypes } from '../actions/searchMovie';\n import { SEARCH_STATE } from './types';\n \n-const initialState: SEARCH_STATE || any = {\n+const initialState: SEARCH_STATE = {\n     movieName: 'zzz',\n     movieList: [],\n     popularMovieList: [],\n     genre: 18,\n@@ -19,12 +19,11 @@\n         };\n     }\n \n     if (action.type === SearchTypes.SEARCH_GAMES_SUCCESS) {\n-        return{\n+        return {\n             ...state,\n-\n-        }\n+        };\n         console.log(action.gameList);\n     }\n \n     if (action.type === SearchTypes.SEARCH_MOVIE_LIST_REQUEST) {\n"
+                },
+                {
+                    "date": 1641836693707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,10 +21,10 @@\n \n     if (action.type === SearchTypes.SEARCH_GAMES_SUCCESS) {\n         return {\n             ...state,\n+            gameList: action.gameList,\n         };\n-        console.log(action.gameList);\n     }\n \n     if (action.type === SearchTypes.SEARCH_MOVIE_LIST_REQUEST) {\n         return {\n"
+                },
+                {
+                    "date": 1641864174928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,66 +25,8 @@\n             gameList: action.gameList,\n         };\n     }\n \n-    if (action.type === SearchTypes.SEARCH_MOVIE_LIST_REQUEST) {\n-        return {\n-            ...state,\n-            genre: action.genre,\n-        };\n-    }\n-\n-    if (action.type === SearchTypes.SEARCH_MOVIE_LIST_SUCCESS) {\n-        if (state.movieList.find((e) => e.genreNumber === action.genre)) {\n-            return {\n-                ...state,\n-                movieList: [\n-                    ...state.movieList.map((e) => {\n-                        if (e.genreNumber === action.genre) {\n-                            return { ...e, movieList: action.movieList };\n-                        }\n-                        return e;\n-                    }),\n-                ],\n-            };\n-        }\n-\n-        return {\n-            ...state,\n-            movieList: [\n-                ...state.movieList,\n-                {\n-                    genreNumber: action.genre,\n-                    movieList: action.movieList,\n-                },\n-            ],\n-        };\n-    }\n-\n-    if (action.type === SearchTypes.SEARCH_POPULAR_MOVIE_LIST_SUCCESS) {\n-        return {\n-            ...state,\n-            movieName: '',\n-            popularMovieList: action.popularMovieList,\n-        };\n-    }\n-\n-    if (action.type === SearchTypes.SEARCH_GENRE_REQUEST) {\n-        return {\n-            ...state,\n-        };\n-    }\n-    if (action.type === SearchTypes.SEARCH_GENRE_SUCCESS) {\n-        const randomArray = action.genreList.sort(() => 0.5 - Math.random());\n-\n-        const result = randomArray.slice(0, 4);\n-\n-        return {\n-            ...state,\n-            genreList: result,\n-        };\n-    }\n-\n     return state;\n };\n \n export default searchMovie;\n"
+                },
+                {
+                    "date": 1641864234653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,8 @@\n import { Types as SearchTypes } from '../actions/searchMovie';\n import { SEARCH_STATE } from './types';\n \n const initialState: SEARCH_STATE = {\n-    movieName: 'zzz',\n-    movieList: [],\n-    popularMovieList: [],\n-    genre: 18,\n-    genreList: [],\n     gameList: [],\n };\n \n const searchMovie = (state = initialState, action: any): SEARCH_STATE => {\n"
+                }
+            ],
+            "date": 1641819792814,
+            "name": "Commit-0",
+            "content": "/* eslint-disable import/no-unresolved */\n\nimport { Types as SearchTypes } from '../actions/searchMovie';\nimport { SEARCH_STATE } from './types';\n\nconst initialState: SEARCH_STATE = {\n    movieName: 'zzz',\n    movieList: [],\n    popularMovieList: [],\n    genre: 18,\n    genreList: [],\n};\n\nconst searchMovie = (state = initialState, action: any): SEARCH_STATE => {\n    if (action.type === SearchTypes.SEARCH_MOVIE_LIST_REQUEST) {\n        return {\n            ...state,\n            genre: action.genre,\n        };\n    }\n\n    if (action.type === SearchTypes.SEARCH_MOVIE_LIST_SUCCESS) {\n        if (state.movieList.find((e) => e.genreNumber === action.genre)) {\n            return {\n                ...state,\n                movieList: [\n                    ...state.movieList.map((e) => {\n                        if (e.genreNumber === action.genre) {\n                            return { ...e, movieList: action.movieList };\n                        }\n                        return e;\n                    }),\n                ],\n            };\n        }\n\n        return {\n            ...state,\n            movieList: [\n                ...state.movieList,\n                {\n                    genreNumber: action.genre,\n                    movieList: action.movieList,\n                },\n            ],\n        };\n    }\n\n    if (action.type === SearchTypes.SEARCH_POPULAR_MOVIE_LIST_SUCCESS) {\n        return {\n            ...state,\n            movieName: '',\n            popularMovieList: action.popularMovieList,\n        };\n    }\n\n    if (action.type === SearchTypes.SEARCH_GENRE_REQUEST) {\n        return {\n            ...state,\n        };\n    }\n    if (action.type === SearchTypes.SEARCH_GENRE_SUCCESS) {\n        const randomArray = action.genreList.sort(() => 0.5 - Math.random());\n\n        const result = randomArray.slice(0, 4);\n\n        return {\n            ...state,\n            genreList: result,\n        };\n    }\n\n    return state;\n};\n\nexport default searchMovie;\n"
+        }
+    ]
+}

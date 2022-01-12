@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/components/mainContent/filter/checkBox/styles.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1641869038038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641869500636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,6 @@\n import styled from 'styled-components';\n+\n+export const customInput = styled.input`\n+    width: 16px;\n+    height: 16px;\n+`;\n"
+                },
+                {
+                    "date": 1641869530048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import styled from 'styled-components';\n \n-export const customInput = styled.input`\n+export const CustomInput = styled.input`\n     width: 16px;\n     height: 16px;\n+    margin-right: 10px;\n `;\n"
+                },
+                {
+                    "date": 1641869708768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,14 @@\n import styled from 'styled-components';\n \n+export const CustomLabem = styled.label`\n+    display: flex;\n+    align-items: center;\n+    height: 20px;\n+    font-size: 18px;\n+    font-weight: 500;\n+`;\n+\n export const CustomInput = styled.input`\n     width: 16px;\n     height: 16px;\n     margin-right: 10px;\n"
+                },
+                {
+                    "date": 1641869786631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,13 @@\n import styled from 'styled-components';\n \n-export const CustomLabem = styled.label`\n+export const CustomLabel = styled.label`\n     display: flex;\n     align-items: center;\n     height: 20px;\n     font-size: 18px;\n     font-weight: 500;\n+    margin-top: 10px;\n `;\n \n export const CustomInput = styled.input`\n     width: 16px;\n"
+                },
+                {
+                    "date": 1641870150444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n     height: 20px;\n     font-size: 18px;\n     font-weight: 500;\n     margin-top: 10px;\n+    text-transform: capitalize;\n `;\n \n export const CustomInput = styled.input`\n     width: 16px;\n"
+                }
+            ],
+            "date": 1641869038038,
+            "name": "Commit-0",
+            "content": "import styled from 'styled-components';\n"
+        }
+    ]
+}

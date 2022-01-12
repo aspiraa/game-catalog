@@ -1,0 +1,346 @@
+{
+    "sourceFile": "src/components/mainContent/modal/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 82,
+            "patches": [
+                {
+                    "date": 1641954052764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641954159079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,11 @@\n import React from 'react';\n+import { ModalContainer } from './style';\n+\n+\n+const Modal: React.FC = () => {\n+    return{\n+       <ModalContainer/>\n+    }\n+}\n+\n+export default Modal\n"
+                },
+                {
+                    "date": 1641954250112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,8 @@\n import React from 'react';\n import { ModalContainer } from './style';\n \n-\n const Modal: React.FC = () => {\n-    return{\n-       <ModalContainer/>\n-    }\n-}\n+    return <ModalContainer />;\n+};\n \n-export default Modal\n+export default Modal;\n"
+                },
+                {
+                    "date": 1641954452488,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n import React from 'react';\n-import { ModalContainer } from './style';\n+import { Content, ModalContainer } from './style';\n \n const Modal: React.FC = () => {\n-    return <ModalContainer />;\n+    return <ModalContainer>\n+        <Content\n+    </ModalContainer>;\n };\n \n export default Modal;\n"
+                },
+                {
+                    "date": 1641954899674,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,24 @@\n import React from 'react';\n-import { Content, ModalContainer } from './style';\n+import {\n+    Content,\n+    ModalContainer,\n+    ScreenshotContainer,\n+    ScreenshotContentContainer,\n+    Screenshot,\n+} from './style';\n \n const Modal: React.FC = () => {\n-    return <ModalContainer>\n-        <Content\n-    </ModalContainer>;\n+    return (\n+        <ModalContainer>\n+            <Content>\n+                <ScreenshotContainer>\n+                    <ScreenshotContentContainer>\n+                        <Screenshot />\n+                    </ScreenshotContentContainer>\n+                </ScreenshotContainer>\n+            </Content>\n+        </ModalContainer>\n+    );\n };\n \n export default Modal;\n"
+                },
+                {
+                    "date": 1641955136364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,10 @@\n             <Content>\n                 <ScreenshotContainer>\n                     <ScreenshotContentContainer>\n                         <Screenshot />\n+                        <Screenshot />\n+                        <Screenshot />\n                     </ScreenshotContentContainer>\n                 </ScreenshotContainer>\n             </Content>\n         </ModalContainer>\n"
+                },
+                {
+                    "date": 1641955335876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,10 @@\n                         <Screenshot />\n                         <Screenshot />\n                     </ScreenshotContentContainer>\n                 </ScreenshotContainer>\n+\n+                <h1> GAME NAME </h1>\n             </Content>\n         </ModalContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641955462454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n                     </ScreenshotContentContainer>\n                 </ScreenshotContainer>\n \n                 <h1> GAME NAME </h1>\n+                <span>Genero</span>\n             </Content>\n         </ModalContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641955609874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,10 @@\n                 </ScreenshotContainer>\n \n                 <h1> GAME NAME </h1>\n                 <span>Genero</span>\n+                <p>\n+                One of the most popular FPSes in the world is now a free-to-play battle royale: Call of Duty: Warzone. Strive to become the last squad standing in Battle Royale mode, where 150 players loot and shoot their way through an ever-shrinking battlefield; or complete contracts and try to escape with the most cash in Plunder mode. Money can also buy you weapons and perks from stations throughout the map, but if you're taken out, you'll lose everything you've accumulated!\n             </Content>\n         </ModalContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641955626776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,18 @@\n \n                 <h1> GAME NAME </h1>\n                 <span>Genero</span>\n                 <p>\n-                One of the most popular FPSes in the world is now a free-to-play battle royale: Call of Duty: Warzone. Strive to become the last squad standing in Battle Royale mode, where 150 players loot and shoot their way through an ever-shrinking battlefield; or complete contracts and try to escape with the most cash in Plunder mode. Money can also buy you weapons and perks from stations throughout the map, but if you're taken out, you'll lose everything you've accumulated!\n+                    One of the most popular FPSes in the world is now a\n+                    free-to-play battle royale: Call of Duty: Warzone. Strive to\n+                    become the last squad standing in Battle Royale mode, where\n+                    150 players loot and shoot their way through an\n+                    ever-shrinking battlefield; or complete contracts and try to\n+                    escape with the most cash in Plunder mode. Money can also\n+                    buy you weapons and perks from stations throughout the map,\n+                    but if you're taken out, you'll lose everything you've\n+                    accumulated!\n+                </p>\n             </Content>\n         </ModalContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641955644703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n                     150 players loot and shoot their way through an\n                     ever-shrinking battlefield; or complete contracts and try to\n                     escape with the most cash in Plunder mode. Money can also\n                     buy you weapons and perks from stations throughout the map,\n-                    but if you're taken out, you'll lose everything you've\n+                    but if youre taken out, youll lose everything youve\n                     accumulated!\n                 </p>\n             </Content>\n         </ModalContainer>\n"
+                },
+                {
+                    "date": 1641955717544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n     ModalContainer,\n     ScreenshotContainer,\n     ScreenshotContentContainer,\n     Screenshot,\n+    Description,\n } from './style';\n \n const Modal: React.FC = () => {\n     return (\n@@ -20,9 +21,9 @@\n                 </ScreenshotContainer>\n \n                 <h1> GAME NAME </h1>\n                 <span>Genero</span>\n-                <p>\n+                <Description>\n                     One of the most popular FPSes in the world is now a\n                     free-to-play battle royale: Call of Duty: Warzone. Strive to\n                     become the last squad standing in Battle Royale mode, where\n                     150 players loot and shoot their way through an\n@@ -30,9 +31,9 @@\n                     escape with the most cash in Plunder mode. Money can also\n                     buy you weapons and perks from stations throughout the map,\n                     but if youre taken out, youll lose everything youve\n                     accumulated!\n-                </p>\n+                </Description>\n             </Content>\n         </ModalContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641955782303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n                 </ScreenshotContainer>\n \n                 <h1> GAME NAME </h1>\n                 <span>Genero</span>\n+                <span>realese data: 2020-03-10\"</span>\n                 <Description>\n                     One of the most popular FPSes in the world is now a\n                     free-to-play battle royale: Call of Duty: Warzone. Strive to\n                     become the last squad standing in Battle Royale mode, where\n"
+                },
+                {
+                    "date": 1641956157746,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,10 @@\n                     </ScreenshotContentContainer>\n                 </ScreenshotContainer>\n \n                 <h1> GAME NAME </h1>\n-                <span>Genero</span>\n-                <span>realese data: 2020-03-10\"</span>\n+                <CustomSpan>Genero</CustomSpan>\n+                <CustomSpan>realese data: 2020-03-10</CustomSpan>\n                 <Description>\n                     One of the most popular FPSes in the world is now a\n                     free-to-play battle royale: Call of Duty: Warzone. Strive to\n                     become the last squad standing in Battle Royale mode, where\n"
+                },
+                {
+                    "date": 1641956388133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n     ScreenshotContainer,\n     ScreenshotContentContainer,\n     Screenshot,\n     Description,\n+    CustomSpan,\n } from './style';\n \n const Modal: React.FC = () => {\n     return (\n@@ -21,9 +22,10 @@\n                 </ScreenshotContainer>\n \n                 <h1> GAME NAME </h1>\n                 <CustomSpan>Genero</CustomSpan>\n-                <CustomSpan>realese data: 2020-03-10</CustomSpan>\n+                <CustomSpan>Realese data: 2020-03-10</CustomSpan>\n+                <CustomSpan>Platform: Windows</CustomSpan>\n                 <Description>\n                     One of the most popular FPSes in the world is now a\n                     free-to-play battle royale: Call of Duty: Warzone. Strive to\n                     become the last squad standing in Battle Royale mode, where\n"
+                },
+                {
+                    "date": 1641956554013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,11 @@\n                     buy you weapons and perks from stations throughout the map,\n                     but if youre taken out, youll lose everything youve\n                     accumulated!\n                 </Description>\n+\n+                <h2>Minimum system requirements</h2>\n+                <div />\n             </Content>\n         </ModalContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641956560644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n                     but if youre taken out, youll lose everything youve\n                     accumulated!\n                 </Description>\n \n-                <h2>Minimum system requirements</h2>\n+                <h2>Minimum system requirements : </h2>\n                 <div />\n             </Content>\n         </ModalContainer>\n     );\n"
+                },
+                {
+                    "date": 1641956786178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n     ScreenshotContentContainer,\n     Screenshot,\n     Description,\n     CustomSpan,\n+    MinRequirementsContainer,\n } from './style';\n \n const Modal: React.FC = () => {\n     return (\n@@ -37,9 +38,18 @@\n                     accumulated!\n                 </Description>\n \n                 <h2>Minimum system requirements : </h2>\n-                <div />\n+                <MinRequirementsContainer>\n+                    <h3>os: Windows 7 64-Bit (SP1) or Windows 10 64-Bit</h3>\n+                    <h3>processor: Intel Core i3-4340 or AMD FX-6300</h3>\n+                    <h3>memory: 8GB RAM</h3>\n+                    <h3>\n+                        graphics: NVIDIA GeForce GTX 670 / GeForce GTX 1650 or\n+                        Radeon HD 7950\n+                    </h3>\n+                    <h3>storage: 175GB HD space</h3>\n+                </MinRequirementsContainer>\n             </Content>\n         </ModalContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641956829773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,10 +37,10 @@\n                     but if youre taken out, youll lose everything youve\n                     accumulated!\n                 </Description>\n \n-                <h2>Minimum system requirements : </h2>\n                 <MinRequirementsContainer>\n+                    <h2>Minimum system requirements : </h2>\n                     <h3>os: Windows 7 64-Bit (SP1) or Windows 10 64-Bit</h3>\n                     <h3>processor: Intel Core i3-4340 or AMD FX-6300</h3>\n                     <h3>memory: 8GB RAM</h3>\n                     <h3>\n"
+                },
+                {
+                    "date": 1641956997152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,12 @@\n                 </Description>\n \n                 <MinRequirementsContainer>\n                     <h2>Minimum system requirements : </h2>\n-                    <h3>os: Windows 7 64-Bit (SP1) or Windows 10 64-Bit</h3>\n+                    <h3>\n+                        <strong>os:</strong>\n+                        Windows 7 64-Bit (SP1) or Windows 10 64-Bit\n+                    </h3>\n                     <h3>processor: Intel Core i3-4340 or AMD FX-6300</h3>\n                     <h3>memory: 8GB RAM</h3>\n                     <h3>\n                         graphics: NVIDIA GeForce GTX 670 / GeForce GTX 1650 or\n"
+                },
+                {
+                    "date": 1641957008730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,12 @@\n                     <h3>\n                         <strong>os:</strong>\n                         Windows 7 64-Bit (SP1) or Windows 10 64-Bit\n                     </h3>\n-                    <h3>processor: Intel Core i3-4340 or AMD FX-6300</h3>\n+                    <h3>\n+                        <strong>processor:</strong>\n+                        Intel Core i3-4340 or AMD FX-6300\n+                    </h3>\n                     <h3>memory: 8GB RAM</h3>\n                     <h3>\n                         graphics: NVIDIA GeForce GTX 670 / GeForce GTX 1650 or\n                         Radeon HD 7950\n"
+                },
+                {
+                    "date": 1641957017532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,10 +47,13 @@\n                     <h3>\n                         <strong>processor:</strong>\n                         Intel Core i3-4340 or AMD FX-6300\n                     </h3>\n-                    <h3>memory: 8GB RAM</h3>\n                     <h3>\n+                        <strong>memory:</strong>\n+                        8GB RAM\n+                    </h3>\n+                    <h3>\n                         graphics: NVIDIA GeForce GTX 670 / GeForce GTX 1650 or\n                         Radeon HD 7950\n                     </h3>\n                     <h3>storage: 175GB HD space</h3>\n"
+                },
+                {
+                    "date": 1641957027816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,10 +52,11 @@\n                         <strong>memory:</strong>\n                         8GB RAM\n                     </h3>\n                     <h3>\n-                        graphics: NVIDIA GeForce GTX 670 / GeForce GTX 1650 or\n-                        Radeon HD 7950\n+                        <strong>graphics:</strong>\n+                        NVIDIA GeForce GTX 670 / GeForce GTX 1650 or Radeon HD\n+                        7950\n                     </h3>\n                     <h3>storage: 175GB HD space</h3>\n                 </MinRequirementsContainer>\n             </Content>\n"
+                },
+                {
+                    "date": 1641957038622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,12 @@\n                         <strong>graphics:</strong>\n                         NVIDIA GeForce GTX 670 / GeForce GTX 1650 or Radeon HD\n                         7950\n                     </h3>\n-                    <h3>storage: 175GB HD space</h3>\n+                    <h3>\n+                        <strong>storage:</strong>\n+                        175GB HD space\n+                    </h3>\n                 </MinRequirementsContainer>\n             </Content>\n         </ModalContainer>\n     );\n"
+                },
+                {
+                    "date": 1641957084943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,29 +39,16 @@\n                 </Description>\n \n                 <MinRequirementsContainer>\n                     <h2>Minimum system requirements : </h2>\n+                    <h3>os: Windows 7 64-Bit (SP1) or Windows 10 64-Bit</h3>\n+                    <h3>processor: Intel Core i3-4340 or AMD FX-6300</h3>\n+                    <h3>memory: 8GB RAM</h3>\n                     <h3>\n-                        <strong>os:</strong>\n-                        Windows 7 64-Bit (SP1) or Windows 10 64-Bit\n+                        graphics: NVIDIA GeForce GTX 670 / GeForce GTX 1650 or\n+                        Radeon HD 7950\n                     </h3>\n-                    <h3>\n-                        <strong>processor:</strong>\n-                        Intel Core i3-4340 or AMD FX-6300\n-                    </h3>\n-                    <h3>\n-                        <strong>memory:</strong>\n-                        8GB RAM\n-                    </h3>\n-                    <h3>\n-                        <strong>graphics:</strong>\n-                        NVIDIA GeForce GTX 670 / GeForce GTX 1650 or Radeon HD\n-                        7950\n-                    </h3>\n-                    <h3>\n-                        <strong>storage:</strong>\n-                        175GB HD space\n-                    </h3>\n+                    <h3>storage: 175GB HD space</h3>\n                 </MinRequirementsContainer>\n             </Content>\n         </ModalContainer>\n     );\n"
+                },
+                {
+                    "date": 1641957144189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,16 +39,31 @@\n                 </Description>\n \n                 <MinRequirementsContainer>\n                     <h2>Minimum system requirements : </h2>\n-                    <h3>os: Windows 7 64-Bit (SP1) or Windows 10 64-Bit</h3>\n-                    <h3>processor: Intel Core i3-4340 or AMD FX-6300</h3>\n-                    <h3>memory: 8GB RAM</h3>\n                     <h3>\n-                        graphics: NVIDIA GeForce GTX 670 / GeForce GTX 1650 or\n-                        Radeon HD 7950\n+                        os:\n+                        <span>Windows 7 64-Bit (SP1) or Windows 10 64-Bit</span>\n                     </h3>\n-                    <h3>storage: 175GB HD space</h3>\n+                    <h3>\n+                        processor:\n+                        <span>Intel Core i3-4340 or AMD FX-6300</span>\n+                    </h3>\n+                    <h3>\n+                        memory:\n+                        <span>8GB RAM</span>\n+                    </h3>\n+                    <h3>\n+                        graphics:\n+                        <span>\n+                            NVIDIA GeForce GTX 670 / GeForce GTX 1650 or Radeon\n+                            HD 7950\n+                        </span>\n+                    </h3>\n+                    <h3>\n+                        storage:\n+                        <span>175GB HD space</span>\n+                    </h3>\n                 </MinRequirementsContainer>\n             </Content>\n         </ModalContainer>\n     );\n"
+                },
+                {
+                    "date": 1641957200050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,31 +39,31 @@\n                 </Description>\n \n                 <MinRequirementsContainer>\n                     <h2>Minimum system requirements : </h2>\n-                    <h3>\n+                    <div>\n                         os:\n                         <span>Windows 7 64-Bit (SP1) or Windows 10 64-Bit</span>\n-                    </h3>\n-                    <h3>\n+                    </div>\n+                    <div>\n                         processor:\n                         <span>Intel Core i3-4340 or AMD FX-6300</span>\n-                    </h3>\n-                    <h3>\n+                    </div>\n+                    <div>\n                         memory:\n                         <span>8GB RAM</span>\n-                    </h3>\n-                    <h3>\n+                    </div>\n+                    <div>\n                         graphics:\n                         <span>\n                             NVIDIA GeForce GTX 670 / GeForce GTX 1650 or Radeon\n                             HD 7950\n                         </span>\n-                    </h3>\n-                    <h3>\n+                    </div>\n+                    <div>\n                         storage:\n                         <span>175GB HD space</span>\n-                    </h3>\n+                    </div>\n                 </MinRequirementsContainer>\n             </Content>\n         </ModalContainer>\n     );\n"
+                },
+                {
+                    "date": 1641957280905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,31 +39,16 @@\n                 </Description>\n \n                 <MinRequirementsContainer>\n                     <h2>Minimum system requirements : </h2>\n+                    <div>os: Windows 7 64-Bit (SP1) or Windows 10 64-Bit</div>\n+                    <div>processor: Intel Core i3-4340 or AMD FX-6300</div>\n+                    <div>memory: 8GB RAM</div>\n                     <div>\n-                        os:\n-                        <span>Windows 7 64-Bit (SP1) or Windows 10 64-Bit</span>\n+                        graphics: NVIDIA GeForce GTX 670 / GeForce GTX 1650 or\n+                        Radeon HD 7950\n                     </div>\n-                    <div>\n-                        processor:\n-                        <span>Intel Core i3-4340 or AMD FX-6300</span>\n-                    </div>\n-                    <div>\n-                        memory:\n-                        <span>8GB RAM</span>\n-                    </div>\n-                    <div>\n-                        graphics:\n-                        <span>\n-                            NVIDIA GeForce GTX 670 / GeForce GTX 1650 or Radeon\n-                            HD 7950\n-                        </span>\n-                    </div>\n-                    <div>\n-                        storage:\n-                        <span>175GB HD space</span>\n-                    </div>\n+                    <div>storage: 175GB HD space</div>\n                 </MinRequirementsContainer>\n             </Content>\n         </ModalContainer>\n     );\n"
+                },
+                {
+                    "date": 1641957578784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n     Screenshot,\n     Description,\n     CustomSpan,\n     MinRequirementsContainer,\n+    Header,\n } from './style';\n \n const Modal: React.FC = () => {\n     return (\n@@ -20,10 +21,11 @@\n                         <Screenshot />\n                         <Screenshot />\n                     </ScreenshotContentContainer>\n                 </ScreenshotContainer>\n-\n-                <h1> GAME NAME </h1>\n+                <Header>\n+                    <h1> GAME NAME </h1>\n+                </Header>\n                 <CustomSpan>Genero</CustomSpan>\n                 <CustomSpan>Realese data: 2020-03-10</CustomSpan>\n                 <CustomSpan>Platform: Windows</CustomSpan>\n                 <Description>\n"
+                },
+                {
+                    "date": 1641957677186,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import React from 'react';\n+import { BiSortUp } from 'react-icons/bi';\n import {\n     Content,\n     ModalContainer,\n     ScreenshotContainer,\n@@ -23,8 +24,11 @@\n                     </ScreenshotContentContainer>\n                 </ScreenshotContainer>\n                 <Header>\n                     <h1> GAME NAME </h1>\n+                    <i>\n+                        <BiSortUp size=\"25px\" />\n+                    </i>\n                 </Header>\n                 <CustomSpan>Genero</CustomSpan>\n                 <CustomSpan>Realese data: 2020-03-10</CustomSpan>\n                 <CustomSpan>Platform: Windows</CustomSpan>\n"
+                },
+                {
+                    "date": 1641957730465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from 'react';\n-import { BiSortUp } from 'react-icons/bi';\n+import { IoReturnDownBackOutline } from 'react-icons/io';\n import {\n     Content,\n     ModalContainer,\n     ScreenshotContainer,\n@@ -25,9 +25,9 @@\n                 </ScreenshotContainer>\n                 <Header>\n                     <h1> GAME NAME </h1>\n                     <i>\n-                        <BiSortUp size=\"25px\" />\n+                        <IoReturnDownBackOutline size=\"25px\" />\n                     </i>\n                 </Header>\n                 <CustomSpan>Genero</CustomSpan>\n                 <CustomSpan>Realese data: 2020-03-10</CustomSpan>\n"
+                },
+                {
+                    "date": 1641957745734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from 'react';\n-import { IoReturnDownBackOutline } from 'react-icons/io';\n+import { IoReturnDownBackOutline } from 'react-icons/io5';\n import {\n     Content,\n     ModalContainer,\n     ScreenshotContainer,\n"
+                },
+                {
+                    "date": 1641957769027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n                 </ScreenshotContainer>\n                 <Header>\n                     <h1> GAME NAME </h1>\n                     <i>\n-                        <IoReturnDownBackOutline size=\"25px\" />\n+                        <IoReturnDownBackOutline size=\"32px\" />\n                     </i>\n                 </Header>\n                 <CustomSpan>Genero</CustomSpan>\n                 <CustomSpan>Realese data: 2020-03-10</CustomSpan>\n"
+                },
+                {
+                    "date": 1641959768640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,9 @@\n import React from 'react';\n import { IoReturnDownBackOutline } from 'react-icons/io5';\n+import { connect, useDispatch, useSelector } from 'react-redux';\n+import { bindActionCreators, Dispatch } from 'redux';\n+import { Creators as SearchAction } from '../../store/actions/searchGames';\n import {\n     Content,\n     ModalContainer,\n     ScreenshotContainer,\n@@ -11,8 +14,15 @@\n     MinRequirementsContainer,\n     Header,\n } from './style';\n \n+const mapDispatchToProps = (dispatch: Dispatch) => {\n+    return bindActionCreators(SearchAction, dispatch);\n+};\n+const mapStateToProps = (state: ApplicationState) => ({\n+    gamelist: state.searchGames.gameList,\n+});\n+\n const Modal: React.FC = () => {\n     return (\n         <ModalContainer>\n             <Content>\n@@ -59,5 +69,5 @@\n         </ModalContainer>\n     );\n };\n \n-export default Modal;\n+export default connect(mapStateToProps, mapDispatchToProps)(Modal);\n"
+                },
+                {
+                    "date": 1641959779056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import React from 'react';\n import { IoReturnDownBackOutline } from 'react-icons/io5';\n import { connect, useDispatch, useSelector } from 'react-redux';\n import { bindActionCreators, Dispatch } from 'redux';\n+import { ApplicationState } from '../../../store';\n import { Creators as SearchAction } from '../../store/actions/searchGames';\n import {\n     Content,\n     ModalContainer,\n"
+                },
+                {
+                    "date": 1641959920319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,10 @@\n import { IoReturnDownBackOutline } from 'react-icons/io5';\n import { connect, useDispatch, useSelector } from 'react-redux';\n import { bindActionCreators, Dispatch } from 'redux';\n import { ApplicationState } from '../../../store';\n-import { Creators as SearchAction } from '../../store/actions/searchGames';\n+import { Creators as SearchAction } from '../../../store/actions/searchGames';\n+import { IGame } from '../../../store/reducers/types';\n import {\n     Content,\n     ModalContainer,\n     ScreenshotContainer,\n@@ -19,12 +20,16 @@\n const mapDispatchToProps = (dispatch: Dispatch) => {\n     return bindActionCreators(SearchAction, dispatch);\n };\n const mapStateToProps = (state: ApplicationState) => ({\n-    gamelist: state.searchGames.gameList,\n+    game: state.searchGames.game,\n });\n \n const Modal: React.FC = () => {\n+    const game: IGame = useSelector(\n+        (state: ApplicationState) => state.searchGames.game,\n+    );\n+\n     return (\n         <ModalContainer>\n             <Content>\n                 <ScreenshotContainer>\n"
+                },
+                {
+                    "date": 1641959950704,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import React from 'react';\n import { IoReturnDownBackOutline } from 'react-icons/io5';\n-import { connect, useDispatch, useSelector } from 'react-redux';\n-import { bindActionCreators, Dispatch } from 'redux';\n+import { connect, useSelector } from 'react-redux';\n+\n import { ApplicationState } from '../../../store';\n-import { Creators as SearchAction } from '../../../store/actions/searchGames';\n+\n import { IGame } from '../../../store/reducers/types';\n import {\n     Content,\n     ModalContainer,\n@@ -16,11 +16,8 @@\n     MinRequirementsContainer,\n     Header,\n } from './style';\n \n-const mapDispatchToProps = (dispatch: Dispatch) => {\n-    return bindActionCreators(SearchAction, dispatch);\n-};\n const mapStateToProps = (state: ApplicationState) => ({\n     game: state.searchGames.game,\n });\n \n@@ -75,5 +72,5 @@\n         </ModalContainer>\n     );\n };\n \n-export default connect(mapStateToProps, mapDispatchToProps)(Modal);\n+export default connect(mapStateToProps, null)(Modal);\n"
+                },
+                {
+                    "date": 1641992141601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,22 +41,12 @@\n                     <i>\n                         <IoReturnDownBackOutline size=\"32px\" />\n                     </i>\n                 </Header>\n-                <CustomSpan>Genero</CustomSpan>\n-                <CustomSpan>Realese data: 2020-03-10</CustomSpan>\n-                <CustomSpan>Platform: Windows</CustomSpan>\n-                <Description>\n-                    One of the most popular FPSes in the world is now a\n-                    free-to-play battle royale: Call of Duty: Warzone. Strive to\n-                    become the last squad standing in Battle Royale mode, where\n-                    150 players loot and shoot their way through an\n-                    ever-shrinking battlefield; or complete contracts and try to\n-                    escape with the most cash in Plunder mode. Money can also\n-                    buy you weapons and perks from stations throughout the map,\n-                    but if youre taken out, youll lose everything youve\n-                    accumulated!\n-                </Description>\n+                <CustomSpan>{game.genre}</CustomSpan>\n+                <CustomSpan>Realese data: {game.release_date}</CustomSpan>\n+                <CustomSpan>Platform: {game.platform}</CustomSpan>\n+                <Description>{game.description}</Description>\n \n                 <MinRequirementsContainer>\n                     <h2>Minimum system requirements : </h2>\n                     <div>os: Windows 7 64-Bit (SP1) or Windows 10 64-Bit</div>\n"
+                },
+                {
+                    "date": 1641992164435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n                         <Screenshot />\n                     </ScreenshotContentContainer>\n                 </ScreenshotContainer>\n                 <Header>\n-                    <h1> GAME NAME </h1>\n+                    <h1> {game.title} </h1>\n                     <i>\n                         <IoReturnDownBackOutline size=\"32px\" />\n                     </i>\n                 </Header>\n"
+                },
+                {
+                    "date": 1641992228263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,16 +48,19 @@\n                 <Description>{game.description}</Description>\n \n                 <MinRequirementsContainer>\n                     <h2>Minimum system requirements : </h2>\n-                    <div>os: Windows 7 64-Bit (SP1) or Windows 10 64-Bit</div>\n-                    <div>processor: Intel Core i3-4340 or AMD FX-6300</div>\n-                    <div>memory: 8GB RAM</div>\n+                    <div>os: {game.minimum_system_requirements.os}</div>\n                     <div>\n-                        graphics: NVIDIA GeForce GTX 670 / GeForce GTX 1650 or\n-                        Radeon HD 7950\n+                        processor: {game.minimum_system_requirements.processor}\n                     </div>\n-                    <div>storage: 175GB HD space</div>\n+                    <div>memory: {game.minimum_system_requirements.memory}</div>\n+                    <div>\n+                        graphics: {game.minimum_system_requirements.graphics}\n+                    </div>\n+                    <div>\n+                        storage: {game.minimum_system_requirements.storage}\n+                    </div>\n                 </MinRequirementsContainer>\n             </Content>\n         </ModalContainer>\n     );\n"
+                },
+                {
+                    "date": 1641992394096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,13 @@\n const mapStateToProps = (state: ApplicationState) => ({\n     game: state.searchGames.game,\n });\n \n-const Modal: React.FC = () => {\n+interface IProps {\n+    visible: boolean;\n+}\n+\n+const Modal: React.FC = ({ visible }: IProps) => {\n     const game: IGame = useSelector(\n         (state: ApplicationState) => state.searchGames.game,\n     );\n \n"
+                },
+                {
+                    "date": 1641992615811,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import React from 'react';\n+import React, { useState } from 'react';\n import { IoReturnDownBackOutline } from 'react-icons/io5';\n import { connect, useSelector } from 'react-redux';\n \n import { ApplicationState } from '../../../store';\n@@ -25,8 +25,18 @@\n     visible: boolean;\n }\n \n const Modal: React.FC = ({ visible }: IProps) => {\n+    const [style, setStyle] = useState({\n+        display: 'none',\n+    });\n+\n+    if (visible) {\n+        setStyle({ display: 'block' });\n+    } else {\n+        setStyle({ display: 'none' });\n+    }\n+\n     const game: IGame = useSelector(\n         (state: ApplicationState) => state.searchGames.game,\n     );\n \n"
+                },
+                {
+                    "date": 1641992635128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n         (state: ApplicationState) => state.searchGames.game,\n     );\n \n     return (\n-        <ModalContainer>\n+        <ModalContainer style={style}>\n             <Content>\n                 <ScreenshotContainer>\n                     <ScreenshotContentContainer>\n                         <Screenshot />\n"
+                },
+                {
+                    "date": 1641992733647,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n interface IProps {\n     visible: boolean;\n }\n \n-const Modal: React.FC = ({ visible }: IProps) => {\n+const Modal = ({ visible }: IProps) => {\n     const [style, setStyle] = useState({\n         display: 'none',\n     });\n \n"
+                },
+                {
+                    "date": 1641992923484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,13 +29,13 @@\n     const [style, setStyle] = useState({\n         display: 'none',\n     });\n \n-    if (visible) {\n-        setStyle({ display: 'block' });\n-    } else {\n-        setStyle({ display: 'none' });\n-    }\n+    // if (visible) {\n+    //     setStyle({ display: 'block' });\n+    // } else {\n+    //     setStyle({ display: 'none' });\n+    // }\n \n     const game: IGame = useSelector(\n         (state: ApplicationState) => state.searchGames.game,\n     );\n"
+                },
+                {
+                    "date": 1641992977925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n }\n \n const Modal = ({ visible }: IProps) => {\n     const [style, setStyle] = useState({\n-        display: 'none',\n+        display: 'block',\n     });\n \n     // if (visible) {\n     //     setStyle({ display: 'block' });\n"
+                },
+                {
+                    "date": 1641993255365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,12 +21,14 @@\n     game: state.searchGames.game,\n });\n \n interface IProps {\n-    visible: boolean;\n+    style: {\n+        display: string;\n+    };\n }\n \n-const Modal = ({ visible }: IProps) => {\n+const Modal = ({ display }: IProps) => {\n     const [style, setStyle] = useState({\n         display: 'block',\n     });\n \n@@ -40,9 +42,9 @@\n         (state: ApplicationState) => state.searchGames.game,\n     );\n \n     return (\n-        <ModalContainer style={style}>\n+        <ModalContainer style={}>\n             <Content>\n                 <ScreenshotContainer>\n                     <ScreenshotContentContainer>\n                         <Screenshot />\n"
+                },
+                {
+                    "date": 1641993265376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,13 +26,9 @@\n         display: string;\n     };\n }\n \n-const Modal = ({ display }: IProps) => {\n-    const [style, setStyle] = useState({\n-        display: 'block',\n-    });\n-\n+const Modal = ({ style }: IProps) => {\n     // if (visible) {\n     //     setStyle({ display: 'block' });\n     // } else {\n     //     setStyle({ display: 'none' });\n"
+                },
+                {
+                    "date": 1641993412129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,26 +21,28 @@\n     game: state.searchGames.game,\n });\n \n interface IProps {\n-    style: {\n-        display: string;\n-    };\n+    display: string;\n }\n \n-const Modal = ({ style }: IProps) => {\n+const Modal = ({ display }: IProps) => {\n     // if (visible) {\n     //     setStyle({ display: 'block' });\n     // } else {\n     //     setStyle({ display: 'none' });\n     // }\n \n+    const style: {\n+        display: string;\n+    };\n+\n     const game: IGame = useSelector(\n         (state: ApplicationState) => state.searchGames.game,\n     );\n \n     return (\n-        <ModalContainer style={}>\n+        <ModalContainer style={style}>\n             <Content>\n                 <ScreenshotContainer>\n                     <ScreenshotContentContainer>\n                         <Screenshot />\n"
+                },
+                {
+                    "date": 1641993430357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,10 +31,10 @@\n     // } else {\n     //     setStyle({ display: 'none' });\n     // }\n \n-    const style: {\n-        display: string;\n+    const style = {\n+        display: display;\n     };\n \n     const game: IGame = useSelector(\n         (state: ApplicationState) => state.searchGames.game,\n"
+                },
+                {
+                    "date": 1641993542477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,11 +32,13 @@\n     //     setStyle({ display: 'none' });\n     // }\n \n     const style = {\n-        display: display;\n+        display,\n     };\n \n+    console.log(style);\n+\n     const game: IGame = useSelector(\n         (state: ApplicationState) => state.searchGames.game,\n     );\n \n"
+                },
+                {
+                    "date": 1641993762145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,20 +21,20 @@\n     game: state.searchGames.game,\n });\n \n interface IProps {\n-    display: string;\n+    displayValue: string;\n }\n \n-const Modal = ({ display }: IProps) => {\n+const Modal = ({ displayValue }: IProps) => {\n     // if (visible) {\n     //     setStyle({ display: 'block' });\n     // } else {\n     //     setStyle({ display: 'none' });\n     // }\n \n     const style = {\n-        display,\n+        display: displayValue,\n     };\n \n     console.log(style);\n \n"
+                },
+                {
+                    "date": 1641994029403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,14 +25,8 @@\n     displayValue: string;\n }\n \n const Modal = ({ displayValue }: IProps) => {\n-    // if (visible) {\n-    //     setStyle({ display: 'block' });\n-    // } else {\n-    //     setStyle({ display: 'none' });\n-    // }\n-\n     const style = {\n         display: displayValue,\n     };\n \n"
+                },
+                {
+                    "date": 1641994141866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n });\n \n interface IProps {\n     displayValue: string;\n+    closeModal: () => void;\n }\n \n const Modal = ({ displayValue }: IProps) => {\n     const style = {\n"
+                },
+                {
+                    "date": 1641994162236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n     displayValue: string;\n     closeModal: () => void;\n }\n \n-const Modal = ({ displayValue }: IProps) => {\n+const Modal = ({ displayValue, closeModal }: IProps) => {\n     const style = {\n         display: displayValue,\n     };\n \n@@ -48,9 +48,9 @@\n                     </ScreenshotContentContainer>\n                 </ScreenshotContainer>\n                 <Header>\n                     <h1> {game.title} </h1>\n-                    <i>\n+                    <i onClick={closeModal}>\n                         <IoReturnDownBackOutline size=\"32px\" />\n                     </i>\n                 </Header>\n                 <CustomSpan>{game.genre}</CustomSpan>\n"
+                },
+                {
+                    "date": 1641994190302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+/* eslint-disable jsx-a11y/no-static-element-interactions */\n+/* eslint-disable jsx-a11y/click-events-have-key-events */\n import React, { useState } from 'react';\n import { IoReturnDownBackOutline } from 'react-icons/io5';\n import { connect, useSelector } from 'react-redux';\n \n"
+                },
+                {
+                    "date": 1641994397199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,13 +32,12 @@\n     const style = {\n         display: displayValue,\n     };\n \n-    console.log(style);\n-\n     const game: IGame = useSelector(\n         (state: ApplicationState) => state.searchGames.game,\n     );\n+    console.log(game.screenshots);\n \n     return (\n         <ModalContainer style={style}>\n             <Content>\n"
+                },
+                {
+                    "date": 1641994734523,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,11 +42,11 @@\n         <ModalContainer style={style}>\n             <Content>\n                 <ScreenshotContainer>\n                     <ScreenshotContentContainer>\n-                        <Screenshot />\n-                        <Screenshot />\n-                        <Screenshot />\n+                        {game.screenshots.map((item) => {\n+                            <img src={item.image} alt={game.title} />;\n+                        })}\n                     </ScreenshotContentContainer>\n                 </ScreenshotContainer>\n                 <Header>\n                     <h1> {game.title} </h1>\n"
+                },
+                {
+                    "date": 1641994747257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n             <Content>\n                 <ScreenshotContainer>\n                     <ScreenshotContentContainer>\n                         {game.screenshots.map((item) => {\n-                            <img src={item.image} alt={game.title} />;\n+                            return <img src={item.image} alt={game.title} />;\n                         })}\n                     </ScreenshotContentContainer>\n                 </ScreenshotContainer>\n                 <Header>\n"
+                },
+                {
+                    "date": 1641994767056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,15 @@\n             <Content>\n                 <ScreenshotContainer>\n                     <ScreenshotContentContainer>\n                         {game.screenshots.map((item) => {\n-                            return <img src={item.image} alt={game.title} />;\n+                            return (\n+                                <img\n+                                    src={item.image}\n+                                    alt={game.title}\n+                                    key={item.id}\n+                                />\n+                            );\n                         })}\n                     </ScreenshotContentContainer>\n                 </ScreenshotContainer>\n                 <Header>\n"
+                },
+                {
+                    "date": 1641995175628,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,13 +44,15 @@\n                 <ScreenshotContainer>\n                     <ScreenshotContentContainer>\n                         {game.screenshots.map((item) => {\n                             return (\n-                                <img\n-                                    src={item.image}\n-                                    alt={game.title}\n-                                    key={item.id}\n-                                />\n+                                <Screenshot>\n+                                    <img\n+                                        src={item.image}\n+                                        alt={game.title}\n+                                        key={item.id}\n+                                    />\n+                                </Screenshot>\n                             );\n                         })}\n                     </ScreenshotContentContainer>\n                 </ScreenshotContainer>\n"
+                },
+                {
+                    "date": 1641996154267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n \n import { ApplicationState } from '../../../store';\n \n import { IGame } from '../../../store/reducers/types';\n+import Carousel from '../../carousel';\n import {\n     Content,\n     ModalContainer,\n     ScreenshotContainer,\n@@ -40,8 +41,9 @@\n \n     return (\n         <ModalContainer style={style}>\n             <Content>\n+                <Carousel />\n                 <ScreenshotContainer>\n                     <ScreenshotContentContainer>\n                         {game.screenshots.map((item) => {\n                             return (\n"
+                },
+                {
+                    "date": 1641996198054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,8 @@\n \n     return (\n         <ModalContainer style={style}>\n             <Content>\n-                <Carousel />\n                 <ScreenshotContainer>\n                     <ScreenshotContentContainer>\n                         {game.screenshots.map((item) => {\n                             return (\n"
+                },
+                {
+                    "date": 1641996279853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \n import { ApplicationState } from '../../../store';\n \n import { IGame } from '../../../store/reducers/types';\n-import Carousel from '../../carousel';\n+\n import {\n     Content,\n     ModalContainer,\n     ScreenshotContainer,\n"
+                },
+                {
+                    "date": 1642000409949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,14 @@\n                 </Header>\n                 <CustomSpan>{game.genre}</CustomSpan>\n                 <CustomSpan>Realese data: {game.release_date}</CustomSpan>\n                 <CustomSpan>Platform: {game.platform}</CustomSpan>\n-                <Description>{game.description}</Description>\n+                <Description>\n+                    {game.description}\n+                    <td\n+                        dangerouslySetInnerHTML={{ __html: this.state.actions }}\n+                    />\n+                </Description>\n \n                 <MinRequirementsContainer>\n                     <h2>Minimum system requirements : </h2>\n                     <div>os: {game.minimum_system_requirements.os}</div>\n"
+                },
+                {
+                    "date": 1642000428048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,12 +66,9 @@\n                 <CustomSpan>{game.genre}</CustomSpan>\n                 <CustomSpan>Realese data: {game.release_date}</CustomSpan>\n                 <CustomSpan>Platform: {game.platform}</CustomSpan>\n                 <Description>\n-                    {game.description}\n-                    <td\n-                        dangerouslySetInnerHTML={{ __html: this.state.actions }}\n-                    />\n+                    <p dangerouslySetInnerHTML={{ __html: game.description }} />\n                 </Description>\n \n                 <MinRequirementsContainer>\n                     <h2>Minimum system requirements : </h2>\n"
+                },
+                {
+                    "date": 1642001158486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,8 @@\n \n     const game: IGame = useSelector(\n         (state: ApplicationState) => state.searchGames.game,\n     );\n-    console.log(game.screenshots);\n \n     return (\n         <ModalContainer style={style}>\n             <Content>\n"
+                },
+                {
+                    "date": 1642001284362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n /* eslint-disable jsx-a11y/no-static-element-interactions */\n /* eslint-disable jsx-a11y/click-events-have-key-events */\n-import React, { useState } from 'react';\n+import React from 'react';\n import { IoReturnDownBackOutline } from 'react-icons/io5';\n import { connect, useSelector } from 'react-redux';\n \n import { ApplicationState } from '../../../store';\n"
+                },
+                {
+                    "date": 1642001295939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,14 +44,10 @@\n                 <ScreenshotContainer>\n                     <ScreenshotContentContainer>\n                         {game.screenshots.map((item) => {\n                             return (\n-                                <Screenshot>\n-                                    <img\n-                                        src={item.image}\n-                                        alt={game.title}\n-                                        key={item.id}\n-                                    />\n+                                <Screenshot key={item.id}>\n+                                    <img src={item.image} alt={game.title} />\n                                 </Screenshot>\n                             );\n                         })}\n                     </ScreenshotContentContainer>\n"
+                },
+                {
+                    "date": 1642005495312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,8 +57,9 @@\n                     <i onClick={closeModal}>\n                         <IoReturnDownBackOutline size=\"32px\" />\n                     </i>\n                 </Header>\n+                <span>Site do jogo</span>\n                 <CustomSpan>{game.genre}</CustomSpan>\n                 <CustomSpan>Realese data: {game.release_date}</CustomSpan>\n                 <CustomSpan>Platform: {game.platform}</CustomSpan>\n                 <Description>\n"
+                },
+                {
+                    "date": 1642005502157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n                     <i onClick={closeModal}>\n                         <IoReturnDownBackOutline size=\"32px\" />\n                     </i>\n                 </Header>\n-                <span>Site do jogo</span>\n+                <a>Site do jogo</a>\n                 <CustomSpan>{game.genre}</CustomSpan>\n                 <CustomSpan>Realese data: {game.release_date}</CustomSpan>\n                 <CustomSpan>Platform: {game.platform}</CustomSpan>\n                 <Description>\n"
+                },
+                {
+                    "date": 1642005521784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n                     <i onClick={closeModal}>\n                         <IoReturnDownBackOutline size=\"32px\" />\n                     </i>\n                 </Header>\n-                <a>Site do jogo</a>\n+                <a href=\"site\">site do jogo</a>\n                 <CustomSpan>{game.genre}</CustomSpan>\n                 <CustomSpan>Realese data: {game.release_date}</CustomSpan>\n                 <CustomSpan>Platform: {game.platform}</CustomSpan>\n                 <Description>\n"
+                },
+                {
+                    "date": 1642005581215,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,10 +56,10 @@\n                     <h1> {game.title} </h1>\n                     <i onClick={closeModal}>\n                         <IoReturnDownBackOutline size=\"32px\" />\n                     </i>\n+                    <a href=\"\">site do jogo</a>\n                 </Header>\n-                <a href=\"site\">site do jogo</a>\n                 <CustomSpan>{game.genre}</CustomSpan>\n                 <CustomSpan>Realese data: {game.release_date}</CustomSpan>\n                 <CustomSpan>Platform: {game.platform}</CustomSpan>\n                 <Description>\n"
+                },
+                {
+                    "date": 1642005787030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,12 @@\n                     <h1> {game.title} </h1>\n                     <i onClick={closeModal}>\n                         <IoReturnDownBackOutline size=\"32px\" />\n                     </i>\n-                    <a href=\"\">site do jogo</a>\n+                    <a href={game.game_url} target=\"_blank\" rel=\"noreferrer\">\n+                        {' '}\n+                        Visit game website\n+                    </a>\n                 </Header>\n                 <CustomSpan>{game.genre}</CustomSpan>\n                 <CustomSpan>Realese data: {game.release_date}</CustomSpan>\n                 <CustomSpan>Platform: {game.platform}</CustomSpan>\n"
+                },
+                {
+                    "date": 1642005807251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,10 +56,9 @@\n                     <h1> {game.title} </h1>\n                     <i onClick={closeModal}>\n                         <IoReturnDownBackOutline size=\"32px\" />\n                     </i>\n-                    <a href={game.game_url} target=\"_blank\" rel=\"noreferrer\">\n-                        {' '}\n+                    <a href={game.game_url} target=\"blank\" rel=\"noreferrer\">\n                         Visit game website\n                     </a>\n                 </Header>\n                 <CustomSpan>{game.genre}</CustomSpan>\n"
+                },
+                {
+                    "date": 1642005827434,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,9 +56,9 @@\n                     <h1> {game.title} </h1>\n                     <i onClick={closeModal}>\n                         <IoReturnDownBackOutline size=\"32px\" />\n                     </i>\n-                    <a href={game.game_url} target=\"blank\" rel=\"noreferrer\">\n+                    <a href={game.game_url} target=\"_blank\" rel=\"noreferrer\">\n                         Visit game website\n                     </a>\n                 </Header>\n                 <CustomSpan>{game.genre}</CustomSpan>\n"
+                },
+                {
+                    "date": 1642005883118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n                     <i onClick={closeModal}>\n                         <IoReturnDownBackOutline size=\"32px\" />\n                     </i>\n                     <a href={game.game_url} target=\"_blank\" rel=\"noreferrer\">\n-                        Visit game website\n+                        Visit game website click here\n                     </a>\n                 </Header>\n                 <CustomSpan>{game.genre}</CustomSpan>\n                 <CustomSpan>Realese data: {game.release_date}</CustomSpan>\n"
+                },
+                {
+                    "date": 1642005917582,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n                     <i onClick={closeModal}>\n                         <IoReturnDownBackOutline size=\"32px\" />\n                     </i>\n                     <a href={game.game_url} target=\"_blank\" rel=\"noreferrer\">\n-                        Visit game website click here\n+                        Visit game website > click here<\n                     </a>\n                 </Header>\n                 <CustomSpan>{game.genre}</CustomSpan>\n                 <CustomSpan>Realese data: {game.release_date}</CustomSpan>\n"
+                },
+                {
+                    "date": 1642005997987,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n                     <i onClick={closeModal}>\n                         <IoReturnDownBackOutline size=\"32px\" />\n                     </i>\n                     <a href={game.game_url} target=\"_blank\" rel=\"noreferrer\">\n-                        Visit game website > click here<\n+                        \"Visit game website  >click here<\"\n                     </a>\n                 </Header>\n                 <CustomSpan>{game.genre}</CustomSpan>\n                 <CustomSpan>Realese data: {game.release_date}</CustomSpan>\n"
+                },
+                {
+                    "date": 1642006007525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n                     <i onClick={closeModal}>\n                         <IoReturnDownBackOutline size=\"32px\" />\n                     </i>\n                     <a href={game.game_url} target=\"_blank\" rel=\"noreferrer\">\n-                        \"Visit game website  >click here<\"\n+                        Visit game website click here\n                     </a>\n                 </Header>\n                 <CustomSpan>{game.genre}</CustomSpan>\n                 <CustomSpan>Realese data: {game.release_date}</CustomSpan>\n"
+                },
+                {
+                    "date": 1642006030163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n                     <i onClick={closeModal}>\n                         <IoReturnDownBackOutline size=\"32px\" />\n                     </i>\n                     <a href={game.game_url} target=\"_blank\" rel=\"noreferrer\">\n-                        Visit game website click here\n+                        Visit game website <span>click here</span>\n                     </a>\n                 </Header>\n                 <CustomSpan>{game.genre}</CustomSpan>\n                 <CustomSpan>Realese data: {game.release_date}</CustomSpan>\n"
+                },
+                {
+                    "date": 1642006186741,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,11 +56,17 @@\n                     <h1> {game.title} </h1>\n                     <i onClick={closeModal}>\n                         <IoReturnDownBackOutline size=\"32px\" />\n                     </i>\n-                    <a href={game.game_url} target=\"_blank\" rel=\"noreferrer\">\n-                        Visit game website <span>click here</span>\n-                    </a>\n+                    <div>\n+                        <a\n+                            href={game.game_url}\n+                            target=\"_blank\"\n+                            rel=\"noreferrer\"\n+                        >\n+                            Visit game website <span>click here</span>\n+                        </a>\n+                    </div>\n                 </Header>\n                 <CustomSpan>{game.genre}</CustomSpan>\n                 <CustomSpan>Realese data: {game.release_date}</CustomSpan>\n                 <CustomSpan>Platform: {game.platform}</CustomSpan>\n"
+                },
+                {
+                    "date": 1642007937374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n     Description,\n     CustomSpan,\n     MinRequirementsContainer,\n     Header,\n+    SubHeader,\n } from './style';\n \n const mapStateToProps = (state: ApplicationState) => ({\n     game: state.searchGames.game,\n@@ -66,11 +67,13 @@\n                             Visit game website <span>click here</span>\n                         </a>\n                     </div>\n                 </Header>\n-                <CustomSpan>{game.genre}</CustomSpan>\n-                <CustomSpan>Realese data: {game.release_date}</CustomSpan>\n-                <CustomSpan>Platform: {game.platform}</CustomSpan>\n+                <SubHeader>\n+                    <CustomSpan>{game.genre}</CustomSpan>\n+                    <CustomSpan>Realese data: {game.release_date}</CustomSpan>\n+                    <CustomSpan>Platform: {game.platform}</CustomSpan>\n+                </SubHeader>\n                 <Description>\n                     <p dangerouslySetInnerHTML={{ __html: game.description }} />\n                 </Description>\n \n"
+                }
+            ],
+            "date": 1641954052764,
+            "name": "Commit-0",
+            "content": "import React from 'react';\n"
+        }
+    ]
+}

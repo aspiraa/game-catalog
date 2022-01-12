@@ -1,0 +1,78 @@
+{
+    "sourceFile": "src/components/Carousel/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 15,
+            "patches": [
+                {
+                    "date": 1641559541978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641559627869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,9 @@\n import React from 'react';\n+\n+const Carousel: React.FC = function () {\n+    return (\n+        <div>\n+            <h2>carrossel</h2>\n+        </div>\n+    );\n+};\n"
+                },
+                {
+                    "date": 1641559639089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,4 +6,6 @@\n             <h2>carrossel</h2>\n         </div>\n     );\n };\n+\n+export default Carousel;\n"
+                },
+                {
+                    "date": 1641560228461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,4 +8,7 @@\n     );\n };\n \n export default Carousel;\n+const Component = function (props) {\n+    return <div />;\n+};\n"
+                },
+                {
+                    "date": 1641560778175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,11 @@\n import React from 'react';\n \n-const Carousel: React.FC = function () {\n+const Carousel: React.FC = () => {\n     return (\n         <div>\n             <h2>carrossel</h2>\n         </div>\n     );\n };\n \n export default Carousel;\n-const Component = function (props) {\n-    return <div />;\n-};\n"
+                },
+                {
+                    "date": 1641560846165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,10 @@\n \n const Carousel: React.FC = () => {\n     return (\n         <div>\n+\n+\n             <h2>carrossel</h2>\n         </div>\n     );\n };\n"
+                },
+                {
+                    "date": 1641560855335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,9 @@\n import React from 'react';\n \n-const Carousel: React.FC = () => {\n+const Carousel: React.FC = function () {\n     return (\n         <div>\n-\n-\n             <h2>carrossel</h2>\n         </div>\n     );\n };\n"
+                },
+                {
+                    "date": 1641560901758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n+/* eslint-disable react/function-component-definition */\n import React from 'react';\n \n-const Carousel: React.FC = function () {\n+const Carousel: React.FC = () => {\n     return (\n         <div>\n             <h2>carrossel</h2>\n         </div>\n"
+                },
+                {
+                    "date": 1641561303084,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-/* eslint-disable react/function-component-definition */\n+\n import React from 'react';\n \n const Carousel: React.FC = () => {\n     return (\n"
+                },
+                {
+                    "date": 1641561712437,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n-\n import React from 'react';\n \n-const Carousel: React.FC = () => {\n+const Carousel: React.FC = function () {\n     return (\n         <div>\n             <h2>carrossel</h2>\n         </div>\n"
+                },
+                {
+                    "date": 1641562327564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\n \n-const Carousel: React.FC = function () {\n+const Carousel: React.FC = () => {\n     return (\n         <div>\n             <h2>carrossel</h2>\n         </div>\n"
+                },
+                {
+                    "date": 1641563598572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,12 @@\n import React from 'react';\n+import { Container, ContentContainer } from './style';\n \n const Carousel: React.FC = () => {\n     return (\n-        <div>\n-            <h2>carrossel</h2>\n-        </div>\n+        <Container>\n+            <ContentContainer />\n+        </Container>\n     );\n };\n \n export default Carousel;\n"
+                },
+                {
+                    "date": 1641563621795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,10 @@\n const Carousel: React.FC = () => {\n     return (\n         <Container>\n             <ContentContainer />\n+            <ContentContainer />\n+            <ContentContainer />\n         </Container>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641567244625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,13 @@\n         <Container>\n             <ContentContainer />\n             <ContentContainer />\n             <ContentContainer />\n+            <SlideContainer>\n+                <SlideButton />\n+                <SlideButton />\n+                <SlideButton />\n+            </SlideContainer>\n         </Container>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641567251723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,11 @@\n import React from 'react';\n-import { Container, ContentContainer } from './style';\n+import {\n+    Container,\n+    ContentContainer,\n+    SlideButton,\n+    SlideContainer,\n+} from './style';\n \n const Carousel: React.FC = () => {\n     return (\n         <Container>\n"
+                },
+                {
+                    "date": 1641567336854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import React from 'react';\n import {\n+    CarouselItem,\n     Container,\n     ContentContainer,\n     SlideButton,\n     SlideContainer,\n@@ -8,11 +9,14 @@\n \n const Carousel: React.FC = () => {\n     return (\n         <Container>\n-            <ContentContainer />\n-            <ContentContainer />\n-            <ContentContainer />\n+            <ContentContainer>\n+                <CarouselItem />\n+                <CarouselItem />\n+                <CarouselItem />\n+            </ContentContainer>\n+\n             <SlideContainer>\n                 <SlideButton />\n                 <SlideButton />\n                 <SlideButton />\n"
+                }
+            ],
+            "date": 1641559541978,
+            "name": "Commit-0",
+            "content": "import React from 'react';\n"
+        }
+    ]
+}

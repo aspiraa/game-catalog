@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/components/mainContent/filter/searchbar/style.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1641571866094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641571890610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n     height: 30px;\n     width: 270px;\n     display: flex;\n     align-items: center;\n+    position: absolute;\n \n     input {\n         width: 100%;\n         height: 30px;\n"
+                },
+                {
+                    "date": 1641576877582,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,8 @@\n     height: 30px;\n     width: 270px;\n     display: flex;\n     align-items: center;\n-    position: absolute;\n \n     input {\n         width: 100%;\n         height: 30px;\n"
+                },
+                {
+                    "date": 1641577614985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,8 @@\n         border: none;\n         border-bottom: 2px solid #635e5e;\n         padding: 5px 5px 5px 10px;\n         background: none;\n-        color: #000;\n \n         &:focus {\n             outline: none;\n             box-shadow: none;\n"
+                },
+                {
+                    "date": 1641577652810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n         border: none;\n         border-bottom: 2px solid #635e5e;\n         padding: 5px 5px 5px 10px;\n         background: none;\n+        color: inherit;\n \n         &:focus {\n             outline: none;\n             box-shadow: none;\n"
+                },
+                {
+                    "date": 1642009484560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n     height: 30px;\n     width: 270px;\n     display: flex;\n     align-items: center;\n+    z-index: 1;\n \n     input {\n         width: 100%;\n         height: 30px;\n"
+                },
+                {
+                    "date": 1642009873971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,5 +30,10 @@\n         top: 1px;\n         color: #635e5e;\n         width: 0;\n     }\n+\n+    @media (min-width: 0px) and (max-width: 800px) {\n+        position: block !important;\n+        width: 100%;\n+    }\n `;\n"
+                },
+                {
+                    "date": 1642010039634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,8 @@\n         width: 0;\n     }\n \n     @media (min-width: 0px) and (max-width: 800px) {\n-        position: block !important;\n+        position: initial !important;\n         width: 100%;\n     }\n `;\n"
+                }
+            ],
+            "date": 1641571866094,
+            "name": "Commit-0",
+            "content": "import styled from 'styled-components';\n\nexport const SearchContainer = styled.div`\n    height: 30px;\n    width: 270px;\n    display: flex;\n    align-items: center;\n\n    input {\n        width: 100%;\n        height: 30px;\n        border: none;\n        border-bottom: 2px solid #635e5e;\n        padding: 5px 5px 5px 10px;\n        background: none;\n        color: #000;\n\n        &:focus {\n            outline: none;\n            box-shadow: none;\n        }\n        &::placeholder {\n            font-family: 'Roboto', sans-serif;\n        }\n    }\n    i {\n        position: relative;\n        left: -25px;\n        top: 1px;\n        color: #635e5e;\n        width: 0;\n    }\n`;\n"
+        }
+    ]
+}

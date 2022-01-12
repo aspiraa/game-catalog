@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/components/Filter/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1641564214155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641564520416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,10 @@\n import React from 'react';\n+\n+const Filter = () => {\n+    return (\n+        <>\n+            <SearchBar />\n+            <FilterCheckBox />\n+        </>\n+    );\n+};\n"
+                },
+                {
+                    "date": 1641564693096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,4 +7,6 @@\n             <FilterCheckBox />\n         </>\n     );\n };\n+\n+export default Filter;\n"
+                },
+                {
+                    "date": 1641564699726,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n import React from 'react';\n+import FilterCheckBox from './filterCheckBox';\n+import SearchBar from './searchbar';\n \n const Filter = () => {\n     return (\n         <>\n"
+                },
+                {
+                    "date": 1641566795346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,15 @@\n import React from 'react';\n import FilterCheckBox from './filterCheckBox';\n import SearchBar from './searchbar';\n+import { FilterContainer } from './style';\n \n const Filter = () => {\n     return (\n-        <>\n+        <FilterContainer>\n             <SearchBar />\n             <FilterCheckBox />\n-        </>\n+        </FilterContainer>\n     );\n };\n \n export default Filter;\n"
+                },
+                {
+                    "date": 1641570488585,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <FilterCheckBox />\n+            <div />\n         </FilterContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641570567428,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <FilterCheckBox />\n-            <div />\n+            <div style=\"height:15px\" />\n         </FilterContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641570667969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     return (\n         <FilterContainer>\n             <SearchBar />\n             <FilterCheckBox />\n-            <div style=\"height:15px\" />\n+            <CheckBoxContainer />\n         </FilterContainer>\n     );\n };\n \n"
+                }
+            ],
+            "date": 1641564214155,
+            "name": "Commit-0",
+            "content": "import React from 'react';\n"
+        }
+    ]
+}

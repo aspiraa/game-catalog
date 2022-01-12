@@ -1,0 +1,50 @@
+{
+    "sourceFile": "src/components/filter/searchbar/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1641564409274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641564646877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,7 @@\n import React from 'react';\n+\n+const SearchBar = () => {\n+    return <h2>searchBar</h2>;\n+};\n+\n+export default SearchBar;\n"
+                },
+                {
+                    "date": 1641565053508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import React from 'react';\n+import { Search } from './style';\n \n const SearchBar = () => {\n-    return <h2>searchBar</h2>;\n+    return <Search />;\n };\n \n export default SearchBar;\n"
+                },
+                {
+                    "date": 1641565303828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import React from 'react';\n+import { IconName } from 'react-icons/fa';\n import { Search } from './style';\n \n const SearchBar = () => {\n     return <Search />;\n"
+                },
+                {
+                    "date": 1641565553589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,22 @@\n import React from 'react';\n-import { IconName } from 'react-icons/fa';\n-import { Search } from './style';\n+import { FaSearch } from 'react-icons/fa';\n+import { SearchContainer } from './style';\n \n const SearchBar = () => {\n-    return <Search />;\n+    return (\n+        <SearchContainer>\n+            <input\n+                type=\"text\"\n+                id=\"searchInput\"\n+                autoComplete=\"off\"\n+                placeholder=\"Pokemon Name\"\n+                onChange={(e) => nameFilter(e.target.value)}\n+            />\n+            <i>\n+                <FaSearch />\n+            </i>\n+        </SearchContainer>\n+    );\n };\n \n export default SearchBar;\n"
+                },
+                {
+                    "date": 1641565560274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,8 @@\n                 type=\"text\"\n                 id=\"searchInput\"\n                 autoComplete=\"off\"\n                 placeholder=\"Pokemon Name\"\n-                onChange={(e) => nameFilter(e.target.value)}\n             />\n             <i>\n                 <FaSearch />\n             </i>\n"
+                },
+                {
+                    "date": 1641565666516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import React from 'react';\n-import { FaSearch } from 'react-icons/fa';\n+import { BiSearchAlt2 } from 'react-icons/bs';\n+\n import { SearchContainer } from './style';\n \n const SearchBar = () => {\n     return (\n@@ -11,9 +12,9 @@\n                 autoComplete=\"off\"\n                 placeholder=\"Pokemon Name\"\n             />\n             <i>\n-                <FaSearch />\n+                <BiSearchAlt2 />\n             </i>\n         </SearchContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641565691542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from 'react';\n-import { BiSearchAlt2 } from 'react-icons/bs';\n+import { BsSearch } from 'react-icons/bs';\n \n import { SearchContainer } from './style';\n \n const SearchBar = () => {\n@@ -12,9 +12,9 @@\n                 autoComplete=\"off\"\n                 placeholder=\"Pokemon Name\"\n             />\n             <i>\n-                <BiSearchAlt2 />\n+                <BsSearch />\n             </i>\n         </SearchContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641565863483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n             <input\n                 type=\"text\"\n                 id=\"searchInput\"\n                 autoComplete=\"off\"\n-                placeholder=\"Pokemon Name\"\n+                placeholder=\"Game Name\"\n             />\n             <i>\n                 <BsSearch />\n             </i>\n"
+                }
+            ],
+            "date": 1641564409274,
+            "name": "Commit-0",
+            "content": "import React from 'react';\n"
+        }
+    ]
+}

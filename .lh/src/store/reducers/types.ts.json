@@ -1,0 +1,150 @@
+{
+    "sourceFile": "src/store/reducers/types.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 33,
+            "patches": [
+                {
+                    "date": 1641819795913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641822554324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,10 +44,4 @@\n export type TypesAction =\n     | SEARCH_MOVIE\n     | SEARCH_MOVIE_LIST\n     | SEARCH_POPULAR_MOVIE_LIST;\n-\n-// Carousel Types\n-\n-export type CAROUSEL_STATE = {\n-    index: number;\n-};\n"
+                },
+                {
+                    "date": 1641836661113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n     movieName?: string;\n     popularMovieList?: MovieListType[];\n     genre?: number;\n     genreList: Genres[];\n+    gameList: any[];\n };\n export type SEARCH_MOVIE = {\n     type: 'SEARCH_MOVIE';\n     movieName: string;\n"
+                },
+                {
+                    "date": 1641837119326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,16 @@\n     genre?: number;\n     genreList: Genres[];\n     gameList: any[];\n };\n+\n+export type GameListType = {\n+    id: string;\n+    title: string;\n+    thumbnail: string;\n+    short_description: string;\n+    genre: string;\n+};\n export type SEARCH_MOVIE = {\n     type: 'SEARCH_MOVIE';\n     movieName: string;\n };\n"
+                },
+                {
+                    "date": 1641837134573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     movieName?: string;\n     popularMovieList?: MovieListType[];\n     genre?: number;\n     genreList: Genres[];\n-    gameList: any[];\n+    gameList: GameListType[];\n };\n \n export type GameListType = {\n     id: string;\n"
+                },
+                {
+                    "date": 1641837534856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,10 @@\n     title: string;\n     thumbnail: string;\n     short_description: string;\n     genre: string;\n+    platform: string;\n+    release_date: string;\n };\n export type SEARCH_MOVIE = {\n     type: 'SEARCH_MOVIE';\n     movieName: string;\n"
+                },
+                {
+                    "date": 1641864285838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,7 @@\n /* eslint-disable camelcase */\n \n export type SEARCH_STATE = {\n-    movieList: GenreMovieList[];\n-    movieName?: string;\n-    popularMovieList?: MovieListType[];\n-    genre?: number;\n-    genreList: Genres[];\n     gameList: GameListType[];\n };\n \n export type GameListType = {\n"
+                },
+                {
+                    "date": 1641864367349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,14 @@\n     genre: string;\n     platform: string;\n     release_date: string;\n };\n+\n+export type SERACH_GAMES_LIST{\n+    type: 'SEARCH_GAME_LIST';\n+    gameList: GameListType[];\n+}\n+\n export type SEARCH_MOVIE = {\n     type: 'SEARCH_MOVIE';\n     movieName: string;\n };\n"
+                },
+                {
+                    "date": 1641864375946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,12 +13,12 @@\n     platform: string;\n     release_date: string;\n };\n \n-export type SERACH_GAMES_LIST{\n+export type SERACH_GAMES_LIST = {\n     type: 'SEARCH_GAME_LIST';\n     gameList: GameListType[];\n-}\n+};\n \n export type SEARCH_MOVIE = {\n     type: 'SEARCH_MOVIE';\n     movieName: string;\n"
+                },
+                {
+                    "date": 1641864394897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,42 +18,9 @@\n     type: 'SEARCH_GAME_LIST';\n     gameList: GameListType[];\n };\n \n-export type SEARCH_MOVIE = {\n-    type: 'SEARCH_MOVIE';\n-    movieName: string;\n-};\n \n-export type SEARCH_MOVIE_LIST = {\n-    type: 'SEARCH_MOVIE_LIST';\n-    genre: number;\n-    movieList: GenreMovieList[];\n-    popularMovieList?: MovieListType[];\n };\n-export type SEARCH_POPULAR_MOVIE_LIST = {\n-    type: 'SEARCH_MOVIE_LIST';\n-    popularMovieList?: MovieListType[];\n-};\n+export type TypesAction =\n+    | SERACH_GAMES_LIST\n \n-export type MovieListType = {\n-    id: number;\n-    title: string;\n-    backdrop_path: string;\n-    poster_path: string;\n-    genre_ids: Array<number>;\n-    overview: string;\n-};\n-\n-export type GenreMovieList = {\n-    genreNumber: number;\n-    movieList: MovieListType[];\n-};\n-\n-export type Genres = {\n-    id: number;\n-    name: string;\n-};\n-export type TypesAction =\n-    | SEARCH_MOVIE\n-    | SEARCH_MOVIE_LIST\n-    | SEARCH_POPULAR_MOVIE_LIST;\n"
+                },
+                {
+                    "date": 1641864404625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,5 @@\n     type: 'SEARCH_GAME_LIST';\n     gameList: GameListType[];\n };\n \n-\n-};\n-export type TypesAction =\n-    | SERACH_GAMES_LIST\n-\n+export type TypesAction = SERACH_GAMES_LIST;\n"
+                },
+                {
+                    "date": 1641871785461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,5 +18,10 @@\n     type: 'SEARCH_GAME_LIST';\n     gameList: GameListType[];\n };\n \n+export type GameFilter = {\n+    gameName: string;\n+    filterType: string;\n+};\n+\n export type TypesAction = SERACH_GAMES_LIST;\n"
+                },
+                {
+                    "date": 1641871817376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,8 @@\n };\n \n export type GameFilter = {\n     gameName: string;\n-    filterType: string;\n+    paramType: string;\n };\n \n export type TypesAction = SERACH_GAMES_LIST;\n"
+                },
+                {
+                    "date": 1641914851686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,10 @@\n     type: 'SEARCH_GAME_LIST';\n     gameList: GameListType[];\n };\n \n-export type GameFilter = {\n-    gameName: string;\n+export type GenreFilter = {\n+    genreName: string;\n     paramType: string;\n };\n \n export type TypesAction = SERACH_GAMES_LIST;\n"
+                },
+                {
+                    "date": 1641914902557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     gameList: GameListType[];\n };\n \n export type GenreFilter = {\n-    genreName: string;\n+    inputName: string;\n     paramType: string;\n };\n \n export type TypesAction = SERACH_GAMES_LIST;\n"
+                },
+                {
+                    "date": 1641915960594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     gameList: GameListType[];\n };\n \n export type GenreFilter = {\n-    inputName: string;\n+    inputName: string[];\n     paramType: string;\n };\n \n export type TypesAction = SERACH_GAMES_LIST;\n"
+                },
+                {
+                    "date": 1641915995248,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,12 @@\n     gameList: GameListType[];\n };\n \n export type GenreFilter = {\n-    inputName: string[];\n-    paramType: string;\n+    filtro{\n+        inputName: string[];\n+        paramType: string;\n+    }\n+\n };\n \n export type TypesAction = SERACH_GAMES_LIST;\n"
+                },
+                {
+                    "date": 1641916005864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,12 +19,11 @@\n     gameList: GameListType[];\n };\n \n export type GenreFilter = {\n-    filtro{\n+    filtro: {\n         inputName: string[];\n         paramType: string;\n-    }\n-\n+    };\n };\n \n export type TypesAction = SERACH_GAMES_LIST;\n"
+                },
+                {
+                    "date": 1641916033734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,10 @@\n };\n \n export type GenreFilter = {\n     filtro: {\n-        inputName: string[];\n-        paramType: string;\n+       [ inputName: string[];\n+        paramType: string;]\n     };\n };\n \n export type TypesAction = SERACH_GAMES_LIST;\n"
+                },
+                {
+                    "date": 1641916040360,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,9 @@\n };\n \n export type GenreFilter = {\n     filtro: {\n-       [ inputName: string[];\n-        paramType: string;]\n+        [inputName: string[], paramType: string];\n     };\n };\n \n export type TypesAction = SERACH_GAMES_LIST;\n"
+                },
+                {
+                    "date": 1641916059003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n };\n \n export type GenreFilter = {\n     filtro: {\n-        [inputName: string[], paramType: string];\n+        [inputName: string, paramType: string];\n     };\n };\n \n export type TypesAction = SERACH_GAMES_LIST;\n"
+                },
+                {
+                    "date": 1641916070197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,9 @@\n     gameList: GameListType[];\n };\n \n export type GenreFilter = {\n-    filtro: {\n-        [inputName: string, paramType: string];\n-    };\n+    inputName: string[];\n+    paramType: string;\n };\n \n export type TypesAction = SERACH_GAMES_LIST;\n"
+                },
+                {
+                    "date": 1641916447543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     gameList: GameListType[];\n };\n \n export type GenreFilter = {\n-    inputName: string[];\n+    inputName: string;\n     paramType: string;\n };\n \n export type TypesAction = SERACH_GAMES_LIST;\n"
+                },
+                {
+                    "date": 1641958234201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,5 +23,15 @@\n     inputName: string;\n     paramType: string;\n };\n \n+export interface IGame extends GameListType = {\n+    minimum_system_requirements: {\n+        os: string,\n+        processor: string,\n+        memory: string,\n+        graphics: string,\n+        storage: string\n+      },\n+}\n+\n export type TypesAction = SERACH_GAMES_LIST;\n"
+                },
+                {
+                    "date": 1641958306111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n     paramType: string;\n };\n \n export interface IGame extends GameListType = {\n-    minimum_system_requirements: {\n+    minimum_system_requirements {\n         os: string,\n         processor: string,\n         memory: string,\n         graphics: string,\n"
+                },
+                {
+                    "date": 1641958415185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,15 +23,15 @@\n     inputName: string;\n     paramType: string;\n };\n \n-export interface IGame extends GameListType = {\n-    minimum_system_requirements {\n-        os: string,\n-        processor: string,\n-        memory: string,\n-        graphics: string,\n-        storage: string\n-      },\n+export interface IGame extends GameListType {\n+    minimum_system_requirements: {\n+        os: string;\n+        processor: string;\n+        memory: string;\n+        graphics: string;\n+        storage: string;\n+    };\n }\n \n export type TypesAction = SERACH_GAMES_LIST;\n"
+                },
+                {
+                    "date": 1641958443773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,7 +31,10 @@\n         memory: string;\n         graphics: string;\n         storage: string;\n     };\n+    screenshots: {\n+        image: string;\n+    };\n }\n \n export type TypesAction = SERACH_GAMES_LIST;\n"
+                },
+                {
+                    "date": 1641958568817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n /* eslint-disable camelcase */\n \n export type SEARCH_STATE = {\n     gameList: GameListType[];\n+    game: IGame;\n };\n \n export type GameListType = {\n     id: string;\n"
+                },
+                {
+                    "date": 1641958670162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,10 +32,12 @@\n         memory: string;\n         graphics: string;\n         storage: string;\n     };\n-    screenshots: {\n-        image: string;\n-    };\n+    screenshots: [\n+        {\n+            image: string;\n+        },\n+    ];\n }\n \n export type TypesAction = SERACH_GAMES_LIST;\n"
+                },
+                {
+                    "date": 1641958800556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,12 +32,10 @@\n         memory: string;\n         graphics: string;\n         storage: string;\n     };\n-    screenshots: [\n-        {\n-            image: string;\n-        },\n-    ];\n+    screenshots: Array<{\n+        image: string;\n+    }>;\n }\n \n export type TypesAction = SERACH_GAMES_LIST;\n"
+                },
+                {
+                    "date": 1641958893044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,9 @@\n     paramType: string;\n };\n \n export interface IGame extends GameListType {\n+    description: string;\n     minimum_system_requirements: {\n         os: string;\n         processor: string;\n         memory: string;\n"
+                },
+                {
+                    "date": 1641958917284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,9 @@\n };\n \n export interface IGame extends GameListType {\n     description: string;\n+    game_url: string;\n     minimum_system_requirements: {\n         os: string;\n         processor: string;\n         memory: string;\n"
+                },
+                {
+                    "date": 1641994629368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,9 @@\n         graphics: string;\n         storage: string;\n     };\n     screenshots: Array<{\n+        id: string;\n         image: string;\n     }>;\n }\n \n"
+                },
+                {
+                    "date": 1642012625614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n /* eslint-disable camelcase */\n \n export type SEARCH_STATE = {\n     gameList: GameListType[];\n+    gamesFiltered: GameListType[];\n     game: IGame;\n };\n \n export type GameListType = {\n"
+                }
+            ],
+            "date": 1641819795913,
+            "name": "Commit-0",
+            "content": "/* eslint-disable camelcase */\n\nexport type SEARCH_STATE = {\n    movieList: GenreMovieList[];\n    movieName?: string;\n    popularMovieList?: MovieListType[];\n    genre?: number;\n    genreList: Genres[];\n};\nexport type SEARCH_MOVIE = {\n    type: 'SEARCH_MOVIE';\n    movieName: string;\n};\n\nexport type SEARCH_MOVIE_LIST = {\n    type: 'SEARCH_MOVIE_LIST';\n    genre: number;\n    movieList: GenreMovieList[];\n    popularMovieList?: MovieListType[];\n};\nexport type SEARCH_POPULAR_MOVIE_LIST = {\n    type: 'SEARCH_MOVIE_LIST';\n    popularMovieList?: MovieListType[];\n};\n\nexport type MovieListType = {\n    id: number;\n    title: string;\n    backdrop_path: string;\n    poster_path: string;\n    genre_ids: Array<number>;\n    overview: string;\n};\n\nexport type GenreMovieList = {\n    genreNumber: number;\n    movieList: MovieListType[];\n};\n\nexport type Genres = {\n    id: number;\n    name: string;\n};\nexport type TypesAction =\n    | SEARCH_MOVIE\n    | SEARCH_MOVIE_LIST\n    | SEARCH_POPULAR_MOVIE_LIST;\n\n// Carousel Types\n\nexport type CAROUSEL_STATE = {\n    index: number;\n};\n"
+        }
+    ]
+}

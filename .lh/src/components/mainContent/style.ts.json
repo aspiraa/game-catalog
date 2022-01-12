@@ -1,0 +1,110 @@
+{
+    "sourceFile": "src/components/mainContent/style.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 23,
+            "patches": [
+                {
+                    "date": 1641568684215,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641568734033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,6 @@\n \n export const MainContentContainer = styled.section`\n     display: flex;\n     gap: 20px 30px;\n+    margin-top: 25px;\n `;\n"
+                },
+                {
+                    "date": 1641568963769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import styled from 'styled-components';\n \n export const MainContentContainer = styled.section`\n     display: flex;\n+    flex-wrap: wrap;\n     gap: 20px 30px;\n     margin-top: 25px;\n `;\n"
+                },
+                {
+                    "date": 1641571425679,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import styled from 'styled-components';\n \n export const MainContentContainer = styled.section`\n-    display: flex;\n-    flex-wrap: wrap;\n     gap: 20px 30px;\n     margin-top: 25px;\n+\n+    display: grid;\n+    grid-template-columns: repeat(4, 1fr);\n `;\n"
+                },
+                {
+                    "date": 1641571484942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,4 +6,10 @@\n \n     display: grid;\n     grid-template-columns: repeat(4, 1fr);\n `;\n+\n+export const GameContainer = styled.div`\n+    display: flex;\n+    flex-wrap: wrap;\n+    gap: 20px 30px;\n+`;\n"
+                },
+                {
+                    "date": 1641571522298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,5 +11,7 @@\n export const GameContainer = styled.div`\n     display: flex;\n     flex-wrap: wrap;\n     gap: 20px 30px;\n+    grid-row: 2;\n+    grid-column: 1/-1;\n `;\n"
+                },
+                {
+                    "date": 1641572111816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n     margin-top: 25px;\n \n     display: grid;\n     grid-template-columns: repeat(4, 1fr);\n+    grid-template-rows: 30px 1fr;\n `;\n \n export const GameContainer = styled.div`\n     display: flex;\n"
+                },
+                {
+                    "date": 1641839054458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,8 @@\n \n export const GameContainer = styled.div`\n     display: flex;\n     flex-wrap: wrap;\n-    gap: 20px 30px;\n+    gap: 30px;\n     grid-row: 2;\n     grid-column: 1/-1;\n `;\n"
+                },
+                {
+                    "date": 1641923701034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,10 @@\n \n export const MainContentContainer = styled.section`\n     gap: 20px 30px;\n     margin-top: 25px;\n-\n+    height: 69vh;\n+    overflow: scroll;\n     display: grid;\n     grid-template-columns: repeat(4, 1fr);\n     grid-template-rows: 30px 1fr;\n `;\n"
+                },
+                {
+                    "date": 1641923770567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,9 @@\n \n export const MainContentContainer = styled.section`\n     gap: 20px 30px;\n     margin-top: 25px;\n-    height: 69vh;\n-    overflow: scroll;\n+\n     display: grid;\n     grid-template-columns: repeat(4, 1fr);\n     grid-template-rows: 30px 1fr;\n `;\n@@ -15,5 +14,7 @@\n     flex-wrap: wrap;\n     gap: 30px;\n     grid-row: 2;\n     grid-column: 1/-1;\n+    height: 69vh;\n+    overflow: scroll;\n `;\n"
+                },
+                {
+                    "date": 1641923796456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,7 +14,8 @@\n     flex-wrap: wrap;\n     gap: 30px;\n     grid-row: 2;\n     grid-column: 1/-1;\n-    height: 69vh;\n+    height: 63vh;\n     overflow: scroll;\n+    overflow-x: hidden;\n `;\n"
+                },
+                {
+                    "date": 1641924104939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,5 +17,6 @@\n     grid-column: 1/-1;\n     height: 63vh;\n     overflow: scroll;\n     overflow-x: hidden;\n+    padding-right: 5px;\n `;\n"
+                },
+                {
+                    "date": 1641953593582,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,4 +19,18 @@\n     overflow: scroll;\n     overflow-x: hidden;\n     padding-right: 5px;\n `;\n+\n+export const ModalContainer = styled.div`\n+    display: none; /* Hidden by default */\n+    position: fixed; /* Stay in place */\n+    z-index: 1; /* Sit on top */\n+    padding-top: 100px; /* Location of the box */\n+    left: 0;\n+    top: 0;\n+    width: 100%; /* Full width */\n+    height: 100%; /* Full height */\n+    overflow: auto; /* Enable scroll if needed */\n+    background-color: rgb(0, 0, 0); /* Fallback color */\n+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */\n+`;\n"
+                },
+                {
+                    "date": 1641953765803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,16 +21,16 @@\n     padding-right: 5px;\n `;\n \n export const ModalContainer = styled.div`\n-    display: none; /* Hidden by default */\n-    position: fixed; /* Stay in place */\n-    z-index: 1; /* Sit on top */\n-    padding-top: 100px; /* Location of the box */\n+    display: none;\n+    position: fixed;\n+    z-index: 1;\n+    padding-top: 100px;\n     left: 0;\n     top: 0;\n-    width: 100%; /* Full width */\n-    height: 100%; /* Full height */\n-    overflow: auto; /* Enable scroll if needed */\n-    background-color: rgb(0, 0, 0); /* Fallback color */\n-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */\n+    width: 100%;\n+    height: 100%;\n+\n+    background-color: rgb(0, 0, 0);\n+    background-color: rgba(0, 0, 0, 0.4); /\n `;\n"
+                },
+                {
+                    "date": 1641953771676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,7 @@\n     left: 0;\n     top: 0;\n     width: 100%;\n     height: 100%;\n-\n     background-color: rgb(0, 0, 0);\n-    background-color: rgba(0, 0, 0, 0.4); /\n+    background-color: rgba(0, 0, 0, 0.4);\n `;\n"
+                },
+                {
+                    "date": 1641953781069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,8 @@\n     padding-right: 5px;\n `;\n \n export const ModalContainer = styled.div`\n-    display: none;\n     position: fixed;\n     z-index: 1;\n     padding-top: 100px;\n     left: 0;\n"
+                },
+                {
+                    "date": 1641954099496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,16 +19,4 @@\n     overflow: scroll;\n     overflow-x: hidden;\n     padding-right: 5px;\n `;\n-\n-export const ModalContainer = styled.div`\n-    position: fixed;\n-    z-index: 1;\n-    padding-top: 100px;\n-    left: 0;\n-    top: 0;\n-    width: 100%;\n-    height: 100%;\n-    background-color: rgb(0, 0, 0);\n-    background-color: rgba(0, 0, 0, 0.4);\n-`;\n"
+                },
+                {
+                    "date": 1641996499170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n export const MainContentContainer = styled.section`\n     gap: 20px 30px;\n     margin-top: 25px;\n-\n+    overflow: hidden;\n     display: grid;\n     grid-template-columns: repeat(4, 1fr);\n     grid-template-rows: 30px 1fr;\n `;\n"
+                },
+                {
+                    "date": 1641996521504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n export const MainContentContainer = styled.section`\n     gap: 20px 30px;\n     margin-top: 25px;\n-    overflow: hidden;\n+\n     display: grid;\n     grid-template-columns: repeat(4, 1fr);\n     grid-template-rows: 30px 1fr;\n `;\n"
+                },
+                {
+                    "date": 1642003855908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,5 +18,24 @@\n     height: 63vh;\n     overflow: scroll;\n     overflow-x: hidden;\n     padding-right: 5px;\n+\n+    ::-webkit-scrollbar {\n+        width: 10px;\n+    }\n+\n+    /* Track */\n+    ::-webkit-scrollbar-track {\n+        background: #f1f1f1;\n+    }\n+\n+    /* Handle */\n+    ::-webkit-scrollbar-thumb {\n+        background: #888;\n+    }\n+\n+    /* Handle on hover */\n+    ::-webkit-scrollbar-thumb:hover {\n+        background: #555;\n+    }\n `;\n"
+                },
+                {
+                    "date": 1642008739925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,12 @@\n \n     display: grid;\n     grid-template-columns: repeat(4, 1fr);\n     grid-template-rows: 30px 1fr;\n+\n+    @media (min-width: 0px;) and (max-width: 800px;) {\n+        grid-template-columns: 1fr 1fr;\n+    }\n `;\n \n export const GameContainer = styled.div`\n     display: flex;\n"
+                },
+                {
+                    "date": 1642008750627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     display: grid;\n     grid-template-columns: repeat(4, 1fr);\n     grid-template-rows: 30px 1fr;\n \n-    @media (min-width: 0px;) and (max-width: 800px;) {\n+    @media (min-width: 0px) and (max-width: 800px;) {\n         grid-template-columns: 1fr 1fr;\n     }\n `;\n \n"
+                },
+                {
+                    "date": 1642008972737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,11 @@\n     display: grid;\n     grid-template-columns: repeat(4, 1fr);\n     grid-template-rows: 30px 1fr;\n \n-    @media (min-width: 0px) and (max-width: 800px;) {\n-        grid-template-columns: 1fr 1fr;\n+    @media (min-width: 0px) and (max-width: 800px) {\n+        display: flex;\n+        flex-direction: column;\n     }\n `;\n \n export const GameContainer = styled.div`\n"
+                },
+                {
+                    "date": 1642009033336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     gap: 30px;\n     grid-row: 2;\n     grid-column: 1/-1;\n     height: 63vh;\n-    overflow: scroll;\n+    overflow: auto;\n     overflow-x: hidden;\n     padding-right: 5px;\n \n     ::-webkit-scrollbar {\n"
+                }
+            ],
+            "date": 1641568684215,
+            "name": "Commit-0",
+            "content": "import styled from 'styled-components';\n\nexport const MainContentContainer = styled.section`\n    display: flex;\n    gap: 20px 30px;\n`;\n"
+        }
+    ]
+}

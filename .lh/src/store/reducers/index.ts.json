@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/store/reducers/index.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1641819790509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641822543206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,8 @@\n import { combineReducers } from 'redux';\n import searchMovie from './searchMovie';\n-import carousel from './carousel';\n \n export default combineReducers({\n     searchMovie,\n-    carousel,\n });\n \n export type RootState = ReturnType<typeof searchMovie>;\n"
+                },
+                {
+                    "date": 1641864864082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { combineReducers } from 'redux';\n-import searchMovie from './searchMovie';\n+import searchGames from './searchGames';\n \n export default combineReducers({\n-    searchMovie,\n+    searchGames,\n });\n \n-export type RootState = ReturnType<typeof searchMovie>;\n+export type RootState = ReturnType<typeof searchGames>;\n"
+                }
+            ],
+            "date": 1641819790509,
+            "name": "Commit-0",
+            "content": "import { combineReducers } from 'redux';\nimport searchMovie from './searchMovie';\nimport carousel from './carousel';\n\nexport default combineReducers({\n    searchMovie,\n    carousel,\n});\n\nexport type RootState = ReturnType<typeof searchMovie>;\n"
+        }
+    ]
+}

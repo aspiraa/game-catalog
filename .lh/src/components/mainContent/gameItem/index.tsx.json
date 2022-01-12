@@ -1,0 +1,62 @@
+{
+    "sourceFile": "src/components/mainContent/gameItem/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1641568194461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641568302794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,10 @@\n-import styled from 'styled-components';\n+import React from 'react';\n+import { ItemContainer } from './style';\n \n-export const gameItem = styled.li`\n-    height: 185px;\n-    flex: 1;\n-    max-width: 270px;\n-`;\n+const GameItem: React.FC = () => {\n+    return (\n+        <ItemContainer>\n+            <h2>nome do jogo</h2>\n+        </ItemContainer>\n+    );\n+};\n"
+                },
+                {
+                    "date": 1641568396891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n \n const GameItem: React.FC = () => {\n     return (\n         <ItemContainer>\n+            <div />\n             <h2>nome do jogo</h2>\n         </ItemContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641568419080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,4 +8,6 @@\n             <h2>nome do jogo</h2>\n         </ItemContainer>\n     );\n };\n+\n+export default GameItem;\n"
+                },
+                {
+                    "date": 1641838320351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react';\n import { ItemContainer } from './style';\n \n-const GameItem: React.FC = () => {\n+const GameItem: React.FC = (gameName: string) => {\n     return (\n         <ItemContainer>\n             <div />\n             <h2>nome do jogo</h2>\n"
+                },
+                {
+                    "date": 1641838366418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n import React from 'react';\n import { ItemContainer } from './style';\n \n-const GameItem: React.FC = (gameName: string) => {\n+interface IProps {\n+    gameName: string;\n+}\n+\n+const GameItem: React.FC = ({ gameName }: IProps) => {\n     return (\n         <ItemContainer>\n             <div />\n             <h2>nome do jogo</h2>\n"
+                },
+                {
+                    "date": 1641838396363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n const GameItem: React.FC = ({ gameName }: IProps) => {\n     return (\n         <ItemContainer>\n             <div />\n-            <h2>nome do jogo</h2>\n+            <h2>${gameName}</h2>\n         </ItemContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641838451626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n interface IProps {\n     gameName: string;\n }\n \n-const GameItem: React.FC = ({ gameName }: IProps) => {\n+const GameItem = ({ gameName }: IProps): JSX.Element => {\n     return (\n         <ItemContainer>\n             <div />\n             <h2>${gameName}</h2>\n"
+                },
+                {
+                    "date": 1641838653588,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,14 +2,19 @@\n import { ItemContainer } from './style';\n \n interface IProps {\n     gameName: string;\n+    imgUrl: string;\n }\n \n-const GameItem = ({ gameName }: IProps): JSX.Element => {\n+const GameItem = ({ gameName, imgUrl }: IProps): JSX.Element => {\n     return (\n         <ItemContainer>\n-            <div />\n+            <div>\n+                <figure>\n+                    <img src={imgUrl} alt=\"\" />\n+                </figure>\n+            </div>\n             <h2>${gameName}</h2>\n         </ItemContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641838997550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n                 <figure>\n                     <img src={imgUrl} alt=\"\" />\n                 </figure>\n             </div>\n-            <h2>${gameName}</h2>\n+            <h2>{gameName}</h2>\n         </ItemContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641960269367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,14 +3,15 @@\n \n interface IProps {\n     gameName: string;\n     imgUrl: string;\n+    onclick: () => void;\n }\n \n-const GameItem = ({ gameName, imgUrl }: IProps): JSX.Element => {\n+const GameItem = ({ gameName, imgUrl, onclick }: IProps): JSX.Element => {\n     return (\n         <ItemContainer>\n-            <div>\n+            <div onClick={onclick}>\n                 <figure>\n                     <img src={imgUrl} alt=\"\" />\n                 </figure>\n             </div>\n"
+                },
+                {
+                    "date": 1641960549915,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+/* eslint-disable jsx-a11y/no-static-element-interactions */\n+/* eslint-disable jsx-a11y/click-events-have-key-events */\n import React from 'react';\n import { ItemContainer } from './style';\n \n interface IProps {\n"
+                }
+            ],
+            "date": 1641568194461,
+            "name": "Commit-0",
+            "content": "import styled from 'styled-components';\n\nexport const gameItem = styled.li`\n    height: 185px;\n    flex: 1;\n    max-width: 270px;\n`;\n"
+        }
+    ]
+}

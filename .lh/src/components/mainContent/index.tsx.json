@@ -1,0 +1,414 @@
+{
+    "sourceFile": "src/components/mainContent/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 99,
+            "patches": [
+                {
+                    "date": 1641568039235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641568471923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,6 @@\n import React from 'react';\n+import GameItem from './gameItem';\n+\n+const MainContent: React.FC = () => {\n+    <GameItem />;\n+};\n"
+                },
+                {
+                    "date": 1641568502576,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import React from 'react';\n import GameItem from './gameItem';\n \n const MainContent: React.FC = () => {\n-    <GameItem />;\n+    return <GameItem />;\n };\n+\n+export default MainContent;\n"
+                },
+                {
+                    "date": 1641568710076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n import React from 'react';\n import GameItem from './gameItem';\n \n const MainContent: React.FC = () => {\n-    return <GameItem />;\n+    return (\n+        <MainContentContainer>\n+            <GameItem />\n+        </MainContentContainer>\n+    );\n };\n \n export default MainContent;\n"
+                },
+                {
+                    "date": 1641568717564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import React from 'react';\n import GameItem from './gameItem';\n+import { MainContentContainer } from './style';\n \n const MainContent: React.FC = () => {\n     return (\n         <MainContentContainer>\n"
+                },
+                {
+                    "date": 1641568944442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n const MainContent: React.FC = () => {\n     return (\n         <MainContentContainer>\n             <GameItem />\n+            <GameItem />\n         </MainContentContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641569042989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,12 +2,23 @@\n import GameItem from './gameItem';\n import { MainContentContainer } from './style';\n \n const MainContent: React.FC = () => {\n+\n+\n+\n     return (\n         <MainContentContainer>\n-            <GameItem />\n-            <GameItem />\n+\n+            {\n+                for (let  = 0;  < 10; i++) {\n+                    <GameItem />\n+\n+                }\n+            }\n+\n+\n+\n         </MainContentContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641569251404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,24 +2,14 @@\n import GameItem from './gameItem';\n import { MainContentContainer } from './style';\n \n const MainContent: React.FC = () => {\n+    const mutipleItem = () => {\n+        for (let i = 0; i < 10; i++) {\n+            <GameItem />;\n+        }\n+    };\n \n-\n-\n-    return (\n-        <MainContentContainer>\n-\n-            {\n-                for (let  = 0;  < 10; i++) {\n-                    <GameItem />\n-\n-                }\n-            }\n-\n-\n-\n-        </MainContentContainer>\n-    );\n+    return <MainContentContainer>{mutipleItem}</MainContentContainer>;\n };\n \n export default MainContent;\n"
+                },
+                {
+                    "date": 1641569265700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { MainContentContainer } from './style';\n \n const MainContent: React.FC = () => {\n     const mutipleItem = () => {\n-        for (let i = 0; i < 10; i++) {\n+        for (let i = 0; i < 10; i += 1) {\n             <GameItem />;\n         }\n     };\n \n"
+                },
+                {
+                    "date": 1641569276839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n const MainContent: React.FC = () => {\n     const mutipleItem = () => {\n         for (let i = 0; i < 10; i += 1) {\n-            <GameItem />;\n+            return <GameItem />;\n         }\n     };\n \n     return <MainContentContainer>{mutipleItem}</MainContentContainer>;\n"
+                },
+                {
+                    "date": 1641569428087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,14 +2,12 @@\n import GameItem from './gameItem';\n import { MainContentContainer } from './style';\n \n const MainContent: React.FC = () => {\n-    const mutipleItem = () => {\n-        for (let i = 0; i < 10; i += 1) {\n-            return <GameItem />;\n-        }\n-    };\n-\n-    return <MainContentContainer>{mutipleItem}</MainContentContainer>;\n+    return (\n+        <MainContentContainer>\n+            <GameItem />;\n+        </MainContentContainer>\n+    );\n };\n \n export default MainContent;\n"
+                },
+                {
+                    "date": 1641569606193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n const MainContent: React.FC = () => {\n     return (\n         <MainContentContainer>\n-            <GameItem />;\n+            <GameItem />;<div>{console.log('dqwdqw')}</div>\n         </MainContentContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641569628342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,10 @@\n \n const MainContent: React.FC = () => {\n     return (\n         <MainContentContainer>\n-            <GameItem />;<div>{console.log('dqwdqw')}</div>\n+            <GameItem />\n+            <div>{console.log('dqwdqw')}</div>\n         </MainContentContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641569635360,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const MainContent: React.FC = () => {\n     return (\n         <MainContentContainer>\n             <GameItem />\n-            <div>{console.log('dqwdqw')}</div>\n+            {console.log('dqwdqw')}\n         </MainContentContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641569723814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,12 +2,18 @@\n import GameItem from './gameItem';\n import { MainContentContainer } from './style';\n \n const MainContent: React.FC = () => {\n+    let a = 0;\n+    while ((a = !10)) {\n+        <GameItem />;\n+        a += 1;\n+    }\n+\n     return (\n         <MainContentContainer>\n             <GameItem />\n-            {console.log('dqwdqw')}\n+            {}\n         </MainContentContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641569729928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { MainContentContainer } from './style';\n \n const MainContent: React.FC = () => {\n     let a = 0;\n-    while ((a = !10)) {\n+    while (a != 10) {\n         <GameItem />;\n         a += 1;\n     }\n \n"
+                },
+                {
+                    "date": 1641569735453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { MainContentContainer } from './style';\n \n const MainContent: React.FC = () => {\n     let a = 0;\n-    while (a != 10) {\n+    while (a !== 10) {\n         <GameItem />;\n         a += 1;\n     }\n \n"
+                },
+                {
+                    "date": 1641569764464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,18 +2,21 @@\n import GameItem from './gameItem';\n import { MainContentContainer } from './style';\n \n const MainContent: React.FC = () => {\n-    let a = 0;\n-    while (a !== 10) {\n-        <GameItem />;\n-        a += 1;\n-    }\n+    const retrunobj = () => {\n+        let a = 0;\n \n+        while (a !== 10) {\n+            <GameItem />;\n+            a += 1;\n+        }\n+    };\n+\n     return (\n         <MainContentContainer>\n             <GameItem />\n-            {}\n+            {retrunobj}\n         </MainContentContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641569774355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \n     return (\n         <MainContentContainer>\n             <GameItem />\n-            {retrunobj}\n+            {retrunobj()}\n         </MainContentContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641569781707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n \n         while (a !== 10) {\n             <GameItem />;\n             a += 1;\n+            return;\n         }\n     };\n \n     return (\n"
+                },
+                {
+                    "date": 1641569840849,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,22 +2,24 @@\n import GameItem from './gameItem';\n import { MainContentContainer } from './style';\n \n const MainContent: React.FC = () => {\n-    const retrunobj = () => {\n-        let a = 0;\n-\n-        while (a !== 10) {\n-            <GameItem />;\n-            a += 1;\n-            return;\n-        }\n-    };\n-\n     return (\n         <MainContentContainer>\n             <GameItem />\n-            {retrunobj()}\n+            <GameItem />\n+            <GameItem />\n+            <GameItem />\n+            <GameItem />\n+            <GameItem />\n+            <GameItem />\n+            <GameItem />\n+            <GameItem />\n+            <GameItem />\n+            <GameItem />\n+            <GameItem />\n+            <GameItem />\n+            <GameItem />\n         </MainContentContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641571306063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,13 @@\n import React from 'react';\n+import Filter from './filter';\n import GameItem from './gameItem';\n import { MainContentContainer } from './style';\n \n const MainContent: React.FC = () => {\n     return (\n         <MainContentContainer>\n+            <Filter />\n             <GameItem />\n             <GameItem />\n             <GameItem />\n             <GameItem />\n"
+                },
+                {
+                    "date": 1641571503136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,27 +1,29 @@\n import React from 'react';\n import Filter from './filter';\n import GameItem from './gameItem';\n-import { MainContentContainer } from './style';\n+import { GameContainer, MainContentContainer } from './style';\n \n const MainContent: React.FC = () => {\n     return (\n         <MainContentContainer>\n             <Filter />\n-            <GameItem />\n-            <GameItem />\n-            <GameItem />\n-            <GameItem />\n-            <GameItem />\n-            <GameItem />\n-            <GameItem />\n-            <GameItem />\n-            <GameItem />\n-            <GameItem />\n-            <GameItem />\n-            <GameItem />\n-            <GameItem />\n-            <GameItem />\n+            <GameContainer>\n+                <GameItem />\n+                <GameItem />\n+                <GameItem />\n+                <GameItem />\n+                <GameItem />\n+                <GameItem />\n+                <GameItem />\n+                <GameItem />\n+                <GameItem />\n+                <GameItem />\n+                <GameItem />\n+                <GameItem />\n+                <GameItem />\n+                <GameItem />\n+            </GameContainer>\n         </MainContentContainer>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1641577805134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n const MainContent: React.FC = () => {\n     return (\n         <MainContentContainer>\n             <Filter />\n-            <GameContainer>\n+            <GameContainer id=\"game-container\">\n                 <GameItem />\n                 <GameItem />\n                 <GameItem />\n                 <GameItem />\n"
+                },
+                {
+                    "date": 1641831302638,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n import React from 'react';\n+import { connect, useDispatch, useSelector } from 'react-redux';\n+import { bindActionCreators, Dispatch } from 'redux';\n import Filter from './filter';\n import GameItem from './gameItem';\n import { GameContainer, MainContentContainer } from './style';\n \n@@ -27,4 +29,5 @@\n     );\n };\n \n export default MainContent;\n+export default connect(mapStateToProps, mapDispatchToProps)(MainContent);\n"
+                },
+                {
+                    "date": 1641831308171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,6 +28,5 @@\n         </MainContentContainer>\n     );\n };\n \n-export default MainContent;\n export default connect(mapStateToProps, mapDispatchToProps)(MainContent);\n"
+                },
+                {
+                    "date": 1641831411247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,19 @@\n import Filter from './filter';\n import GameItem from './gameItem';\n import { GameContainer, MainContentContainer } from './style';\n \n+import { Creators as SearchAction } from '../../store/actions/searchMovie';\n+\n+const mapDispatchToProps = (dispatch: Dispatch) => {\n+    return bindActionCreators(SearchAction, dispatch);\n+};\n+const mapStateToProps = (state: any) => ({\n+    movieList: state.searchMovie.movieList,\n+    movieName: state.searchMovie.movieName,\n+    genreList: state.searchMovie.genreList,\n+});\n+\n const MainContent: React.FC = () => {\n     return (\n         <MainContentContainer>\n             <Filter />\n"
+                },
+                {
+                    "date": 1641831513978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import React from 'react';\n+import React, { useEffect } from 'react';\n import { connect, useDispatch, useSelector } from 'react-redux';\n import { bindActionCreators, Dispatch } from 'redux';\n import Filter from './filter';\n import GameItem from './gameItem';\n@@ -16,8 +16,14 @@\n     genreList: state.searchMovie.genreList,\n });\n \n const MainContent: React.FC = () => {\n+    const dispatch = useDispatch();\n+    const { searchGamesRequest } = SearchAction;\n+\n+    useEffect(() => {\n+        dispatch(searchGamesRequest());\n+    }, []);\n     return (\n         <MainContentContainer>\n             <Filter />\n             <GameContainer id=\"game-container\">\n"
+                },
+                {
+                    "date": 1641838289783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,13 +5,15 @@\n import GameItem from './gameItem';\n import { GameContainer, MainContentContainer } from './style';\n \n import { Creators as SearchAction } from '../../store/actions/searchMovie';\n+import { GameListType } from '../../store/reducers/types';\n+import { ApplicationState } from '../../store';\n \n const mapDispatchToProps = (dispatch: Dispatch) => {\n     return bindActionCreators(SearchAction, dispatch);\n };\n-const mapStateToProps = (state: any) => ({\n+const mapStateToProps = (state: ApplicationState) => ({\n     movieList: state.searchMovie.movieList,\n     movieName: state.searchMovie.movieName,\n     genreList: state.searchMovie.genreList,\n });\n@@ -19,8 +21,12 @@\n const MainContent: React.FC = () => {\n     const dispatch = useDispatch();\n     const { searchGamesRequest } = SearchAction;\n \n+    const gameList: GameListType[] = useSelector(\n+        (state: ApplicationState) => state.searchMovie.gameList,\n+    );\n+\n     useEffect(() => {\n         dispatch(searchGamesRequest());\n     }, []);\n     return (\n"
+                },
+                {
+                    "date": 1641838558242,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,22 +32,11 @@\n     return (\n         <MainContentContainer>\n             <Filter />\n             <GameContainer id=\"game-container\">\n-                <GameItem />\n-                <GameItem />\n-                <GameItem />\n-                <GameItem />\n-                <GameItem />\n-                <GameItem />\n-                <GameItem />\n-                <GameItem />\n-                <GameItem />\n-                <GameItem />\n-                <GameItem />\n-                <GameItem />\n-                <GameItem />\n-                <GameItem />\n+                {gameList.map((item) => {\n+                    return <GameItem gameName={item.title} />;\n+                })}\n             </GameContainer>\n         </MainContentContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641838673178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,14 @@\n         <MainContentContainer>\n             <Filter />\n             <GameContainer id=\"game-container\">\n                 {gameList.map((item) => {\n-                    return <GameItem gameName={item.title} />;\n+                    return (\n+                        <GameItem\n+                            gameName={item.title}\n+                            imgUrl={item.thumbnail}\n+                        />\n+                    );\n                 })}\n             </GameContainer>\n         </MainContentContainer>\n     );\n"
+                },
+                {
+                    "date": 1641838970233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,8 +33,9 @@\n         <MainContentContainer>\n             <Filter />\n             <GameContainer id=\"game-container\">\n                 {gameList.map((item) => {\n+                    console.log(item.title);\n                     return (\n                         <GameItem\n                             gameName={item.title}\n                             imgUrl={item.thumbnail}\n"
+                },
+                {
+                    "date": 1641838990563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,8 @@\n         <MainContentContainer>\n             <Filter />\n             <GameContainer id=\"game-container\">\n                 {gameList.map((item) => {\n-                    console.log(item.title);\n                     return (\n                         <GameItem\n                             gameName={item.title}\n                             imgUrl={item.thumbnail}\n"
+                },
+                {
+                    "date": 1641864714212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,11 +12,9 @@\n const mapDispatchToProps = (dispatch: Dispatch) => {\n     return bindActionCreators(SearchAction, dispatch);\n };\n const mapStateToProps = (state: ApplicationState) => ({\n-    movieList: state.searchMovie.movieList,\n-    movieName: state.searchMovie.movieName,\n-    genreList: state.searchMovie.genreList,\n+    gamelist: state.searchMovie.gameList,\n });\n \n const MainContent: React.FC = () => {\n     const dispatch = useDispatch();\n"
+                },
+                {
+                    "date": 1641864806154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,25 +4,25 @@\n import Filter from './filter';\n import GameItem from './gameItem';\n import { GameContainer, MainContentContainer } from './style';\n \n-import { Creators as SearchAction } from '../../store/actions/searchMovie';\n+import { Creators as SearchAction } from '../../store/actions/searchGames';\n import { GameListType } from '../../store/reducers/types';\n import { ApplicationState } from '../../store';\n \n const mapDispatchToProps = (dispatch: Dispatch) => {\n     return bindActionCreators(SearchAction, dispatch);\n };\n const mapStateToProps = (state: ApplicationState) => ({\n-    gamelist: state.searchMovie.gameList,\n+    gamelist: state.searchGames.gameList,\n });\n \n const MainContent: React.FC = () => {\n     const dispatch = useDispatch();\n     const { searchGamesRequest } = SearchAction;\n \n     const gameList: GameListType[] = useSelector(\n-        (state: ApplicationState) => state.searchMovie.gameList,\n+        (state: ApplicationState) => state.searchGames.gameList,\n     );\n \n     useEffect(() => {\n         dispatch(searchGamesRequest());\n"
+                },
+                {
+                    "date": 1641870368520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,9 @@\n                     return (\n                         <GameItem\n                             gameName={item.title}\n                             imgUrl={item.thumbnail}\n+                            key={item.title}\n                         />\n                     );\n                 })}\n             </GameContainer>\n"
+                },
+                {
+                    "date": 1641922637858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,17 +30,21 @@\n     return (\n         <MainContentContainer>\n             <Filter />\n             <GameContainer id=\"game-container\">\n-                {gameList.map((item) => {\n-                    return (\n-                        <GameItem\n-                            gameName={item.title}\n-                            imgUrl={item.thumbnail}\n-                            key={item.title}\n-                        />\n-                    );\n-                })}\n+                {gameList ? (\n+                    gameList.map((item) => {\n+                        return (\n+                            <GameItem\n+                                gameName={item.title}\n+                                imgUrl={item.thumbnail}\n+                                key={item.title}\n+                            />\n+                        );\n+                    })\n+                ) : (\n+                    <h2>nenhum jogo localizado</h2>\n+                )}\n             </GameContainer>\n         </MainContentContainer>\n     );\n };\n"
+                },
+                {
+                    "date": 1641922694165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     return (\n         <MainContentContainer>\n             <Filter />\n             <GameContainer id=\"game-container\">\n-                {gameList ? (\n+                {gameList.length > 0 ? (\n                     gameList.map((item) => {\n                         return (\n                             <GameItem\n                                 gameName={item.title}\n"
+                },
+                {
+                    "date": 1641922711094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n                             />\n                         );\n                     })\n                 ) : (\n-                    <h2>nenhum jogo localizado</h2>\n+                    <h2>Nenhum jogo localizado</h2>\n                 )}\n             </GameContainer>\n         </MainContentContainer>\n     );\n"
+                },
+                {
+                    "date": 1641923269376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,9 @@\n         dispatch(searchGamesRequest());\n     }, []);\n     return (\n         <MainContentContainer>\n+            <div />\n             <Filter />\n             <GameContainer id=\"game-container\">\n                 {gameList.length > 0 ? (\n                     gameList.map((item) => {\n"
+                },
+                {
+                    "date": 1641923338796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,8 @@\n         dispatch(searchGamesRequest());\n     }, []);\n     return (\n         <MainContentContainer>\n-            <div />\n             <Filter />\n             <GameContainer id=\"game-container\">\n                 {gameList.length > 0 ? (\n                     gameList.map((item) => {\n"
+                },
+                {
+                    "date": 1641953601388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,9 @@\n         dispatch(searchGamesRequest());\n     }, []);\n     return (\n         <MainContentContainer>\n+            <ModalContainer />\n             <Filter />\n             <GameContainer id=\"game-container\">\n                 {gameList.length > 0 ? (\n                     gameList.map((item) => {\n"
+                },
+                {
+                    "date": 1641954266288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n \n import { Creators as SearchAction } from '../../store/actions/searchGames';\n import { GameListType } from '../../store/reducers/types';\n import { ApplicationState } from '../../store';\n+import Modal from './modal';\n \n const mapDispatchToProps = (dispatch: Dispatch) => {\n     return bindActionCreators(SearchAction, dispatch);\n };\n@@ -28,9 +29,9 @@\n         dispatch(searchGamesRequest());\n     }, []);\n     return (\n         <MainContentContainer>\n-            <ModalContainer />\n+            <Modal />\n             <Filter />\n             <GameContainer id=\"game-container\">\n                 {gameList.length > 0 ? (\n                     gameList.map((item) => {\n"
+                },
+                {
+                    "date": 1641960048784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n });\n \n const MainContent: React.FC = () => {\n     const dispatch = useDispatch();\n-    const { searchGamesRequest } = SearchAction;\n+    const { searchGamesRequest, getEspecificGameRequest } = SearchAction;\n \n     const gameList: GameListType[] = useSelector(\n         (state: ApplicationState) => state.searchGames.gameList,\n     );\n"
+                },
+                {
+                    "date": 1641960115517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,12 @@\n     const gameList: GameListType[] = useSelector(\n         (state: ApplicationState) => state.searchGames.gameList,\n     );\n \n+    const openModal = (genre: string) => {\n+        dispatch(getEspecificGameRequest(genre));\n+    };\n+\n     useEffect(() => {\n         dispatch(searchGamesRequest());\n     }, []);\n     return (\n"
+                },
+                {
+                    "date": 1641960495390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,8 +43,11 @@\n                             <GameItem\n                                 gameName={item.title}\n                                 imgUrl={item.thumbnail}\n                                 key={item.title}\n+                                onclick={() => {\n+                                    openModal(item.id);\n+                                }}\n                             />\n                         );\n                     })\n                 ) : (\n"
+                },
+                {
+                    "date": 1641960698297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import React, { useEffect } from 'react';\n+import React, { useEffect, useState } from 'react';\n import { connect, useDispatch, useSelector } from 'react-redux';\n import { bindActionCreators, Dispatch } from 'redux';\n import Filter from './filter';\n import GameItem from './gameItem';\n@@ -24,8 +24,10 @@\n     const gameList: GameListType[] = useSelector(\n         (state: ApplicationState) => state.searchGames.gameList,\n     );\n \n+    const [gameId, setGameId] = useState();\n+\n     const openModal = (genre: string) => {\n         dispatch(getEspecificGameRequest(genre));\n     };\n \n"
+                },
+                {
+                    "date": 1641960767155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,13 +24,13 @@\n     const gameList: GameListType[] = useSelector(\n         (state: ApplicationState) => state.searchGames.gameList,\n     );\n \n-    const [gameId, setGameId] = useState();\n+    const [gameId, setGameId] = useState<string>();\n \n-    const openModal = (genre: string) => {\n-        dispatch(getEspecificGameRequest(genre));\n-    };\n+    useEffect(() => {\n+        dispatch(getEspecificGameRequest(gameId));\n+    }, [gameId]);\n \n     useEffect(() => {\n         dispatch(searchGamesRequest());\n     }, []);\n@@ -46,9 +46,9 @@\n                                 gameName={item.title}\n                                 imgUrl={item.thumbnail}\n                                 key={item.title}\n                                 onclick={() => {\n-                                    openModal(item.id);\n+                                    setGameId(item.id);\n                                 }}\n                             />\n                         );\n                     })\n"
+                },
+                {
+                    "date": 1641960779242,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n     const gameList: GameListType[] = useSelector(\n         (state: ApplicationState) => state.searchGames.gameList,\n     );\n \n-    const [gameId, setGameId] = useState<string>();\n+    const [gameId, setGameId] = useState<string>('1');\n \n     useEffect(() => {\n         dispatch(getEspecificGameRequest(gameId));\n     }, [gameId]);\n"
+                },
+                {
+                    "date": 1641960856297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     const [gameId, setGameId] = useState<string>('1');\n \n     useEffect(() => {\n         dispatch(getEspecificGameRequest(gameId));\n-    }, [gameId]);\n+    }, []);\n \n     useEffect(() => {\n         dispatch(searchGamesRequest());\n     }, []);\n"
+                },
+                {
+                    "date": 1641960875925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,11 +26,11 @@\n     );\n \n     const [gameId, setGameId] = useState<string>('1');\n \n-    useEffect(() => {\n-        dispatch(getEspecificGameRequest(gameId));\n-    }, []);\n+    // useEffect(() => {\n+    //     dispatch(getEspecificGameRequest(gameId));\n+    // }, []);\n \n     useEffect(() => {\n         dispatch(searchGamesRequest());\n     }, []);\n"
+                },
+                {
+                    "date": 1641961008671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,13 +24,13 @@\n     const gameList: GameListType[] = useSelector(\n         (state: ApplicationState) => state.searchGames.gameList,\n     );\n \n-    const [gameId, setGameId] = useState<string>('1');\n+    const [gameId, setGameId] = useState<string>('');\n \n-    // useEffect(() => {\n-    //     dispatch(getEspecificGameRequest(gameId));\n-    // }, []);\n+    useEffect(() => {\n+        dispatch(getEspecificGameRequest(gameId));\n+    }, [gameId]);\n \n     useEffect(() => {\n         dispatch(searchGamesRequest());\n     }, []);\n"
+                },
+                {
+                    "date": 1641961034019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,11 +26,11 @@\n     );\n \n     const [gameId, setGameId] = useState<string>('');\n \n-    useEffect(() => {\n-        dispatch(getEspecificGameRequest(gameId));\n-    }, [gameId]);\n+    // useEffect(() => {\n+    //     dispatch(getEspecificGameRequest(gameId));\n+    // }, [gameId]);\n \n     useEffect(() => {\n         dispatch(searchGamesRequest());\n     }, []);\n"
+                },
+                {
+                    "date": 1641961053250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n                                 gameName={item.title}\n                                 imgUrl={item.thumbnail}\n                                 key={item.title}\n                                 onclick={() => {\n-                                    setGameId(item.id);\n+                                    console.log(item.id);\n                                 }}\n                             />\n                         );\n                     })\n"
+                },
+                {
+                    "date": 1641961092507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n \n     // useEffect(() => {\n     //     dispatch(getEspecificGameRequest(gameId));\n     // }, [gameId]);\n-\n+    console.log('ue');\n     useEffect(() => {\n         dispatch(searchGamesRequest());\n     }, []);\n     return (\n"
+                },
+                {
+                    "date": 1641961130305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,12 @@\n \n     // useEffect(() => {\n     //     dispatch(getEspecificGameRequest(gameId));\n     // }, [gameId]);\n-    console.log('ue');\n+    const getEspecifGame = (genre: string) => {\n+        console.log(genre);\n+    };\n+\n     useEffect(() => {\n         dispatch(searchGamesRequest());\n     }, []);\n     return (\n"
+                },
+                {
+                    "date": 1641961169424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,9 @@\n     //     dispatch(getEspecificGameRequest(gameId));\n     // }, [gameId]);\n     const getEspecifGame = (genre: string) => {\n         console.log(genre);\n+        getEspecificGameRequest(genre);\n     };\n \n     useEffect(() => {\n         dispatch(searchGamesRequest());\n@@ -49,9 +50,9 @@\n                                 gameName={item.title}\n                                 imgUrl={item.thumbnail}\n                                 key={item.title}\n                                 onclick={() => {\n-                                    console.log(item.id);\n+                                    getEspecifGame(item.id);\n                                 }}\n                             />\n                         );\n                     })\n"
+                },
+                {
+                    "date": 1641961196465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n     //     dispatch(getEspecificGameRequest(gameId));\n     // }, [gameId]);\n     const getEspecifGame = (genre: string) => {\n         console.log(genre);\n-        getEspecificGameRequest(genre);\n+        dispach(getEspecificGameRequest(genre));\n     };\n \n     useEffect(() => {\n         dispatch(searchGamesRequest());\n"
+                },
+                {
+                    "date": 1641961203421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n     //     dispatch(getEspecificGameRequest(gameId));\n     // }, [gameId]);\n     const getEspecifGame = (genre: string) => {\n         console.log(genre);\n-        dispach(getEspecificGameRequest(genre));\n+        dispatch(getEspecificGameRequest(genre));\n     };\n \n     useEffect(() => {\n         dispatch(searchGamesRequest());\n"
+                },
+                {
+                    "date": 1641961222024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n     //     dispatch(getEspecificGameRequest(gameId));\n     // }, [gameId]);\n     const getEspecifGame = (genre: string) => {\n         console.log(genre);\n-        dispatch(getEspecificGameRequest(genre));\n+        // dispatch(getEspecificGameRequest(genre));\n     };\n \n     useEffect(() => {\n         dispatch(searchGamesRequest());\n"
+                },
+                {
+                    "date": 1641961231129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n     //     dispatch(getEspecificGameRequest(gameId));\n     // }, [gameId]);\n     const getEspecifGame = (genre: string) => {\n         console.log(genre);\n-        // dispatch(getEspecificGameRequest(genre));\n+        dispatch(getEspecificGameRequest(genre));\n     };\n \n     useEffect(() => {\n         dispatch(searchGamesRequest());\n"
+                },
+                {
+                    "date": 1641961405506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,8 +41,17 @@\n     return (\n         <MainContentContainer>\n             <Modal />\n             <Filter />\n+            <button\n+                type=\"button\"\n+                onClick={() => {\n+                    getEspecifGame('1');\n+                }}\n+            >\n+                {' '}\n+                teste\n+            </button>\n             <GameContainer id=\"game-container\">\n                 {gameList.length > 0 ? (\n                     gameList.map((item) => {\n                         return (\n"
+                },
+                {
+                    "date": 1641961633974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,13 +31,13 @@\n     //     dispatch(getEspecificGameRequest(gameId));\n     // }, [gameId]);\n     const getEspecifGame = (genre: string) => {\n         console.log(genre);\n-        dispatch(getEspecificGameRequest(genre));\n     };\n \n     useEffect(() => {\n         dispatch(searchGamesRequest());\n+        dispatch(getEspecificGameRequest('1'));\n     }, []);\n     return (\n         <MainContentContainer>\n             <Modal />\n@@ -47,9 +47,8 @@\n                 onClick={() => {\n                     getEspecifGame('1');\n                 }}\n             >\n-                {' '}\n                 teste\n             </button>\n             <GameContainer id=\"game-container\">\n                 {gameList.length > 0 ? (\n"
+                },
+                {
+                    "date": 1641961663972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n     };\n \n     useEffect(() => {\n         dispatch(searchGamesRequest());\n-        dispatch(getEspecificGameRequest('1'));\n+        // dispatch(getEspecificGameRequest('1'));\n     }, []);\n     return (\n         <MainContentContainer>\n             <Modal />\n"
+                },
+                {
+                    "date": 1641961673812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n     };\n \n     useEffect(() => {\n         dispatch(searchGamesRequest());\n-        // dispatch(getEspecificGameRequest('1'));\n+        dispatch(getEspecificGameRequest('1'));\n     }, []);\n     return (\n         <MainContentContainer>\n             <Modal />\n"
+                },
+                {
+                    "date": 1641961684342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n     };\n \n     useEffect(() => {\n         dispatch(searchGamesRequest());\n-        dispatch(getEspecificGameRequest('1'));\n+        // dispatch(getEspecificGameRequest('1'));\n     }, []);\n     return (\n         <MainContentContainer>\n             <Modal />\n"
+                },
+                {
+                    "date": 1641962014182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n     };\n \n     useEffect(() => {\n         dispatch(searchGamesRequest());\n-        // dispatch(getEspecificGameRequest('1'));\n+        dispatch(getEspecificGameRequest('1'));\n     }, []);\n     return (\n         <MainContentContainer>\n             <Modal />\n"
+                },
+                {
+                    "date": 1641988669798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,14 +30,13 @@\n     // useEffect(() => {\n     //     dispatch(getEspecificGameRequest(gameId));\n     // }, [gameId]);\n     const getEspecifGame = (genre: string) => {\n-        console.log(genre);\n+        dispatch(getEspecificGameRequest(genre));\n     };\n \n     useEffect(() => {\n         dispatch(searchGamesRequest());\n-        dispatch(getEspecificGameRequest('1'));\n     }, []);\n     return (\n         <MainContentContainer>\n             <Modal />\n"
+                },
+                {
+                    "date": 1641989798335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,9 @@\n     // useEffect(() => {\n     //     dispatch(getEspecificGameRequest(gameId));\n     // }, [gameId]);\n     const getEspecifGame = (genre: string) => {\n+        console.log('oiii');\n         dispatch(getEspecificGameRequest(genre));\n     };\n \n     useEffect(() => {\n"
+                },
+                {
+                    "date": 1641989820441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,8 @@\n     // useEffect(() => {\n     //     dispatch(getEspecificGameRequest(gameId));\n     // }, [gameId]);\n     const getEspecifGame = (genre: string) => {\n-        console.log('oiii');\n         dispatch(getEspecificGameRequest(genre));\n     };\n \n     useEffect(() => {\n"
+                },
+                {
+                    "date": 1641990033972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,8 @@\n     const gameList: GameListType[] = useSelector(\n         (state: ApplicationState) => state.searchGames.gameList,\n     );\n \n-    const [gameId, setGameId] = useState<string>('');\n-\n     // useEffect(() => {\n     //     dispatch(getEspecificGameRequest(gameId));\n     // }, [gameId]);\n     const getEspecifGame = (genre: string) => {\n"
+                },
+                {
+                    "date": 1641990550441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,11 +24,11 @@\n     const gameList: GameListType[] = useSelector(\n         (state: ApplicationState) => state.searchGames.gameList,\n     );\n \n-    // useEffect(() => {\n-    //     dispatch(getEspecificGameRequest(gameId));\n-    // }, [gameId]);\n+    useEffect(() => {\n+        dispatch(getEspecificGameRequest(gameId));\n+    }, []);\n     const getEspecifGame = (genre: string) => {\n         dispatch(getEspecificGameRequest(genre));\n     };\n \n"
+                },
+                {
+                    "date": 1641990603446,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,11 +24,11 @@\n     const gameList: GameListType[] = useSelector(\n         (state: ApplicationState) => state.searchGames.gameList,\n     );\n \n-    useEffect(() => {\n-        dispatch(getEspecificGameRequest(gameId));\n-    }, []);\n+    // useEffect(() => {\n+    //     dispatch(getEspecificGameRequest('2'));\n+    // }, []);\n     const getEspecifGame = (genre: string) => {\n         dispatch(getEspecificGameRequest(genre));\n     };\n \n"
+                },
+                {
+                    "date": 1641990615516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,9 @@\n \n     // useEffect(() => {\n     //     dispatch(getEspecificGameRequest('2'));\n     // }, []);\n+\n     const getEspecifGame = (genre: string) => {\n         dispatch(getEspecificGameRequest(genre));\n     };\n \n"
+                },
+                {
+                    "date": 1641991628710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     //     dispatch(getEspecificGameRequest('2'));\n     // }, []);\n \n     const getEspecifGame = (genre: string) => {\n-        dispatch(getEspecificGameRequest(genre));\n+        dispatch(getEspecificGameRequest('1'));\n     };\n \n     useEffect(() => {\n         dispatch(searchGamesRequest());\n"
+                },
+                {
+                    "date": 1641991645808,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     //     dispatch(getEspecificGameRequest('2'));\n     // }, []);\n \n     const getEspecifGame = (genre: string) => {\n-        dispatch(getEspecificGameRequest('1'));\n+        dispatch(getEspecificGameRequest(genre));\n     };\n \n     useEffect(() => {\n         dispatch(searchGamesRequest());\n"
+                },
+                {
+                    "date": 1641991760417,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,12 +24,8 @@\n     const gameList: GameListType[] = useSelector(\n         (state: ApplicationState) => state.searchGames.gameList,\n     );\n \n-    // useEffect(() => {\n-    //     dispatch(getEspecificGameRequest('2'));\n-    // }, []);\n-\n     const getEspecifGame = (genre: string) => {\n         dispatch(getEspecificGameRequest(genre));\n     };\n \n"
+                },
+                {
+                    "date": 1641992272645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,16 +35,8 @@\n     return (\n         <MainContentContainer>\n             <Modal />\n             <Filter />\n-            <button\n-                type=\"button\"\n-                onClick={() => {\n-                    getEspecifGame('1');\n-                }}\n-            >\n-                teste\n-            </button>\n             <GameContainer id=\"game-container\">\n                 {gameList.length > 0 ? (\n                     gameList.map((item) => {\n                         return (\n"
+                },
+                {
+                    "date": 1641992822078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,10 @@\n     gamelist: state.searchGames.gameList,\n });\n \n const MainContent: React.FC = () => {\n+    const [visible, setVisible] = useState<boolean>(false);\n+\n     const dispatch = useDispatch();\n     const { searchGamesRequest, getEspecificGameRequest } = SearchAction;\n \n     const gameList: GameListType[] = useSelector(\n@@ -33,9 +35,9 @@\n         dispatch(searchGamesRequest());\n     }, []);\n     return (\n         <MainContentContainer>\n-            <Modal />\n+            <Modal visible={visible} />\n             <Filter />\n             <GameContainer id=\"game-container\">\n                 {gameList.length > 0 ? (\n                     gameList.map((item) => {\n"
+                },
+                {
+                    "date": 1641992841396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,8 +47,9 @@\n                                 imgUrl={item.thumbnail}\n                                 key={item.title}\n                                 onclick={() => {\n                                     getEspecifGame(item.id);\n+                                    setVisible(true);\n                                 }}\n                             />\n                         );\n                     })\n"
+                },
+                {
+                    "date": 1641993456820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n         dispatch(searchGamesRequest());\n     }, []);\n     return (\n         <MainContentContainer>\n-            <Modal visible={visible} />\n+            <Modal style=\"display:none\" />\n             <Filter />\n             <GameContainer id=\"game-container\">\n                 {gameList.length > 0 ? (\n                     gameList.map((item) => {\n"
+                },
+                {
+                    "date": 1641993482785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n         dispatch(searchGamesRequest());\n     }, []);\n     return (\n         <MainContentContainer>\n-            <Modal style=\"display:none\" />\n+            <Modal display=\"display:none\" />\n             <Filter />\n             <GameContainer id=\"game-container\">\n                 {gameList.length > 0 ? (\n                     gameList.map((item) => {\n"
+                },
+                {
+                    "date": 1641993497655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n         dispatch(searchGamesRequest());\n     }, []);\n     return (\n         <MainContentContainer>\n-            <Modal display=\"display:none\" />\n+            <Modal display=\"display:none;\" />\n             <Filter />\n             <GameContainer id=\"game-container\">\n                 {gameList.length > 0 ? (\n                     gameList.map((item) => {\n"
+                },
+                {
+                    "date": 1641993528825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n         dispatch(searchGamesRequest());\n     }, []);\n     return (\n         <MainContentContainer>\n-            <Modal display=\"display:none;\" />\n+            <Modal display=\"display:none\" />\n             <Filter />\n             <GameContainer id=\"game-container\">\n                 {gameList.length > 0 ? (\n                     gameList.map((item) => {\n"
+                },
+                {
+                    "date": 1641993770387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n         dispatch(searchGamesRequest());\n     }, []);\n     return (\n         <MainContentContainer>\n-            <Modal display=\"display:none\" />\n+            <Modal displayValue=\"none\" />\n             <Filter />\n             <GameContainer id=\"game-container\">\n                 {gameList.length > 0 ? (\n                     gameList.map((item) => {\n"
+                },
+                {
+                    "date": 1641993836019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     gamelist: state.searchGames.gameList,\n });\n \n const MainContent: React.FC = () => {\n-    const [visible, setVisible] = useState<boolean>(false);\n+    const [display, setDisplay] = useState<string>('none');\n \n     const dispatch = useDispatch();\n     const { searchGamesRequest, getEspecificGameRequest } = SearchAction;\n \n@@ -35,9 +35,9 @@\n         dispatch(searchGamesRequest());\n     }, []);\n     return (\n         <MainContentContainer>\n-            <Modal displayValue=\"none\" />\n+            <Modal displayValue={display} />\n             <Filter />\n             <GameContainer id=\"game-container\">\n                 {gameList.length > 0 ? (\n                     gameList.map((item) => {\n@@ -47,9 +47,9 @@\n                                 imgUrl={item.thumbnail}\n                                 key={item.title}\n                                 onclick={() => {\n                                     getEspecifGame(item.id);\n-                                    setVisible(true);\n+                                    setDisplay('block');\n                                 }}\n                             />\n                         );\n                     })\n"
+                },
+                {
+                    "date": 1641994220753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,14 @@\n         dispatch(searchGamesRequest());\n     }, []);\n     return (\n         <MainContentContainer>\n-            <Modal displayValue={display} />\n+            <Modal\n+                displayValue={display}\n+                closeModal={() => {\n+                    setDisplay('none');\n+                }}\n+            />\n             <Filter />\n             <GameContainer id=\"game-container\">\n                 {gameList.length > 0 ? (\n                     gameList.map((item) => {\n"
+                },
+                {
+                    "date": 1641995428808,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,15 +34,15 @@\n     useEffect(() => {\n         dispatch(searchGamesRequest());\n     }, []);\n     return (\n-        <MainContentContainer>\n             <Modal\n                 displayValue={display}\n                 closeModal={() => {\n                     setDisplay('none');\n                 }}\n             />\n+        <MainContentContainer>\n             <Filter />\n             <GameContainer id=\"game-container\">\n                 {gameList.length > 0 ? (\n                     gameList.map((item) => {\n"
+                },
+                {
+                    "date": 1641995441452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,36 +34,38 @@\n     useEffect(() => {\n         dispatch(searchGamesRequest());\n     }, []);\n     return (\n+        <>\n             <Modal\n                 displayValue={display}\n                 closeModal={() => {\n                     setDisplay('none');\n                 }}\n             />\n-        <MainContentContainer>\n-            <Filter />\n-            <GameContainer id=\"game-container\">\n-                {gameList.length > 0 ? (\n-                    gameList.map((item) => {\n-                        return (\n-                            <GameItem\n-                                gameName={item.title}\n-                                imgUrl={item.thumbnail}\n-                                key={item.title}\n-                                onclick={() => {\n-                                    getEspecifGame(item.id);\n-                                    setDisplay('block');\n-                                }}\n-                            />\n-                        );\n-                    })\n-                ) : (\n-                    <h2>Nenhum jogo localizado</h2>\n-                )}\n-            </GameContainer>\n-        </MainContentContainer>\n+            <MainContentContainer>\n+                <Filter />\n+                <GameContainer id=\"game-container\">\n+                    {gameList.length > 0 ? (\n+                        gameList.map((item) => {\n+                            return (\n+                                <GameItem\n+                                    gameName={item.title}\n+                                    imgUrl={item.thumbnail}\n+                                    key={item.title}\n+                                    onclick={() => {\n+                                        getEspecifGame(item.id);\n+                                        setDisplay('block');\n+                                    }}\n+                                />\n+                            );\n+                        })\n+                    ) : (\n+                        <h2>Nenhum jogo localizado</h2>\n+                    )}\n+                </GameContainer>\n+            </MainContentContainer>\n+        </>\n     );\n };\n \n export default connect(mapStateToProps, mapDispatchToProps)(MainContent);\n"
+                },
+                {
+                    "date": 1641996220829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,8 +42,9 @@\n                     setDisplay('none');\n                 }}\n             />\n             <MainContentContainer>\n+                <Carousel />\n                 <Filter />\n                 <GameContainer id=\"game-container\">\n                     {gameList.length > 0 ? (\n                         gameList.map((item) => {\n"
+                },
+                {
+                    "date": 1641996234027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n import { Creators as SearchAction } from '../../store/actions/searchGames';\n import { GameListType } from '../../store/reducers/types';\n import { ApplicationState } from '../../store';\n import Modal from './modal';\n+import Carousel from '../carousel';\n \n const mapDispatchToProps = (dispatch: Dispatch) => {\n     return bindActionCreators(SearchAction, dispatch);\n };\n@@ -41,10 +42,10 @@\n                 closeModal={() => {\n                     setDisplay('none');\n                 }}\n             />\n+            <Carousel />\n             <MainContentContainer>\n-                <Carousel />\n                 <Filter />\n                 <GameContainer id=\"game-container\">\n                     {gameList.length > 0 ? (\n                         gameList.map((item) => {\n"
+                },
+                {
+                    "date": 1641996244109,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n                 closeModal={() => {\n                     setDisplay('none');\n                 }}\n             />\n-            <Carousel />\n+\n             <MainContentContainer>\n                 <Filter />\n                 <GameContainer id=\"game-container\">\n                     {gameList.length > 0 ? (\n"
+                },
+                {
+                    "date": 1641996260474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,8 @@\n import { Creators as SearchAction } from '../../store/actions/searchGames';\n import { GameListType } from '../../store/reducers/types';\n import { ApplicationState } from '../../store';\n import Modal from './modal';\n-import Carousel from '../carousel';\n \n const mapDispatchToProps = (dispatch: Dispatch) => {\n     return bindActionCreators(SearchAction, dispatch);\n };\n"
+                },
+                {
+                    "date": 1642012954299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n     return bindActionCreators(SearchAction, dispatch);\n };\n const mapStateToProps = (state: ApplicationState) => ({\n     gamelist: state.searchGames.gameList,\n+    gamelistFiltered: state.searchGames.gamesFiltered,\n });\n \n const MainContent: React.FC = () => {\n     const [display, setDisplay] = useState<string>('none');\n@@ -25,8 +26,11 @@\n \n     const gameList: GameListType[] = useSelector(\n         (state: ApplicationState) => state.searchGames.gameList,\n     );\n+    const gameListFiltered: GameListType[] = useSelector(\n+        (state: ApplicationState) => state.searchGames.gamesFiltered,\n+    );\n \n     const getEspecifGame = (genre: string) => {\n         dispatch(getEspecificGameRequest(genre));\n     };\n"
+                },
+                {
+                    "date": 1642013145170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,30 @@\n \n     useEffect(() => {\n         dispatch(searchGamesRequest());\n     }, []);\n+\n+    const setHtml = (list : GameListType[]) =>{\n+        return (\n+            list.length > 0 ? (\n+                list.map((item) => {\n+                    return (\n+                        <GameItem\n+                            gameName={item.title}\n+                            imgUrl={item.thumbnail}\n+                            key={item.title}\n+                            onclick={() => {\n+                                getEspecifGame(item.id);\n+                                setDisplay('block');\n+                            }}\n+                        />\n+                    );\n+                })\n+            ) : (\n+                <h2>Nenhum jogo localizado</h2>\n+        )\n+    }\n+\n     return (\n         <>\n             <Modal\n                 displayValue={display}\n"
+                },
+                {
+                    "date": 1642013154880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,11 +54,11 @@\n                             }}\n                         />\n                     );\n                 })\n-            ) : (\n+            ) :\n                 <h2>Nenhum jogo localizado</h2>\n-        )\n+\n     }\n \n     return (\n         <>\n"
+                },
+                {
+                    "date": 1642013165231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,29 +38,28 @@\n     useEffect(() => {\n         dispatch(searchGamesRequest());\n     }, []);\n \n-    const setHtml = (list : GameListType[]) =>{\n-        return (\n-            list.length > 0 ? (\n-                list.map((item) => {\n-                    return (\n-                        <GameItem\n-                            gameName={item.title}\n-                            imgUrl={item.thumbnail}\n-                            key={item.title}\n-                            onclick={() => {\n-                                getEspecifGame(item.id);\n-                                setDisplay('block');\n-                            }}\n-                        />\n-                    );\n-                })\n-            ) :\n-                <h2>Nenhum jogo localizado</h2>\n+    const setHtml = (list: GameListType[]) => {\n+        return list.length > 0 ? (\n+            list.map((item) => {\n+                return (\n+                    <GameItem\n+                        gameName={item.title}\n+                        imgUrl={item.thumbnail}\n+                        key={item.title}\n+                        onclick={() => {\n+                            getEspecifGame(item.id);\n+                            setDisplay('block');\n+                        }}\n+                    />\n+                );\n+            })\n+        ) : (\n+            <h2>Nenhum jogo localizado</h2>\n+        );\n+    };\n \n-    }\n-\n     return (\n         <>\n             <Modal\n                 displayValue={display}\n"
+                },
+                {
+                    "date": 1642013228884,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,24 +70,12 @@\n \n             <MainContentContainer>\n                 <Filter />\n                 <GameContainer id=\"game-container\">\n-                    {gameList.length > 0 ? (\n-                        gameList.map((item) => {\n-                            return (\n-                                <GameItem\n-                                    gameName={item.title}\n-                                    imgUrl={item.thumbnail}\n-                                    key={item.title}\n-                                    onclick={() => {\n-                                        getEspecifGame(item.id);\n-                                        setDisplay('block');\n-                                    }}\n-                                />\n-                            );\n-                        })\n-                    ) : (\n-                        <h2>Nenhum jogo localizado</h2>\n+                    {setHtml(\n+                        gameListFiltered.length > 0\n+                            ? gameListFiltered\n+                            : gameList,\n                     )}\n                 </GameContainer>\n             </MainContentContainer>\n         </>\n"
+                },
+                {
+                    "date": 1642014994677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,13 +70,9 @@\n \n             <MainContentContainer>\n                 <Filter />\n                 <GameContainer id=\"game-container\">\n-                    {setHtml(\n-                        gameListFiltered.length > 0\n-                            ? gameListFiltered\n-                            : gameList,\n-                    )}\n+                    {setHtml(gameListFiltered)}\n                 </GameContainer>\n             </MainContentContainer>\n         </>\n     );\n"
+                },
+                {
+                    "date": 1642015252591,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,13 @@\n \n             <MainContentContainer>\n                 <Filter />\n                 <GameContainer id=\"game-container\">\n-                    {setHtml(gameListFiltered)}\n+                    {setHtml(\n+                        gameListFiltered.length > 0\n+                            ? gameListFiltered\n+                            : gameList,\n+                    )}\n                 </GameContainer>\n             </MainContentContainer>\n         </>\n     );\n"
+                }
+            ],
+            "date": 1641568039235,
+            "name": "Commit-0",
+            "content": "import React from 'react';\n"
+        }
+    ]
+}

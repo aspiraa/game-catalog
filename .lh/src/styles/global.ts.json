@@ -1,0 +1,70 @@
+{
+    "sourceFile": "src/styles/global.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1641557559435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641558144524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,20 +9,9 @@\n \n   }\n   body{\n       position: relative;\n-\n+      background: red;\n   }\n-  /* THE HAMBURGUER MENU ANIMATION */\n-  .menu-btn.open .menu-btn__burger {\n-        transform: translateX(-50px);\n-        background: transparent;\n-        box-shadow: none;\n-    }\n-    .menu-btn.open .menu-btn__burger::before {\n-        transform: rotate(45deg) translate(35px, -35px);\n-    }\n-    .menu-btn.open .menu-btn__burger::after {\n-        transform: rotate(-45deg) translate(35px, 35px);\n-    }\n \n+\n `;\n"
+                },
+                {
+                    "date": 1641558152343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n   }\n   body{\n       position: relative;\n-      background: red;\n+      background-color: red;\n   }\n \n \n `;\n"
+                },
+                {
+                    "date": 1641558171507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,13 +5,14 @@\n     margin: 0;\n     padding: 0;\n     font-family: \"Roboto\", sans-serif;\n     box-sizing: border-box;\n+    background-color: red;\n \n   }\n   body{\n       position: relative;\n-      background-color: red;\n+\n   }\n \n \n `;\n"
+                },
+                {
+                    "date": 1641558182805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,14 +5,11 @@\n     margin: 0;\n     padding: 0;\n     font-family: \"Roboto\", sans-serif;\n     box-sizing: border-box;\n-    background-color: red;\n-\n   }\n   body{\n       position: relative;\n-\n   }\n \n \n `;\n"
+                },
+                {
+                    "date": 1641558534235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n     box-sizing: border-box;\n   }\n   body{\n       position: relative;\n+      background-color:red;\n   }\n \n \n `;\n"
+                },
+                {
+                    "date": 1641558746167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     box-sizing: border-box;\n   }\n   body{\n       position: relative;\n-      background-color:red;\n+\n   }\n \n \n `;\n"
+                },
+                {
+                    "date": 1641558782421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     font-family: \"Roboto\", sans-serif;\n     box-sizing: border-box;\n   }\n   body{\n-      position: relative;\n+    position: relative;\n \n   }\n \n \n"
+                },
+                {
+                    "date": 1641563075852,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,6 @@\n     box-sizing: border-box;\n   }\n   body{\n     position: relative;\n-\n   }\n-\n-\n `;\n"
+                },
+                {
+                    "date": 1641563207911,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { createGlobalStyle } from 'styled-components';\n+import styled, { createGlobalStyle } from 'styled-components';\n \n export default createGlobalStyle`\n   *{\n     margin: 0;\n@@ -10,4 +10,6 @@\n   body{\n     position: relative;\n   }\n `;\n+\n+export const GlobalContainer;\n"
+                },
+                {
+                    "date": 1641563236161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,5 +11,8 @@\n     position: relative;\n   }\n `;\n \n-export const GlobalContainer;\n+export const GlobalContainer = styled.main`\n+    max-width: 1200px;\n+    margin: 0 auto;\n+`;\n"
+                },
+                {
+                    "date": 1641565234912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n     box-sizing: border-box;\n   }\n   body{\n     position: relative;\n+    background-color: #DCDCDC;\n   }\n `;\n \n export const GlobalContainer = styled.main`\n"
+                },
+                {
+                    "date": 1641570252381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,5 +15,6 @@\n \n export const GlobalContainer = styled.main`\n     max-width: 1200px;\n     margin: 0 auto;\n+    padding: 0 15px;\n `;\n"
+                },
+                {
+                    "date": 1641996535223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,5 +16,6 @@\n export const GlobalContainer = styled.main`\n     max-width: 1200px;\n     margin: 0 auto;\n     padding: 0 15px;\n+    overflow: hidden;\n `;\n"
+                }
+            ],
+            "date": 1641557559435,
+            "name": "Commit-0",
+            "content": "import { createGlobalStyle } from 'styled-components';\n\nexport default createGlobalStyle`\n  *{\n    margin: 0;\n    padding: 0;\n    font-family: \"Roboto\", sans-serif;\n    box-sizing: border-box;\n\n  }\n  body{\n      position: relative;\n\n  }\n  /* THE HAMBURGUER MENU ANIMATION */\n  .menu-btn.open .menu-btn__burger {\n        transform: translateX(-50px);\n        background: transparent;\n        box-shadow: none;\n    }\n    .menu-btn.open .menu-btn__burger::before {\n        transform: rotate(45deg) translate(35px, -35px);\n    }\n    .menu-btn.open .menu-btn__burger::after {\n        transform: rotate(-45deg) translate(35px, 35px);\n    }\n\n`;\n"
+        }
+    ]
+}

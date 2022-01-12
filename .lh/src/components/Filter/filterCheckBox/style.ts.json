@@ -1,0 +1,50 @@
+{
+    "sourceFile": "src/components/filter/filterCheckBox/style.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1641565967070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641566028177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import styled from 'styled-components';\n \n-export const CheckBoxContainer = styled.div`\n+export const CheckBoxContainer = styled.button`\n     width: 210px;\n     height: 30px;\n     background-color: #3ac9b8;\n `;\n"
+                },
+                {
+                    "date": 1641566103065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,6 @@\n export const CheckBoxContainer = styled.button`\n     width: 210px;\n     height: 30px;\n     background-color: #3ac9b8;\n+    border: 1px solid;\n `;\n"
+                },
+                {
+                    "date": 1641566110668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n export const CheckBoxContainer = styled.button`\n     width: 210px;\n     height: 30px;\n     background-color: #3ac9b8;\n-    border: 1px solid;\n+    border: 1px solid #282828;\n `;\n"
+                },
+                {
+                    "date": 1641566121180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import styled from 'styled-components';\n \n export const CheckBoxContainer = styled.button`\n-    width: 210px;\n+    width: 150px;\n     height: 30px;\n     background-color: #3ac9b8;\n     border: 1px solid #282828;\n `;\n"
+                },
+                {
+                    "date": 1641566371294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import styled from 'styled-components';\n \n-export const CheckBoxContainer = styled.button`\n+export const CheckBoxButton = styled.button`\n     width: 150px;\n     height: 30px;\n     background-color: #3ac9b8;\n     border: 1px solid #282828;\n"
+                },
+                {
+                    "date": 1641566544061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,7 @@\n     width: 150px;\n     height: 30px;\n     background-color: #3ac9b8;\n     border: 1px solid #282828;\n+    display: flex;\n+    align-items: center;\n `;\n"
+                },
+                {
+                    "date": 1641566561507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,6 @@\n     background-color: #3ac9b8;\n     border: 1px solid #282828;\n     display: flex;\n     align-items: center;\n+    cursor: pointer;\n `;\n"
+                },
+                {
+                    "date": 1641566665909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n export const CheckBoxButton = styled.button`\n     width: 150px;\n     height: 30px;\n     background-color: #3ac9b8;\n-    border: 1px solid #282828;\n+    border: 1px solid #39b3a4;\n     display: flex;\n     align-items: center;\n     cursor: pointer;\n `;\n"
+                }
+            ],
+            "date": 1641565967070,
+            "name": "Commit-0",
+            "content": "import styled from 'styled-components';\n\nexport const CheckBoxContainer = styled.div`\n    width: 210px;\n    height: 30px;\n    background-color: #3ac9b8;\n`;\n"
+        }
+    ]
+}

@@ -1,0 +1,74 @@
+{
+    "sourceFile": "src/components/mainContent/filter/filterCheckBoxButton/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1641578028129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641578503255,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n import React from 'react';\n import { BiSortUp } from 'react-icons/bi';\n import { CheckBoxButton } from './style';\n \n+interface IProps {\n+    functionName: string;\n+}\n+\n const FilterCheckBoxButton = () => {\n     return (\n         <CheckBoxButton type=\"button\" id=\"check-box-button\">\n             <i>\n@@ -12,5 +16,5 @@\n         </CheckBoxButton>\n     );\n };\n \n-export default FilterCheckBox;\n+export default FilterCheckBoxButton;\n"
+                },
+                {
+                    "date": 1641578538877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,11 +5,17 @@\n interface IProps {\n     functionName: string;\n }\n \n-const FilterCheckBoxButton = () => {\n+const FilterCheckBoxButton = ({ functionName }: IProps) => {\n     return (\n-        <CheckBoxButton type=\"button\" id=\"check-box-button\">\n+        <CheckBoxButton\n+            type=\"button\"\n+            id=\"check-box-button\"\n+            onClick={() => {\n+                functionName();\n+            }}\n+        >\n             <i>\n                 <BiSortUp size=\"25px\" />\n             </i>\n             <span>Filtrar Resultados</span>\n"
+                },
+                {
+                    "date": 1641578548793,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n         <CheckBoxButton\n             type=\"button\"\n             id=\"check-box-button\"\n             onClick={() => {\n-                functionName();\n+                functionName;\n             }}\n         >\n             <i>\n                 <BiSortUp size=\"25px\" />\n"
+                },
+                {
+                    "date": 1641578652825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,15 +7,9 @@\n }\n \n const FilterCheckBoxButton = ({ functionName }: IProps) => {\n     return (\n-        <CheckBoxButton\n-            type=\"button\"\n-            id=\"check-box-button\"\n-            onClick={() => {\n-                functionName;\n-            }}\n-        >\n+        <CheckBoxButton type=\"button\" id=\"check-box-button\">\n             <i>\n                 <BiSortUp size=\"25px\" />\n             </i>\n             <span>Filtrar Resultados</span>\n"
+                },
+                {
+                    "date": 1641578660933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,9 @@\n import React from 'react';\n import { BiSortUp } from 'react-icons/bi';\n import { CheckBoxButton } from './style';\n \n-interface IProps {\n-    functionName: string;\n-}\n-\n-const FilterCheckBoxButton = ({ functionName }: IProps) => {\n+const FilterCheckBoxButton = () => {\n     return (\n         <CheckBoxButton type=\"button\" id=\"check-box-button\">\n             <i>\n                 <BiSortUp size=\"25px\" />\n"
+                },
+                {
+                    "date": 1641612172962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\n import { BiSortUp } from 'react-icons/bi';\n import { CheckBoxButton } from './style';\n \n-const FilterCheckBoxButton = () => {\n+const FilterCheckBoxButton = (props) => {\n     return (\n         <CheckBoxButton type=\"button\" id=\"check-box-button\">\n             <i>\n                 <BiSortUp size=\"25px\" />\n"
+                },
+                {
+                    "date": 1641612233386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\n import { BiSortUp } from 'react-icons/bi';\n import { CheckBoxButton } from './style';\n \n-const FilterCheckBoxButton = (props) => {\n+const FilterCheckBoxButton = () => {\n     return (\n         <CheckBoxButton type=\"button\" id=\"check-box-button\">\n             <i>\n                 <BiSortUp size=\"25px\" />\n"
+                },
+                {
+                    "date": 1641612539818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\n import { BiSortUp } from 'react-icons/bi';\n import { CheckBoxButton } from './style';\n \n-const FilterCheckBoxButton = () => {\n+const FilterCheckBoxButton = (props: any) => {\n     return (\n         <CheckBoxButton type=\"button\" id=\"check-box-button\">\n             <i>\n                 <BiSortUp size=\"25px\" />\n"
+                },
+                {
+                    "date": 1641612681965,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,13 @@\n import { CheckBoxButton } from './style';\n \n const FilterCheckBoxButton = (props: any) => {\n     return (\n-        <CheckBoxButton type=\"button\" id=\"check-box-button\">\n+        <CheckBoxButton\n+            type=\"button\"\n+            id=\"check-box-button\"\n+            onClick={() => props.visible}\n+        >\n             <i>\n                 <BiSortUp size=\"25px\" />\n             </i>\n             <span>Filtrar Resultados</span>\n"
+                },
+                {
+                    "date": 1641612708380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n     return (\n         <CheckBoxButton\n             type=\"button\"\n             id=\"check-box-button\"\n+            // eslint-disable-next-line react/destructuring-assignment\n             onClick={() => props.visible}\n         >\n             <i>\n                 <BiSortUp size=\"25px\" />\n"
+                },
+                {
+                    "date": 1641613144116,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n         <CheckBoxButton\n             type=\"button\"\n             id=\"check-box-button\"\n             // eslint-disable-next-line react/destructuring-assignment\n-            onClick={() => props.visible}\n+            onClick={() => props.visible(false)}\n         >\n             <i>\n                 <BiSortUp size=\"25px\" />\n             </i>\n"
+                },
+                {
+                    "date": 1641613633100,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n         <CheckBoxButton\n             type=\"button\"\n             id=\"check-box-button\"\n             // eslint-disable-next-line react/destructuring-assignment\n-            onClick={() => props.visible(false)}\n+            onClick={() => props.visibly(false)}\n         >\n             <i>\n                 <BiSortUp size=\"25px\" />\n             </i>\n"
+                },
+                {
+                    "date": 1641613863484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n         <CheckBoxButton\n             type=\"button\"\n             id=\"check-box-button\"\n             // eslint-disable-next-line react/destructuring-assignment\n-            onClick={() => props.visibly(false)}\n+            onClick={() => props.visibly()}\n         >\n             <i>\n                 <BiSortUp size=\"25px\" />\n             </i>\n"
+                },
+                {
+                    "date": 1641613932150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n         <CheckBoxButton\n             type=\"button\"\n             id=\"check-box-button\"\n             // eslint-disable-next-line react/destructuring-assignment\n-            onClick={() => props.visibly()}\n+            onClick={() => props.onClick()}\n         >\n             <i>\n                 <BiSortUp size=\"25px\" />\n             </i>\n"
+                }
+            ],
+            "date": 1641578028129,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport { BiSortUp } from 'react-icons/bi';\nimport { CheckBoxButton } from './style';\n\nconst FilterCheckBoxButton = () => {\n    return (\n        <CheckBoxButton type=\"button\" id=\"check-box-button\">\n            <i>\n                <BiSortUp size=\"25px\" />\n            </i>\n            <span>Filtrar Resultados</span>\n        </CheckBoxButton>\n    );\n};\n\nexport default FilterCheckBox;\n"
+        }
+    ]
+}

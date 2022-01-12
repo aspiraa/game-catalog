@@ -1,0 +1,310 @@
+{
+    "sourceFile": "src/components/mainContent/modal/style.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 73,
+            "patches": [
+                {
+                    "date": 1641954076085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641954105502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,13 @@\n import styled from 'styled-components';\n+\n+export const ModalContainer = styled.div`\n+    position: fixed;\n+    z-index: 1;\n+    padding-top: 100px;\n+    left: 0;\n+    top: 0;\n+    width: 100%;\n+    height: 100%;\n+    background-color: rgb(0, 0, 0);\n+    background-color: rgba(0, 0, 0, 0.4);\n+`;\n"
+                },
+                {
+                    "date": 1641954440715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,4 +10,10 @@\n     height: 100%;\n     background-color: rgb(0, 0, 0);\n     background-color: rgba(0, 0, 0, 0.4);\n `;\n+\n+export const Content = styled.div`\n+    max-width: 1200px;\n+    margin: 0 auto;\n+    padding: 0 15px;\n+`;\n"
+                },
+                {
+                    "date": 1641954582368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,8 @@\n \n export const ModalContainer = styled.div`\n     position: fixed;\n     z-index: 1;\n-    padding-top: 100px;\n     left: 0;\n     top: 0;\n     width: 100%;\n     height: 100%;\n"
+                },
+                {
+                    "date": 1641954791941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,4 +15,29 @@\n     max-width: 1200px;\n     margin: 0 auto;\n     padding: 0 15px;\n `;\n+\n+/** Screen shot  */\n+\n+export const screenshotContainer = styled.section`\n+    width: 100%;\n+    max-width: 870px;\n+    display: flex;\n+    flex-direction: column;\n+    margin: 35px auto 0 auto;\n+    gap: 15px;\n+`;\n+\n+export const screenshotContentContainer = styled.div`\n+    height: 90%;\n+    width: 100%;\n+    display: flex;\n+    justify-content: space-between;\n+`;\n+\n+export const screenshot = styled.div`\n+    height: 200px;\n+    max-width: 31%;\n+    flex: 1;\n+    background-color: #282828;\n+`;\n"
+                },
+                {
+                    "date": 1641954916973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,25 +18,25 @@\n `;\n \n /** Screen shot  */\n \n-export const screenshotContainer = styled.section`\n+export const ScreenshotContainer = styled.section`\n     width: 100%;\n     max-width: 870px;\n     display: flex;\n     flex-direction: column;\n     margin: 35px auto 0 auto;\n     gap: 15px;\n `;\n \n-export const screenshotContentContainer = styled.div`\n+export const ScreenshotContentContainer = styled.div`\n     height: 90%;\n     width: 100%;\n     display: flex;\n     justify-content: space-between;\n `;\n \n-export const screenshot = styled.div`\n+export const Screenshot = styled.div`\n     height: 200px;\n     max-width: 31%;\n     flex: 1;\n     background-color: #282828;\n"
+                },
+                {
+                    "date": 1641955354803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n     width: 100%;\n     height: 100%;\n     background-color: rgb(0, 0, 0);\n     background-color: rgba(0, 0, 0, 0.4);\n+    color: white;\n `;\n \n export const Content = styled.div`\n     max-width: 1200px;\n"
+                },
+                {
+                    "date": 1641955363333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     top: 0;\n     width: 100%;\n     height: 100%;\n     background-color: rgb(0, 0, 0);\n-    background-color: rgba(0, 0, 0, 0.4);\n+    background-color: #000;\n     color: white;\n `;\n \n export const Content = styled.div`\n"
+                },
+                {
+                    "date": 1641955705089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,4 +41,8 @@\n     max-width: 31%;\n     flex: 1;\n     background-color: #282828;\n `;\n+\n+export const Description = styled.div`\n+    max-width: 50%;\n+`;\n"
+                },
+                {
+                    "date": 1641955835582,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n     width: 100%;\n     max-width: 870px;\n     display: flex;\n     flex-direction: column;\n-    margin: 35px auto 0 auto;\n+    margin: 35px auto 60px auto;\n     gap: 15px;\n `;\n \n export const ScreenshotContentContainer = styled.div`\n"
+                },
+                {
+                    "date": 1641955866469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,12 @@\n     height: 100%;\n     background-color: rgb(0, 0, 0);\n     background-color: #000;\n     color: white;\n+\n+    h1 {\n+        margin-bottom: 15px;\n+    }\n `;\n \n export const Content = styled.div`\n     max-width: 1200px;\n"
+                },
+                {
+                    "date": 1641955885507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     background-color: #000;\n     color: white;\n \n     h1 {\n-        margin-bottom: 15px;\n+        margin-bottom: 10px;\n     }\n `;\n \n export const Content = styled.div`\n"
+                },
+                {
+                    "date": 1641956145410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     background-color: #000;\n     color: white;\n \n     h1 {\n-        margin-bottom: 10px;\n+        margin-bottom: 15px;\n     }\n `;\n \n export const Content = styled.div`\n@@ -46,7 +46,16 @@\n     flex: 1;\n     background-color: #282828;\n `;\n \n+export const CustomSpan = styled.span`\n+    border: 1px solid;\n+    border-radius: 20px;\n+    padding: 6px;\n+    margin: 10px;\n+    margin-left: 0;\n+    background-color: #328f37;\n+`;\n+\n export const Description = styled.div`\n     max-width: 50%;\n `;\n"
+                },
+                {
+                    "date": 1641956229766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,5 +57,6 @@\n `;\n \n export const Description = styled.div`\n     max-width: 50%;\n+    margin-top: 45px;\n `;\n"
+                },
+                {
+                    "date": 1641956311498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,13 +48,14 @@\n `;\n \n export const CustomSpan = styled.span`\n     border: 1px solid;\n-    border-radius: 20px;\n+    border-radius: 10px;\n     padding: 6px;\n     margin: 10px;\n     margin-left: 0;\n     background-color: #328f37;\n+    font-size: 12px;\n `;\n \n export const Description = styled.div`\n     max-width: 50%;\n"
+                },
+                {
+                    "date": 1641956686823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,4 +60,8 @@\n export const Description = styled.div`\n     max-width: 50%;\n     margin-top: 45px;\n `;\n+\n+export const MinRequirementsContainer = styled.div`\n+    max-width: 50%;\n+`;\n"
+                },
+                {
+                    "date": 1641956855066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,5 +63,6 @@\n `;\n \n export const MinRequirementsContainer = styled.div`\n     max-width: 50%;\n+    margin-top: 50px;\n `;\n"
+                },
+                {
+                    "date": 1641957369871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,5 +64,9 @@\n \n export const MinRequirementsContainer = styled.div`\n     max-width: 50%;\n     margin-top: 50px;\n+\n+    h2 {\n+        margin-bottom: 15px;\n+    }\n `;\n"
+                },
+                {
+                    "date": 1641957561294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,8 +46,14 @@\n     flex: 1;\n     background-color: #282828;\n `;\n \n+export const Header = styled.header`\n+    display: flex;\n+    justify-content: space-between;\n+    align-items: center;\n+`;\n+\n export const CustomSpan = styled.span`\n     border: 1px solid;\n     border-radius: 10px;\n     padding: 6px;\n"
+                },
+                {
+                    "date": 1641957797923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,12 +9,8 @@\n     height: 100%;\n     background-color: rgb(0, 0, 0);\n     background-color: #000;\n     color: white;\n-\n-    h1 {\n-        margin-bottom: 15px;\n-    }\n `;\n \n export const Content = styled.div`\n     max-width: 1200px;\n"
+                },
+                {
+                    "date": 1641957812076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,8 +46,16 @@\n export const Header = styled.header`\n     display: flex;\n     justify-content: space-between;\n     align-items: center;\n+\n+    h1 {\n+        margin-bottom: 15px;\n+    }\n+\n+    i {\n+        cursor: pointer;\n+    }\n `;\n \n export const CustomSpan = styled.span`\n     border: 1px solid;\n"
+                },
+                {
+                    "date": 1641960805467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import styled from 'styled-components';\n \n export const ModalContainer = styled.div`\n+    display: none;\n     position: fixed;\n     z-index: 1;\n     left: 0;\n     top: 0;\n"
+                },
+                {
+                    "date": 1641992044126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import styled from 'styled-components';\n \n export const ModalContainer = styled.div`\n-    display: none;\n+    display: block;\n     position: fixed;\n     z-index: 1;\n     left: 0;\n     top: 0;\n"
+                },
+                {
+                    "date": 1641994831687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,8 +34,13 @@\n     height: 90%;\n     width: 100%;\n     display: flex;\n     justify-content: space-between;\n+\n+    img {\n+        width: 100%;\n+        height: 100%;\n+    }\n `;\n \n export const Screenshot = styled.div`\n     height: 200px;\n"
+                },
+                {
+                    "date": 1641995028151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n \n export const ScreenshotContainer = styled.section`\n     width: 100%;\n     max-width: 870px;\n+    max-height: 200px;\n     display: flex;\n     flex-direction: column;\n     margin: 35px auto 60px auto;\n     gap: 15px;\n"
+                },
+                {
+                    "date": 1641995315752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,8 +33,9 @@\n \n export const ScreenshotContentContainer = styled.div`\n     height: 90%;\n     width: 100%;\n+    gap: 30px;\n     display: flex;\n     justify-content: space-between;\n \n     img {\n"
+                },
+                {
+                    "date": 1641995342858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,9 @@\n \n     img {\n         width: 100%;\n         height: 100%;\n+        object-fit: cover;\n     }\n `;\n \n export const Screenshot = styled.div`\n"
+                },
+                {
+                    "date": 1641995565857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n import styled from 'styled-components';\n \n export const ModalContainer = styled.div`\n     display: block;\n-    position: fixed;\n+    position: absolute;\n     z-index: 1;\n     left: 0;\n     top: 0;\n     width: 100%;\n-    height: 100%;\n+    height: auto;\n     background-color: rgb(0, 0, 0);\n     background-color: #000;\n     color: white;\n `;\n"
+                },
+                {
+                    "date": 1641995620451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     max-width: 870px;\n     max-height: 200px;\n     display: flex;\n     flex-direction: column;\n-    margin: 35px auto 60px auto;\n+    margin: 0px auto 60px auto;\n     gap: 15px;\n `;\n \n export const ScreenshotContentContainer = styled.div`\n"
+                },
+                {
+                    "date": 1641995798697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     z-index: 1;\n     left: 0;\n     top: 0;\n     width: 100%;\n-    height: auto;\n+    height: 100%;\n     background-color: rgb(0, 0, 0);\n     background-color: #000;\n     color: white;\n `;\n"
+                },
+                {
+                    "date": 1641995848904,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,8 +78,9 @@\n \n export const Description = styled.div`\n     max-width: 50%;\n     margin-top: 45px;\n+    line-height: 1.4rem;\n `;\n \n export const MinRequirementsContainer = styled.div`\n     max-width: 50%;\n"
+                },
+                {
+                    "date": 1641995856393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,8 +84,9 @@\n \n export const MinRequirementsContainer = styled.div`\n     max-width: 50%;\n     margin-top: 50px;\n+    line-height: 1.4rem;\n \n     h2 {\n         margin-bottom: 15px;\n     }\n"
+                },
+                {
+                    "date": 1641996591357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     max-width: 870px;\n     max-height: 200px;\n     display: flex;\n     flex-direction: column;\n-    margin: 0px auto 60px auto;\n+    margin: 35px auto 0 auto;\n     gap: 15px;\n `;\n \n export const ScreenshotContentContainer = styled.div`\n"
+                },
+                {
+                    "date": 1641996631447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     max-width: 870px;\n     max-height: 200px;\n     display: flex;\n     flex-direction: column;\n-    margin: 35px auto 0 auto;\n+    margin: 35px auto 30px auto;\n     gap: 15px;\n `;\n \n export const ScreenshotContentContainer = styled.div`\n"
+                },
+                {
+                    "date": 1641997059492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n export const Content = styled.div`\n     max-width: 1200px;\n     margin: 0 auto;\n     padding: 0 15px;\n+    background-color: #000;\n `;\n \n /** Screen shot  */\n \n"
+                },
+                {
+                    "date": 1641997297855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     z-index: 1;\n     left: 0;\n     top: 0;\n     width: 100%;\n-    height: 100%;\n+    height: min-content;\n     background-color: rgb(0, 0, 0);\n     background-color: #000;\n     color: white;\n `;\n"
+                },
+                {
+                    "date": 1641997324505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n     left: 0;\n     top: 0;\n     width: 100%;\n     height: min-content;\n+    min-height: 100%;\n     background-color: rgb(0, 0, 0);\n     background-color: #000;\n     color: white;\n `;\n"
+                },
+                {
+                    "date": 1641997399885,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,8 @@\n     top: 0;\n     width: 100%;\n     height: min-content;\n     min-height: 100%;\n-    background-color: rgb(0, 0, 0);\n     background-color: #000;\n     color: white;\n `;\n \n"
+                },
+                {
+                    "date": 1641997430655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,10 @@\n     z-index: 1;\n     left: 0;\n     top: 0;\n     width: 100%;\n-    height: min-content;\n-    min-height: 100%;\n+\n+    min-height: 101%;\n     background-color: #000;\n     color: white;\n `;\n \n"
+                },
+                {
+                    "date": 1641997518793,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,9 @@\n     z-index: 1;\n     left: 0;\n     top: 0;\n     width: 100%;\n-\n-    min-height: 101%;\n+    min-height: 100%;\n     background-color: #000;\n     color: white;\n `;\n \n"
+                },
+                {
+                    "date": 1641997553994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     z-index: 1;\n     left: 0;\n     top: 0;\n     width: 100%;\n-    min-height: 100%;\n+    min-height: 101%;\n     background-color: #000;\n     color: white;\n `;\n \n"
+                },
+                {
+                    "date": 1642000887991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,11 @@\n     display: flex;\n     flex-direction: column;\n     margin: 35px auto 30px auto;\n     gap: 15px;\n+\n+    overflow: scroll;\n+    overflow-y: hidden;\n `;\n \n export const ScreenshotContentContainer = styled.div`\n     height: 90%;\n@@ -47,8 +50,9 @@\n \n export const Screenshot = styled.div`\n     height: 200px;\n     max-width: 31%;\n+    min-width: 25%;\n     flex: 1;\n     background-color: #282828;\n `;\n \n"
+                },
+                {
+                    "date": 1642001518732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,8 +77,9 @@\n     margin: 10px;\n     margin-left: 0;\n     background-color: #328f37;\n     font-size: 12px;\n+    box-shadow: 0 0 1px 1px white;\n `;\n \n export const Description = styled.div`\n     max-width: 50%;\n"
+                },
+                {
+                    "date": 1642001557455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,9 +77,9 @@\n     margin: 10px;\n     margin-left: 0;\n     background-color: #328f37;\n     font-size: 12px;\n-    box-shadow: 0 0 1px 1px white;\n+    box-shadow: 0 0 1px 0px white;\n `;\n \n export const Description = styled.div`\n     max-width: 50%;\n"
+                },
+                {
+                    "date": 1642003827036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,27 @@\n     width: 100%;\n     min-height: 101%;\n     background-color: #000;\n     color: white;\n+\n+    ::-webkit-scrollbar {\n+        width: 10px;\n+    }\n+\n+    /* Track */\n+    ::-webkit-scrollbar-track {\n+        background: #f1f1f1;\n+    }\n+\n+    /* Handle */\n+    ::-webkit-scrollbar-thumb {\n+        background: #888;\n+    }\n+\n+    /* Handle on hover */\n+    ::-webkit-scrollbar-thumb:hover {\n+        background: #555;\n+    }\n `;\n \n export const Content = styled.div`\n     max-width: 1200px;\n"
+                },
+                {
+                    "date": 1642003843399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,27 +9,8 @@\n     width: 100%;\n     min-height: 101%;\n     background-color: #000;\n     color: white;\n-\n-    ::-webkit-scrollbar {\n-        width: 10px;\n-    }\n-\n-    /* Track */\n-    ::-webkit-scrollbar-track {\n-        background: #f1f1f1;\n-    }\n-\n-    /* Handle */\n-    ::-webkit-scrollbar-thumb {\n-        background: #888;\n-    }\n-\n-    /* Handle on hover */\n-    ::-webkit-scrollbar-thumb:hover {\n-        background: #555;\n-    }\n `;\n \n export const Content = styled.div`\n     max-width: 1200px;\n"
+                },
+                {
+                    "date": 1642003878213,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,27 @@\n     gap: 15px;\n \n     overflow: scroll;\n     overflow-y: hidden;\n+\n+    ::-webkit-scrollbar {\n+        width: 10px;\n+    }\n+\n+    /* Track */\n+    ::-webkit-scrollbar-track {\n+        background: #f1f1f1;\n+    }\n+\n+    /* Handle */\n+    ::-webkit-scrollbar-thumb {\n+        background: #888;\n+    }\n+\n+    /* Handle on hover */\n+    ::-webkit-scrollbar-thumb:hover {\n+        background: #555;\n+    }\n `;\n \n export const ScreenshotContentContainer = styled.div`\n     height: 90%;\n"
+                },
+                {
+                    "date": 1642003959801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,10 @@\n \n export const ScreenshotContainer = styled.section`\n     width: 100%;\n     max-width: 870px;\n-    max-height: 200px;\n+    max-height: 220px;\n+    padding-bottom: 5px;\n     display: flex;\n     flex-direction: column;\n     margin: 35px auto 30px auto;\n     gap: 15px;\n"
+                },
+                {
+                    "date": 1642003967440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     overflow: scroll;\n     overflow-y: hidden;\n \n     ::-webkit-scrollbar {\n-        width: 10px;\n+        width: 5px;\n     }\n \n     /* Track */\n     ::-webkit-scrollbar-track {\n"
+                },
+                {
+                    "date": 1642004334987,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     overflow: scroll;\n     overflow-y: hidden;\n \n     ::-webkit-scrollbar {\n-        width: 5px;\n+        height: 8px;\n     }\n \n     /* Track */\n     ::-webkit-scrollbar-track {\n"
+                },
+                {
+                    "date": 1642005651925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,16 +79,21 @@\n export const Header = styled.header`\n     display: flex;\n     justify-content: space-between;\n     align-items: center;\n+    flex-wrap: wrap;\n \n     h1 {\n         margin-bottom: 15px;\n     }\n \n     i {\n         cursor: pointer;\n     }\n+\n+    a {\n+        text-decoration: none;\n+    }\n `;\n \n export const CustomSpan = styled.span`\n     border: 1px solid;\n"
+                },
+                {
+                    "date": 1642005664571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,8 +91,9 @@\n     }\n \n     a {\n         text-decoration: none;\n+        width: 100%;\n     }\n `;\n \n export const CustomSpan = styled.span`\n"
+                },
+                {
+                    "date": 1642005685937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -80,8 +80,9 @@\n     display: flex;\n     justify-content: space-between;\n     align-items: center;\n     flex-wrap: wrap;\n+    margin-bottom: 10px;\n \n     h1 {\n         margin-bottom: 15px;\n     }\n"
+                },
+                {
+                    "date": 1642005703869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -93,8 +93,12 @@\n \n     a {\n         text-decoration: none;\n         width: 100%;\n+\n+        &:visited {\n+            color: inherit;\n+        }\n     }\n `;\n \n export const CustomSpan = styled.span`\n"
+                },
+                {
+                    "date": 1642005900382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -93,8 +93,9 @@\n \n     a {\n         text-decoration: none;\n         width: 100%;\n+        color: #fff;\n \n         &:visited {\n             color: inherit;\n         }\n"
+                },
+                {
+                    "date": 1642006089467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -98,8 +98,12 @@\n \n         &:visited {\n             color: inherit;\n         }\n+\n+        span {\n+            color: #00dcff;\n+        }\n     }\n `;\n \n export const CustomSpan = styled.span`\n"
+                },
+                {
+                    "date": 1642006179736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,11 +90,14 @@\n     i {\n         cursor: pointer;\n     }\n \n+    div {\n+        width: 100%;\n+    }\n     a {\n         text-decoration: none;\n-        width: 100%;\n+\n         color: #fff;\n \n         &:visited {\n             color: inherit;\n"
+                },
+                {
+                    "date": 1642006705868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -123,8 +123,11 @@\n export const Description = styled.div`\n     max-width: 50%;\n     margin-top: 45px;\n     line-height: 1.4rem;\n+\n+    @media (max-widht: '80px') {\n+    }\n `;\n \n export const MinRequirementsContainer = styled.div`\n     max-width: 50%;\n"
+                },
+                {
+                    "date": 1642006876977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,9 +124,10 @@\n     max-width: 50%;\n     margin-top: 45px;\n     line-height: 1.4rem;\n \n-    @media (max-widht: '80px') {\n+    @media (max-widht: '800px') {\n+        max-width: 100%;\n     }\n `;\n \n export const MinRequirementsContainer = styled.div`\n@@ -136,5 +137,9 @@\n \n     h2 {\n         margin-bottom: 15px;\n     }\n+\n+    @media (max-widht: '800px') {\n+        max-width: 100%;\n+    }\n `;\n"
+                },
+                {
+                    "date": 1642006899631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -125,9 +125,11 @@\n     margin-top: 45px;\n     line-height: 1.4rem;\n \n     @media (max-widht: '800px') {\n-        max-width: 100%;\n+        MinRequirementsContainer {\n+            max-width: 100%;\n+        }\n     }\n `;\n \n export const MinRequirementsContainer = styled.div`\n"
+                },
+                {
+                    "date": 1642006965509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -125,11 +125,9 @@\n     margin-top: 45px;\n     line-height: 1.4rem;\n \n     @media (max-widht: '800px') {\n-        MinRequirementsContainer {\n-            max-width: 100%;\n-        }\n+        max-width: 100%;\n     }\n `;\n \n export const MinRequirementsContainer = styled.div`\n"
+                },
+                {
+                    "date": 1642007035496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -120,26 +120,18 @@\n     box-shadow: 0 0 1px 0px white;\n `;\n \n export const Description = styled.div`\n-    max-width: 50%;\n+    max-width: 90%;\n     margin-top: 45px;\n     line-height: 1.4rem;\n-\n-    @media (max-widht: '800px') {\n-        max-width: 100%;\n-    }\n `;\n \n export const MinRequirementsContainer = styled.div`\n-    max-width: 50%;\n+    max-width: 90%;\n     margin-top: 50px;\n     line-height: 1.4rem;\n \n     h2 {\n         margin-bottom: 15px;\n     }\n-\n-    @media (max-widht: '800px') {\n-        max-width: 100%;\n-    }\n `;\n"
+                },
+                {
+                    "date": 1642007080111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,10 +69,9 @@\n `;\n \n export const Screenshot = styled.div`\n     height: 200px;\n-    max-width: 31%;\n-    min-width: 25%;\n+    width: 220px;\n     flex: 1;\n     background-color: #282828;\n `;\n \n"
+                },
+                {
+                    "date": 1642007160225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,10 @@\n `;\n \n export const Screenshot = styled.div`\n     height: 200px;\n-    width: 220px;\n+\n+    width: 300px;\n     flex: 1;\n     background-color: #282828;\n `;\n \n"
+                },
+                {
+                    "date": 1642007209814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,10 +69,9 @@\n `;\n \n export const Screenshot = styled.div`\n     height: 200px;\n-\n-    width: 300px;\n+    min-width: 300px;\n     flex: 1;\n     background-color: #282828;\n `;\n \n"
+                },
+                {
+                    "date": 1642007319599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,8 @@\n /** Screen shot  */\n \n export const ScreenshotContainer = styled.section`\n     width: 100%;\n-    max-width: 870px;\n     max-height: 220px;\n     padding-bottom: 5px;\n     display: flex;\n     flex-direction: column;\n"
+                },
+                {
+                    "date": 1642007487244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -125,9 +125,9 @@\n `;\n \n export const MinRequirementsContainer = styled.div`\n     max-width: 90%;\n-    margin-top: 50px;\n+    margin: 50px 0;\n     line-height: 1.4rem;\n \n     h2 {\n         margin-bottom: 15px;\n"
+                },
+                {
+                    "date": 1642007600640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     flex-direction: column;\n     margin: 35px auto 30px auto;\n     gap: 15px;\n \n-    overflow: scroll;\n+    overflow: auto;\n     overflow-y: hidden;\n \n     ::-webkit-scrollbar {\n         height: 8px;\n"
+                },
+                {
+                    "date": 1642007711670,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -118,15 +118,17 @@\n     box-shadow: 0 0 1px 0px white;\n `;\n \n export const Description = styled.div`\n-    max-width: 90%;\n+    max-width: 100%;\n     margin-top: 45px;\n     line-height: 1.4rem;\n+    padding: 0 15px;\n `;\n \n export const MinRequirementsContainer = styled.div`\n-    max-width: 90%;\n+    max-width: 100%;\n+    padding: 0 15px;\n     margin: 50px 0;\n     line-height: 1.4rem;\n \n     h2 {\n"
+                },
+                {
+                    "date": 1642007751471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,14 +121,13 @@\n export const Description = styled.div`\n     max-width: 100%;\n     margin-top: 45px;\n     line-height: 1.4rem;\n-    padding: 0 15px;\n `;\n \n export const MinRequirementsContainer = styled.div`\n     max-width: 100%;\n-    padding: 0 15px;\n+\n     margin: 50px 0;\n     line-height: 1.4rem;\n \n     h2 {\n"
+                },
+                {
+                    "date": 1642007922692,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -106,8 +106,13 @@\n         }\n     }\n `;\n \n+export const SubHeader = styled.div`\n+    display: flex;\n+    flex-wrap: wrap;\n+`;\n+\n export const CustomSpan = styled.span`\n     border: 1px solid;\n     border-radius: 10px;\n     padding: 6px;\n"
+                },
+                {
+                    "date": 1642010287364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n export const ModalContainer = styled.div`\n     display: block;\n     position: absolute;\n-    z-index: 1;\n+    z-index: 100;\n     left: 0;\n     top: 0;\n     width: 100%;\n     min-height: 101%;\n"
+                },
+                {
+                    "date": 1642010320860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n export const ModalContainer = styled.div`\n     display: block;\n     position: absolute;\n-    z-index: 100;\n+    z-index: 1;\n     left: 0;\n     top: 0;\n     width: 100%;\n     min-height: 101%;\n"
+                },
+                {
+                    "date": 1642010338289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n export const ModalContainer = styled.div`\n     display: block;\n     position: absolute;\n-    z-index: 1;\n+    z-index: 100;\n     left: 0;\n     top: 0;\n     width: 100%;\n     min-height: 101%;\n"
+                }
+            ],
+            "date": 1641954076085,
+            "name": "Commit-0",
+            "content": "import styled from 'styled-components';\n"
+        }
+    ]
+}

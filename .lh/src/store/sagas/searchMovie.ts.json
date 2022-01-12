@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/store/sagas/searchMovie.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1641821451304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641831217786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,18 @@\n import { call, put } from 'redux-saga/effects';\n import { services } from '../services';\n import { Creators as SearchActions } from '../actions/searchMovie';\n \n+export function* getGames(): any {\n+    try {\n+        const gameList = yield call(services.getGames);\n+\n+        yield put(SearchActions.searchGamesSuccess(gameList));\n+    } catch (err) {\n+        yield put(SearchActions.searchGamesFailed());\n+    }\n+}\n+\n export function* getImageRequest(action: any): any {\n     try {\n         const img = yield call(services.getImage, action.movieName);\n         yield put(SearchActions.searchMovie(action.movieName));\n"
+                },
+                {
+                    "date": 1641834200384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n     try {\n         const gameList = yield call(services.getGames);\n \n         yield put(SearchActions.searchGamesSuccess(gameList));\n+        console.log(gameList);\n     } catch (err) {\n         yield put(SearchActions.searchGamesFailed());\n     }\n }\n"
+                },
+                {
+                    "date": 1641834933567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,11 @@\n \n export function* getGames(): any {\n     try {\n         const gameList = yield call(services.getGames);\n+        console.log(gameList);\n \n         yield put(SearchActions.searchGamesSuccess(gameList));\n-        console.log(gameList);\n     } catch (err) {\n         yield put(SearchActions.searchGamesFailed());\n     }\n }\n"
+                },
+                {
+                    "date": 1641836544936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,8 @@\n \n export function* getGames(): any {\n     try {\n         const gameList = yield call(services.getGames);\n-        console.log(gameList);\n \n         yield put(SearchActions.searchGamesSuccess(gameList));\n     } catch (err) {\n         yield put(SearchActions.searchGamesFailed());\n"
+                },
+                {
+                    "date": 1641837202905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n export function* getGames(): any {\n     try {\n         const gameList = yield call(services.getGames);\n \n-        yield put(SearchActions.searchGamesSuccess(gameList));\n+        yield put(SearchActions.searchGamesSuccess(gameList.data));\n     } catch (err) {\n         yield put(SearchActions.searchGamesFailed());\n     }\n }\n"
+                },
+                {
+                    "date": 1641838015867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n export function* getGames(): any {\n     try {\n         const gameList = yield call(services.getGames);\n \n-        yield put(SearchActions.searchGamesSuccess(gameList.data));\n+        yield put(SearchActions.searchGamesSuccess(gameList));\n     } catch (err) {\n         yield put(SearchActions.searchGamesFailed());\n     }\n }\n"
+                },
+                {
+                    "date": 1641838033805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n export function* getGames(): any {\n     try {\n         const gameList = yield call(services.getGames);\n \n-        yield put(SearchActions.searchGamesSuccess(gameList));\n+        yield put(SearchActions.searchGamesSuccess(gameList.data));\n     } catch (err) {\n         yield put(SearchActions.searchGamesFailed());\n     }\n }\n"
+                },
+                {
+                    "date": 1641862676731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,10 @@\n     try {\n         const gameList = yield call(services.getGames);\n \n         yield put(SearchActions.searchGamesSuccess(gameList.data));\n+\n+        return;\n     } catch (err) {\n         yield put(SearchActions.searchGamesFailed());\n     }\n }\n"
+                },
+                {
+                    "date": 1641864452100,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,49 +12,4 @@\n     } catch (err) {\n         yield put(SearchActions.searchGamesFailed());\n     }\n }\n-\n-export function* getImageRequest(action: any): any {\n-    try {\n-        const img = yield call(services.getImage, action.movieName);\n-        yield put(SearchActions.searchMovie(action.movieName));\n-    } catch (err) {\n-        console.error(err);\n-    }\n-}\n-\n-export function* getGenres(): any {\n-    try {\n-        const genreList = yield call(services.getGenres);\n-\n-        yield put(SearchActions.searchGenrerSucess(genreList));\n-    } catch (err) {\n-        yield put(SearchActions.searchMovieListFailed());\n-    }\n-}\n-\n-export function* getPopularMovies(): any {\n-    try {\n-        const popularMovieList = yield call(services.getPopularMovies);\n-\n-        yield put(\n-            SearchActions.searchPopularMovieListSuccess({ popularMovieList }),\n-        );\n-    } catch (err) {\n-        yield put(SearchActions.searchMovieListFailed());\n-    }\n-}\n-export function* getMovieList(action: any): any {\n-    try {\n-        const movieList = yield call(services.getMoviesByGenre, action.genre);\n-\n-        yield put(\n-            SearchActions.searchMovieListSuccess({\n-                movieList,\n-                genre: action.genre,\n-            }),\n-        );\n-    } catch (err) {\n-        yield put(SearchActions.searchMovieListFailed());\n-    }\n-}\n"
+                }
+            ],
+            "date": 1641821451304,
+            "name": "Commit-0",
+            "content": "import { call, put } from 'redux-saga/effects';\nimport { services } from '../services';\nimport { Creators as SearchActions } from '../actions/searchMovie';\n\nexport function* getImageRequest(action: any): any {\n    try {\n        const img = yield call(services.getImage, action.movieName);\n        yield put(SearchActions.searchMovie(action.movieName));\n    } catch (err) {\n        console.error(err);\n    }\n}\n\nexport function* getGenres(): any {\n    try {\n        const genreList = yield call(services.getGenres);\n\n        yield put(SearchActions.searchGenrerSucess(genreList));\n    } catch (err) {\n        yield put(SearchActions.searchMovieListFailed());\n    }\n}\n\nexport function* getPopularMovies(): any {\n    try {\n        const popularMovieList = yield call(services.getPopularMovies);\n\n        yield put(\n            SearchActions.searchPopularMovieListSuccess({ popularMovieList }),\n        );\n    } catch (err) {\n        yield put(SearchActions.searchMovieListFailed());\n    }\n}\nexport function* getMovieList(action: any): any {\n    try {\n        const movieList = yield call(services.getMoviesByGenre, action.genre);\n\n        yield put(\n            SearchActions.searchMovieListSuccess({\n                movieList,\n                genre: action.genre,\n            }),\n        );\n    } catch (err) {\n        yield put(SearchActions.searchMovieListFailed());\n    }\n}\n"
+        }
+    ]
+}

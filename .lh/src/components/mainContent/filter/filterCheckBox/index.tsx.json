@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/components/mainContent/filter/filterCheckBox/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1641572726613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641572783845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,12 +2,8 @@\n import { BiSortUp } from 'react-icons/bi';\n import { CheckBoxButton } from './style';\n \n const FilterCheckBox = () => {\n-    const showCheckContainer = () => {\n-        document.querySelector('#check-box-container')?.style.display = 'none';\n-    };\n-\n     return (\n         <CheckBoxButton type=\"button\">\n             <i>\n                 <BiSortUp size=\"25px\" />\n"
+                },
+                {
+                    "date": 1641575133576,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { CheckBoxButton } from './style';\n \n const FilterCheckBox = () => {\n     return (\n-        <CheckBoxButton type=\"button\">\n+        <CheckBoxButton type=\"button\" id=\"check-box-button\">\n             <i>\n                 <BiSortUp size=\"25px\" />\n             </i>\n             <span>Filtrar Resultados</span>\n"
+                }
+            ],
+            "date": 1641572726613,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport { BiSortUp } from 'react-icons/bi';\nimport { CheckBoxButton } from './style';\n\nconst FilterCheckBox = () => {\n    const showCheckContainer = () => {\n        document.querySelector('#check-box-container')?.style.display = 'none';\n    };\n\n    return (\n        <CheckBoxButton type=\"button\">\n            <i>\n                <BiSortUp size=\"25px\" />\n            </i>\n            <span>Filtrar Resultados</span>\n        </CheckBoxButton>\n    );\n};\n\nexport default FilterCheckBox;\n"
+        }
+    ]
+}

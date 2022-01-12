@@ -1,0 +1,94 @@
+{
+    "sourceFile": "src/store/actions/searchGames.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 19,
+            "patches": [
+                {
+                    "date": 1641864964685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641871612881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,11 @@\n export const Types = {\n     SEARCH_GAMES_REQUEST: 'SEARCH_GAMES_REQUEST',\n     SEARCH_GAMES_SUCCESS: 'SEARCH_GAMES_SUCCESS',\n     SEARCH_GAMES_FAILED: 'SEARCH_GAMES_FAILED',\n+\n+    FILTER_GAMES_REQUEST: 'FILTER_GAMES_REQUEST',\n+    FILTER_GAMES_SUCCESS: 'FILTER_GAMES_SUCCES',\n };\n \n export const Creators = {\n     searchGamesRequest: () => ({\n"
+                },
+                {
+                    "date": 1641871695538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,12 +12,18 @@\n export const Creators = {\n     searchGamesRequest: () => ({\n         type: 'SEARCH_GAMES_REQUEST',\n     }),\n+\n     searchGamesSuccess: (gameList: GameListType) => ({\n         type: 'SEARCH_GAMES_SUCCESS',\n         gameList,\n     }),\n+\n     searchGamesFailed: () => ({\n         type: 'SEARCH_GAMES_FAILED',\n     }),\n+\n+    filterGamesRequest: () => ({\n+        type: Types.FILTER_GAMES_REQUEST,\n+    }),\n };\n"
+                },
+                {
+                    "date": 1641871710868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,7 +23,7 @@\n         type: 'SEARCH_GAMES_FAILED',\n     }),\n \n     filterGamesRequest: () => ({\n-        type: Types.FILTER_GAMES_REQUEST,\n+        type: 'FILTER_GAMES_REQUEST',\n     }),\n };\n"
+                },
+                {
+                    "date": 1641871859421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { GameListType } from '../reducers/types';\n+import { GameFilter, GameListType } from '../reducers/types';\n \n export const Types = {\n     SEARCH_GAMES_REQUEST: 'SEARCH_GAMES_REQUEST',\n     SEARCH_GAMES_SUCCESS: 'SEARCH_GAMES_SUCCESS',\n@@ -22,8 +22,10 @@\n     searchGamesFailed: () => ({\n         type: 'SEARCH_GAMES_FAILED',\n     }),\n \n-    filterGamesRequest: () => ({\n+    filterGamesRequest: ({ gameName, paramType }: GameFilter) => ({\n         type: 'FILTER_GAMES_REQUEST',\n+        gameName,\n+        paramType,\n     }),\n };\n"
+                },
+                {
+                    "date": 1641871920016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     SEARCH_GAMES_SUCCESS: 'SEARCH_GAMES_SUCCESS',\n     SEARCH_GAMES_FAILED: 'SEARCH_GAMES_FAILED',\n \n     FILTER_GAMES_REQUEST: 'FILTER_GAMES_REQUEST',\n-    FILTER_GAMES_SUCCESS: 'FILTER_GAMES_SUCCES',\n+    FILTER_GAMES_SUCCESS: 'FILTER_GAMES_SUCCESS',\n };\n \n export const Creators = {\n     searchGamesRequest: () => ({\n@@ -27,5 +27,9 @@\n         type: 'FILTER_GAMES_REQUEST',\n         gameName,\n         paramType,\n     }),\n+\n+    filterGamesSucces: () => ({\n+        type: 'FILTER_GAMES_SUCCESS',\n+    }),\n };\n"
+                },
+                {
+                    "date": 1641871949837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     searchGamesRequest: () => ({\n         type: 'SEARCH_GAMES_REQUEST',\n     }),\n \n-    searchGamesSuccess: (gameList: GameListType) => ({\n+    searchGamesSuccess: (gameList: GameListType[]) => ({\n         type: 'SEARCH_GAMES_SUCCESS',\n         gameList,\n     }),\n \n@@ -28,8 +28,9 @@\n         gameName,\n         paramType,\n     }),\n \n-    filterGamesSucces: () => ({\n+    filterGamesSucces: (gameList: GameListType[]) => ({\n         type: 'FILTER_GAMES_SUCCESS',\n+        gameList,\n     }),\n };\n"
+                },
+                {
+                    "date": 1641914904546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { GameFilter, GameListType } from '../reducers/types';\n+import { GenreFilter, GameListType } from '../reducers/types';\n \n export const Types = {\n     SEARCH_GAMES_REQUEST: 'SEARCH_GAMES_REQUEST',\n     SEARCH_GAMES_SUCCESS: 'SEARCH_GAMES_SUCCESS',\n@@ -22,11 +22,11 @@\n     searchGamesFailed: () => ({\n         type: 'SEARCH_GAMES_FAILED',\n     }),\n \n-    filterGamesRequest: ({ gameName, paramType }: GameFilter) => ({\n+    filterGamesRequest: ({ inputName, paramType }: GenreFilter) => ({\n         type: 'FILTER_GAMES_REQUEST',\n-        gameName,\n+        inputName,\n         paramType,\n     }),\n \n     filterGamesSucces: (gameList: GameListType[]) => ({\n"
+                },
+                {
+                    "date": 1641916534857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,12 +22,11 @@\n     searchGamesFailed: () => ({\n         type: 'SEARCH_GAMES_FAILED',\n     }),\n \n-    filterGamesRequest: ({ inputName, paramType }: GenreFilter) => ({\n+    filterGamesRequest: (array: GenreFilter[]) => ({\n         type: 'FILTER_GAMES_REQUEST',\n-        inputName,\n-        paramType,\n+        array,\n     }),\n \n     filterGamesSucces: (gameList: GameListType[]) => ({\n         type: 'FILTER_GAMES_SUCCESS',\n"
+                },
+                {
+                    "date": 1641918013773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,8 @@\n     SEARCH_GAMES_SUCCESS: 'SEARCH_GAMES_SUCCESS',\n     SEARCH_GAMES_FAILED: 'SEARCH_GAMES_FAILED',\n \n     FILTER_GAMES_REQUEST: 'FILTER_GAMES_REQUEST',\n-    FILTER_GAMES_SUCCESS: 'FILTER_GAMES_SUCCESS',\n };\n \n export const Creators = {\n     searchGamesRequest: () => ({\n@@ -26,10 +25,5 @@\n     filterGamesRequest: (array: GenreFilter[]) => ({\n         type: 'FILTER_GAMES_REQUEST',\n         array,\n     }),\n-\n-    filterGamesSucces: (gameList: GameListType[]) => ({\n-        type: 'FILTER_GAMES_SUCCESS',\n-        gameList,\n-    }),\n };\n"
+                },
+                {
+                    "date": 1641919039761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n     SEARCH_GAMES_SUCCESS: 'SEARCH_GAMES_SUCCESS',\n     SEARCH_GAMES_FAILED: 'SEARCH_GAMES_FAILED',\n \n     FILTER_GAMES_REQUEST: 'FILTER_GAMES_REQUEST',\n+    FILTER_GAMES_SUCCESS: 'FILTER_GAMES_SUCCESS',\n };\n \n export const Creators = {\n     searchGamesRequest: () => ({\n@@ -25,5 +26,10 @@\n     filterGamesRequest: (array: GenreFilter[]) => ({\n         type: 'FILTER_GAMES_REQUEST',\n         array,\n     }),\n+\n+    filterGamesSucces: (gameList: GameListType[]) => ({\n+        type: 'FILTER_GAMES_SUCCESS',\n+        gameList,\n+    }),\n };\n"
+                },
+                {
+                    "date": 1641958004374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,11 @@\n     SEARCH_GAMES_FAILED: 'SEARCH_GAMES_FAILED',\n \n     FILTER_GAMES_REQUEST: 'FILTER_GAMES_REQUEST',\n     FILTER_GAMES_SUCCESS: 'FILTER_GAMES_SUCCESS',\n+\n+    GET_ESPECIFIC_GAME_REQUEST: 'GET_ESPECIFIC_GAME_REQUEST',\n+    GET_ESPECIFIC_GAME_SUCCESS: 'GET_ESPECIFIC_GAME_SUCCESS',\n };\n \n export const Creators = {\n     searchGamesRequest: () => ({\n@@ -31,5 +34,9 @@\n     filterGamesSucces: (gameList: GameListType[]) => ({\n         type: 'FILTER_GAMES_SUCCESS',\n         gameList,\n     }),\n+\n+    getEspecificGameRequest: () => ({\n+        type: 'GET_ESPECIFIC_GAME_REQUEST',\n+    }),\n };\n"
+                },
+                {
+                    "date": 1641958488241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { GenreFilter, GameListType } from '../reducers/types';\n+import { GenreFilter, GameListType, IGame } from '../reducers/types';\n \n export const Types = {\n     SEARCH_GAMES_REQUEST: 'SEARCH_GAMES_REQUEST',\n     SEARCH_GAMES_SUCCESS: 'SEARCH_GAMES_SUCCESS',\n@@ -38,5 +38,9 @@\n \n     getEspecificGameRequest: () => ({\n         type: 'GET_ESPECIFIC_GAME_REQUEST',\n     }),\n+    getEspecificGameSuccess: (game: IGame) => ({\n+        type: 'GET_ESPECIFIC_GAME_REQUEST',\n+        game,\n+    }),\n };\n"
+                },
+                {
+                    "date": 1641960043107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,10 +35,11 @@\n         type: 'FILTER_GAMES_SUCCESS',\n         gameList,\n     }),\n \n-    getEspecificGameRequest: () => ({\n+    getEspecificGameRequest: (genre: string) => ({\n         type: 'GET_ESPECIFIC_GAME_REQUEST',\n+        genre,\n     }),\n     getEspecificGameSuccess: (game: IGame) => ({\n         type: 'GET_ESPECIFIC_GAME_REQUEST',\n         game,\n"
+                },
+                {
+                    "date": 1641991877237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,8 @@\n         type: 'GET_ESPECIFIC_GAME_REQUEST',\n         genre,\n     }),\n     getEspecificGameSuccess: (game: IGame) => ({\n-        type: 'GET_ESPECIFIC_GAME_REQUEST',\n+        type: 'GET_ESPECIFIC_GAME_Success',\n         game,\n     }),\n };\n"
+                },
+                {
+                    "date": 1641991887486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,8 @@\n         type: 'GET_ESPECIFIC_GAME_REQUEST',\n         genre,\n     }),\n     getEspecificGameSuccess: (game: IGame) => ({\n-        type: 'GET_ESPECIFIC_GAME_Success',\n+        type: 'GET_ESPECIFIC_GAME_SUCCESS',\n         game,\n     }),\n };\n"
+                },
+                {
+                    "date": 1642012536049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,10 @@\n     FILTER_GAMES_SUCCESS: 'FILTER_GAMES_SUCCESS',\n \n     GET_ESPECIFIC_GAME_REQUEST: 'GET_ESPECIFIC_GAME_REQUEST',\n     GET_ESPECIFIC_GAME_SUCCESS: 'GET_ESPECIFIC_GAME_SUCCESS',\n+\n+    FILTERED_GAMES_STORE: 'FILTERED_GAMES_STORE',\n };\n \n export const Creators = {\n     searchGamesRequest: () => ({\n@@ -43,5 +45,10 @@\n     getEspecificGameSuccess: (game: IGame) => ({\n         type: 'GET_ESPECIFIC_GAME_SUCCESS',\n         game,\n     }),\n+\n+    filteredGamesStore: (gameList: GameListType[]{\n+        type: 'FILTERED_GAMES_STORE',\n+        gameList,\n+    })\n };\n"
+                },
+                {
+                    "date": 1642012552811,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n         type: 'GET_ESPECIFIC_GAME_SUCCESS',\n         game,\n     }),\n \n-    filteredGamesStore: (gameList: GameListType[]{\n+    filteredGamesStore: (gameList: GameListType[]) => {\n         type: 'FILTERED_GAMES_STORE',\n         gameList,\n     })\n };\n"
+                },
+                {
+                    "date": 1642012561052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n         type: 'GET_ESPECIFIC_GAME_SUCCESS',\n         game,\n     }),\n \n-    filteredGamesStore: (gameList: GameListType[]) => {\n+    filteredGamesStore: (gameList: GameListType[]) => ({\n         type: 'FILTERED_GAMES_STORE',\n         gameList,\n-    })\n+    }),\n };\n"
+                },
+                {
+                    "date": 1642012674024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n         type: 'GET_ESPECIFIC_GAME_SUCCESS',\n         game,\n     }),\n \n-    filteredGamesStore: (gameList: GameListType[]) => ({\n+    filteredGamesStore: (gamesFiltered: GameListType[]) => ({\n         type: 'FILTERED_GAMES_STORE',\n-        gameList,\n+        gamesFiltered,\n     }),\n };\n"
+                }
+            ],
+            "date": 1641864964685,
+            "name": "Commit-0",
+            "content": "import { GameListType } from '../reducers/types';\n\nexport const Types = {\n    SEARCH_GAMES_REQUEST: 'SEARCH_GAMES_REQUEST',\n    SEARCH_GAMES_SUCCESS: 'SEARCH_GAMES_SUCCESS',\n    SEARCH_GAMES_FAILED: 'SEARCH_GAMES_FAILED',\n};\n\nexport const Creators = {\n    searchGamesRequest: () => ({\n        type: 'SEARCH_GAMES_REQUEST',\n    }),\n    searchGamesSuccess: (gameList: GameListType) => ({\n        type: 'SEARCH_GAMES_SUCCESS',\n        gameList,\n    }),\n    searchGamesFailed: () => ({\n        type: 'SEARCH_GAMES_FAILED',\n    }),\n};\n"
+        }
+    ]
+}

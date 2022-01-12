@@ -1,0 +1,86 @@
+{
+    "sourceFile": "src/components/mainContent/gameItem/style.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 17,
+            "patches": [
+                {
+                    "date": 1641568207239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641568261051,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import styled from 'styled-components';\n \n-export const GameItem = styled.li`\n+export const ItemContainer = styled.li`\n     height: 185px;\n     flex: 1;\n     max-width: 270px;\n `;\n"
+                },
+                {
+                    "date": 1641568381604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,9 @@\n export const ItemContainer = styled.li`\n     height: 185px;\n     flex: 1;\n     max-width: 270px;\n+\n+    div {\n+        height: 90%;\n+    }\n `;\n"
+                },
+                {
+                    "date": 1641568392590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,7 @@\n     max-width: 270px;\n \n     div {\n         height: 90%;\n+        background-color: #000;\n     }\n `;\n"
+                },
+                {
+                    "date": 1641568528267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n export const ItemContainer = styled.li`\n     height: 185px;\n     flex: 1;\n     max-width: 270px;\n+    list-style: none;\n \n     div {\n         height: 90%;\n         background-color: #000;\n"
+                },
+                {
+                    "date": 1641568541648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n     height: 185px;\n     flex: 1;\n     max-width: 270px;\n     list-style: none;\n+    text-align: center;\n \n     div {\n         height: 90%;\n         background-color: #000;\n"
+                },
+                {
+                    "date": 1641568629643,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,10 @@\n import styled from 'styled-components';\n \n-export const ItemContainer = styled.li`\n+export const ItemContainer = styled.div`\n     height: 185px;\n     flex: 1;\n     max-width: 270px;\n-    list-style: none;\n     text-align: center;\n \n     div {\n         height: 90%;\n"
+                },
+                {
+                    "date": 1641568911042,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,11 @@\n     height: 185px;\n     flex: 1;\n     max-width: 270px;\n     text-align: center;\n+    display: flex;\n+    flex-direction: column;\n+    row-gap: 15px;\n \n     div {\n         height: 90%;\n         background-color: #000;\n"
+                },
+                {
+                    "date": 1641569912244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n     text-align: center;\n     display: flex;\n     flex-direction: column;\n     row-gap: 15px;\n+    min-width: 20%;\n \n     div {\n         height: 90%;\n         background-color: #000;\n"
+                },
+                {
+                    "date": 1641569938753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,14 @@\n export const ItemContainer = styled.div`\n     height: 185px;\n     flex: 1;\n     max-width: 270px;\n-    text-align: center;\n+    min-width: 20%;\n     display: flex;\n     flex-direction: column;\n+    text-align: center;\n     row-gap: 15px;\n-    min-width: 20%;\n+    cursor: pointer;\n \n     div {\n         height: 90%;\n         background-color: #000;\n"
+                },
+                {
+                    "date": 1641571732819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,10 @@\n import styled from 'styled-components';\n \n export const ItemContainer = styled.div`\n     height: 185px;\n-    flex: 1;\n     max-width: 270px;\n-    min-width: 20%;\n+    min-width: 23%;\n     display: flex;\n     flex-direction: column;\n     text-align: center;\n     row-gap: 15px;\n"
+                },
+                {
+                    "date": 1641578806363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n     display: flex;\n     flex-direction: column;\n     text-align: center;\n     row-gap: 15px;\n+    flex: 1;\n     cursor: pointer;\n \n     div {\n         height: 90%;\n"
+                },
+                {
+                    "date": 1641838792754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,5 +14,15 @@\n     div {\n         height: 90%;\n         background-color: #000;\n     }\n+\n+    figure {\n+        width: 100%;\n+        height: 100%;\n+    }\n+\n+    img {\n+        width: 100%;\n+        height: 100%;\n+    }\n `;\n"
+                },
+                {
+                    "date": 1641867062779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n     flex-direction: column;\n     text-align: center;\n     row-gap: 15px;\n     flex: 1;\n+    margin-bottom: 15px;\n     cursor: pointer;\n \n     div {\n         height: 90%;\n"
+                },
+                {
+                    "date": 1642009298519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,11 @@\n \n     img {\n         width: 100%;\n         height: 100%;\n+        object-fit: cover;\n     }\n+\n+    @media (min-width: 0px) and (max-width: 800px) {\n+        min-width: 40%;\n+    }\n `;\n"
+                },
+                {
+                    "date": 1642009354253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,6 +29,7 @@\n     }\n \n     @media (min-width: 0px) and (max-width: 800px) {\n         min-width: 40%;\n+        font-size: 17px;\n     }\n `;\n"
+                },
+                {
+                    "date": 1642009379176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,7 +29,10 @@\n     }\n \n     @media (min-width: 0px) and (max-width: 800px) {\n         min-width: 40%;\n-        font-size: 17px;\n+\n+        h2 {\n+            font-size: 17px;\n+        }\n     }\n `;\n"
+                },
+                {
+                    "date": 1642009680070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n \n     img {\n         width: 100%;\n         height: 100%;\n-        object-fit: cover;\n+        object-fit: fill;\n     }\n \n     @media (min-width: 0px) and (max-width: 800px) {\n         min-width: 40%;\n"
+                }
+            ],
+            "date": 1641568207239,
+            "name": "Commit-0",
+            "content": "import styled from 'styled-components';\n\nexport const GameItem = styled.li`\n    height: 185px;\n    flex: 1;\n    max-width: 270px;\n`;\n"
+        }
+    ]
+}

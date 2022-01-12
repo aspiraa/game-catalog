@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/components/mainContent/filter/filterCheckBoxButton/style.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1642009513747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1642009513747,
+            "name": "Commit-0",
+            "content": "import styled from 'styled-components';\n\nexport const CheckBoxButton = styled.button`\n    width: 150px;\n    height: 30px;\n    background-color: #3ac9b8;\n    border: 1px solid #39b3a4;\n    display: flex;\n    align-items: center;\n    cursor: pointer;\n    z-index: 2;\n`;\n"
+        }
+    ]
+}

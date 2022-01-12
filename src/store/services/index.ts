@@ -4,7 +4,7 @@ import { IFilter } from '../../components/mainContent/filter';
 
 const headers = {
     'x-rapidapi-host': 'mmo-games.p.rapidapi.com',
-    'x-rapidapi-key': '60b99f967cmsh9c2e261209c9ab4p138f4fjsn18d12b4c6aa6',
+    'x-rapidapi-key': 'Insira a x-rapidapi-key',
 };
 export const services = {
     getGames: async () => {

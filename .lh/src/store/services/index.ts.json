@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 71,
+            "activePatchIndex": 72,
             "patches": [
                 {
                     "date": 1641822496836,
@@ -292,6 +292,10 @@
                 {
                     "date": 1641989737020,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,8 @@\n         }\n     },\n \n     getEspecificGame: async (genre: string) => {\n-        console.log('oiii');\n         const params = {\n             id: genre,\n         };\n         try {\n"
+                },
+                {
+                    "date": 1642017167838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { IFilter } from '../../components/mainContent/filter';\n \n const headers = {\n     'x-rapidapi-host': 'mmo-games.p.rapidapi.com',\n-    'x-rapidapi-key': '60b99f967cmsh9c2e261209c9ab4p138f4fjsn18d12b4c6aa6',\n+    'x-rapidapi-key': 'Insira a x-rapidapi-key',\n };\n export const services = {\n     getGames: async () => {\n         try {\n"
                 }
             ],
             "date": 1641822496836,

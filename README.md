@@ -28,6 +28,9 @@ Um catalogo de jogos,utilizando as tecnologias Typescript, ReactJs Redux, Html e
  
  # executar o projeto
   yarn start
+  
+ # adicional 
+    entre em game-catalog/src/store/services/index.ts e insira uma x-rapid-api-key valida https://rapidapi.com/digiwalls/api/mmo-games
  ```
 
 # Autor
